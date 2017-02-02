@@ -89,7 +89,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\bootstrap.css" />
+    <Content Include="CSS\common.css" />
+    <Content Include="CSS\lightbox.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\style4.css" />
     <Content Include="Global.asax" />
+    <Content Include="JS\bootstrap-3.1.1.min.js" />
+    <Content Include="JS\jquery-1.11.1.min.js" />
+    <Content Include="JS\jquery.flexisel.js" />
+    <Content Include="JS\jquery.min.js" />
+    <Content Include="JS\lightbox-plus-jquery.min.js" />
+    <Content Include="JS\modernizr.custom.79639.js" />
+    <Content Include="JS\responsiveslides.min.js" />
+    <Content Include="Views\about.html" />
+    <Content Include="Views\contact.html" />
+    <Content Include="Views\gallery.html" />
+    <Content Include="Views\index.html" />
+    <Content Include="Views\review.html" />
+    <Content Include="Views\single.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
