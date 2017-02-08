@@ -152,6 +152,7 @@
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
     <Content Include="Views\index.html" />
+    <Content Include="Views\Loja.html" />
     <Content Include="Views\review.html" />
     <Content Include="Views\single.html" />
     <Content Include="Web.config" />
@@ -160,6 +161,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +172,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
