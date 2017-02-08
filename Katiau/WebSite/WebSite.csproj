@@ -151,7 +151,6 @@
     <Content Include="Views\about.html" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
-    <Content Include="Views\index.html" />
     <Content Include="Views\Loja.html" />
     <Content Include="Views\review.html" />
     <Content Include="Views\single.html" />
@@ -167,7 +166,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ReviewController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
