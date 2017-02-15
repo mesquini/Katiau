@@ -148,7 +148,7 @@
     <Content Include="JS\lightbox-plus-jquery.min.js" />
     <Content Include="JS\modernizr.custom.79639.js" />
     <Content Include="JS\responsiveslides.min.js" />
-    <Content Include="Views\about.html" />
+    <None Include="Views\About\Index.cshtml" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
     <Content Include="Views\Loja.html" />
@@ -191,7 +191,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\About\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
