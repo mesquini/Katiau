@@ -148,7 +148,7 @@
     <Content Include="JS\lightbox-plus-jquery.min.js" />
     <Content Include="JS\modernizr.custom.79639.js" />
     <Content Include="JS\responsiveslides.min.js" />
-    <Content Include="Views\about.html" />
+    <None Include="Views\About\Index.cshtml" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
     <Content Include="Views\Loja.html" />
@@ -179,7 +179,6 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Single\Index.cshtml" />
     <None Include="Web.Debug.config">
