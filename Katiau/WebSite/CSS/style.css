@@ -359,8 +359,8 @@ h5.act a{
 	text-decoration:none;
 }
 h5.act a:hover{
-	    color: #000;
-    background: #ffdd57;
+	    color: #B01030;
+    background: #ffffff;
 }
 .grid2{
 	position:relative;
@@ -474,7 +474,7 @@ h5.arc a:hover{
 	margin-top:0.7em;
 }
 .tab-post-info p a {
-    color:#ffdd57;
+    color:#B01030;
     text-decoration: none;
 }
 .tab-post-info p a:hover{
@@ -814,7 +814,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding:0;
 }
 .rft-pic-info h4 a{
-    color: #B01030;
+    color: #ffdd57;
     font-size: 1em;
     font-weight: 600;
      font-family: 'Titillium Web', sans-serif;
@@ -824,7 +824,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	color:#0dc5dd;
 }
 .rft-pic-info p {
-    color: #000;
+    color: #999;
     font-size: 0.9em;
     line-height: 1.8em;
     margin-top: 8px;
