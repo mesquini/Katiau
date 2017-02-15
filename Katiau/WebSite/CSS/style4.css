@@ -5,6 +5,7 @@
 	position: relative;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 	cursor: default;
+   
 }
 .ch-info-wrap{
 	position: absolute;
@@ -45,6 +46,7 @@
 	-o-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+    
 }
 .ch-info > div {
 	display: block;
@@ -58,6 +60,7 @@
 	-o-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
+    
 }
 .ch-info .ch-info-back {
 	-webkit-transform: rotate3d(0,1,0,180deg);
@@ -66,20 +69,54 @@
 	-ms-transform: rotate3d(0,1,0,180deg);
 	transform: rotate3d(0,1,0,180deg);
 	background: #b01030;
+    
 }
+
+
+/* Team (About) */
 
 .ch-img-1 { 
-	background-image: url(../images/team-1.jpg);
+	background-image: url(../images/venda-1.jpg);
 }
 
+
 .ch-img-2 { 
-	background-image: url(../images/team-2.jpg);
+	background-image: url(../images/venda-2.jpg);
 }
 
 .ch-img-3 { 
-	background-image: url(../images/team-3.jpg);
+	background-image: url(../images/venda-3.jpg);
 }
 
+.ch-img-4 { 
+	background-image: url(../images/venda-3.jpg);
+}
+
+.ch-img-5 { 
+	background-image: url(../images/venda-3.jpg);
+}
+
+.ch-img-6 { 
+	background-image: url(../images/venda-3.jpg);
+}
+
+.ch-img-7 { 
+	background-image: url(../images/venda-3.jpg);
+}
+
+/* Vendas (Store) */
+
+.ch-img-venda-1 { 
+	background-image: url(../images/venda-1.jpg);
+}
+
+.ch-img-venda-2 { 
+	background-image: url(../images/venda-2.jpg);
+}
+
+.ch-img-venda-3 { 
+	background-image: url(../images/venda-3.jpg);
+}
 .ch-info h3 {
 	color: #fff;
 	text-transform: uppercase;
@@ -89,6 +126,7 @@
 	padding: 40px 0 0 0;
 	height: 90px;
 	font-family: 'Open Sans', Arial, sans-serif;
+    margin-top:36px;
 	text-shadow: 
 		0 0 1px #fff, 
 		0 1px 2px rgba(0,0,0,0.3);
