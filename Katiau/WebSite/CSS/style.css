@@ -1092,7 +1092,7 @@ h2.typoh2{
 .contact-form input[type="text"] {
   display: inline-block;
   background: none;
-  border: 1.5px solid #CBCBCB;
+  border: 1.5px solid #B01030;
   width: 31.9%;
   outline: none;
   padding: 10px 15px 10px 15px;
@@ -1104,7 +1104,7 @@ h2.typoh2{
 .contact-form input[type="email"] {
 	display: inline-block;
 	background: none;
-	border: 1.5px solid #CBCBCB;
+	border: 1.5px solid #B01030;
 	width: 32%;
 	outline: none;
 	padding: 10px 15px 10px 15px;
@@ -1115,7 +1115,7 @@ h2.typoh2{
 }
 .contact-form textarea {
 	background: none;
-	border: 1.5px solid #CBCBCB;
+	border: 1.5px solid #B01030;
 	width: 100%;
 	display: block;
 	height: 150px;
