@@ -615,7 +615,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 .about h2,h2.top,.review h2,.gallery h2,.contact h2{
     font-size:2.5em;
     margin: 0;
-    color: #0dc5dd;
+    color: #B01030;
      font-family: 'Titillium Web', sans-serif;
     font-weight: 600;
     text-align: center;
@@ -814,7 +814,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding:0;
 }
 .rft-pic-info h4 a{
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1em;
     font-weight: 600;
      font-family: 'Titillium Web', sans-serif;
@@ -824,7 +824,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	color:#0dc5dd;
 }
 .rft-pic-info p {
-    color: #999;
+    color: #000;
     font-size: 0.9em;
     line-height: 1.8em;
     margin-top: 8px;
