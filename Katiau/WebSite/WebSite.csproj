@@ -132,6 +132,13 @@
     <Content Include="images\prev.png" />
     <Content Include="images\ps.png" />
     <Content Include="images\sin1.jpg" />
+    <Content Include="images\team-1.jpg" />
+    <Content Include="images\team-2.jpg" />
+    <Content Include="images\team-3.jpg" />
+    <Content Include="images\team-4.jpg" />
+    <Content Include="images\team-5.jpg" />
+    <Content Include="images\team-6.jpg" />
+    <Content Include="images\team-7.jpg" />
     <Content Include="images\tr1.jpg" />
     <Content Include="images\tr2.jpg" />
     <Content Include="images\tr3.jpg" />
