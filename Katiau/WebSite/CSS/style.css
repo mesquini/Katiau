@@ -814,7 +814,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding:0;
 }
 .rft-pic-info h4 a{
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1em;
     font-weight: 600;
      font-family: 'Titillium Web', sans-serif;
@@ -824,7 +824,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	color:#0dc5dd;
 }
 .rft-pic-info p {
-    color: #999;
+    color: #000;
     font-size: 0.9em;
     line-height: 1.8em;
     margin-top: 8px;
@@ -1037,7 +1037,7 @@ h2.typoh2{
     padding:3em 0;
 }
 .contact h4 {
-    color: #080808;
+    color: #B01030;
     font-size: 1.2em;
     font-weight: 600;
     margin: 0 0 1em;
