@@ -633,12 +633,12 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding-left: 0;
 }
 .about-text-right h4 {
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1.5em;
     line-height: 1.4em;
 }
 .about-text-right p {
-  color: #999;
+  color: #000;
   font-size:0.9em;
   line-height: 1.8em;
     margin-top: 1em;
@@ -653,11 +653,11 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
   margin: 1em 0 0;
 }
 .about-text-right ul li a{
-  color: #999;
+  color: #000;
   font-size:0.9em;
 }
 .about-text-right ul li a:hover{
-	color: #0dc5dd;
+	color: #B01030;
     padding-left: 15px;
 	text-decoration:none;
 }
@@ -814,7 +814,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding:0;
 }
 .rft-pic-info h4 a{
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1em;
     font-weight: 600;
      font-family: 'Titillium Web', sans-serif;
@@ -824,7 +824,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	color:#0dc5dd;
 }
 .rft-pic-info p {
-    color: #999;
+    color: #000;
     font-size: 0.9em;
     line-height: 1.8em;
     margin-top: 8px;
