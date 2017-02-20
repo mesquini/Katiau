@@ -184,8 +184,11 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PCController.cs" />
+    <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +206,9 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Single\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\PC\Index.cshtml" />
+    <Content Include="Views\Play\Index.cshtml" />
+    <Content Include="Views\Xbox\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
