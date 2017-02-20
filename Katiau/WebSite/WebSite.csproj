@@ -89,11 +89,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\common.css" />
     <Content Include="CSS\lightbox.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\style4.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\bnr.jpg" />
     <Content Include="images\c1.jpg" />
@@ -103,6 +107,7 @@
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
     <Content Include="images\ftr-icons.png" />
+    <Content Include="images\fundoLoja.jpg" />
     <Content Include="images\g1.jpg" />
     <Content Include="images\g10.jpg" />
     <Content Include="images\g11.jpg" />
@@ -155,7 +160,17 @@
     <Content Include="JS\lightbox-plus-jquery.min.js" />
     <Content Include="JS\modernizr.custom.79639.js" />
     <Content Include="JS\responsiveslides.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Views\About\Index.cshtml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
     <Content Include="Views\Loja.html" />
@@ -180,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
@@ -188,6 +202,7 @@
     <Content Include="Views\Review\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Single\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -594,7 +594,7 @@ a.list-group-item:hover {
     display: block;
 }
 .copywrite {
-    padding: 2em 0;
+    padding: 8px;
     background: #333;
 }
 .copywrite p {
@@ -611,6 +611,11 @@ a.list-group-item:hover {
 background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	min-height:250px;
+}
+.bannerStore{
+background:url(../images/fundoLoja.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	min-height:929px;
 }
 .about h2,h2.top,.review h2,.gallery h2,.contact h2{
     font-size:2.5em;
@@ -702,12 +707,13 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
     padding: 5px 0
 }
 .team-top h3{
-    font-size: 2.3em;
+    font-size: 5em;
     margin: 0;
     color: #B01030;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 600;
     text-align: center;
+    padding: 88px;
 }
 /* Caption Style 3 */
 .cs-style-3 figure {
