@@ -199,8 +199,10 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
     <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,8 +226,9 @@
     <Content Include="Views\Play\Index.cshtml" />
     <Content Include="Views\Xbox\Index.cshtml" />
     <Content Include="Views\Drift\Index.cshtml" />
-    <Content Include="Views\Vantagens\Index.cshtml" />
+    <Content Include="Views\Simulador\Index.cshtml" />
     <Content Include="Views\Neve\Index.cshtml" />
+    <Content Include="Views\TechMundo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -236,6 +239,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Vantagens\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
