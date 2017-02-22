@@ -215,6 +215,7 @@
     <Content Include="Views\Play\Index.cshtml" />
     <Content Include="Views\Xbox\Index.cshtml" />
     <Content Include="Views\Drift\Index.cshtml" />
+    <Content Include="Views\Neve\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,7 +226,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Neve\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
