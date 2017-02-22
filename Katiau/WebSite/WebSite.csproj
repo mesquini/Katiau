@@ -195,6 +195,7 @@
     <Compile Include="Controllers\DriftController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NeveController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
@@ -224,6 +225,7 @@
     <Content Include="Views\Xbox\Index.cshtml" />
     <Content Include="Views\Drift\Index.cshtml" />
     <Content Include="Views\Vantagens\Index.cshtml" />
+    <Content Include="Views\Neve\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
