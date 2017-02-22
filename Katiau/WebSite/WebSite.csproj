@@ -195,12 +195,14 @@
     <Compile Include="Controllers\DriftController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NeveController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
     <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,6 +228,7 @@
     <Content Include="Views\Drift\Index.cshtml" />
     <Content Include="Views\Simulador\Index.cshtml" />
     <Content Include="Views\Neve\Index.cshtml" />
+    <Content Include="Views\TechMundo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
