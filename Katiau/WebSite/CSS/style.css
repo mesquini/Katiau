@@ -359,8 +359,8 @@ h5.act a{
 	text-decoration:none;
 }
 h5.act a:hover{
-	    color: #000;
-    background: #ffdd57;
+	    color: #B01030;
+    background: #ffffff;
 }
 .grid2{
 	position:relative;
@@ -474,7 +474,7 @@ h5.arc a:hover{
 	margin-top:0.7em;
 }
 .tab-post-info p a {
-    color:#ffdd57;
+    color:#B01030;
     text-decoration: none;
 }
 .tab-post-info p a:hover{
@@ -633,12 +633,12 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding-left: 0;
 }
 .about-text-right h4 {
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1.5em;
     line-height: 1.4em;
 }
 .about-text-right p {
-  color: #999;
+  color: #000;
   font-size:0.9em;
   line-height: 1.8em;
     margin-top: 1em;
@@ -653,11 +653,11 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
   margin: 1em 0 0;
 }
 .about-text-right ul li a{
-  color: #999;
+  color: #000;
   font-size:0.9em;
 }
 .about-text-right ul li a:hover{
-	color: #0dc5dd;
+	color: #B01030;
     padding-left: 15px;
 	text-decoration:none;
 }
@@ -704,7 +704,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 .team-top h3{
     font-size: 2.3em;
     margin: 0;
-    color: #ffdd57;
+    color: #B01030;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 600;
     text-align: center;
@@ -814,7 +814,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	padding:0;
 }
 .rft-pic-info h4 a{
-    color: #ffdd57;
+    color: #B01030;
     font-size: 1em;
     font-weight: 600;
      font-family: 'Titillium Web', sans-serif;
@@ -824,7 +824,7 @@ background:url(../images/bnr.jpg) no-repeat 0px 0px;
 	color:#0dc5dd;
 }
 .rft-pic-info p {
-    color: #999;
+    color: #000;
     font-size: 0.9em;
     line-height: 1.8em;
     margin-top: 8px;
@@ -1037,7 +1037,7 @@ h2.typoh2{
     padding:3em 0;
 }
 .contact h4 {
-    color: #080808;
+    color: #B01030;
     font-size: 1.2em;
     font-weight: 600;
     margin: 0 0 1em;
@@ -1092,7 +1092,7 @@ h2.typoh2{
 .contact-form input[type="text"] {
   display: inline-block;
   background: none;
-  border: 1.5px solid #CBCBCB;
+  border: 1.5px solid #B01030;
   width: 31.9%;
   outline: none;
   padding: 10px 15px 10px 15px;
@@ -1104,7 +1104,7 @@ h2.typoh2{
 .contact-form input[type="email"] {
 	display: inline-block;
 	background: none;
-	border: 1.5px solid #CBCBCB;
+	border: 1.5px solid #B01030;
 	width: 32%;
 	outline: none;
 	padding: 10px 15px 10px 15px;
@@ -1115,7 +1115,7 @@ h2.typoh2{
 }
 .contact-form textarea {
 	background: none;
-	border: 1.5px solid #CBCBCB;
+	border: 1.5px solid #B01030;
 	width: 100%;
 	display: block;
 	height: 150px;
@@ -1148,7 +1148,7 @@ button.btn1.btn-1.btn-1b:hover {
 /*--single--*/
 .single-middle h3{
 font-size: 2.3em; 
-  color: #2d2d2d;
+  color: #B01030;
   text-align:center;
     margin: 0 0 1em;
 }
@@ -1160,9 +1160,9 @@ font-size: 2.3em;
   padding: 1em;
   background: none;
   outline: none;
-  border: 1px solid #A09F9F;
+  border: 1px solid #B01030;
   font-size: 1em;
-  color:#A09F9F;
+  color: #000;
   -webkit-appearance: none;
 }
 .single-bottom  input[type="submit"]{
@@ -1196,7 +1196,7 @@ font-size: 2.3em;
 	  font-size: 1.3em; 
 }
 .media-body h4 a{
-  color: #2d2d2d;
+  color: #B01030;
   text-decoration:none;
    font-family: 'Titillium Web', sans-serif;
   font-size:1em;
@@ -1212,7 +1212,7 @@ font-size: 2.3em;
 }
 .single-bottom h3 {
   font-size: 2.5em; 
-  color: #2d2d2d;
+  color: #B01030;
   text-align: center;
   margin: 0.5em 0 1em;
    font-family: 'Titillium Web', sans-serif;
