@@ -184,6 +184,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DriftController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -212,6 +213,7 @@
     <Content Include="Views\PC\Index.cshtml" />
     <Content Include="Views\Play\Index.cshtml" />
     <Content Include="Views\Xbox\Index.cshtml" />
+    <Content Include="Views\Drift\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
