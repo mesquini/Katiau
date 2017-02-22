@@ -673,7 +673,7 @@ background:url(../images/fundoLoja.jpg) no-repeat 0px 0px;
 }
 .number {
 	float: left;
-	background: #0dc5dd;
+	background: #B01030;
 	display: inline-block;
 	text-align: center;
 	border-radius: 50%;
@@ -699,7 +699,7 @@ background:url(../images/fundoLoja.jpg) no-repeat 0px 0px;
 }
 .heading h4 {
   font-size: 1.2em;
-  color: #333;
+  color: #B01030;
   margin-top: 7px;
 }
 .heading-desc p {
