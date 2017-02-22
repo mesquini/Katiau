@@ -225,6 +225,7 @@
     <Content Include="Views\Xbox\Index.cshtml" />
     <Content Include="Views\Drift\Index.cshtml" />
     <Content Include="Views\Simulador\Index.cshtml" />
+    <Content Include="Views\Neve\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
