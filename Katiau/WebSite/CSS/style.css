@@ -597,7 +597,11 @@ a.list-group-item:hover {
 .copywrite {
     padding: 8px;
     background: #333;
+    position:absolute;
+    margin-top:350px;
     
+    width:100%;
+    text-align:center;
 }
 .copywrite p {
     color: #FFF;
@@ -2088,18 +2092,20 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
     text-align: center;
      font-size: 50px;
    
-    font-family: Broadway;
+    font-family: 'Swis721 BT';
     color: #B01030;
     padding: 17.5px;
 }
 .capa{
-    padding: 20px;
-    margin-left: 300px;
     
+    margin-left: 300px;
+    width:30%;
+    float:left;
 }
 .detalhes{
     margin-left:330px;
    padding:10px;
+
 }
 .bot_comprar {
 	width: 194px;
@@ -2127,5 +2133,13 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
     font-family: 'Swis721 BT';
     font-size:45px;
     color: #B01030;
+   text-align:center;
    
+}
+.carrinho{
+    text-align:center;
+}
+.sobre{
+    font-size: 15px;
+    width:80%;
 }
