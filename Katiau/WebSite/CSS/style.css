@@ -32,7 +32,7 @@ h1.b1,h2.b2,h3.b3 {
 }	
 /*-- header_top --*/
 .banner{
-	background:url(../images/bnr.jpg) no-repeat 0px 0px;
+	background:url(../images/fundoHome.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	min-height:790px;	
 }
@@ -44,7 +44,7 @@ h1.b1,h2.b2,h3.b3 {
 	float:right;
 }
 .banner_head_top {
-    background: #000;
+    background: Transparent;
     padding:20px 44px;
 	margin-top:1em;
 }
@@ -243,9 +243,11 @@ h1.b1,h2.b2,h3.b3 {
 /*--content--*/
 .content-left{
 	padding-left:0;
+    padding-top:50px;
 }
 .content-right{
 	padding-right:0;
+     padding-top:50px;
 }
 .information{
 	margin:0 0 2em 0;
@@ -265,7 +267,7 @@ h1.b1,h2.b2,h3.b3 {
 .info{
 	float: left;
     width: 75%;
-    margin-right: 5%;
+ 
 }
 .info p {
     color: #B01030;
