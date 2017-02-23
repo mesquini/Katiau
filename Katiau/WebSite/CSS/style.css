@@ -597,8 +597,8 @@ a.list-group-item:hover {
 .copywrite {
     padding: 8px;
     background: #333;
-    position:absolute;
-    margin-top:350px;
+    
+   
     
     width:100%;
     text-align:center;
@@ -2122,6 +2122,14 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
     margin-right:19px;
     
 }
+.capaPC{
+    
+    margin-left: 300px;
+    width:28%;
+    float:left;
+    
+    
+}
 .detalhes {
    font-size:20px;
    margin-top:10px;
@@ -2163,5 +2171,6 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
 }
 .sobre{
     font-size: 20px;
-   
+   width:78%;
+   text-align:justify;
 }
