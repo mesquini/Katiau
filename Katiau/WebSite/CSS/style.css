@@ -2131,6 +2131,8 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
 .detalhes {
    font-size:20px;
    margin-top:10px;
+   text-align:justify;
+   width:80%;
 }
 .detalhes strong{
     color: #B01030;
