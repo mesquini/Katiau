@@ -2174,3 +2174,27 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
    width:78%;
    text-align:justify;
 }
+
+#HCB_comment_box blockquote {
+    color:red;
+  }
+#HCB_comment_box .text-blur {
+    color:red;
+  }
+  #HCB_comment_box .text-focus {
+    color:darkred;
+  }
+  #HCB_comment_box .submit {
+    background:none; /* Clear twitter bootstrap style. */
+    background-color:#B01030;
+    border:1px solid darkgreen;
+    color: white;
+  }
+   #HCB_comment_box {
+    color:#B01030;
+  }
+ #hcb_form_name {
+    color:blue;
+    font-size:18px;
+    background-color:darkgreen;
+  }

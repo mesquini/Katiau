@@ -19,6 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
+   
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -116,81 +117,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
 
-
-
-            <div class="single-middle">
-
-                <h3>4 Comentários</h3>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">gamerBoy12</a></h4>
-                        <p>A Beta estava meio bugada, mas os carros estão 'zika' kkkj</p>
-                    </div>
-                </div>
-                <div class="media in-media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">mesquini</a></h4>
-                        <p> Sou obrigado a falar, esse jogo tá uma porr*! </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Emankcin</a></h4>
-                        <p> O site está bem legal, as fotos estão 10/10.. Se eu fosse um professor daria 100 não é clã? </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">KilleroftheNightDark666</a></h4>
-                        <p> Baixei só pra testar os carros, se eu curtir eu compro </p>
-                    </div>
-                </div>
-
-            </div>
-            <!---->
-            <div class="single-bottom">
-
-                <h3>Deixe um Comentário</h3>
-                <form>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Nome" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nome';}">
-                    </div>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-                    </div>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Assunto" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Assunto';}">
-                    </div>
-                    <div class="clearfix"> </div>
-                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Mensagem</textarea>
-
-                    <input type="submit" value="Enviar">
-
-                </form>
-            </div>
-        </div>
     </div>
+   
+        <div id="HCB_comment_box"><h3>Comentarios</h3>
+        <style type="text/css">
+            #HCB_comment_box #HCB_comment_form_box {
+                padding-bottom: 1em;
+            }
 
+            #HCB_comment_box .hcb-link {
+                cursor: pointer;
+            }
+
+            #HCB_comment_box .hcb-icon {
+                border: 0px transparent none;
+            }
+
+            #HCB_comment_box textarea {
+                display: block;
+                width: 100%;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                width: 100%;
+                         
+            }
+
+            #HCB_comment_box blockquote {
+                margin: 10px;
+                overflow: hidden;
+            }
+
+            #HCB_comment_box .hcb-err {
+                color: red;
+            }
+
+            #HCB_comment_box .hcb-comment-tb {
+                margin: 0;
+                color: red;
+            }
+
+            #HCB_comment_box .comment {
+                position: relative;
+                color: red;
+            }
+
+                #HCB_comment_box .comment .likes {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    opacity: 0.8;
+                }
+
+                #HCB_comment_box .comment .hcb-comment-tb a {
+                    visibility: hidden;
+                }
+
+                #HCB_comment_box .comment:hover .hcb-comment-tb a {
+                    visibility: visible;
+                }
+
+            #HCB_comment_box .gravatar {
+                padding-right: 2px;
+            }
+
+            #HCB_comment_box input {
+                margin-left: 0;
+            }
+
+        </style></div>
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a></div>
+        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24KJvpEEI7TDxRD5qolK3BS0"+"&opts=16862&num=10&ts=1487880652574");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau . All rights reserved | Design by <a href="#">w3layouts</a></p>
