@@ -114,6 +114,7 @@
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
     <Content Include="images\ftr-icons.png" />
+    <Content Include="images\fundoHome.jpg" />
     <Content Include="images\fundoLoja.jpg" />
     <Content Include="images\g1.jpg" />
     <Content Include="images\g10.jpg" />
