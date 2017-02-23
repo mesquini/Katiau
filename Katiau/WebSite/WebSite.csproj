@@ -111,9 +111,15 @@
     <Content Include="images\c2.jpg" />
     <Content Include="images\c3.jpg" />
     <Content Include="images\c4.jpg" />
+    <Content Include="images\cars-1.jpg" />
+    <Content Include="images\cars-4.jpg" />
+    <Content Include="images\cars-6.jpg" />
+    <Content Include="images\cars3.jpg" />
+    <Content Include="images\cars4.jpg" />
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
     <Content Include="images\ftr-icons.png" />
+    <Content Include="images\fundoHome.jpg" />
     <Content Include="images\fundoLoja.jpg" />
     <Content Include="images\g1.jpg" />
     <Content Include="images\g10.jpg" />
