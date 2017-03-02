@@ -2241,3 +2241,33 @@ br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box span.home-desc{font-size:10px;opacity:.4}
 #HCB_comment_box blockquote{margin:0!important;padding:20px;background:url(speech-bubble.png) no-repeat}
 #HCB_comment_box div.comment{margin-bottom:5px;border-bottom:1px solid #eee}
+
+.dados{
+    margin-left:25%;
+    margin-top:70px;
+    margin-bottom:70px;
+    color: #B01030;
+}
+.login{
+    margin-left:25%;
+    margin-top:42px;
+    margin-bottom:20px;
+    color: #B01030;
+}
+.submit{
+    margin-left:35%;
+    margin-bottom:38px;
+}
+.titu{
+    color: red;
+}
+.dados tr td label{
+    margin-left:10px;
+    margin-right:15px;
+    margin-bottom:10px;
+}
+.login tr td label{
+    margin-left:10px;
+    margin-right:15px;
+    margin-bottom:10px;
+}
