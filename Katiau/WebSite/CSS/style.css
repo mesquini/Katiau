@@ -102,7 +102,7 @@ h1.b1,h2.b2,h3.b3 {
 	font-weight:600;
 	font-size:1em;
 	color:#fff!important;
-	border-bottom:1px solid #000;
+	border-bottom:1px solid #fff;
 	margin-right:20px;
 }
 .navbar-nav > li > a:hover{
@@ -1568,7 +1568,7 @@ p.sed {
     border-bottom:none!important;
 }
 .navbar-nav > li > a:hover,.navbar-nav > .active > a:hover{
-    border-bottom:1px solid #000!important;
+    border-bottom:1px solid #fff!important;
 	color: #0dc5dd!important;
 }
 .navbar-nav > li > a {
