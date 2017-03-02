@@ -119,6 +119,7 @@
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
     <Content Include="images\ftr-icons.png" />
+    <Content Include="images\fundoAlternative.jpg" />
     <Content Include="images\fundoHome.jpg" />
     <Content Include="images\fundoLoja.jpg" />
     <Content Include="images\g1.jpg" />
@@ -134,6 +135,7 @@
     <Content Include="images\g8.jpg" />
     <Content Include="images\g9.jpg" />
     <Content Include="images\icon1.png" />
+    <Content Include="images\iconeLogin_Cadastro.png" />
     <Content Include="images\katiau16.png" />
     <Content Include="images\katiau32.png" />
     <Content Include="images\katiau48.png" />
