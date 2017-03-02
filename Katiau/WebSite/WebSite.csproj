@@ -197,7 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CadastroController.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DriftController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
@@ -237,7 +237,7 @@
     <Content Include="Views\Neve\Index.cshtml" />
     <Content Include="Views\TechMundo\Index.cshtml" />
     <Content Include="Views\Vantagens\Index.cshtml" />
-    <Content Include="Views\Cadastro\Index.cshtml" />
+    <Content Include="Views\Administrador\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
