@@ -632,7 +632,7 @@ a.list-group-item:hover {
 
 /*----*/
 .banner2{
-background:url(../images/bnr.jpg) no-repeat 0px 0px;
+background:url(../images/fundoAlternative.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	min-height:250px;
 }
@@ -1681,11 +1681,11 @@ ul.grid-part li a{
     font-size: 1.4em;
 }
 .banner {
-    background: url(../images/bnr.jpg) no-repeat -313px 0px;
+    background: url(../images/fundoHome.jpg) no-repeat -313px 0px;
     background-size: cover;
 }
 .banner2 {
-    background: url(../images/bnr.jpg) no-repeat 0px 0px;
+    background: url(../images/fundoHome.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 }
