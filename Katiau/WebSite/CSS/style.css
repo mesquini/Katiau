@@ -105,6 +105,8 @@ h1.b1,h2.b2,h3.b3 {
 	border-bottom:1px solid #fff;
 	margin-right:20px;
 }
+
+.navbar-nav > li > 
 .navbar-nav > li > a:hover{
 	color:#B01030!important;
 	border-bottom: 1px solid #B01030;
