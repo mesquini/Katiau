@@ -102,9 +102,11 @@ h1.b1,h2.b2,h3.b3 {
 	font-weight:600;
 	font-size:1em;
 	color:#fff!important;
-	border-bottom:1px solid #000;
+	border-bottom:1px solid #fff;
 	margin-right:20px;
 }
+
+.navbar-nav > li > 
 .navbar-nav > li > a:hover{
 	color:#B01030!important;
 	border-bottom: 1px solid #B01030;
@@ -603,6 +605,17 @@ a.list-group-item:hover {
     width:100%;
     text-align:center;
 }
+
+.copywritenovo{
+    position: absolute;
+    top: 932px;
+    padding: 8px;
+    background: #333;
+    width:100%;
+    text-align:center;
+    color: white;
+}
+
 .copywrite p {
     color: #FFF;
     font-size: .9em;
@@ -1557,7 +1570,7 @@ p.sed {
     border-bottom:none!important;
 }
 .navbar-nav > li > a:hover,.navbar-nav > .active > a:hover{
-    border-bottom:1px solid #000!important;
+    border-bottom:1px solid #fff!important;
 	color: #0dc5dd!important;
 }
 .navbar-nav > li > a {
@@ -2198,5 +2211,65 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
  #hcb_form_name {
     color:blue;
     font-size:18px;
-    background-color:darkgreen;
+    background-color:deeppink;
   }
+ .comment{
+     margin: 50px;
+ }
+ textarea#hcb_form_content.commentbox.hcb-shadow-r{
+     color: #B01030;
+ }
+ input#hcb_form_name.hcb-shadow-r{
+     color: #B01030;
+ }
+ 
+ div.hcb-shadow-tl{background:url(shadow-bg.png) top left}
+div.hcb-shadow-tr{background:url(shadow-bg.png) top right}
+div.hcb-shadow-bl{background:url(shadow-bg.png) bottom left}
+div.hcb-shadow-br{background:url(shadow-bg.png) bottom right}
+div.hcb-shadow-t{background:url(shadow-bg-t.png) repeat-x}
+div.hcb-shadow-b{margin-bottom:5px;background:url(shadow-bg-t.png) repeat-x bottom}
+div.hcb-shadow-m{clear:both;background:url(shadow-bg-r.png) repeat-y right;padding-right:7px}
+.hcb-shadow-r{display:block;background:url(shadow-bg-l.png) repeat-y left}
+div.hcb-shadow-tr,div.hcb-shadow-br,div.hcb-shadow-tl,div.hcb-shadow-bl{width:7px}
+div.hcb-shadow-tr,div.hcb-shadow-br{float:right}
+div.hcb-shadow-tl,div.hcb-shadow-bl{float:left}
+br.hcb-shadow-clear{clear:both;display:block}
+#HCB_comment_box *{margin:0;padding:0;border-width:0;outline:0}
+#HCB_comment_box textarea.commentbox{width:100%;display:block;border:0}
+#HCB_comment_box .hcb-wrapper-half{width:50%; float:left}
+#HCB_comment_box .hcb-wrapper{clear:left}
+#HCB_comment_box input.text{width:100%}
+#HCB_comment_box span.home-desc{font-size:10px;opacity:.4}
+#HCB_comment_box blockquote{margin:0!important;padding:20px;background:url(speech-bubble.png) no-repeat}
+#HCB_comment_box div.comment{margin-bottom:5px;border-bottom:1px solid #eee}
+
+.dados{
+    margin-left:25%;
+    margin-top:70px;
+    margin-bottom:70px;
+    color: #B01030;
+}
+.login{
+    margin-left:25%;
+    margin-top:42px;
+    margin-bottom:20px;
+    color: #B01030;
+}
+.submit{
+    margin-left:35%;
+    margin-bottom:38px;
+}
+.titu{
+    color: red;
+}
+.dados tr td label{
+    margin-left:10px;
+    margin-right:15px;
+    margin-bottom:10px;
+}
+.login tr td label{
+    margin-left:10px;
+    margin-right:15px;
+    margin-bottom:10px;
+}
