@@ -121,6 +121,7 @@
     <Content Include="CSS\lightbox.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\style4.css" />
+    <Content Include="CSS\styleLogin.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\bnr.jpg" />
@@ -187,10 +188,12 @@
     <Content Include="images\tr5.jpg" />
     <Content Include="images\tr6.jpg" />
     <Content Include="images\usuario.png" />
+    <Content Include="images\usuarioHover.png" />
     <Content Include="images\venda-1.jpg" />
     <Content Include="images\venda-2.jpg" />
     <Content Include="images\venda-3.jpg" />
     <Content Include="JS\bootstrap-3.1.1.min.js" />
+    <Content Include="JS\index.js" />
     <Content Include="JS\jquery-1.11.1.min.js" />
     <Content Include="JS\jquery.flexisel.js" />
     <Content Include="JS\jquery.min.js" />
