@@ -260,7 +260,6 @@
     <Content Include="Views\Neve\Index.cshtml" />
     <Content Include="Views\TechMundo\Index.cshtml" />
     <Content Include="Views\Vantagens\Index.cshtml" />
-    <Content Include="Views\Administrador\View.cshtml" />
     <Content Include="Views\Cadastro\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -271,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Administrador\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
