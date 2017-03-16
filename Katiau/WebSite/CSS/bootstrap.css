@@ -5761,4 +5761,7 @@ button.close {
     display: none !important;
   }
 }
+p.sobre{
+    text-align:justify;
+}
 /*# sourceMappingURL=bootstrap.css.map */
