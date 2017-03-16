@@ -71,13 +71,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                             <li><a href="~/Store/Index">Loja</a></li>
                             <li><a href="~/Contact/Index">Contato</a></li>
-                            <li class="imagemUser"><a href="#" class="loginform" id="loginform">
+                            <li class="imagemUser"><a class="loginform" id="loginform">
+                                <script src="~/JS/index.js"></script>
+                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                       
                                 <img class="login-sign-image" src="~/images/usuarioHover.png"
                                                               onmouseover="this.src='/images/usuario.png'"
                                                               onmouseout="this.src='/images/usuarioHover.png'"/>
                                     <div class="login">
                                         <div class="arrow-up"></div>
-                                           <div class="formholder">
+                                           <div class="formholder" style="display: block;">
                                            <div class="randompad">
                                               <fieldset>
                                                     <label name="email">Email</label>
@@ -89,12 +92,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                </fieldset>
                                             </div>
                                             </div>
-                                            </div>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-                                            <script src="~/JS/index.js"></script>                            
-                                   
-                             </a></li>
-                            </ul>
+                                            </div>                         
+                             </a></li></ul>
                             </div>
                             <!--/navbar collapse-->
                         </nav>

@@ -110,9 +110,10 @@ h1.b1,h2.b2,h3.b3 {
 .navbar-nav > li > a:hover{
 	color:#B01030!important;
 	border-bottom: 1px solid #B01030;
+    display:block;
 }
-.navbar-nav > li > a.loginform{
-    border-bottom:none;
+.navbar-nav > li > a.loginform {
+    border-bottom: none;
 }
 .navbar{
 	margin:2em 0;
@@ -124,16 +125,31 @@ h1.b1,h2.b2,h3.b3 {
 .navbar {
     margin: 0em 0;
 }
+.imagemUser{
+    cursor:pointer;
+}
 
 /*--------------------------------------------------------*/
 fieldset {
   border: none;
+  cursor:default;
+}
+a.loginform:hover{
+    display:block;
 }
 
 .login {
   position: absolute;
   width: 350px;
   display: none;
+}
+a.login:hover {
+  position: absolute;
+  width: 350px;
+  display: block;
+}
+li.imagemUser > a.loginform > login:hover{
+    display:block;
 }
 
 .arrow-up {
@@ -186,6 +202,7 @@ fieldset {
 
 .randompad {
   padding: 10px;
+  display:block;
 }
 
 .green {
@@ -198,7 +215,9 @@ a {
 }
 a:hover {
   color: #1abc9c;
+  display:block;
 }
+
 
 .banner-head {
     margin-bottom: 2em;
