@@ -127,6 +127,8 @@ h1.b1,h2.b2,h3.b3 {
 }
 .imagemUser{
     cursor:pointer;
+    position:absolute;
+    top: 12px;
 }
 
 /*--------------------------------------------------------*/
@@ -134,22 +136,19 @@ fieldset {
   border: none;
   cursor:default;
 }
-a.loginform:hover{
-    display:block;
-}
 
 .login {
   position: absolute;
   width: 350px;
   display: none;
+  top: 60px;
+  left: -27px;
 }
-a.login:hover {
-  position: absolute;
-  width: 350px;
-  display: block;
+label.email{
+    color:#B01030;
 }
-li.imagemUser > a.loginform > login:hover{
-    display:block;
+label.senha{
+    color:#B01030;
 }
 
 .arrow-up {
@@ -172,7 +171,7 @@ li.imagemUser > a.loginform > login:hover{
 .formholder input[type="email"], .formholder input[type="password"] {
   padding: 7px 5px;
   margin: 10px 0;
-  width: 96%;
+  width: 99.7%;
   display: block;
   font-size: 18px;
   border-radius: 5px;
@@ -184,40 +183,42 @@ li.imagemUser > a.loginform > login:hover{
 }
 .formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
   outline: none;
-  box-shadow: 0 0 1px 1px #1abc9c;
+  box-shadow: 0 0 1px 1px #B01030;
 }
 .formholder input[type="submit"] {
-  background: #1abc9c;
+  background: #B01030;
   padding: 10px;
   font-size: 20px;
   display: block;
   width: 100%;
   border: none;
-  color: #fff;
+  color: #ffffff;
   border-radius: 5px;
 }
 .formholder input[type="submit"]:hover {
-  background: #1bc6a4;
+  background: #ffffff;
+  color:#B01030;
+  box-shadow: 0 0 1px 1px #B01030;
 }
 
 .randompad {
   padding: 10px;
-  display:block;
 }
 
 .green {
-  color: #1abc9c;
+  color: #B01030;
 }
 
 a {
-  color: #ecf0f1;
+  color: #B01030;
   text-decoration: none;
 }
 a:hover {
-  color: #1abc9c;
-  display:block;
+  color: #B01030;
 }
-
+h4.cadastrar{
+    color:#B01030;
+}
 
 .banner-head {
     margin-bottom: 2em;
