@@ -726,7 +726,8 @@ a.list-group-item:hover {
     color: #fff;
 }
 
-.loginAdm a{
+.copywrite p a link{
+    padding-left:5em;
     color: #3333;
 }
 
