@@ -726,8 +726,8 @@ a.list-group-item:hover {
     color: #fff;
 }
 
-.copywrite p a nav{
-    padding-left:5em;
+.copywrite p a nav a{
+    padding-left:4em;
     color: #3333;
 }
 
