@@ -725,6 +725,11 @@ a.list-group-item:hover {
 .copywrite p a {
     color: #fff;
 }
+
+.loginAdm a{
+    color: #3333;
+}
+
 .copywriteLoja {
     padding: 8px;
     background: #333;
