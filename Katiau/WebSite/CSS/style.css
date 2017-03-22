@@ -727,7 +727,7 @@ a.list-group-item:hover {
 }
 
 .copywrite a{
-    /*padding-left: 50;*/
+    float-left: 60px;
     color: #3333;
 }
 
