@@ -25,8 +25,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="keywords" content="Game Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+    </script>
 
 </head>
 <body>
@@ -64,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="contact.html">Contato</a></li>
+                                    <li><a href="~/Contact/Index">Contato</a></li>
                                     <li class="imagemUser">
                                         <span class="loginform" id="loginform">
                                             <script src="~/JS/index.js"></script>
@@ -91,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </span>
                                     </li>
-                                </ul>
+                                </ul></div>
                             <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
@@ -115,29 +122,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li>Informações pessoais</li>
             </ul>
             <!-- fieldsets -->
-            <fieldset>
+            <fieldset id="fs1">
                 <h2 class="fs-title">Criar sua conta</h2>
                 <h3 class="fs-subtitle">Essa é a 1° etapa</h3>
-                <input type="email" name="email" placeholder="Email" required="required" />
-                <input type="password" name="pass" placeholder="Senha" required="required" />
-                <input type="password" name="cpass" placeholder="Confirmar Senha" required="required"/>
+                <input type="email" id="email" name="email" placeholder="Email" required/>
+                <input type="password" id="senha" name="senha" placeholder="Senha" required/>
+                <input type="password" id="csenha" name="csenha" placeholder="Confirmar Senha" required/>
                 <input type="button" name="next" class="next action-button" value="Próximo" />
             </fieldset>
-            <fieldset>
+            <fieldset id="fs2">
                 <h2 class="fs-title">Informações da conta</h2>
                 <h3 class="fs-subtitle">Informações da conta</h3>
-                <input type="text" name="nick" placeholder="Nick Name" maxlength="15" required="required" />
-                <p class="Perfil">Imagem do Perfil:</p>
-                <input type="file" name="imagemPerfil" />
+                <input type="text" id="nick" name="nick" placeholder="Nickname" maxlength="15" required/>
+                <!--<p class="Perfil">Imagem do Perfil:</p>-->
+                <input type="file" placeholder="Imagem de Perfil" name="imagemPerfil" />
                 <input type="button" name="Antes" class="previous action-button" value="Antes" />
                 <input type="button" name="Próximo" class="next action-button" value="Próximo" />
             </fieldset>
-            <fieldset>
+            <fieldset id="fs3">
                 <h2 class="fs-title">Informações pessoais</h2>
                 <h3 class="fs-subtitle">Serão úteis futuramente</h3>
                 <input type="text" name="fname" placeholder="Primeiro Nome" required="required"/>
                 <input type="text" name="lname" placeholder="Último Nome" required="required"/>
-                <input type="number" id="data" class="data" placeholder="Ex.: dd/mm/aaaa" maxlength="10" required="required"/>
+                <input type="date" id="datepicker">
                 <input type="button" name="previous" class="previous action-button" value="Antes" />
                 <input type="submit" name="submit" class="submit action-button" value="Enviar"  />
             </fieldset>
@@ -154,7 +161,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             var animating; //flag to prevent quick multi-click glitches
 
             $(".next").click(function () {
-                
+
+                if ($("#fs1").css("display") != "none") {
+                    if ($("#email").val() == "") {
+                        $("#email").css("border-color", "#B01030");
+                        return false;
+                    }
+
+                    if ($("#senha").val() == "") {
+                        $("#senha").css("border-color", "#B01030");
+                        return false;
+                    }
+
+                    if ($("#csenha").val() != $("#senha").val()) {
+                        $("#csenha").css("border-color", "#B01030");
+                        return false;
+                    }
+                }
+
+                if ($("#fs2").css("display") != "none") {
+                    if ($("#nick").val() == "") {
+                        $("#nick").css("border-color", "#B01030");
+                        return false;
+                    }
+                }
+
+                if ($("#fs2").css("display") != "none") {
+                    if ($("#primeironome").val() == "") {
+                        $("#primeironome").css("border-color", "#B01030");
+                        return false;
+                    }
+
+                    if ($("#ultimonome").val() == "") {
+                        $("#ultimonome").css("border-color", "#B01030");
+                        return false;
+                    }
+                }
+
               if (animating) return false;
            
               animating = true;
