@@ -2475,9 +2475,7 @@ body {
     margin-bottom:2px;
 }
 
-form {
-    border: 3px solid #f1f1f1;
-}
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -2489,7 +2487,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #B01030;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -2505,7 +2503,7 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: #B01030;
 }
 
 .imgcontainer {
