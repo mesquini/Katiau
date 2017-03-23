@@ -45,8 +45,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento]
-                , ImagemPerfil)" 
+            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento ImagemPerfil)" 
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
