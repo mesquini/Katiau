@@ -20,7 +20,7 @@ namespace Website.Models
 
         public Usuario(Int32 ID)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
@@ -40,16 +40,17 @@ namespace Website.Models
 
         public Boolean Salvar()
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, , Nascimento, ImagemPerfil)" 
+            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento]
+                , ImagemPerfil)" 
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
-            Comando.Parameters.AddWithValue("@IDCategoria", this.Email);
-            Comando.Parameters.AddWithValue("@Titulo", this.Nome);
+            Comando.Parameters.AddWithValue("@Email", this.Email);
+            Comando.Parameters.AddWithValue("@Nome", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
@@ -70,16 +71,16 @@ namespace Website.Models
 
         public static List<Usuario> Listar()
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Usuario;";
+            Comando.CommandText = "SELECT * FROM Usuário;";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
-            List<Usuario> Posts = new List<Usuario>();
+            List<Usuario> Users = new List<Usuario>();
             while (Leitor.Read())
             {
                 Usuario U = new Usuario();
@@ -91,12 +92,33 @@ namespace Website.Models
                 U.Nascimento = (String)Leitor["Nascimento"];
                 U.ImagemPerfil = (String)Leitor["ImagemPerfil"];
 
-                Posts.Add(U);
+                Users.Add(U);
             }
 
             Conexao.Close();
 
-            return Posts;
+            return Users;
+        }
+
+        public static Boolean Autenticar(String Email, String Senha)
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
+
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT ID FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.Parameters.AddWithValue("@Email", Email);
+            Comando.Parameters.AddWithValue("@Senha", Senha);
+
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            Boolean Resultado = Leitor.HasRows;
+
+            Conexao.Close();
+
+            return Resultado ? true : false;
         }
     }
 }
