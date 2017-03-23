@@ -5,6 +5,32 @@ var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function () {
 
+    if ($("#fs1").css("display") != "none") {
+        if ($("#email").val() == "") {
+            $("#email").css("border-color", "#B01030");
+            return false;
+        }
+
+        if ($("#senha").val() == "") {
+            $("#senha").css("border-color", "#B01030");
+            return false;
+        }
+
+        if ($("#csenha").val() != $("#senha").val()) {
+            $("#csenha").css("border-color", "#B01030");
+            return false;
+        }
+    }
+
+    if ($("#fs2").css("display") != "none") {
+        if ($("#nick").val() == "") {
+            $("#nick").css("border-color", "#B01030");
+            return false;
+        }
+    }
+
+   
+
     if (animating) return false;
 
     animating = true;
@@ -91,6 +117,20 @@ $(".previous").click(function () {
 });
 
 $(".submit").click(function () {
-    return false;
+
+    if ($("#fs3").css("display") != "none") {
+        if ($("#primeironome").val() == "") {
+            $("#primeironome").css("border-color", "#B01030");
+            return false;
+        }
+
+        if ($("#ultimonome").val() == "") {
+            $("#ultimonome").css("border-color", "#B01030");
+            return false;
+        }
+
+    }
+
+   
 })
 //# sourceURL=pen.js
