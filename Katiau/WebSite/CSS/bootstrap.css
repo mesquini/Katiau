@@ -297,12 +297,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #B01030;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #B01030;
   text-decoration: underline;
 }
 a:focus {
@@ -5759,5 +5759,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+p.sobre{
+    text-align:justify;
 }
 /*# sourceMappingURL=bootstrap.css.map */

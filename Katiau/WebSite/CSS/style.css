@@ -4,6 +4,8 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
+@import "compass/css3";
+
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0; padding:0;}
@@ -105,11 +107,13 @@ h1.b1,h2.b2,h3.b3 {
 	border-bottom:1px solid #fff;
 	margin-right:20px;
 }
-
-.navbar-nav > li > 
 .navbar-nav > li > a:hover{
 	color:#B01030!important;
 	border-bottom: 1px solid #B01030;
+    display:block;
+}
+.navbar-nav > li > a.loginform {
+    border-bottom: none;
 }
 .navbar{
 	margin:2em 0;
@@ -121,6 +125,101 @@ h1.b1,h2.b2,h3.b3 {
 .navbar {
     margin: 0em 0;
 }
+.imagemUser{
+    cursor:pointer;
+    position:absolute;
+    top: 12px;
+}
+
+/*--------------------------------------------------------*/
+fieldset {
+  border: none;
+  cursor:default;
+}
+
+.login {
+  position: absolute;
+  width: 350px;
+  display: none;
+  top: 60px;
+  left: -27px;
+}
+label.email{
+    color:#B01030;
+}
+label.senha{
+    color:#B01030;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #ECF0F1;
+  left: 10%;
+  position: absolute;
+  top: -10px;
+}
+
+.formholder {
+  background: #ecf0f1;
+  width: 350px;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.formholder input[type="email"], .formholder input[type="password"] {
+  padding: 7px 5px;
+  margin: 10px 0;
+  width: 99.7%;
+  display: block;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #B01030;
+}
+.formholder input[type="submit"] {
+  background: #B01030;
+  padding: 10px;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.formholder input[type="submit"]:hover {
+  background: #ffffff;
+  color:#B01030;
+  box-shadow: 0 0 1px 1px #B01030;
+}
+
+.randompad {
+  padding: 10px;
+}
+
+.green {
+  color: #B01030;
+}
+
+a {
+  color: #B01030;
+  text-decoration: none;
+}
+a:hover {
+  color: #B01030;
+}
+h4.cadastrar{
+    color:#B01030;
+}
+
 .banner-head {
     margin-bottom: 2em;
 }
@@ -622,9 +721,16 @@ a.list-group-item:hover {
     text-align: center;
     line-height: 1.8em;
 }
+
 .copywrite p a {
     color: #fff;
 }
+
+.copywrite a{
+    /*float: right;*/
+    color: #3333;
+}
+
 .copywriteLoja {
     padding: 8px;
     background: #333;
@@ -2244,32 +2350,190 @@ br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box blockquote{margin:0!important;padding:20px;background:url(speech-bubble.png) no-repeat}
 #HCB_comment_box div.comment{margin-bottom:5px;border-bottom:1px solid #eee}
 
-.dados{
-    margin-left:25%;
-    margin-top:70px;
-    margin-bottom:70px;
-    color: #B01030;
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+	font-family: montserrat, arial, verdana;
 }
-.login{
-    margin-left:25%;
-    margin-top:42px;
-    margin-bottom:20px;
-    color: #B01030;
+/*form styles*/
+#msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
 }
-.submit{
-    margin-left:35%;
-    margin-bottom:38px;
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
 }
-.titu{
-    color: red;
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
 }
-.dados tr td label{
-    margin-left:10px;
-    margin-right:15px;
-    margin-bottom:10px;
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
 }
-.login tr td label{
-    margin-left:10px;
-    margin-right:15px;
-    margin-bottom:10px;
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #B01030;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
 }
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #B01030;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #B01030;
+	color: white;
+}
+
+.Perfil{
+    margin-right:123px;
+    margin-bottom:2px;
+}
+
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #B01030;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #B01030;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container2 {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+

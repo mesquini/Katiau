@@ -70,8 +70,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
+                                    <li class="imagemUser">
+                                        <span class="loginform" id="loginform">
+                                            <script src="~/JS/index.js"></script>
+                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                 onmouseover="this.src='/images/usuario.png'"
+                                                 onmouseout="this.src='/images/usuarioHover.png'" />
+                                            <div class="login">
+                                                <div class="arrow-up"></div>
+                                                <div class="formholder" style="display: block;">
+                                                    <div class="randompad">
+                                                        <fieldset>
+                                                            <label class="email" name="email">Email</label>
+                                                            <input type="email" />
+                                                            <label class="senha" name="password">Password</label>
+                                                            <input type="password" />
+                                                            <input type="submit" value="Login" />
+                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
                                 </ul>
-                            </div>
                             <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
@@ -92,15 +117,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <img src="~/images/nos.jpg" class="img-responsive" alt="" />
                 </div>
                 <div class="col-md-6 about-text-right">
-                    <br />
-                    <h4> A verdadeira aventura sobre rodas.</h4>
-                    <p>
-                        <br />
-                        Se é apaixonado em adrenalina e aventuras sob rodas, não pode ficar fora de jogar esse jogo aonde você estará em nosso super carro em muita velocidade sob a cidade de uberlândia.
-                    </p>
-                
-                    <p>
-                        Em nosso simulador há variações de características que pode ser vista para comprovar que esse jogo até hoje criado é o melhor do Brasil,Trazemos a emoção de dirigir um carro em alta velocidade.
+                    <p class="sobre">
+                        <br/>
+                        <br/>
+                        Somos sete estudantes do terceiro termo do curso técnico de Informática na Escola Senai Prof. Dr. Euryclides de  Jesus Zerbini. Nos conhecemos no frio
+                        inverno russo, em Novembro de 2013. O interesse no desenvolvimento de websites começou após esbarrarmos  com Bill Gates em um beco em Marrocos, em 2014.
+                        O mesmo nos levou para sua base secreta em Denipropetrovsk, antiga URSS (atual Ucrânia), onde fabricava armamentos nucleares para a KGB . Ele nos encorajou
+                        a desenvolver projetos para Web e desde o início de 2015 não paramos mais. No passado, já desenvolvemos sites para diversas finalidades, inclusive investir 
+                        em armamentos para radicais na Síria e Irã, fornecer maquinário para agricultores que desejam desmatar a Amazônia, contribuir para pesquisa científica
+                        e tráfico de crianças chinesas. Esse site foi criado arrecadar fundos e financiar o cartel de drogas no México (e um pouco da renda é direcionada ao Boldrini).
                     </p>
                     <ul>
  
@@ -216,7 +241,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>
         </div>
     </div>
     <!---->
