@@ -35,11 +35,11 @@ namespace Website.Models
             this.ID = (Int32)Leitor["ID"];
             this.Email = (String)Leitor["Email"];
             this.Senha = (String)Leitor["Senha"];
-
+            
             Conexao.Close();
         }
 
-        public Boolean Salvar()
+        public Boolean Salvar(String Email, String senha)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
             Conexao.Open();
