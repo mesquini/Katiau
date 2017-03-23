@@ -15,7 +15,6 @@ namespace Website.Models
         public String Sobrenome { get; set; }
         public String Senha { get; set; }
         public String Nascimento { get; set; }
-        public String Login { get; set; }
         public String ImagemPerfil { get; set; }
         public Usuario() { }
 
@@ -26,7 +25,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Post WHERE ID=@ID;";
+            Comando.CommandText = "SELECT * FROM Usuário WHERE ID=@ID;";
             Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
@@ -46,15 +45,14 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, , Nascimento, Login, ImagemPerfil)" 
-              + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @Login, @ImagemPerfil GETDATE());";
+            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, , Nascimento, ImagemPerfil)" 
+              + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@IDCategoria", this.Email);
             Comando.Parameters.AddWithValue("@Titulo", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
-            Comando.Parameters.AddWithValue("@Login", this.Login);
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
            
             
@@ -91,7 +89,6 @@ namespace Website.Models
                 U.Sobrenome = (String)Leitor["Sobrenome"];
                 U.Senha = (String)Leitor["Senha"];
                 U.Nascimento = (String)Leitor["Nascimento"];
-                U.Login = (String)Leitor["Login"];
                 U.ImagemPerfil = (String)Leitor["ImagemPerfil"];
 
                 Posts.Add(U);
