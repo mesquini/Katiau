@@ -38,7 +38,7 @@ namespace Website.Models
             Conexao.Close();
         }
 
-        public Boolean Salvar()
+        public Boolean Salvar(String Email, String senha)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
             Conexao.Open();
