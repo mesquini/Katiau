@@ -165,6 +165,7 @@
     <Content Include="images\Logos\xbox com logo deluxe.png" />
     <Content Include="images\Logos\xbox com logo.jpg" />
     <Content Include="images\next.png" />
+    <Content Include="images\nos.jpg" />
     <Content Include="images\p1.jpg" />
     <Content Include="images\p2.jpg" />
     <Content Include="images\p3.jpg" />
@@ -193,6 +194,7 @@
     <Content Include="images\venda-2.jpg" />
     <Content Include="images\venda-3.jpg" />
     <Content Include="JS\bootstrap-3.1.1.min.js" />
+    <Content Include="JS\Cadastrar.js" />
     <Content Include="JS\index.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="JS\jquery.flexisel.js" />
@@ -231,9 +233,11 @@
     <Compile Include="Controllers\NeveController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PCController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
+    <Compile Include="Controllers\SobreJogoController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
@@ -267,6 +271,8 @@
     <Content Include="Views\Cadastro\Index.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\Adm2\index.cshtml" />
+    <Content Include="Views\SobreJogo\index.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
