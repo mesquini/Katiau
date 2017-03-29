@@ -222,6 +222,7 @@
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DriftController.cs" />
+    <Compile Include="Controllers\ExecuçaoController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NeveController.cs" />
@@ -269,6 +270,7 @@
     <Content Include="Views\SobreOJogo\Index.cshtml" />
     <Content Include="Views\VantagensTechMundo\Index.cshtml" />
     <Content Include="Views\SimuladorRealistico\Index.cshtml" />
+    <Content Include="Views\Execuçao\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
