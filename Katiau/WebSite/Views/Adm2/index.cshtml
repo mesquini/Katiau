@@ -75,8 +75,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </nav>
                         <!--/navbar-->
                     </div>
-
-
                     <div class="clearfix"></div>
                     <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
                 </div>
@@ -84,6 +82,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
+
+    <div class="nav_tabs">
+        <ul>
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <label for="tab1"> Usuários </label>
+                </li>
+               
+
+            
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2"> Pacotes </label>
+                <div class="content_tab">
+                    <article>
+                       
+                    </article>  
+                </div>
+            </li>
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
+                <label for="tab3"> DLC </label>
+                <div class="content_tab">
+                    <article>
+
+                    </article>  
+                </div>
+            </li>
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab4">
+                <label for="tab4"> Tab4 </label>
+                <div class="content_tab">
+                    
+                        <section>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Sobrenome</th>
+                                        <th>Email</th>
+                                        <th>Senha</th>
+                                        <th>Nascimento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var U in ViewBag.User)
+                                    {
+                                        <tr>
+                                            <td>@(U.ID)</td>
+                                            <td>@(U.Nome)</td>
+                                            <td>@(U.Sobrenome)</td>
+                                            <td>@(U.Email)</td>
+                                            <td>@(U.Senha)</td>
+                                            <td>@(U.Nascimento)</td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </section>
+                     
+                </div>
+            </li>
+        </ul>
+    </div>
+
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>

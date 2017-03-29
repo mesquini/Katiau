@@ -15,21 +15,21 @@ namespace WebSite.Controllers
         {
             if (Session["ADM"] != null)
             {
-                Response.Redirect("~/Adm2/Index", false);
+                Response.Redirect("/Adm2/Index");
             }
 
-            if (Session["User "] != null)
+            if (Session["User"] != null)
             {
-                Response.Redirect("~/Play/Index", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
             {
-                String Email = Request.Form["Email"].ToString();
-                String Senha = Request.Form["Senha"].ToString();
+                String Email = Request.Form["email"].ToString();
+                String Senha = Request.Form["senha"].ToString();
                 String SenhaEncriptada = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1");
 
-                if(Email.Equals("admin@gmail.com") && Senha.Equals("8be663a184d8d05aac22faa608c9edef87b215cd"))
+                if(Email.Equals("admin@gmail.com") && Senha.Equals("Senai1234"))
                 {
                     Usuario U = new Usuario(Email, SenhaEncriptada);
                     Session["ADM"] = U;
@@ -37,9 +37,9 @@ namespace WebSite.Controllers
                 }
                 if (Usuario.Autenticar(Email, SenhaEncriptada))
                 {
-                    Usuario U = new Usuario(Email , SenhaEncriptada);
+                    Usuario U = new Usuario(Email, SenhaEncriptada);
                     Session["User"] = U;
-                    Response.Redirect("~/Play/Index", false);
+                    Response.Redirect("~/Home/Index", false);
                 }
                 else
                 {
