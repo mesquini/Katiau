@@ -234,6 +234,7 @@
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
+    <Compile Include="Controllers\VantagensTechMundoController.cs" />
     <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,6 +266,7 @@
     <Content Include="Views\Cadastro\Index.cshtml" />
     <Content Include="Views\SobreOJogo.cshtml" />
     <Content Include="Views\SobreOJogo\Index.cshtml" />
+    <Content Include="Views\VantagensTechMundo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
