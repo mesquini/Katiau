@@ -88,12 +88,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                 <label for="tab1"> Usuários </label>
-                <div class="content_tab">
-                    <article>
-                        Aenean id ante eu eros tincidunt efficitur sit amet at massa. Fusce ut pharetra erat, vitae auctor felis. Fusce porta nunc eget enim faucibus feugiat. Sed quam lectus, convallis ut varius vitae, ullamcorper sit amet arcu. Praesent convallis, magna et rutrum consectetur, ligula turpis ullamcorper purus, eu pulvinar purus felis eget ipsum. Sed accumsan ante nec felis convallis laoreet. Aliquam efficitur a lorem ut viverra. Aliquam erat volutpat. Phasellus sit amet sapien at est placerat sagittis sit amet suscipit nulla. Nunc a cursus lacus. Curabitur sed maximus urna. Suspendisse in eros aliquam, auctor velit id, aliquet justo. Vestibulum porttitor, orci nec consequat varius, enim mi tristique lectus, eu hendrerit nisi lorem sit amet dui. Cras fringilla consequat quam et tincidunt. 
-                    </article>    
-                </div>
-            </li>
+                </li>
+               
+
+            
 
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab2">
@@ -119,9 +117,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                 <label for="tab4"> Tab4 </label>
                 <div class="content_tab">
-                    <article>
+                    
+                        <section>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Sobrenome</th>
+                                        <th>Email</th>
+                                        <th>Senha</th>
+                                        <th>Nascimento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var U in ViewBag.User)
+                                    {
+                                        <tr>
+                                            <td>@(U.ID)</td>
+                                            <td>@(U.Nome)</td>
+                                            <td>@(U.Sobrenome)</td>
+                                            <td>@(U.Email)</td>
+                                            <td>@(U.Senha)</td>
+                                            <td>@(U.Nascimento)</td>
 
-                    </article>  
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </section>
+                     
                 </div>
             </li>
         </ul>

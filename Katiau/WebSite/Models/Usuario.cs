@@ -81,7 +81,7 @@ namespace Website.Models
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
-            List<Usuario> Users = new List<Usuario>();
+            List<Usuario> User = new List<Usuario>();
             while (Leitor.Read())
             {
                 Usuario U = new Usuario();
@@ -93,12 +93,12 @@ namespace Website.Models
                 U.Nascimento = (String)Leitor["Nascimento"];
                 U.ImagemPerfil = (String)Leitor["ImagemPerfil"];
 
-                Users.Add(U);
+                User.Add(U);
             }
 
             Conexao.Close();
 
-            return Users;
+            return User;
         }
 
         public static Boolean Autenticar(String Email, String Senha)

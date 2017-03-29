@@ -15,12 +15,12 @@ namespace WebSite.Controllers
         {
             if (Session["ADM"] != null)
             {
-                Response.Redirect("~/Adm2/Index");
+                Response.Redirect("/Adm2/Index");
             }
 
             if (Session["User"] != null)
             {
-                Response.Redirect("~/Home/Index", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
