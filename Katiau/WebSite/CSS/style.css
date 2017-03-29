@@ -20,7 +20,6 @@ body a{
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
 }
 h1.b1,h2.b2,h3.b3 {
   margin-bottom:25px;
@@ -676,7 +675,6 @@ a.list-group-item:hover {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
     float: left;
     font-size: 0.9em;
 }
@@ -728,7 +726,7 @@ a.list-group-item:hover {
 
 .copywrite a{
     /*float: right;*/
-    color: #3333;
+    color: #333;
 }
 
 .copywriteLoja {
@@ -1292,7 +1290,6 @@ button.btn1.btn-1.btn-1b:hover {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
 }
 /*--single--*/
 .single-middle h3{
@@ -1329,7 +1326,6 @@ font-size: 2.3em;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
 }
 .single-bottom  input[type="submit"]:hover{
 	background:transparent;
@@ -2263,7 +2259,6 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
 	height: 42px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	-khtml-border-radius: 10px;
 	border-radius: 10px;
 	display: inline-block;
 	color: #B01030;
@@ -2329,17 +2324,34 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
      color: #B01030;
  }
  
- div.hcb-shadow-tl{background:url(shadow-bg.png) top left}
-div.hcb-shadow-tr{background:url(shadow-bg.png) top right}
-div.hcb-shadow-bl{background:url(shadow-bg.png) bottom left}
-div.hcb-shadow-br{background:url(shadow-bg.png) bottom right}
-div.hcb-shadow-t{background:url(shadow-bg-t.png) repeat-x}
-div.hcb-shadow-b{margin-bottom:5px;background:url(shadow-bg-t.png) repeat-x bottom}
-div.hcb-shadow-m{clear:both;background:url(shadow-bg-r.png) repeat-y right;padding-right:7px}
+.hcb-shadow-tl{
+    background:url(shadow-bg.png) top left
+}
+.hcb-shadow-tr{
+    background:url(shadow-bg.png) top right
+
+}
+.hcb-shadow-bl{
+    background:url(shadow-bg.png) bottom left
+
+}
+.hcb-shadow-br{
+    background:url(shadow-bg.png) bottom right
+
+}
+.hcb-shadow-t{
+    background:url(shadow-bg-t.png) repeat-x
+
+}
+.hcb-shadow-b{
+    margin-bottom:5px;background:url(shadow-bg-t.png) repeat-x bottom
+
+}
+.hcb-shadow-m{clear:both;background:url(shadow-bg-r.png) repeat-y right;padding-right:7px}
 .hcb-shadow-r{display:block;background:url(shadow-bg-l.png) repeat-y left}
-div.hcb-shadow-tr,div.hcb-shadow-br,div.hcb-shadow-tl,div.hcb-shadow-bl{width:7px}
-div.hcb-shadow-tr,div.hcb-shadow-br{float:right}
-div.hcb-shadow-tl,div.hcb-shadow-bl{float:left}
+.hcb-shadow-tr,.hcb-shadow-br,.hcb-shadow-tl,.hcb-shadow-bl{width:7px}
+.hcb-shadow-tr,.hcb-shadow-br{float:right}
+.hcb-shadow-tl,.hcb-shadow-bl{float:left}
 br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box *{margin:0;padding:0;border-width:0;outline:0}
 #HCB_comment_box textarea.commentbox{width:100%;display:block;border:0}
@@ -2348,7 +2360,7 @@ br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box input.text{width:100%}
 #HCB_comment_box span.home-desc{font-size:10px;opacity:.4}
 #HCB_comment_box blockquote{margin:0!important;padding:20px;background:url(speech-bubble.png) no-repeat}
-#HCB_comment_box div.comment{margin-bottom:5px;border-bottom:1px solid #eee}
+#HCB_comment_box .comment{margin-bottom:5px;border-bottom:1px solid #eee}
 
 /*custom font*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
@@ -2475,63 +2487,142 @@ body {
     margin-bottom:2px;
 }
 
+<!--  -->
 
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.login-wrap{
+    width:100%;
+    margin:auto;
+    max-width:525px;
+    min-height:670px;
+    position:relative;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:90px 70px 50px 70px;
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    transform:rotateY(180deg);
+    backface-visibility:hidden;
+    transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+    display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+    text-transform:uppercase;
+}
+.login-html .tab{
+    font-size:22px;
+    margin-right:15px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+    color:#fff;
+    border-color:#B01030;
+}
+.login-form{
+    min-height:345px;
+    position:relative;
+    perspective:1000px;
+    transform-style:preserve-3d;
+}
+.login-form .group{
+    margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+    width:100%;
+    color:#B01030;
+    display:block;
 }
 
-button {
-    background-color: #B01030;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+.login-form .group .button{
+    width:100%;
+    color:#ffffff;
+    display:block;
 }
 
-button:hover {
-    opacity: 0.8;
+.login-form .group .input,
+.login-form .group .button{
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
 }
 
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #B01030;
+.login-form .group .label{
+    color:black;
+    font-size:15px;
+}
+.login-form .group .button{
+    background:#B01030;
+}
+.login-form .group label .icon{
+    width:15px;
+    height:15px;
+    border-radius:2px;
+    position:relative;
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+    content:'';
+    width:10px;
+    height:2px;
+    background:#fff;
+    position:absolute;
+    transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+    left:3px;
+    width:5px;
+    bottom:6px;
+    transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+    top:6px;
+    right:0;
+    transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+    color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+    background:#B01030;
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+    transform:rotate(0);
 }
 
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
 
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
+.hr{
+    height:2px;
+    margin:60px 0 50px 0;
+    background:rgba(255,255,255,.2);
 }
-
-.container2 {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+.foot-lnk{
+    text-align:center;
 }

@@ -18,29 +18,31 @@ namespace Website.Models
         public String ImagemPerfil { get; set; }
         public Usuario() { }
 
-        public Usuario(Int32 ID)
+        public Usuario(String Email, String Senha)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Usuário WHERE ID=@ID;";
-            Comando.Parameters.AddWithValue("@ID", ID);
+            Comando.CommandText = "SELECT * FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.Parameters.AddWithValue("@Email", Email);
+            Comando.Parameters.AddWithValue("@Senha", Senha);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
             Leitor.Read();
 
             this.ID = (Int32)Leitor["ID"];
+            this.Email = (String)Leitor["EmailU"];
+            this.Senha = (String)Leitor["SenhaU"];
             
-
             Conexao.Close();
         }
 
-        public Boolean Salvar()
+        public Boolean Salvar(String Email, String senha)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
@@ -70,7 +72,7 @@ namespace Website.Models
 
         public static List<Usuario> Listar()
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
@@ -101,7 +103,7 @@ namespace Website.Models
 
         public static Boolean Autenticar(String Email, String Senha)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Katiau"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
 
             Conexao.Open();
 

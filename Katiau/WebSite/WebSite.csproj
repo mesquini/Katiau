@@ -241,6 +241,7 @@
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
+    <Compile Include="Controllers\VantangensController.cs" />
     <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
