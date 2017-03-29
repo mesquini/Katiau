@@ -60,7 +60,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li class="active"><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
                                     <li class="dropdown">
-                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -82,15 +81,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <div class="arrow-up"></div>
                                            <div class="formholder" style="display: block;">
                                            <div class="randompad">
-                                              <fieldset>
-                                                    <label class="email" name="email">Email</label>
-                                                        <input type="email"/>
+                                              <form method="post" action="/Home/Index">
+                                                    <label class="email"  name="email">Email</label>
+                                                        <input type="email" id="email" name="email"/>
                                                     <label class="senha" name="password">Password</label>
-                                                        <input type="password" />
+                                                        <input type="password" id="senha" name="senha"/>
                                                     <input type="submit" value="Login" />
                                                     <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
                                                   
-                                               </fieldset>
+                                               </form>
                                             </div>
                                             </div>
                                             </div>                         
@@ -112,11 +111,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="social">
                 <ul>
-                    <li><a href="#"><span class="fa"> </span></a></li>
-                    <li><a href="#"><span class="tw"> </span></a></li>
-                    <li><a href="#"><span class="g"> </span></a></li>
-                    <li><a href="#"><span class="in"> </span></a></li>
-                    <li><a href="#"><span class="pin"> </span></a></li>
+                    <li><a href="https://www.facebook.com/Katiau-167535650431869/"><span class="fa"> </span></a></li>
+                    <li><a href="https://twitter.com/KatiauTheGame?lang=pt-br"><span class="tw"> </span></a></li>
+                    <li><a href="https://www.instagram.com/katiauenterprise/"><span class="in"> </span></a></li>
+                    <li><a href="https://www.pinterest.com/katiauthe"><span class="pin"> </span></a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>

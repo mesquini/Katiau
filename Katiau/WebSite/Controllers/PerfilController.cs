@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace WebSite.Controllers
 {
-    public class Adm1Controller : Controller
+    public class PerfilController : Controller
     {
-        // GET: Adm1
+        // GET: Perfil
         public ActionResult Index()
         {
             return View();
