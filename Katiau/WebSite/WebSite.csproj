@@ -218,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Adm2Controller.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -271,6 +272,8 @@
     <Content Include="Views\VantagensTechMundo\Index.cshtml" />
     <Content Include="Views\SimuladorRealistico\Index.cshtml" />
     <Content Include="Views\Execuçao\Index.cshtml" />
+    <Content Include="Views\Adm2\index.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

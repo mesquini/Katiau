@@ -47,7 +47,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)" 
+            Comando.CommandText = "INSERT INTO Usuário (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)" 
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
@@ -65,11 +65,7 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-
         
-
-      
-
         public static List<Usuario> Listar()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -81,7 +77,7 @@ namespace Website.Models
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
-            List<Usuario> Users = new List<Usuario>();
+            List<Usuario> User = new List<Usuario>();
             while (Leitor.Read())
             {
                 Usuario U = new Usuario();
@@ -93,12 +89,12 @@ namespace Website.Models
                 U.Nascimento = (String)Leitor["Nascimento"];
                 U.ImagemPerfil = (String)Leitor["ImagemPerfil"];
 
-                Users.Add(U);
+                User.Add(U);
             }
 
             Conexao.Close();
 
-            return Users;
+            return User;
         }
 
         public static Boolean Autenticar(String Email, String Senha)
@@ -109,7 +105,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT ID FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.CommandText = "SELECT ID, Administrador FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
             Comando.Parameters.AddWithValue("@Email", Email);
             Comando.Parameters.AddWithValue("@Senha", Senha);
 
