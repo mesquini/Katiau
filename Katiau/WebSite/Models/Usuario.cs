@@ -47,7 +47,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)" 
+            Comando.CommandText = "INSERT INTO Usuário (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)" 
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
@@ -65,11 +65,7 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-
         
-
-      
-
         public static List<Usuario> Listar()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -109,7 +105,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT ID FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.CommandText = "SELECT ID, Administrador FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
             Comando.Parameters.AddWithValue("@Email", Email);
             Comando.Parameters.AddWithValue("@Senha", Senha);
 
