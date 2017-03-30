@@ -15,12 +15,12 @@ namespace WebSite.Controllers
         {
             if (Session["User"] != null)
             {
-                Response.Redirect("~/Adm2/Index", false);
+                Response.Redirect("/Adm2/Listar", false);
             }
 
             if (Session["User"] != null)
             {
-                Response.Redirect("~/Cadastro/Index", false);
+                Response.Redirect("/Cadastro/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -35,7 +35,7 @@ namespace WebSite.Controllers
 
                         Usuario ADM = new Usuario(Email, SenhaEncriptada);
                         Session["User"] = ADM;
-                        Response.Redirect("~/Adm2/Index", false);
+                        Response.Redirect("/Adm2/Listar", false);
 
                         break;
 
@@ -43,7 +43,7 @@ namespace WebSite.Controllers
 
                         Usuario U = new Usuario(Email, SenhaEncriptada);
                         Session["User"] = U;
-                        Response.Redirect("~/Cadastro/Index", false);
+                        Response.Redirect("/Cadastro/Index", false);
 
                         break;
 
@@ -53,6 +53,13 @@ namespace WebSite.Controllers
 
                 }
             }
+
+            return View();
+        }
+        public ActionResult Listar()
+        {
+            List<Usuario> user = Usuario.Listar();
+            ViewBag.User = User;
 
             return View();
         }
