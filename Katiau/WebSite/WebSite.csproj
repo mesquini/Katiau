@@ -182,12 +182,12 @@
     <Content Include="images\katiau64.png" />
     <Content Include="images\Logos\katiaulogo.png" />
     <Content Include="images\Logos\katiaulogokatiau.png" />
-    <Content Include="images\Logos\pcgamelogokatiau com logo deluxe.png" />
-    <Content Include="images\Logos\pcgamelogokatiau com logo.jpg" />
-    <Content Include="images\Logos\ps4 com logo deluxe.png" />
-    <Content Include="images\Logos\ps4 com logo.jpg" />
-    <Content Include="images\Logos\xbox com logo deluxe.png" />
-    <Content Include="images\Logos\xbox com logo.jpg" />
+    <Content Include="images\Logos\pcgame_com_logo.jpg" />
+    <Content Include="images\Logos\pcgame_com_logo_deluxe.png" />
+    <Content Include="images\Logos\ps4_com_logo.jpg" />
+    <Content Include="images\Logos\ps4_com_logo_deluxe.png" />
+    <Content Include="images\Logos\xbox_com_logo.jpg" />
+    <Content Include="images\Logos\xbox_com_logo_deluxe.png" />
     <Content Include="images\next.png" />
     <Content Include="images\p1.jpg" />
     <Content Include="images\p2.jpg" />
@@ -260,6 +260,8 @@
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\PostUsuarioController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SimuladorRealisticoController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
@@ -308,6 +310,9 @@
     <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\PostUsuario\Index.cshtml" />
+    <Content Include="Views\Post\Ver.cshtml" />
+    <Content Include="Views\Post\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

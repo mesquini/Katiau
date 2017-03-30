@@ -18,11 +18,6 @@ namespace WebSite.Controllers
                 Response.Redirect("/Adm2/Listar", false);
             }
 
-            if (Session["User"] != null)
-            {
-                Response.Redirect("/Cadastro/Index", false);
-            }
-
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();

@@ -2498,6 +2498,19 @@ body {
     padding-left:19%;
 }
 
+.nav_tabs h2{
+    /*font-size: 2.3em;
+	font-family: 'Open Sans', sans-serif;
+	color:#B01030;
+    text-align: center;*/
+    font-size: 2.5em;
+margin: 0;
+color: #B01030;
+font-family: 'Titillium Web', sans-serif;
+font-weight: 600;
+text-align: center;
+}
+
 .nav_tabs ul{
     list-style: none;
 }
@@ -2517,6 +2530,7 @@ body {
     background-color: #B01030;
     display: block;
     color: #ffffff;
+
     cursor: pointer;
     text-align: center;
 }
