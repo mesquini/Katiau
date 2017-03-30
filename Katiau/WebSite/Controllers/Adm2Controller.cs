@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using System.Web.Security;
 using Website.Models;
 
 namespace WebSite.Controllers
 {
     public class Adm2Controller : Controller
     {
-        public ActionResult Listar()
+
+
+       public ActionResult Listar()
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Adm2/Index", false);
+                Response.Redirect("/Home/Listar", false);
             }
 
             List<Usuario> User = Usuario.Listar();
@@ -25,7 +23,7 @@ namespace WebSite.Controllers
                 ViewBag.Mensagem = TempData["Mensagem"].ToString();
             }
 
-            return View();
+            return View(); 
         }
     }
 }
