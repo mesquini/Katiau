@@ -15,7 +15,10 @@ namespace Website.Models
         public String Sobrenome { get; set; }
         public String Senha { get; set; }
         public String Nascimento { get; set; }
+        public String Bio { get; set; }
         public String ImagemPerfil { get; set; }
+        
+
         public Usuario() { }
 
         public Usuario(String Email, String Senha)
@@ -25,7 +28,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.CommandText = "SELECT * FROM Usuario WHERE EmailU=@Email AND SenhaU=@Senha;";
             Comando.Parameters.AddWithValue("@Email", Email);
             Comando.Parameters.AddWithValue("@Senha", Senha);
 
@@ -86,12 +89,14 @@ namespace Website.Models
             {
                 Usuario U = new Usuario();
                 U.ID = (Int32)Leitor["ID"];
-                U.Email = ((String)Leitor["Email"]);
-                U.Nome = ((String)Leitor["Nome"]);
-                U.Sobrenome = (String)Leitor["Sobrenome"];
-                U.Senha = (String)Leitor["Senha"];
-                U.Nascimento = (String)Leitor["Nascimento"];
-                U.ImagemPerfil = (String)Leitor["ImagemPerfil"];
+                U.Nome = ((String)Leitor["NomeU"]);
+                U.Sobrenome = (String)Leitor["SobrenomeU"];
+                U.Email = ((String)Leitor["EmailU"]);
+                U.Senha = (String)Leitor["SenhaU"];
+                U.Nascimento = (String)Leitor["NascimentoU"];
+                U.Bio = (String)Leitor["BioU"];
+                U.ImagemPerfil = (String)Leitor["ImagemU"];
+                
 
                 Users.Add(U);
             }
@@ -127,7 +132,7 @@ namespace Website.Models
 
             Conexao.Close();
 
-            return Adm ? "Administrador" : "Usuário";
+            return Adm ? "Administrador" : "Usuario";
         }
     }
 }
