@@ -56,12 +56,12 @@ namespace WebSite.Controllers
 
             return View();
         }
-        public ActionResult Listar()
+        public ActionResult Sair()
         {
-            List<Usuario> user = Usuario.Listar();
-            ViewBag.User = User;
+            Session.Abandon();
+            Session.Clear();
 
-            return View();
+            return RedirectToAction("Autenticar");
         }
     }
 }

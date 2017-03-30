@@ -18,10 +18,9 @@ namespace Website.Models
         public String Bio { get; set; }
         public String ImagemPerfil { get; set; }
         
-
         public Usuario() { }
 
-        public Usuario(String Email, String Senha)
+        public Usuario(Int32 ID)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -42,7 +41,27 @@ namespace Website.Models
 
             Conexao.Close();
         }
+        public Usuario(String Email, String Senha)
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            Conexao.Open();
 
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT * FROM Usuario WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.Parameters.AddWithValue("@Email", Email);
+            Comando.Parameters.AddWithValue("@Senha", Senha);
+
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            Leitor.Read();
+
+            this.ID = (Int32)Leitor["ID"];
+            this.Email = (String)Leitor["EmailU"];
+            this.Senha = (String)Leitor["SenhaU"];
+
+            Conexao.Close();
+        }
         public Boolean Salvar(String Email, String senha)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -50,7 +69,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento, Bio, ImagemPerfil, Adm)"
+            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
@@ -105,7 +124,24 @@ namespace Website.Models
 
             return Users;
         }
+        public Boolean Salvar()
+        {
+            throw new NotImplementedException();
+        }
 
+        public Boolean Alterar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Apagar()
+        {
+            throw new NotImplementedException();
+        }
+        public static List<Categoria> Lista()
+        {
+            throw new NotImplementedException();
+        }
         public static String Autenticar(String Email, String Senha)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);

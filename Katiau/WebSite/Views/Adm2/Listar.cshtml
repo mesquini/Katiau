@@ -82,12 +82,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-
+@foreach (var U in ViewBag.User)
+{
     <div class="nav_tabs">
         <ul>
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
                 <label for="tab1"> Usuários </label>
+                    
                 <div class="content_tab">
                     <section>
                         <table border="1">
@@ -100,11 +102,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <th>Senha</th>
                                     <th>Nascimento</th>
                                     <th>ImagemPerfil</th>
+                                    <th>Categoria</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var U in ViewBag.User)
-                                {
+                               
                                     <tr>
                                         <td>@(U.ID)</td>
                                         <td>@(U.Nome)</td>
@@ -113,22 +116,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Senha)</td>
                                         <td>@(U.Nascimento)</td>
                                         <td>@(U.ImagemPerfil)</td>
+                                        <td>@(U.Categoria.Titulo) [ID: @(U.Categoria.ID)]</td>
+                                        <td>
+                                            <a href="/Post/Ver/@(U.ID)">Ver</a> |
+                                            <a href="/Post/Alterar/@(U.ID)">Alterar</a> |
+                                            <a href="/Post/Apagar/@(U.ID)">Apagar</a>
+                                        </td>
                                   </tr>
-                                }
+                                
                             </tbody>
                         </table>
                     </section>
                    </div>
                 </li>
-               
 
-            
+
+
 
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                 <label for="tab2"> Pacotes </label>
                 <div class="content_tab">
-                     
+                     <button @(U.ID)>Criar</button>
+                    <button @(U.ID)>Alterar</button>
+                    <button @(U.ID)>Excluir</button>
                 </div>
             </li>
 
@@ -153,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </li>
         </ul>
     </div>
-
+                    }
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>

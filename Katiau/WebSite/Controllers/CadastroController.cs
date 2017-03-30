@@ -9,8 +9,9 @@ namespace WebSite.Controllers
     public class CadastroController : Controller
     {
         // GET: Cadastro
-        public ActionResult Index()
+        public ActionResult Salvar(String Email, String Senha)
         {
+
             return View();
         }
     }
