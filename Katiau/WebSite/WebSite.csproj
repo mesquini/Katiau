@@ -230,6 +230,8 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\PostUsuarioController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SimuladorRealisticoController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
@@ -274,6 +276,9 @@
     <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\index.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\PostUsuario\Index.cshtml" />
+    <Content Include="Views\Post\Ver.cshtml" />
+    <Content Include="Views\Post\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
