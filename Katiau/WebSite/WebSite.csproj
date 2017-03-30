@@ -121,7 +121,6 @@
     <Content Include="CSS\lightbox.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\style4.css" />
-    <Content Include="CSS\styleLogin.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\bnr.jpg" />
@@ -165,7 +164,6 @@
     <Content Include="images\Logos\xbox com logo deluxe.png" />
     <Content Include="images\Logos\xbox com logo.jpg" />
     <Content Include="images\next.png" />
-    <Content Include="images\nos.jpg" />
     <Content Include="images\p1.jpg" />
     <Content Include="images\p2.jpg" />
     <Content Include="images\p3.jpg" />
@@ -189,13 +187,10 @@
     <Content Include="images\tr5.jpg" />
     <Content Include="images\tr6.jpg" />
     <Content Include="images\usuario.png" />
-    <Content Include="images\usuarioHover.png" />
     <Content Include="images\venda-1.jpg" />
     <Content Include="images\venda-2.jpg" />
     <Content Include="images\venda-3.jpg" />
     <Content Include="JS\bootstrap-3.1.1.min.js" />
-    <Content Include="JS\Cadastrar.js" />
-    <Content Include="JS\index.js" />
     <Content Include="JS\jquery-1.11.1.min.js" />
     <Content Include="JS\jquery.flexisel.js" />
     <Content Include="JS\jquery.min.js" />
@@ -228,6 +223,7 @@
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DriftController.cs" />
+    <Compile Include="Controllers\ExecuçaoController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NeveController.cs" />
@@ -235,12 +231,13 @@
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
+    <Compile Include="Controllers\SimuladorRealisticoController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
-    <Compile Include="Controllers\SobreJogoController.cs" />
+    <Compile Include="Controllers\SobreOJogoController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\TechMundoController.cs" />
     <Compile Include="Controllers\VantagensController.cs" />
-    <Compile Include="Controllers\VantangensController.cs" />
+    <Compile Include="Controllers\VantagensTechMundoController.cs" />
     <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -268,10 +265,15 @@
     <Content Include="Views\Neve\Index.cshtml" />
     <Content Include="Views\TechMundo\Index.cshtml" />
     <Content Include="Views\Vantagens\Index.cshtml" />
+    <Content Include="Views\Administrador\View.cshtml" />
     <Content Include="Views\Cadastro\Index.cshtml" />
-    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\SobreOJogo.cshtml" />
+    <Content Include="Views\SobreOJogo\Index.cshtml" />
+    <Content Include="Views\VantagensTechMundo\Index.cshtml" />
+    <Content Include="Views\SimuladorRealistico\Index.cshtml" />
+    <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\index.cshtml" />
-    <Content Include="Views\SobreJogo\index.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
