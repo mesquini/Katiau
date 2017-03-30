@@ -36,7 +36,7 @@ namespace Website.Models
             this.ID = (Int32)Leitor["ID"];
             this.Email = (String)Leitor["EmailU"];
             this.Senha = (String)Leitor["SenhaU"];
-            
+
             Conexao.Close();
         }
 
@@ -47,7 +47,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)" 
+            Comando.CommandText = "INSERT INTO Usuario (ID, Email, Nome, Sobrenome, Senha, Nascimento, ImagemPerfil)"
               + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @ImagemPerfil GETDATE());";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
@@ -56,8 +56,8 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
-           
-            
+
+
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -66,9 +66,9 @@ namespace Website.Models
             return Resultado > 0 ? true : false;
         }
 
-        
 
-      
+
+
 
         public static List<Usuario> Listar()
         {
@@ -101,7 +101,7 @@ namespace Website.Models
             return Users;
         }
 
-        public static Boolean Autenticar(String Email, String Senha)
+        public static String Autenticar(String Email, String Senha)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
 
@@ -109,17 +109,25 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT ID FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
+            Comando.CommandText = "SELECT ID,Administrador FROM Usuário WHERE EmailU=@Email AND SenhaU=@Senha;";
             Comando.Parameters.AddWithValue("@Email", Email);
             Comando.Parameters.AddWithValue("@Senha", Senha);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
-            Boolean Resultado = Leitor.HasRows;
+            Leitor.Read();
+
+            if(!Leitor.HasRows)
+            {
+                Conexao.Close();
+                return null;
+            }
+
+            Boolean Adm = Boolean.Parse(Leitor["Administrador"].ToString());
 
             Conexao.Close();
 
-            return Resultado ? true : false;
+            return Adm ? "Administrador" : "Usuário";
         }
     }
 }
