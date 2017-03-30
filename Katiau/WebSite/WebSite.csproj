@@ -159,10 +159,16 @@
     <Content Include="images\Logos\katiaulogokatiau.png" />
     <Content Include="images\Logos\pcgamelogokatiau com logo deluxe.png" />
     <Content Include="images\Logos\pcgamelogokatiau com logo.jpg" />
+    <Content Include="images\Logos\pcgamelogokatiau_com_logo.jpg" />
+    <Content Include="images\Logos\pcgamelogokatiau_com_logo_deluxe.png" />
     <Content Include="images\Logos\ps4 com logo deluxe.png" />
     <Content Include="images\Logos\ps4 com logo.jpg" />
+    <Content Include="images\Logos\ps4_com_logo.jpg" />
+    <Content Include="images\Logos\ps4_com_logo_deluxe.png" />
     <Content Include="images\Logos\xbox com logo deluxe.png" />
     <Content Include="images\Logos\xbox com logo.jpg" />
+    <Content Include="images\Logos\xbox_com_logo.jpg" />
+    <Content Include="images\Logos\xbox_com_logo_deluxe.png" />
     <Content Include="images\next.png" />
     <Content Include="images\p1.jpg" />
     <Content Include="images\p2.jpg" />
