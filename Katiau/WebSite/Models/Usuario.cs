@@ -62,7 +62,7 @@ namespace Website.Models
 
             Conexao.Close();
         }
-        public Boolean Salvar(String Email, String senha)
+        public Boolean Salvar(String Email, String senha, String nome, String sobrenome, String Nascimento, String bio, String imagemp,Boolean adm)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -77,7 +77,9 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
+            Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
+            Comando.Parameters.AddWithValue("@Adm", 0);
 
 
 
