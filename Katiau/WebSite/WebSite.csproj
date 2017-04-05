@@ -260,7 +260,6 @@
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
-    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\PostUsuarioController.cs" />
     <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Controllers\SimuladorRealisticoController.cs" />
@@ -278,6 +277,7 @@
     </Compile>
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
@@ -311,8 +311,8 @@
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
-    <Content Include="Views\Post\Ver.cshtml" />
-    <Content Include="Views\Post\Alterar.cshtml" />
+    <Content Include="Views\Adm2\Ver.cshtml" />
+    <Content Include="Views\Adm2\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

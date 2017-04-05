@@ -82,33 +82,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-@foreach (var U in ViewBag.User)
-{
+    <!--USUARIOS-->
     <div class="nav_tabs">
         <ul>
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                <label for="tab1"> Usuários </label>
-                    
-                <div class="content_tab">
-                    <section>
-                        <table border="1">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Sobrenome</th>
-                                    <th>Email</th>
-                                    <th>Senha</th>
-                                    <th>Nascimento</th>
-                                    <th>ImagemPerfil</th>
-                                    <th>Categoria</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               
+           
+                <li class="tabs">
+                    <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                    <label for="tab1"> Usuários </label>
+
+           
+                    <div class="content_tab">
+                        <section>
+                            <table border="1">
+                                <thead>
                                     <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Sobrenome</th>
+                                        <th>Email</th>
+                                        <th>Senha</th>
+                                        <th>Nascimento</th>
+                                        <th>ImagemPerfil</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var U in ViewBag.User){
+                                    <tr>
+
                                         <td>@(U.ID)</td>
                                         <td>@(U.Nome)</td>
                                         <td>@(U.Sobrenome)</td>
@@ -116,40 +117,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Senha)</td>
                                         <td>@(U.Nascimento)</td>
                                         <td>@(U.ImagemPerfil)</td>
-                                        <td>@(U.Categoria.Titulo) [ID: @(U.Categoria.ID)]</td>
                                         <td>
                                             <a href="/Post/Ver/@(U.ID)">Ver</a> |
-                                            <a href="/Post/Alterar/@(U.ID)">Alterar</a> |
+                                            <a href="/Post/Alterar/@(U.ID)">Alterar</a>
                                             <a href="/Post/Apagar/@(U.ID)">Apagar</a>
                                         </td>
-                                  </tr>
-                                
-                            </tbody>
-                        </table>
-                    </section>
-                   </div>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+
                 </li>
+                <li class="tabs">
+                    <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                    <label for="tab2"> Pacotes </label>
 
-
-
-
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                <label for="tab2"> Pacotes </label>
-                <div class="content_tab">
-                     <button @(U.ID)>Criar</button>
-                    <button @(U.ID)>Alterar</button>
-                    <button @(U.ID)>Excluir</button>
-                </div>
-            </li>
+                    <div class="content_tab">
+                        <div class="content_tab">
+                            <section>
+                                <table border="1">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Versão</th>
+                                            <th>Imagem</th>
+                                            <th>Descrição</th>
+                                            <th>Preço</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+@foreach (var P in ViewBag.Prod)
+{
+                                        <tr>
+                                       <!--PACOTES-->
+                                        
+                                            <td>@(P.ID)</td>
+                                            <td>@(P.Nome)</td>
+                                            <td>@(P.Versao)</td>
+                                            <td>@(P.Imagem)</td>
+                                            <td>@(P.Descricao)</td>
+                                            <td>@(P.Preco)</td>
+                                            <td>
+                                                <a href="/Post/Ver/@(P.ID)">Ver</a> |
+                                                <a href="/Post/Alterar/@(P.ID)">Alterar</a> |
+                                                <a href="/Post/Apagar/@(P.ID)">Apagar</a>
+                                            </td>
+                                        </tr>
+}
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                    </div>
+                </li>
 
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                 <label for="tab3"> DLC </label>
                 <div class="content_tab">
-                    <article>
-
-                    </article>  
+                    <article></article>
                 </div>
             </li>
 
@@ -157,14 +186,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <input type="radio" name="tabs" class="rd_tabs" id="tab4">
                 <label for="tab4"> Tab4 </label>
                 <div class="content_tab">
-                    
-                        
-                     
+
+
+
                 </div>
             </li>
         </ul>
     </div>
-                    }
+
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>

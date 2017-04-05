@@ -105,8 +105,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
+        <h2>Ver Post</h2>
+        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
+    <div>
+        <section>
+            <div>
+                <h2>@(ViewBag.Post.Titulo)</h2>
 
+                <h3>Enviado por @(ViewBag.Post.Usuario.Email) em @(ViewBag.Post.DataPostagem.ToShortDateString()) às @(ViewBag.Post.DataPostagem.ToLongTimeString())</h3>
+
+                <p>@(ViewBag.Post.Texto)</p>
+            </div>
+        </section>
+
+
+    </div>
     <div class="copywriteLoja">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>

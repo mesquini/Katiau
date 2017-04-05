@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Website.Models;
+using WebSite.Models;
 
 namespace WebSite.Controllers
 {
@@ -19,6 +20,9 @@ namespace WebSite.Controllers
             List<Usuario> User = Usuario.Listar();
             ViewBag.User = User;
 
+            List<Produto> Prod = Produto.Listar();
+            ViewBag.Prod = Prod;
+
             if (TempData["Mensagem"] != null)
             {
                 ViewBag.Mensagem = TempData["Mensagem"].ToString();
@@ -26,9 +30,10 @@ namespace WebSite.Controllers
 
             return View(); 
         }
+        
         public ActionResult Novo()
         {
-            if (Session["Usuario"] == null)
+            if (Session["User"] == null)
             {
                 Response.Redirect("/Home/Index", false);
             }
@@ -67,9 +72,9 @@ namespace WebSite.Controllers
 
         public ActionResult Alterar(string ID)
         {
-            if (Session["Usuario"] == null)
+            if (Session["User"] == null)
             {
-                Response.Redirect("/Usuario/Autenticar", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -106,7 +111,7 @@ namespace WebSite.Controllers
 
         public ActionResult Ver(string ID)
         {
-            if (Session["Usuario"] == null)
+            if (Session["User"] == null)
             {
                 Response.Redirect("/Home/Index", false);
             }
