@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace WebSite.Controllers
 {
-    public class CadastroController : Controller
+    public class SobreJogoController : Controller
     {
-        // GET: Cadastro
-        public ActionResult Salvar(String Email, String Senha)
+        // GET: SobreJogo
+        public ActionResult Index()
         {
-
             return View();
         }
     }

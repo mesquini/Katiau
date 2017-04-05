@@ -4,6 +4,8 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
+@import "compass/css3";
+
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0; padding:0;}
@@ -18,7 +20,6 @@ body a{
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
 }
 h1.b1,h2.b2,h3.b3 {
   margin-bottom:25px;
@@ -105,11 +106,13 @@ h1.b1,h2.b2,h3.b3 {
 	border-bottom:1px solid #fff;
 	margin-right:20px;
 }
-
-.navbar-nav > li > 
 .navbar-nav > li > a:hover{
 	color:#B01030!important;
 	border-bottom: 1px solid #B01030;
+    display:block;
+}
+.navbar-nav > li > a.loginform {
+    border-bottom: none;
 }
 .navbar{
 	margin:2em 0;
@@ -121,6 +124,101 @@ h1.b1,h2.b2,h3.b3 {
 .navbar {
     margin: 0em 0;
 }
+.imagemUser{
+    cursor:pointer;
+    position:absolute;
+    top: 12px;
+}
+
+/*--------------------------------------------------------*/
+fieldset {
+  border: none;
+  cursor:default;
+}
+
+.login {
+  position: absolute;
+  width: 350px;
+  display: none;
+  top: 60px;
+  left: -27px;
+}
+label.email{
+    color:#B01030;
+}
+label.senha{
+    color:#B01030;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #ECF0F1;
+  left: 10%;
+  position: absolute;
+  top: -10px;
+}
+
+.formholder {
+  background: #ecf0f1;
+  width: 350px;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.formholder input[type="email"], .formholder input[type="password"] {
+  padding: 7px 5px;
+  margin: 10px 0;
+  width: 99.7%;
+  display: block;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #B01030;
+}
+.formholder input[type="submit"] {
+  background: #B01030;
+  padding: 10px;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.formholder input[type="submit"]:hover {
+  background: #ffffff;
+  color:#B01030;
+  box-shadow: 0 0 1px 1px #B01030;
+}
+
+.randompad {
+  padding: 10px;
+}
+
+.green {
+  color: #B01030;
+}
+
+a {
+  color: #B01030;
+  text-decoration: none;
+}
+a:hover {
+  color: #B01030;
+}
+h4.cadastrar{
+    color:#B01030;
+}
+
 .banner-head {
     margin-bottom: 2em;
 }
@@ -577,7 +675,6 @@ a.list-group-item:hover {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
     float: left;
     font-size: 0.9em;
 }
@@ -622,9 +719,16 @@ a.list-group-item:hover {
     text-align: center;
     line-height: 1.8em;
 }
+
 .copywrite p a {
     color: #fff;
 }
+
+.copywrite a{
+    /*float: right;*/
+    color: #333;
+}
+
 .copywriteLoja {
     padding: 8px;
     background: #333;
@@ -1186,7 +1290,6 @@ button.btn1.btn-1.btn-1b:hover {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
 }
 /*--single--*/
 .single-middle h3{
@@ -1223,7 +1326,6 @@ font-size: 2.3em;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
 }
 .single-bottom  input[type="submit"]:hover{
 	background:transparent;
@@ -2157,7 +2259,6 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
 	height: 42px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	-khtml-border-radius: 10px;
 	border-radius: 10px;
 	display: inline-block;
 	color: #B01030;
@@ -2223,17 +2324,34 @@ h5.act a,h5.race a,h5.sport a,h5.arc a{
      color: #B01030;
  }
  
- div.hcb-shadow-tl{background:url(shadow-bg.png) top left}
-div.hcb-shadow-tr{background:url(shadow-bg.png) top right}
-div.hcb-shadow-bl{background:url(shadow-bg.png) bottom left}
-div.hcb-shadow-br{background:url(shadow-bg.png) bottom right}
-div.hcb-shadow-t{background:url(shadow-bg-t.png) repeat-x}
-div.hcb-shadow-b{margin-bottom:5px;background:url(shadow-bg-t.png) repeat-x bottom}
-div.hcb-shadow-m{clear:both;background:url(shadow-bg-r.png) repeat-y right;padding-right:7px}
+.hcb-shadow-tl{
+    background:url(shadow-bg.png) top left
+}
+.hcb-shadow-tr{
+    background:url(shadow-bg.png) top right
+
+}
+.hcb-shadow-bl{
+    background:url(shadow-bg.png) bottom left
+
+}
+.hcb-shadow-br{
+    background:url(shadow-bg.png) bottom right
+
+}
+.hcb-shadow-t{
+    background:url(shadow-bg-t.png) repeat-x
+
+}
+.hcb-shadow-b{
+    margin-bottom:5px;background:url(shadow-bg-t.png) repeat-x bottom
+
+}
+.hcb-shadow-m{clear:both;background:url(shadow-bg-r.png) repeat-y right;padding-right:7px}
 .hcb-shadow-r{display:block;background:url(shadow-bg-l.png) repeat-y left}
-div.hcb-shadow-tr,div.hcb-shadow-br,div.hcb-shadow-tl,div.hcb-shadow-bl{width:7px}
-div.hcb-shadow-tr,div.hcb-shadow-br{float:right}
-div.hcb-shadow-tl,div.hcb-shadow-bl{float:left}
+.hcb-shadow-tr,.hcb-shadow-br,.hcb-shadow-tl,.hcb-shadow-bl{width:7px}
+.hcb-shadow-tr,.hcb-shadow-br{float:right}
+.hcb-shadow-tl,.hcb-shadow-bl{float:left}
 br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box *{margin:0;padding:0;border-width:0;outline:0}
 #HCB_comment_box textarea.commentbox{width:100%;display:block;border:0}
@@ -2242,34 +2360,208 @@ br.hcb-shadow-clear{clear:both;display:block}
 #HCB_comment_box input.text{width:100%}
 #HCB_comment_box span.home-desc{font-size:10px;opacity:.4}
 #HCB_comment_box blockquote{margin:0!important;padding:20px;background:url(speech-bubble.png) no-repeat}
-#HCB_comment_box div.comment{margin-bottom:5px;border-bottom:1px solid #eee}
+#HCB_comment_box .comment{margin-bottom:5px;border-bottom:1px solid #eee}
 
-.dados{
-    margin-left:25%;
-    margin-top:70px;
-    margin-bottom:70px;
-    color: #B01030;
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+	font-family: montserrat, arial, verdana;
 }
-.login{
-    margin-left:25%;
-    margin-top:42px;
-    margin-bottom:20px;
-    color: #B01030;
+/*form styles*/
+#msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
 }
-.submit{
-    margin-left:35%;
-    margin-bottom:38px;
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
 }
-.titu{
-    color: red;
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
 }
-.dados tr td label{
-    margin-left:10px;
-    margin-right:15px;
-    margin-bottom:10px;
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
 }
-.login tr td label{
-    margin-left:10px;
-    margin-right:15px;
-    margin-bottom:10px;
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #B01030;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #B01030;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #B01030;
+	color: white;
+}
+
+.Perfil{
+    margin-right:123px;
+    margin-bottom:2px;
+}
+
+<!--  -->
+
+.nav_tabs{
+    width: 1800px;
+    height: 800px;
+    margin: 100px auto;
+    position: relative;
+    margin:0;
+    padding-left:19%;
+}
+
+.nav_tabs h2{
+    /*font-size: 2.3em;
+	font-family: 'Open Sans', sans-serif;
+	color:#B01030;
+    text-align: center;*/
+    font-size: 2.5em;
+margin: 0;
+color: #B01030;
+font-family: 'Titillium Web', sans-serif;
+font-weight: 600;
+text-align: center;
+}
+
+.nav_tabs ul{
+    list-style: none;
+}
+
+.nav-tabs ul li{
+    padding-left:360px;
+}
+
+.tabs{
+    float:left;
+    border-bottom:12px solid #333;
+}
+
+.nav_tabs label{
+    width: 300px;
+    padding: 25px;
+    background-color: #B01030;
+    display: block;
+    color: #ffffff;
+
+    cursor: pointer;
+    text-align: center;
+}
+
+.rd_tabs:checked~label{
+    background-color: #333;
+    color:#ffffff;
+}
+
+.rd_tabs:checked~.nav_tabs{
+    border-bottom:10px solid #333;
+}
+
+.rd_tabs{
+    display:none;
+}
+
+.content_tab{
+    border: 5px solid #333;
+    display: none;
+    position:relative;
+    height: 600px;
+    width:1200px;
+    left:0;
+    padding: 10px;
+    background-color:#ffffff;
+}
+
+.rd_tabs:checked~.content_tab{
+    display:block;
+    position:absolute;
+    left:362px;
+    top:70px;
 }

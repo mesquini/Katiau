@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
     <!-- header -->
-    <div class="banner bannerStore">
+    <div class="banner banner2">
         <div class="container">
             <div class="headr-right">
             </div>
@@ -52,7 +52,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
-
                                 </button>
                             </div>
                             <!--/navbar header-->
@@ -81,47 +80,97 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
+        </div>
+    </div>
+@foreach (var U in ViewBag.User)
+{
+    <div class="nav_tabs">
+        <ul>
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <label for="tab1"> Usuários </label>
+                    
+                <div class="content_tab">
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Sobrenome</th>
+                                    <th>Email</th>
+                                    <th>Senha</th>
+                                    <th>Nascimento</th>
+                                    <th>ImagemPerfil</th>
+                                    <th>Categoria</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                    <tr>
+                                        <td>@(U.ID)</td>
+                                        <td>@(U.Nome)</td>
+                                        <td>@(U.Sobrenome)</td>
+                                        <td>@(U.Email)</td>
+                                        <td>@(U.Senha)</td>
+                                        <td>@(U.Nascimento)</td>
+                                        <td>@(U.ImagemPerfil)</td>
+                                        <td>@(U.Categoria.Titulo) [ID: @(U.Categoria.ID)]</td>
+                                        <td>
+                                            <a href="/Post/Ver/@(U.ID)">Ver</a> |
+                                            <a href="/Post/Alterar/@(U.ID)">Alterar</a> |
+                                            <a href="/Post/Apagar/@(U.ID)">Apagar</a>
+                                        </td>
+                                  </tr>
+                                
+                            </tbody>
+                        </table>
+                    </section>
+                   </div>
+                </li>
 
-            <div>
-                <div class="login-wrap">
-                    <div class="login-html">
-                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
-                       <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                        <div class="login-form">
-                            <div class="sign-in-htm">
-                                <div class="group">
-                                    <label for="user" class="label">Username</label>
-                                    <input id="user" type="text" class="input" required>
-                                </div>
-                                <div class="group">
-                                    <label for="pass" class="label">Senha</label>
-                                    <input id="pass" type="password" class="input" data-type="password" required>
-                                </div>
-                                <div class="group">
-                                    <input id="check" type="checkbox" class="check" checked>
-                                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                                </div>
-                                <div class="group">
-                                    <input type="submit" class="button" value="Sign In">
-                                </div>
-                                <div class="hr"></div>
-                                <div class="foot-lnk">
-                                    <a href="#forgot">Esqueceu a Senha?</a>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                </div>
-                </div>
 
 
 
-                <div class="copywrite">
-                    <div class="container">
-                        <p> © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030">w3Layouts</a></p>
-                    </div>
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2"> Pacotes </label>
+                <div class="content_tab">
+                     <button @(U.ID)>Criar</button>
+                    <button @(U.ID)>Alterar</button>
+                    <button @(U.ID)>Excluir</button>
                 </div>
-                <!---->
+            </li>
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
+                <label for="tab3"> DLC </label>
+                <div class="content_tab">
+                    <article>
+
+                    </article>  
+                </div>
+            </li>
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab4">
+                <label for="tab4"> Tab4 </label>
+                <div class="content_tab">
+                    
+                        
+                     
+                </div>
+            </li>
+        </ul>
+    </div>
+                    }
+    <div class="copywrite">
+        <div class="container">
+            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+        </div>
+    </div>
+    <!---->
 
 </body>
 </html>
