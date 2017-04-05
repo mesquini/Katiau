@@ -155,9 +155,9 @@
     <Content Include="images\c4.jpg" />
     <Content Include="images\cars-1.jpg" />
     <Content Include="images\cars-4.jpg" />
-    <Content Include="images\cars-6.jpg" />
     <Content Include="images\cars3.jpg" />
     <Content Include="images\cars4.jpg" />
+    <Content Include="images\cars6.jpg" />
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
     <Content Include="images\ftr-icons.png" />
