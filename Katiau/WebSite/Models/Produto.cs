@@ -41,14 +41,14 @@ namespace WebSite.Models
 
             Conexao.Close();
     }*/
-        public static List<Produto> Listar()
+        public static List<Produto> ListarP()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT ID,NomeProduto,VersaoProduto,ImagemProduto,DescricaoProduto,PrecoProduto FROM Produto WHERE CategoriaID=3;";
+            Comando.CommandText = "SELECT CategoriaID, NomeProduto, VersaoProduto, ImagemProduto, DescricaoProduto, PrecoProduto,Categoria.NomeCategoria FROM Produto,Categoria WHERE Produto.CategoriaID = Categoria.ID;";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -56,7 +56,7 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 Produto P = new Produto();
-                P.ID = (Int32)Leitor["ID"];
+                P.ID = (Int32)Leitor["CategoriaID"];
                 P.Nome = ((String)Leitor["NomeProduto"]);
                 P.Versao = (Int32)Leitor["VersaoProduto"];
                 P.Imagem = ((String)Leitor["ImagemProduto"]);

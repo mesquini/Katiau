@@ -9,6 +9,7 @@ namespace Website.Models
     {
         public Int32 ID { get; set; }
         public String Email { get; set; }
+        public String Nick { get; set; }
         public String Nome { get; set; }
         public String Sobrenome { get; set; }
         public String Senha { get; set; }
@@ -67,10 +68,11 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
-              + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
+            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
+              + "VALUES (@ID, @Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
+            Comando.Parameters.AddWithValue("@NickU", this.Nick);
             Comando.Parameters.AddWithValue("@Nome", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
@@ -86,7 +88,7 @@ namespace Website.Models
             return Resultado > 0 ? true : false;
         }
         
-        public static List<Usuario> Listar()
+        public static List<Usuario> ListarU()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -103,6 +105,7 @@ namespace Website.Models
                 Usuario U = new Usuario();
                 U.ID = (Int32)Leitor["ID"];
                 U.Nome = ((String)Leitor["NomeU"]);
+                U.Nick = Leitor["NickU"].ToString();
                 U.Sobrenome = (String)Leitor["SobrenomeU"];
                 U.Email = ((String)Leitor["EmailU"]);
                 U.Senha = (String)Leitor["SenhaU"];
