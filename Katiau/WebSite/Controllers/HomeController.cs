@@ -15,7 +15,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] != null)
             {
-                Response.Redirect("/Adm2/Listar", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -34,7 +34,7 @@ namespace WebSite.Controllers
 
                         break;
 
-                    case "Usuário":
+                    case "Usuario":
 
                         Usuario U = new Usuario(Email, SenhaEncriptada);
                         Session["User"] = U;

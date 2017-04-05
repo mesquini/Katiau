@@ -16,7 +16,7 @@ namespace Website.Models
 
         public Categoria(Int32 ID)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
@@ -50,12 +50,12 @@ namespace Website.Models
 
         public static List<Categoria> Lista()
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Categoria ORDER BY ID;";
+            Comando.CommandText = "SELECT NomeProduto, VersaoProduto, ImagemProduto, DescricaoProduto, PrecoProduto,Categoria.NomeCategoria FROM Produto,Categoria WHERE Produto.CategoriaID = Categoria.ID;";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 

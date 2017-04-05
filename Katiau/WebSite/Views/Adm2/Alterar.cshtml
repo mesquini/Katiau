@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Katiau</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -87,6 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                             <input type="password" />
                                                             <input type="submit" value="Login" />
                                                             <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+
                                                         </fieldset>
                                                     </div>
                                                 </div>
@@ -94,7 +95,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </span>
                                     </li>
                                 </ul>
-                            </div>
                                 <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
@@ -105,8 +105,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
+        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
+    <div>
+        <section>
+            <h3>Preencha os campos abaixo para alterar o Post selecionado</h3>
+            <h4>@(ViewBag.Mensagem)</h4>
+            <form method="post" action="/Post/Alterar/@(ViewBag.Post.ID)">
+                <p>
+                    Categoria:
+                    <select name="Categoria" id="Categoria">
+                        @foreach (var C in ViewBag.Categorias)
+                        {
+                            if (C.ID == ViewBag.Post.Categoria.ID)
+                            {
+                                <option value="@(C.ID)" selected>@(C.Titulo)</option>
+                            }
+                            else
+                            {
+                                <option value="@(C.ID)">@(C.Titulo)</option>
+                            }
+                        }
+                    </select>
+                </p>
 
+                <p><input type="text" name="Titulo" id="Titulo" placeholder="Digite o título do Post" value="@(ViewBag.Post.Titulo)" required /></p>
+                <p><textarea rows="10" cols="40" name="Texto" id="Texto" placeholder="Digite o texto do Post" required>@(ViewBag.Post.Texto)</textarea></p>
+                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+            </form>
+        </section>
+
+
+
+    </div>
     <div class="copywriteLoja">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>

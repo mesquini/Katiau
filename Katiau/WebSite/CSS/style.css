@@ -2494,8 +2494,8 @@ body {
     height: 800px;
     margin: 100px auto;
     position: relative;
-    margin:0;
-    padding-left:19%;
+    margin:2px;
+    padding-left:15%;
 }
 
 .nav_tabs h2{
@@ -2525,7 +2525,7 @@ text-align: center;
 }
 
 .nav_tabs label{
-    width: 300px;
+    width: 350px;
     padding: 25px;
     background-color: #B01030;
     display: block;
@@ -2553,7 +2553,7 @@ text-align: center;
     display: none;
     position:relative;
     height: 600px;
-    width:1200px;
+    width:1400px;
     left:0;
     padding: 10px;
     background-color:#ffffff;
@@ -2562,6 +2562,6 @@ text-align: center;
 .rd_tabs:checked~.content_tab{
     display:block;
     position:absolute;
-    left:362px;
+    left:15.9%;
     top:70px;
 }
