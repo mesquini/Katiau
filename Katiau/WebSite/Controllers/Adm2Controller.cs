@@ -123,7 +123,7 @@ namespace WebSite.Controllers
             Usuario U = new Usuario(Convert.ToInt32(ID));
             ViewBag.User = U;
 
-            Pacote P = new Pacote(Convert.ToString(ID));
+            Pacote P = new Pacote(Convert.ToInt32(ID));
             ViewBag.Prod = P;
 
             DLC DLCs = new DLC(Convert.ToInt32(ID));
