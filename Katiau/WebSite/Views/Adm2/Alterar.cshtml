@@ -9,16 +9,20 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title> alt+Tab #4 Simuladores à todo vapor!  </title>
+    <title>Katiau</title>
 
-    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
+
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
+    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -91,8 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </span>
                                     </li>
                                 </ul>
-                            </div>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -102,118 +105,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
+        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <!---->
-    <div class="container">
-        <div class="single">
-            <div class="blog-to">
+    <div>
+        <section>
+            <h3>Preencha os campos abaixo para alterar o Post selecionado</h3>
+            <h4>@(ViewBag.Mensagem)</h4>
+            <form method="post" action="/Post/Alterar/@(ViewBag.Post.ID)">
+                <p>
+                    Categoria:
+                    <select name="Categoria" id="Categoria">
+                        @foreach (var C in ViewBag.Categorias)
+                        {
+                            if (C.ID == ViewBag.Post.Categoria.ID)
+                            {
+                                <option value="@(C.ID)" selected>@(C.Titulo)</option>
+                            }
+                            else
+                            {
+                                <option value="@(C.ID)">@(C.Titulo)</option>
+                            }
+                        }
+                    </select>
+                </p>
 
-                <img class="img-responsive sin-on" src="~/images/g1.jpg" alt="" />
-                <div class="blog-top">
-                    <div class="blog-left">
-                        <b>22</b>
-                        <span>Feb</span>
-                    </div>
-                    <div class="top-blog">
-                        <a class="fast" href="#"> Simulador </a>
-                        <p>Postado por <a href="#">Ana Carolina</a> no <a href="#">Assuntos Gerais</a> | <a href="#">4 Comentários</a></p>
-                       
-                        <p class="sed">
-                            Um jogo de simulação descreve uma diversa categoria de jogos eletrônicos para computadores e videogames,Os jogos de simulação que também podem ser chamados de jogos de estratégia,
-                            testam e desenvolvem as habilidades de construção e gerenciamento do jogador, obtendo o objetivo de simular o mundo real.O realismo é a marca registrada destes simuladores que vão lhe possibilitar a sensação de encarar a máquina dos seus sonhos.
-                            Os simuladores são utilizados tanto para diversão como para treinamento de profissionais,haja vista os equipamentos que imitam a ausência de gravidade, 
-                            usados pela NASA.Há varios tipos de simuladores atualmente todos com diferente aspecto que são usados em empresas,jogos,investimentos,AutoEscolas e varios outros locais.
-
-                        <div class="col-md-6 md-in">
-                            <ul class="grid-part">
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
+                <p><input type="text" name="Titulo" id="Titulo" placeholder="Digite o título do Post" value="@(ViewBag.Post.Titulo)" required /></p>
+                <p><textarea rows="10" cols="40" name="Texto" id="Texto" placeholder="Digite o texto do Post" required>@(ViewBag.Post.Texto)</textarea></p>
+                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+            </form>
+        </section>
 
 
 
-            <div class="single-middle">
-
-                <h3>4 Comentários</h3>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">gamerBoy12</a></h4>
-                        <p>A Beta estava meio bugada, mas os carros estão 'zika' kkkj</p>
-                    </div>
-                </div>
-                <div class="media in-media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">mesquini</a></h4>
-                        <p> Sou obrigado a falar, esse jogo tá uma porr*! </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Emankcin</a></h4>
-                        <p> O site está bem legal, as fotos estão 10/10.. Se eu fosse um professor daria 10 não é clã? </p>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="~/images/co.png" alt="">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="#">KilleroftheNightDark666</a></h4>
-                        <p> Baixei só pra testar os carros, se eu curtir eu compro </p>
-                    </div>
-                </div>
-
-            </div>
-            <!---->
-            <div class="single-bottom">
-
-                <h3>Leave a Comment</h3>
-                <form>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
-                    </div>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-                    </div>
-                    <div class="col-md-4 comment">
-                        <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
-                    </div>
-                    <div class="clearfix"> </div>
-                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-
-                    <input type="submit" value="Send">
-
-                </form>
-            </div>
-        </div>
     </div>
-
-    <div class="copywrite">
+    <div class="copywriteLoja">
         <div class="container">
-            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030">w3Layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>
         </div>
     </div>
-
 </body>
 </html>

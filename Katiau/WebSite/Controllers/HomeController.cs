@@ -13,14 +13,9 @@ namespace WebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (Session["ADM"] != null)
-            {
-                Response.Redirect("~/Adm2/Index");
-            }
-
             if (Session["User"] != null)
             {
-                Response.Redirect("~/Home/Index", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -29,25 +24,39 @@ namespace WebSite.Controllers
                 String Senha = Request.Form["senha"].ToString();
                 String SenhaEncriptada = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1");
 
-                if(Email.Equals("admin@gmail.com") && Senha.Equals("Senai1234"))
+                switch (Usuario.Autenticar(Email,SenhaEncriptada))
                 {
-                    Usuario U = new Usuario(Email, SenhaEncriptada);
-                    Session["ADM"] = U;
-                    Response.Redirect("~/Adm2/Index", false);
-                }
-                if (Usuario.Autenticar(Email, SenhaEncriptada))
-                {
-                    Usuario U = new Usuario(Email, SenhaEncriptada);
-                    Session["User"] = U;
-                    Response.Redirect("~/Home/Index", false);
-                }
-                else
-                {
-                    ViewBag.Mensagem = "Usuário e/ou senha inválido(s)";
+                    case "Administrador":
+
+                        Usuario ADM = new Usuario(Email, SenhaEncriptada);
+                        Session["User"] = ADM;
+                        Response.Redirect("/Adm2/Listar", false);
+
+                        break;
+
+                    case "Usuario":
+
+                        Usuario U = new Usuario(Email, SenhaEncriptada);
+                        Session["User"] = U;
+                        Response.Redirect("/Cadastro/Index", false);
+
+                        break;
+
+                    default:
+
+                        break;
+
                 }
             }
 
             return View();
+        }
+        public ActionResult Sair()
+        {
+            Session.Abandon();
+            Session.Clear();
+
+            return RedirectToAction("Autenticar");
         }
     }
 }
