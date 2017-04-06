@@ -15,7 +15,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] != null)
             {
-                Response.Redirect("/Perfil/Index", false);
+                Response.Redirect("/Home/Index", false);
             }
 
             if (Request.HttpMethod == "POST")
