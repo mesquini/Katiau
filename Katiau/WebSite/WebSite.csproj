@@ -220,7 +220,6 @@
     <Content Include="JS\bootstrap-3.1.1.min.js" />
     <Content Include="JS\Cadastrar.js" />
     <Content Include="JS\index.js" />
-    <Content Include="JS\jquery-1.11.1.min.js" />
     <Content Include="JS\jquery.flexisel.js" />
     <Content Include="JS\jquery.min.js" />
     <Content Include="JS\lightbox-plus-jquery.min.js" />
@@ -319,6 +318,7 @@
     <Content Include="Views\Adm2\Alterar.cshtml" />
     <Content Include="Views\Adm2\VerPacote.cshtml" />
     <Content Include="Views\NovoPost\Index.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
