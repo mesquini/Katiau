@@ -20,8 +20,11 @@ namespace WebSite.Controllers
             List<Usuario> User = Usuario.ListarU();
             ViewBag.User = User;
 
-            List<Produto> Prod = Produto.ListarP();
+            List<Pacote> Prod = Pacote.ListarP();
             ViewBag.Prod = Prod;
+
+            List<DLC> DLCs = DLC.ListarDLC();
+            ViewBag.DLCs = DLCs;
 
             if (TempData["Mensagem"] != null)
             {
@@ -37,7 +40,7 @@ namespace WebSite.Controllers
                 Response.Redirect("/Home/Index", false);
             }
             
-            List<Produto> Prod = Produto.ListarP();
+            List<Pacote> Prod = Pacote.ListarP();
             ViewBag.Prod = Prod;
 
             if (TempData["Mensagem"] != null)
