@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-namespace WebSite.Controllers
+using System.Security;
+using Website.Models;
+    
+    namespace WebSite.Controllers
 {
     public class PerfilController : Controller
     {
         // GET: Perfil
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public ActionResult Index(String ID)
+        { }
     }
 }
