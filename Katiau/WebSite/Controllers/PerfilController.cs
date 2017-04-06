@@ -11,7 +11,9 @@ using Website.Models;
     public class PerfilController : Controller
     {
         // GET: Perfil
-        public ActionResult Index(String ID)
-        { }
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
