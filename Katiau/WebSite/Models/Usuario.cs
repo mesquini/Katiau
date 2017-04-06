@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -11,6 +9,7 @@ namespace Website.Models
     {
         public Int32 ID { get; set; }
         public String Email { get; set; }
+        public String Nick { get; set; }
         public String Nome { get; set; }
         public String Sobrenome { get; set; }
         public String Senha { get; set; }
@@ -43,7 +42,7 @@ namespace Website.Models
         }
         public Usuario(String Email, String Senha)
         {
-            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["LPW"].ConnectionString);
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
@@ -62,22 +61,25 @@ namespace Website.Models
 
             Conexao.Close();
         }
-        public Boolean Salvar(String Email, String senha)
+        public Boolean Salvar(String Email, String senha, String nome, String sobrenome, String Nascimento, String bio, String imagemp,Boolean adm)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
-              + "VALUES (@ID, @Email, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
+            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
+              + "VALUES (@ID, @Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
             Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
             Comando.Parameters.AddWithValue("@Email", this.Email);
+            Comando.Parameters.AddWithValue("@NickU", this.Nick);
             Comando.Parameters.AddWithValue("@Nome", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
+            Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
+            Comando.Parameters.AddWithValue("@Adm", 0);
 
 
 
@@ -87,12 +89,8 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-
-
-
-
-
-        public static List<Usuario> Listar()
+        
+        public static List<Usuario> ListarU()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -109,6 +107,7 @@ namespace Website.Models
                 Usuario U = new Usuario();
                 U.ID = (Int32)Leitor["ID"];
                 U.Nome = ((String)Leitor["NomeU"]);
+                U.Nick = Leitor["NickU"].ToString();
                 U.Sobrenome = (String)Leitor["SobrenomeU"];
                 U.Email = ((String)Leitor["EmailU"]);
                 U.Senha = (String)Leitor["SenhaU"];
