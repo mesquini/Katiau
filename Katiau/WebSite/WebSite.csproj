@@ -211,6 +211,8 @@
     <Content Include="images\tr4.jpg" />
     <Content Include="images\tr5.jpg" />
     <Content Include="images\tr6.jpg" />
+    <Content Include="images\useredit - default.png" />
+    <Content Include="images\useredit - hover.png" />
     <Content Include="images\usuario.png" />
     <Content Include="images\venda-1.jpg" />
     <Content Include="images\venda-2.jpg" />
@@ -277,8 +279,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\DLC.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Pacote.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
@@ -312,8 +315,9 @@
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
-    <Content Include="Views\Adm2\Ver.cshtml" />
+    <Content Include="Views\Adm2\VerUsuario.cshtml" />
     <Content Include="Views\Adm2\Alterar.cshtml" />
+    <Content Include="Views\Adm2\VerPacote.cshtml" />
     <Content Include="Views\NovoPost\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
