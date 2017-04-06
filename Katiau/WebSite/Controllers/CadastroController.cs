@@ -29,13 +29,10 @@ namespace WebSite.Controllers
                 String senha = Request.Form["senha"];
                 String nome = Request.Form["nome"];
 
-                Post NovoPost = new Post();
-                NovoPost.Usuario = U;
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
+                Post NovoUsuario = new Post();
+                NovoUsuario.Usuario = U;
 
-                if (NovoPost.Salvar())
+                if (NovoUsuario.Salvar())
                 {
                     ViewBag.Mensagem = "Post criado com sucesso!";
                 }
