@@ -154,9 +154,9 @@
     <Content Include="images\c3.jpg" />
     <Content Include="images\c4.jpg" />
     <Content Include="images\cars-1.jpg" />
-    <Content Include="images\cars-4.jpg" />
     <Content Include="images\cars3.jpg" />
     <Content Include="images\cars4.jpg" />
+    <Content Include="images\cars5.jpg" />
     <Content Include="images\cars6.jpg" />
     <Content Include="images\close.png" />
     <Content Include="images\co.png" />
@@ -257,6 +257,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NeveController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\NovoPostController.cs" />
     <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
@@ -313,6 +314,7 @@
     <Content Include="Views\PostUsuario\Index.cshtml" />
     <Content Include="Views\Adm2\Ver.cshtml" />
     <Content Include="Views\Adm2\Alterar.cshtml" />
+    <Content Include="Views\NovoPost\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
