@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -9,20 +8,16 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title> Criar novo post! :D  </title>
 
-    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
-    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -68,34 +63,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="~/JS/index.js"></script>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
-                                                        </fieldset>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </span>
-                                    </li>
                                 </ul>
                             </div>
-                                <!--/navbar collapse-->
+                            <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -105,26 +75,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        <h2>Ver Post</h2>
-        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <div>
-        <section>
-            <div>
-                <h2>@(ViewBag.Post.Titulo)</h2>
 
-                <h3>Enviado por @(ViewBag.Post.Usuario.Email) em @(ViewBag.Post.DataPostagem.ToShortDateString()) às @(ViewBag.Post.DataPostagem.ToLongTimeString())</h3>
+    <!--TRAB-->
 
-                <p>@(ViewBag.Post.Texto)</p>
+    <div class="single-middle">
+
+        <h3>Criar um novo post</h3>
+       
+    <!---->
+    <div class="single-bottom">
+        <form>
+            <div class="col-md-4 comment">
+                <input type="text" value="Titulo" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Titulo';}">
+                <input type="file" placeholder="Imagem" name="imagemPerfil" />
             </div>
-        </section>
+            <div class="col-md-4 comment">
+                <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+            </div>
+            <div class="col-md-4 comment">
+                <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+            </div>
+            <div class="clearfix"> </div>
+            <textarea cols="77" rows="6" value="Message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
 
+            <input type="submit" value="Enviar">
 
+        </form>
     </div>
-    <div class="copywriteLoja">
+    </div>
+    </div>
+    <!-- /TRAB
+        -->
+
+    <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>
+            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030">w3Layouts</a></p>
         </div>
     </div>
+
 </body>
 </html>

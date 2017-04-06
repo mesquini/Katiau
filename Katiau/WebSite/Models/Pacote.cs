@@ -5,20 +5,20 @@ using System.Configuration;
 
 namespace WebSite.Models
 {
-    public class Produto
+    public class Pacote
     {
 
         public Int32 ID { get; set; }
         public String Nome { get; set; }
-        public Int32 Versao { get; set; }
+        public String Categoria { get; set; }
         public String Imagem { get; set; }
         public String Descricao { get; set; }
         public Double Preco { get; set; }
 
-        public Produto() { }
+        public Pacote() { }
     
 
-   /* public Produto(Int32 ID)
+    public Pacote(String ID)
     {
         SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
         Conexao.Open();
@@ -34,31 +34,44 @@ namespace WebSite.Models
 
         this.ID = (Int32)Leitor["ID"];
         this.Nome = (String)Leitor["NomeProduto"];
-        this.Versao = (Int32)Leitor["VersaoProduto"];
+        this.Categoria = (String)Leitor["NomeCategoria"];
         this.Imagem = (String)Leitor["ImagemProduto"];
         this.Descricao = (String)Leitor["DescricaoProduto"];
         this.Preco = (Double)Leitor["PrecoProduto"];
 
             Conexao.Close();
-    }*/
-        public static List<Produto> ListarP()
+    }
+        public Boolean Salvar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Alterar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Remover()
+        {
+            throw new NotImplementedException();
+        }
+        public static List<Pacote> ListarP()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT CategoriaID, NomeProduto, VersaoProduto, ImagemProduto, DescricaoProduto, PrecoProduto,Categoria.NomeCategoria FROM Produto,Categoria WHERE Produto.CategoriaID = Categoria.ID;";
+            Comando.CommandText = "SELECT NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
-            List<Produto> Prods = new List<Produto>();
+            List<Pacote> Prods = new List<Pacote>();
             while (Leitor.Read())
             {
-                Produto P = new Produto();
-                P.ID = (Int32)Leitor["CategoriaID"];
+                Pacote P = new Pacote();
                 P.Nome = ((String)Leitor["NomeProduto"]);
-                P.Versao = (Int32)Leitor["VersaoProduto"];
+                P.Categoria = (String)Leitor["NomeCategoria"];
                 P.Imagem = ((String)Leitor["ImagemProduto"]);
                 P.Descricao = (String)Leitor["DescricaoProduto"];
                 P.Preco = (Double)Leitor["PrecoProduto"];
@@ -71,6 +84,7 @@ namespace WebSite.Models
 
             return Prods;
         }
+       
 
     }
 
