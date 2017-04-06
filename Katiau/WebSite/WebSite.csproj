@@ -219,6 +219,7 @@
     <Content Include="JS\bootstrap-3.1.1.min.js" />
     <Content Include="JS\Cadastrar.js" />
     <Content Include="JS\index.js" />
+    <Content Include="JS\jquery-1.11.1.min.js" />
     <Content Include="JS\jquery.flexisel.js" />
     <Content Include="JS\jquery.min.js" />
     <Content Include="JS\lightbox-plus-jquery.min.js" />
@@ -303,7 +304,6 @@
     <Content Include="Views\Neve\Index.cshtml" />
     <Content Include="Views\TechMundo\Index.cshtml" />
     <Content Include="Views\Vantagens\Index.cshtml" />
-    <Content Include="Views\Administrador\View.cshtml" />
     <Content Include="Views\Cadastro\Index.cshtml" />
     <Content Include="Views\SobreOJogo.cshtml" />
     <Content Include="Views\SobreOJogo\Index.cshtml" />
@@ -311,7 +311,6 @@
     <Content Include="Views\SimuladorRealistico\Index.cshtml" />
     <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\Listar.cshtml" />
-    <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
     <Content Include="Views\Adm2\VerUsuario.cshtml" />
     <Content Include="Views\Adm2\Alterar.cshtml" />

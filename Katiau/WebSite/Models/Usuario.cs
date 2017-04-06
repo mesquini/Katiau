@@ -26,9 +26,8 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Usuario WHERE EmailU=@Email AND SenhaU=@Senha;";
-            Comando.Parameters.AddWithValue("@Email", Email);
-            Comando.Parameters.AddWithValue("@Senha", Senha);
+            Comando.CommandText = "SELECT * FROM Usuario WHERE ID=@ID;";
+            Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 

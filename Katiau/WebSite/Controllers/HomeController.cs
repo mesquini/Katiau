@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Website.Models;
+using WebSite.Models;
 
 namespace WebSite.Controllers
 {
@@ -13,10 +12,7 @@ namespace WebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (Session["User"] != null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
+            
 
             if (Request.HttpMethod == "POST")
             {
@@ -24,7 +20,7 @@ namespace WebSite.Controllers
                 String Senha = Request.Form["senha"].ToString();
                 String SenhaEncriptada = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1");
 
-                switch (Usuario.Autenticar(Email,SenhaEncriptada))
+                switch (Usuario.Autenticar(Email, SenhaEncriptada))
                 {
                     case "Administrador":
 
@@ -48,9 +44,20 @@ namespace WebSite.Controllers
 
                 }
             }
+            List<Usuario> User = Usuario.ListarU();
+            ViewBag.User = User;
+
+            List<Pacote> Prod = Pacote.ListarP();
+            ViewBag.Prod = Prod;
+
+            List<DLC> DLCs = DLC.ListarDLC();
+            ViewBag.DLCs = DLCs;
 
             return View();
         }
+        
+            
+
         public ActionResult Sair()
         {
             Session.Abandon();
@@ -58,5 +65,7 @@ namespace WebSite.Controllers
 
             return RedirectToAction("Autenticar");
         }
+
+        
     }
 }
