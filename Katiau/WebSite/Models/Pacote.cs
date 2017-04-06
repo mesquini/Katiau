@@ -18,7 +18,7 @@ namespace WebSite.Models
         public Pacote() { }
     
 
-    public Pacote(Int32 ID)
+    public Pacote(String ID)
     {
         SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
         Conexao.Open();

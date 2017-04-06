@@ -121,7 +121,13 @@ namespace WebSite.Controllers
             }
 
             Usuario U = new Usuario(Convert.ToInt32(ID));
-            ViewBag.Post = U;
+            ViewBag.User = U;
+
+            Pacote P = new Pacote(Convert.ToString(ID));
+            ViewBag.Prod = P;
+
+            DLC DLCs = new DLC(Convert.ToInt32(ID));
+            ViewBag.DLCs = DLCs;
 
             return View();
         }

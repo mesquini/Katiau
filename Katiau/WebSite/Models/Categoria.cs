@@ -29,7 +29,7 @@ namespace Website.Models
             Leitor.Read();
 
             this.ID = (Int32)Leitor["ID"];
-            this.Titulo = (String)Leitor["Titulo"];
+            this.Titulo = (String)Leitor["NomeCategoria"];
 
             Conexao.Close();
         }
@@ -64,7 +64,7 @@ namespace Website.Models
             {
                 Categoria C = new Categoria();
                 C.ID = (Int32)Leitor["ID"];
-                C.Titulo = (String)Leitor["Titulo"];
+                C.Titulo = (String)Leitor["NomeCategoria"];
 
                 Categorias.Add(C);
             }
