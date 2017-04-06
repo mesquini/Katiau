@@ -314,8 +314,9 @@
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
-    <Content Include="Views\Adm2\Ver.cshtml" />
+    <Content Include="Views\Adm2\VerUsuario.cshtml" />
     <Content Include="Views\Adm2\Alterar.cshtml" />
+    <Content Include="Views\Adm2\VerPacote.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

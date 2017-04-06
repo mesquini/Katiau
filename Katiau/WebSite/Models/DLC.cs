@@ -45,7 +45,20 @@ namespace WebSite.Models
             Conexao.Close();
         }
 
+        public Boolean Salvar()
+        {
+            throw new NotImplementedException();
+        }
 
+        public Boolean Alterar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Remover()
+        {
+            throw new NotImplementedException();
+        }
         public static List<DLC> ListarDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);

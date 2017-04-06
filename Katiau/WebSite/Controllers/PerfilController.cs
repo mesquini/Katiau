@@ -12,6 +12,9 @@ using Website.Models;
     {
         // GET: Perfil
         public ActionResult Index(String ID)
-        { }
+        {
+
+            return View();
+        }
     }
 }

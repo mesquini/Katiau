@@ -33,23 +33,7 @@ namespace WebSite.Controllers
 
             return View(); 
         }
-        public ActionResult ListarP()
-        {
-            if (Session["User"] == null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
-            
-            List<Pacote> Prod = Pacote.ListarP();
-            ViewBag.Prod = Prod;
-
-            if (TempData["Mensagem"] != null)
-            {
-                ViewBag.Mensagem = TempData["Mensagem"].ToString();
-            }
-
-            return View();
-        }
+      
         public ActionResult Novo()
         {
             if (Session["User"] == null)
@@ -89,7 +73,8 @@ namespace WebSite.Controllers
             return View();
         }
 
-        public ActionResult Alterar(string ID)
+        public ActionResult Alterar(String ID)
+
         {
             if (Session["User"] == null)
             {
@@ -128,20 +113,20 @@ namespace WebSite.Controllers
             return View();
         }
 
-        public ActionResult Ver(string ID)
+        public ActionResult Ver(String ID)
         {
             if (Session["User"] == null)
             {
                 Response.Redirect("/Home/Index", false);
             }
 
-            Categoria P = new Categoria(Convert.ToInt32(ID));
-            ViewBag.Post = P;
+            Usuario U = new Usuario(Convert.ToInt32(ID));
+            ViewBag.Post = U;
 
             return View();
         }
 
-        public ActionResult Apagar(string ID)
+        public ActionResult Apagar(String ID)
         {
             if (Session["User"] == null)
             {
