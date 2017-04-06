@@ -31,9 +31,9 @@ namespace WebSite.Controllers
 
                 Post NovoPost = new Post();
                 NovoPost.Usuario = U;
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
+                //NovoPost.Categoria = C;
+                //NovoPost.Titulo = Titulo;
+                //NovoPost.Texto = Texto;
 
                 if (NovoPost.Salvar())
                 {
