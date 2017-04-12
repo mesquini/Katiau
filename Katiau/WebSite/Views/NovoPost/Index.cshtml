@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li >
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -84,29 +84,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3>Criar um novo post</h3>
        
     <!---->
-    <div class="single-bottom">
         <form>
             <div class="col-md-4 comment">
                 <input type="text" value="Titulo" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Titulo';}">
+            </div>
+            <div class="col-md-4 comment">
                 <input type="file" placeholder="Imagem" name="imagemPerfil" />
             </div>
-            <div class="col-md-4 comment">
-                <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-            </div>
-            <div class="col-md-4 comment">
-                <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
-            </div>
             <div class="clearfix"> </div>
-            <textarea cols="77" rows="6" value="Message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-
-            <input type="submit" value="Enviar">
+            <textarea cols="100" rows="6" value="Message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+            <br />
+            <br />
+            <input class="botaoenviar" type="submit" value="Enviar">
 
         </form>
+    <div class="single-bottom">
+        
     </div>
     </div>
-    </div>
-    <!-- /TRAB
-        -->
+    <!-- /TRAB-->
 
     <div class="copywrite">
         <div class="container">

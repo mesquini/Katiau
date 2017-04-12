@@ -43,9 +43,21 @@ namespace Website.Models
             throw new NotImplementedException();
         }
 
-        public Boolean Remover()
+        public Boolean Apagar()
         {
-            throw new NotImplementedException();
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "DELETE FROM Categoria WHERE ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
         }
 
         public static List<Categoria> Lista()
