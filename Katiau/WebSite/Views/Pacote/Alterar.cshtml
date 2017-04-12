@@ -9,10 +9,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Contato</title>
+    <title>Katiau</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -57,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="dropdown">
+                                    <li class="active">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -66,11 +67,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li class="active"><a href="~/Contact/Index">Contato</a></li>
+                                    <li><a href="~/Contact/Index">Contato</a></li>
                                     <li class="imagemUser">
                                         <span class="loginform" id="loginform">
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
                                             <script src="~/JS/index.js"></script>
+                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
                                             <img class="login-sign-image" src="~/images/usuarioHover.png"
                                                  onmouseover="this.src='/images/usuario.png'"
                                                  onmouseout="this.src='/images/usuarioHover.png'" />
@@ -78,22 +80,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <div class="arrow-up"></div>
                                                 <div class="formholder" style="display: block;">
                                                     <div class="randompad">
-                                                        <h4>@(ViewBag.Mensagem)</h4>
-                                                        <form method="post" action="/Home/Index">
+                                                        <fieldset>
                                                             <label class="email" name="email">Email</label>
-                                                            <input type="email" id="email" name="email" />
+                                                            <input type="email" />
                                                             <label class="senha" name="password">Password</label>
-                                                            <input type="password" id="senha" name="senha" />
+                                                            <input type="password" />
                                                             <input type="submit" value="Login" />
                                                             <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
-                                                        </form>
+
+                                                        </fieldset>
                                                     </div>
                                                 </div>
                                             </div>
                                         </span>
                                     </li>
                                 </ul>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -103,80 +105,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
+        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <!---->
-    <div class="contact">
+    <div>
+        <section>
+            <h3>Preencha os campos abaixo para alterar o Post selecionado</h3>
+            <h4>@(ViewBag.Mensagem)</h4>
+            <form method="post" action="/Post/Alterar/@(ViewBag.Post.ID)">
+                <p>
+                    Categoria:
+                    <select name="Categoria" id="Categoria">
+                        @foreach (var C in ViewBag.Categorias)
+                        {
+                            if (C.ID == ViewBag.Post.Categoria.ID)
+                            {
+                                <option value="@(C.ID)" selected>@(C.Titulo)</option>
+                            }
+                            else
+                            {
+                                <option value="@(C.ID)">@(C.Titulo)</option>
+                            }
+                        }
+                    </select>
+                </p>
+
+                <p><input type="text" name="Titulo" id="Titulo" placeholder="Digite o título do Post" value="@(ViewBag.Post.Titulo)" required /></p>
+                <p><textarea rows="10" cols="40" name="Texto" id="Texto" placeholder="Digite o texto do Post" required>@(ViewBag.Post.Texto)</textarea></p>
+                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+            </form>
+        </section>
+
+
+
+    </div>
+    <div class="copywriteLoja">
         <div class="container">
-            <h2>Contato</h2>
-            <div class="map">
-                <h4>Onde nos encontrar:</h4>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3090.269682941242!2d-47.059012458982835!3d-22.914451744047835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf3303ceff43%3A0xea485c60a4b21ef5!2sEscola+SENAI+Prof.+Dr.+Euryclides+de+Jesus+Zerbini!5e0!3m2!1spt-BR!2sbr!4v1485457042632" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-            <div class="address">
-                <div class="col-md-4 address-grids">
-                    <h4>Nome :</h4>
-                    <ul>
-                        <li>
-                            <p>
-                                Ana Carolina<br>
-                                Marcelli<br>
-                                Pedro/Matias<br>
-                                Thiago<br>
-                                Victor<br>
-                                Victão<br>
-                                Victoria
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4 address-grids">
-                    <h4>Telefone :</h4>
-                    <p>
-                        +2 987 654 701<br>
-                        +2 987 654 302<br>
-                        +2 987 654 303<br>
-                        +2 987 654 304<br>
-                        +2 987 654 305<br>
-                        +2 987 654 306<br>
-                        +2 987 654 307
-                    </p>
-                </div>
-                <div class="col-md-4 address-grids">
-                    <h4>E-mail :</h4>
-                    <p><a href="mailto:example@email.com">Ana@example.com</a><br>
-                    <p>
-                        <a href="mailto:example@email.com">Marcelli@example.com</a><br>
-                        <a href="mailto:example@email.com">Pedro@example.com</a><br>
-                        <a href="mailto:example@email.com">Thiago@example.com</a><br>
-                        <a href="mailto:example@email.com">Victor@example.com</a><br>
-                        <a href="mailto:example@email.com">Victão@example.com</a><br>
-                        <a href="mailto:example@email.com">Victoria@example.com</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="contact-form">
-                <h4>Formulário de Contato</h4>
-                <form>
-                    <input type="text" placeholder="Nome" required="">
-                    <input type="email" placeholder="Email" required="">
-                    <input type="text" placeholder="Telefone" required="">
-                    <textarea placeholder="Mensagem" required=""></textarea>
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Limpar Campos" />
-                </form>
-            </div>
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>
         </div>
     </div>
-    <!-- //contact -->
-
-
-    <div class="copywrite">
-        <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
-        </div>
-    </div>
-    <!---->
-
 </body>
 </html>

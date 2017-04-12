@@ -13,11 +13,6 @@ namespace WebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (Session["User"] != null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
-
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();
@@ -38,7 +33,7 @@ namespace WebSite.Controllers
 
                         Usuario U = new Usuario(Email, SenhaEncriptada);
                         Session["User"] = U;
-                        Response.Redirect("/Cadastro/Index", false);
+                        Response.Redirect("/Perfil/Index", false);
 
                         break;
 
@@ -49,14 +44,19 @@ namespace WebSite.Controllers
                 }
             }
 
+            if (Session["User"] != null)
+            {
+                ViewBag.Logado = Session["User"];
+            }
+
             return View();
         }
-        public ActionResult Sair()
+        public void Sair()
         {
             Session.Abandon();
             Session.Clear();
 
-            return RedirectToAction("Autenticar");
+            Response.Redirect("/Home/Index", false);
         }
     }
 }

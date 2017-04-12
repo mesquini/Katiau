@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                 </ul>
                             </div>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -111,11 +111,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div>
         <section>
             <div>
-                <h2>@(ViewBag.Prod.Nome)</h2>
+                <h2>@(ViewBag.DLCs.Nome)</h2>
 
-                <h3>Categoria: @(ViewBag.Prod.Categoria) Preço @(ViewBag.Prod.Preco) </h3>
+                <h3>Enviado por @(ViewBag.Prod.Usuario.Email) em @(ViewBag.Prod.DataPostagem.ToShortDateString()) às @(ViewBag.Prod.DataPostagem.ToLongTimeString())</h3>
 
-                <p>@(ViewBag.Prod.Descricao)</p>
+                <p>@(ViewBag.Prod.Texto)</p>
             </div>
         </section>
 

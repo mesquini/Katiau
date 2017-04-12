@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -8,10 +9,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Katiau</title>
+    <title>Review | PC World</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -19,9 +21,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
     <!-- Custom Theme files -->
-    <link rel="stylesheet" type="text/css" href="~/CSS/common.css" />
-    <link rel="stylesheet" type="text/css" href="~/CSS/style4.css" />
-    <script type="text/javascript" src="~/JS/modernizr.custom.79639.js"></script>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- Custom Theme files -->
     <!--//theme-style-->
@@ -35,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
     <!-- header -->
-    <div class="banner bannerStore">
+    <div class="banner banner2">
         <div class="container">
             <div class="headr-right">
             </div>
@@ -52,7 +51,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
-
                                 </button>
                             </div>
                             <!--/navbar header-->
@@ -60,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="dropdown">
+                                    <li class="active">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -70,9 +68,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
+                                    <li class="imagemUser">
+                                        <span class="loginform" id="loginform">
+                                            <script src="~/JS/index.js"></script>
+                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                 onmouseover="this.src='/images/usuario.png'"
+                                                 onmouseout="this.src='/images/usuarioHover.png'" />
+                                            <div class="login">
+                                                <div class="arrow-up"></div>
+                                                <div class="formholder" style="display: block;">
+                                                    <div class="randompad">
+                                                        <fieldset>
+                                                            <label class="email" name="email">Email</label>
+                                                            <input type="email" />
+                                                            <label class="senha" name="password">Password</label>
+                                                            <input type="password" />
+                                                            <input type="submit" value="Login" />
+                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
                                 </ul>
                             </div>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -81,47 +104,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"></div>
             </div>
-
+        </div>
+        <h2>Ver Post</h2>
+        <a href="/Adm2/Listar">Voltar à listagem</a>
+    </div>
+    <div>
+        <section>
             <div>
-                <div class="login-wrap">
-                    <div class="login-html">
-                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
-                       <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                        <div class="login-form">
-                            <div class="sign-in-htm">
-                                <div class="group">
-                                    <label for="user" class="label">Username</label>
-                                    <input id="user" type="text" class="input" required>
-                                </div>
-                                <div class="group">
-                                    <label for="pass" class="label">Senha</label>
-                                    <input id="pass" type="password" class="input" data-type="password" required>
-                                </div>
-                                <div class="group">
-                                    <input id="check" type="checkbox" class="check" checked>
-                                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                                </div>
-                                <div class="group">
-                                    <input type="submit" class="button" value="Sign In">
-                                </div>
-                                <div class="hr"></div>
-                                <div class="foot-lnk">
-                                    <a href="#forgot">Esqueceu a Senha?</a>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                </div>
-                </div>
+                <h2>@(ViewBag.DLCs.NomeProduto)</h2>
+
+                <h3> Categoria: @(ViewBag.DLCs.NomeCategoria) Preço: @(ViewBag.DLCs.Preco) Imagem: @(ViewBag.DLCs.Imagem)</h3>
+
+                <p>Descrição: @(ViewBag.DLCs.Descricao)</p>
+            </div>
+        </section>
 
 
-
-                <div class="copywrite">
-                    <div class="container">
-                        <p> © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030">w3Layouts</a></p>
-                    </div>
-                </div>
-                <!---->
-
+    </div>
+    <div class="copywriteLoja">
+        <div class="container">
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030">w3layouts</a></p>
+        </div>
+    </div>
 </body>
 </html>
