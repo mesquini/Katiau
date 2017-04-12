@@ -6,22 +6,16 @@ using WebSite.Models;
 
 namespace WebSite.Controllers
 {
-    public class Adm2Controller : Controller
+    public class DLCsController : Controller
     {
-
-
-       public ActionResult Listar()
+        // GET: DLCs
+        public ActionResult Listar()
         {
             if (Session["User"] == null)
             {
                 Response.Redirect("/Home/Index", false);
             }
-
-            List<Usuario> User = Usuario.ListarU();
-            ViewBag.User = User;
-
-            List<Produto> Prod = Produto.ListarP();
-            ViewBag.Prod = Prod;
+            
 
             List<DLC> DLCs = DLC.ListarDLC();
             ViewBag.DLCs = DLCs;
@@ -31,9 +25,9 @@ namespace WebSite.Controllers
                 ViewBag.Mensagem = TempData["Mensagem"].ToString();
             }
 
-            return View(); 
+            return View();
         }
-      
+
         public ActionResult Novo()
         {
             if (Session["User"] == null)
@@ -45,30 +39,34 @@ namespace WebSite.Controllers
             {
                 Usuario U = (Usuario)Session["User"];
 
-                Int32 IDCategoria = Convert.ToInt32(Request.Form["Categoria"]);
-                Categoria C = new Categoria(IDCategoria);
+                Int32 ID = Convert.ToInt32(Request.Form["DLC"]);
+                DLC C = new DLC(ID);
+            
+                String Nome = Request.Form["NomeProduto"];
+                String Categoria = Request.Form["NomeCategoria"];
+                String Imagem = Request.Form["ImagemProduto"];
+                String Descricao = Request.Form["DescricaoProduto"];
+                Double Preco = Double.Parse(Request.Form["PrecoProduto"]);
 
-                String Titulo = Request.Form["Titulo"];
-                String Texto = Request.Form["Texto"];
+                DLC NovoDLC = new DLC(Convert.ToInt32(ID));
+                NovoDLC.Nome = Nome;
+                NovoDLC.Categoria = Categoria;
+                NovoDLC.Imagem = Imagem;
+                NovoDLC.Descricao = Descricao;
+                NovoDLC.Preco = Preco;
 
-                Post NovoPost = new Post();
-                NovoPost.Usuario = U;
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
-
-                if (NovoPost.Salvar())
+                if (NovoDLC.Novo())
                 {
-                    ViewBag.Mensagem = "Post criado com sucesso!";
+                    ViewBag.Mensagem = "NovoDLC criado com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar o NovoDLC. Verifique os dados e tente novamente.";
                 }
             }
 
-            List<Categoria> Categorias = Categoria.Lista();
-            ViewBag.Categorias = Categorias;
+            List<DLC> DLCs = DLC.ListarDLC();
+            ViewBag.DLCs = DLCs;
 
             return View();
         }
@@ -86,29 +84,31 @@ namespace WebSite.Controllers
                 Int32 IDCategoria = Convert.ToInt32(Request.Form["Categoria"]);
                 Categoria C = new Categoria(IDCategoria);
 
-                String Titulo = Request.Form["Titulo"];
-                String Texto = Request.Form["Texto"];
+                String Nome = Request.Form["NomeProduto"];
+                String Categoria = Request.Form["NomeCategoria"];
+                String Imagem = Request.Form["ImagemProduto"];
+                String Descricao = Request.Form["DescricaoProduto"];
+                Double Preco = Double.Parse( Request.Form["PrecoProduto"]);
 
-                Post NovoPost = new Post(Convert.ToInt32(ID));
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
+                DLC NovoDLC = new DLC(Convert.ToInt32(ID));
+                NovoDLC.Nome = Nome;
+                NovoDLC.Categoria = Categoria;
+                NovoDLC.Imagem = Imagem;
+                NovoDLC.Descricao = Descricao;
+                NovoDLC.Preco = Preco;
+                    
 
-                if (NovoPost.Alterar())
+                if (NovoDLC.Alterar())
                 {
-                    ViewBag.Mensagem = "Post alterado com sucesso!";
+                    ViewBag.Mensagem = "DLC alterado com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar o DLC. Verifique os dados e tente novamente.";
                 }
             }
 
-            List<Categoria> Categorias = Categoria.Lista();
-            ViewBag.Categorias = Categorias;
-
-            Categoria P = new Categoria(Convert.ToInt32(ID));
-            ViewBag.Post = P;
+           
 
             return View();
         }
@@ -119,13 +119,7 @@ namespace WebSite.Controllers
             {
                 Response.Redirect("/Home/Index", false);
             }
-
-            Usuario U = new Usuario(Convert.ToInt32(ID));
-            ViewBag.User = U;
-
-            Produto P = new Produto(Convert.ToInt32(ID));
-            ViewBag.Prod = P;
-
+            
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
 
@@ -139,10 +133,10 @@ namespace WebSite.Controllers
                 Response.Redirect("/Home/Index", false);
             }
 
-            Categoria P = new Categoria(Convert.ToInt32(ID));
+            DLC dlc = new DLC(Convert.ToInt32(ID));
 
 
-            if (P.Apagar())
+            if (dlc.Apagar())
             {
                 TempData["Mensagem"] = "Post removido com sucesso!";
             }

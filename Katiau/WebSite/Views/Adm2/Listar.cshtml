@@ -116,13 +116,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Nome)</td>
                                         <td>@(U.Sobrenome)</td>
                                         <td>@(U.Email)</td>
-                                        <td>@(U.Senha.Substring(0, Math.Min(U.Senha.Length, 35)) + "...")</td>
+                                        <td>@(U.Senha.Substring(0, Math.Min(U.Senha.Length, 55)) + "...")</td>
                                         <td>@(U.Nascimento)</td>
                                         <td>@(U.ImagemPerfil)</td>
                                         <td>
-                                            <a href="/Adm2/Ver/@(U.ID)">Ver</a> |
-                                            <a href="/Adm2/Alterar/@(U.ID)">Alterar</a> |
-                                            <a href="/Adm2/Apagar/@(U.ID)">Apagar</a>
+                                            <a href="/Usuario/Novo/@(U.ID)">Novo</a> |
+                                            <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
                                         </td>
                                     </tr>
                                 }
@@ -153,10 +152,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </thead>
                                     <tbody>
 
-    @foreach (var P in ViewBag.Prod)
-    {
+                                        @foreach (var P in ViewBag.Prod)
+                                        {
                                             <tr>
-                                           <!--PACOTES-->
+                                                <!--PACOTES-->
 
                                                 <td>@(P.Nome)</td>
                                                 <td>@(P.Categoria)</td>
@@ -164,15 +163,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
                                                 <td>R$@(P.Preco)</td>
                                                 <td>
-                                                    <a href="/Adm2/VerPacote/@(P.ID)">Ver</a> |
-                                                    <a href="/Adm2/Novo/@(P.ID)">Novo</a> |
-                                                    <a href="/Adm2/Alterar/@(P.ID)">Alterar</a> |
-                                                    <a href="/Adm2/Apagar/@(P.ID)">Apagar</a>
+                                                    <a href="/Produto/Ver/@(P.CategoriaID)">Ver</a> |
+                                                    <a href="/Produto/Novo/@(P.CategoriaID)">Novo</a> |
+                                                    <a href="/Produto/Alterar/@(P.CategoriaID)">Alterar</a> |
+                                                    <a href="/Produto/Apagar/@(P.CategoriaID)">Apagar</a>
                                                 </td>
                                             </tr>
-    }
-                                    </tbody>
-                                </table>
+                                            
+                                        }
+                                            </tbody>
+</table>
                             </section>
                         </div>
                     
@@ -208,10 +208,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 88)) + "...")</td>
                                         <td>R$@(D.Preco)</td>
                                         <td>
-                                            <a href="/Adm2/Ver/@(D.ID)">Ver</a> |
-                                            <a href="/Adm2/Novo/@(D.ID)">Novo</a> |
-                                            <a href="/Adm2/Alterar/@(D.ID)">Alterar</a> |
-                                            <a href="/Adm2/Apagar/@(D.ID)">Apagar</a>
+                                            <a href="/Produto/Ver/@(D.CategoriaID)">Ver</a> |
+                                            <a href="/Produto/Novo/@(D.CategoriaID)">Novo</a> |
+                                            <a href="/Produto/Alterar/@(D.CategoriaID)">Alterar</a> |
+                                            <a href="/Produto/Apagar/@(D.CategoriaID)">Apagar</a>
                                         </td>
                                     </tr>
 }

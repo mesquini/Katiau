@@ -60,7 +60,7 @@ namespace Website.Models
 
             Conexao.Close();
         }
-        public Boolean Salvar(String Email, String senha, String nome, String sobrenome, String Nascimento, String bio, String imagemp,Boolean adm)
+        public Boolean Novo()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -122,26 +122,26 @@ namespace Website.Models
 
             return Users;
         }
-        public Boolean Salvar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Boolean Alterar()
-        {
-            throw new NotImplementedException();
-        }
-
+        
+        
         public Boolean Apagar()
         {
-            throw new NotImplementedException();
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "DELETE FROM Usuario WHERE ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            
+
+            return Resultado > 0 ? true : false;
         }
-        public static List<Categoria> Lista()
-        {
-            throw new NotImplementedException();
-        }
-        public static String Autenticar(String Email, String Senha)
-        {
+        
+        public static String Autenticar(String Email, String Senha){
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
 
             Conexao.Open();

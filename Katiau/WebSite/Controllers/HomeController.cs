@@ -47,7 +47,7 @@ namespace WebSite.Controllers
             List<Usuario> User = Usuario.ListarU();
             ViewBag.User = User;
 
-            List<Pacote> Prod = Pacote.ListarP();
+            List<Produto> Prod = Produto.ListarP();
             ViewBag.Prod = Prod;
 
             List<DLC> DLCs = DLC.ListarDLC();
