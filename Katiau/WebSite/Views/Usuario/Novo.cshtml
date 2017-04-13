@@ -113,7 +113,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
             <h4>@(ViewBag.Mensagem)</h4>
             <form method="post" action="/Usuario/Novo">
-                
+                <select name="Usuario" id="Usuario">
+                    @foreach (var C in ViewBag.User) { }
+
+                </select>
 
                 <p> Nick: <input type="text" name="NickU" id="NickU" placeholder="Digite o Nick" required /></p>
                 <p> Nome: <input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>

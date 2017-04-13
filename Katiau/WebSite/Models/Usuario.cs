@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
+using WebSite.Models;
 
 namespace Website.Models
 {
@@ -88,7 +89,6 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-        
         public static List<Usuario> ListarU()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);

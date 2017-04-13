@@ -130,6 +130,45 @@ namespace WebSite.Models
 
             return Prods;
         }
+        
+
+       
+    }
+    public class DLC
+    {
+        public Int32 ID { get; set; }
+        public Int32 CategoriaID { get; set; }
+        public String Nome { get; set; }
+        public String Categoria { get; set; }
+        public String Imagem { get; set; }
+        public String Descricao { get; set; }
+        public Double Preco { get; set; }
+
+        public DLC() { }
+        public DLC(Int32 ID)
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT * FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.Parameters.AddWithValue("CategoriaID", ID);
+
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            Leitor.Read();
+
+            this.ID = (Int32)Leitor["ID"];
+            this.CategoriaID = (Int32)Leitor["CategoriaID"];
+            this.Nome = (String)Leitor["NomeProduto"];
+            this.Categoria = (String)Leitor["NomeCategoria"];
+            this.Imagem = (String)Leitor["ImagemProduto"];
+            this.Descricao = (String)Leitor["DescricaoProduto"];
+            this.Preco = (Double)Leitor["PrecoProduto"];
+
+            Conexao.Close();
+        }
         public static List<DLC> ListarDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -159,7 +198,5 @@ namespace WebSite.Models
 
             return DLC;
         }
-
     }
-
 }

@@ -2499,7 +2499,7 @@ body {
     margin: 100px auto;
     position: relative;
     margin:2px;
-    padding-left:15%;
+    padding-left:10%;
 }
 
 .nav_tabs h2{
@@ -2566,12 +2566,13 @@ text-align: center;
 .rd_tabs:checked~.content_tab{
     display:block;
     position:absolute;
-    left:15.9%;
+    left:9.69%;
     top:70px;
 }
 
 .Produto{
      background-color: #B01030;
+     padding: 50px 50px;
      
 }
 .texto{
