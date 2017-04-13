@@ -198,5 +198,61 @@ namespace WebSite.Models
 
             return DLC;
         }
+        public Boolean Novo()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "INSERT INTO Produto (Nome, Categoria, Imagem, Preco) VALUES (@Nome, @Categoria, @Imagem, @Preco);";
+            Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
+            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
+            Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
+            Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
+            Comando.Parameters.AddWithValue("@ID", this.ID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
+        public Boolean Alterar()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "UPDATE Produto SET NomeProduto = @NomeProduto, NomeCategoria = @NomeCategoria, ImagemProduto = @ImagemProduto, PrecoProduto = @PrecoProduto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
+            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
+            Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
+            Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
+            Comando.Parameters.AddWithValue("@ID", this.ID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
+        public Boolean Apagar()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "DELETE FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.Parameters.AddWithValue("Produto.CategoriaID", this.CategoriaID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
     }
 }

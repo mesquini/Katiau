@@ -15,7 +15,13 @@ namespace WebSite.Controllers
             {
                 Response.Redirect("/Home/Index", false);
             }
-            
+
+
+            List<Usuario> User = Usuario.ListarU();
+            ViewBag.User = User;
+
+            List<Produto> Prod = Produto.ListarP();
+            ViewBag.Prod = Prod;
 
             List<DLC> DLCs = DLC.ListarDLC();
             ViewBag.DLCs = DLCs;
@@ -81,7 +87,7 @@ namespace WebSite.Controllers
 
             if (Request.HttpMethod == "POST")
             {
-                Int32 IDCategoria = Convert.ToInt32(Request.Form["Categoria"]);
+                Int32 IDCategoria = Convert.ToInt32(Request.Form["Produto.CategoriaID"]);
                 Categoria C = new Categoria(IDCategoria);
 
                 String Nome = Request.Form["NomeProduto"];
@@ -119,7 +125,13 @@ namespace WebSite.Controllers
             {
                 Response.Redirect("/Home/Index", false);
             }
-            
+
+            Usuario U = new Usuario(Convert.ToInt32(ID));
+            ViewBag.User = U;
+
+            Produto P = new Produto(Convert.ToInt32(ID));
+            ViewBag.Prod = P;
+
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
 
@@ -138,11 +150,11 @@ namespace WebSite.Controllers
 
             if (dlc.Apagar())
             {
-                TempData["Mensagem"] = "Post removido com sucesso!";
+                TempData["Mensagem"] = "DLC removido com sucesso!";
             }
             else
             {
-                TempData["Mensagem"] = "Não foi possível remover o Post. Verifique os dados e tente novamente";
+                TempData["Mensagem"] = "Não foi possível remover o DLC. Verifique os dados e tente novamente";
             }
 
             return RedirectToAction("Listar");
