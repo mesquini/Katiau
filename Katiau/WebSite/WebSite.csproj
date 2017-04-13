@@ -252,6 +252,7 @@
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DLCsController.cs" />
     <Compile Include="Controllers\DriftController.cs" />
     <Compile Include="Controllers\ExecuçaoController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />

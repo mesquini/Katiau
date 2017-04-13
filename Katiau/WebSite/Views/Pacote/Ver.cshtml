@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -113,9 +113,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div>
                 <h2>@(ViewBag.DLCs.Nome)</h2>
 
-                <h3>Enviado por @(ViewBag.Prod.Usuario.Email) em @(ViewBag.Prod.DataPostagem.ToShortDateString()) às @(ViewBag.Prod.DataPostagem.ToLongTimeString())</h3>
+                <h3>Categoria: @(ViewBag.DLCs.Categoria) Imagem: @(ViewBag.DLCs.Imagem) Preço: R$@(ViewBag.DLCs.Preco)</h3>
 
-                <p>@(ViewBag.Prod.Texto)</p>
+                <p>@(ViewBag.DLCs.Descricao)</p>
             </div>
         </section>
 
