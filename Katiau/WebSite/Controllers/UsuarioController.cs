@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.Security;
 using Website.Models;
 using WebSite.Models;
 
@@ -74,6 +75,24 @@ namespace WebSite.Controllers
             ViewBag.User = User;
 
             return View();
+        }
+
+        public ActionResult Cadastrar()
+        {
+            if (Request.HttpMethod == "POST")
+            {
+                Usuario User = new Usuario();
+                User.Email = Request.Form["email"];
+                User.Nick = Request.Form["nick"];
+                User.Nome = Request.Form["fname"];
+                User.Sobrenome = Request.Form["lname"];
+                User.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Request.Form["senha"], "SHA1");
+                User.Nascimento = Request.Form["datepicker"];
+                User.ImagemPerfil = Request.Form["imagemPerfil"];
+
+            }
+            return View();
+            
         }
 
        

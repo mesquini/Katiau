@@ -60,6 +60,36 @@ namespace Website.Models
 
             Conexao.Close();
         }
+        public Boolean NovoUser(String email, String senha, String nick, String nome, String lnome, String Nascimento, String Imagemperfil)
+        {
+
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
+              + "VALUES (@ID, @Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
+            Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
+            Comando.Parameters.AddWithValue("@Email", this.Email);
+            Comando.Parameters.AddWithValue("@NickU", this.Nick);
+            Comando.Parameters.AddWithValue("@Nome", this.Nome);
+            Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
+            Comando.Parameters.AddWithValue("@Senha", this.Senha);
+            Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
+            Comando.Parameters.AddWithValue("@Bio", "Biografia");
+            Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
+            Comando.Parameters.AddWithValue("@Adm", 0);
+
+
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
+
         public Boolean Novo()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -88,7 +118,7 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-        
+
         public static List<Usuario> ListarU()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
