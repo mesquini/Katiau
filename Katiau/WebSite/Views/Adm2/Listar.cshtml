@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <section>
                                 <table border="1">
                                     <thead>
-                                        <tr><a href="/Produto/Novo/@(ViewBag.Prod.ID)">Cadastrar um novo Pacote</a></tr> 
+                                        <tr><a href="/Produto/Novo/@(ViewBag.Produto.ID)">Cadastrar um novo Pacote</a></tr> 
                                         <tr class="Produto">
                                             
                                             <th class="texto">Nome</th>
@@ -176,9 +176,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
                                                 <td>R$@(P.Preco)</td>
                                                 <td>
-                                                    <a href="/Produto/Ver/@(P.Prod.ID)">Ver</a> |
-                                                    <a href="/Produto/Alterar/@(P.Prod.ID)">Alterar</a> |
-                                                    <a href="/Produto/Apagar/@(P.Prod.ID)">Apagar</a>
+                                                    <a href="/Produto/Ver/@(P.Prod.CategoriaID)">Ver</a> |
+                                                    <a href="/Produto/Alterar/@(P.Prod.CategoriaID)">Alterar</a> |
+                                                    <a href="/Produto/Apagar/@(P.Prod.CategoriaID)">Apagar</a>
                                                 </td>
                                             </tr>
                                             
