@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -105,15 +105,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        <h2>Ver Post</h2>
         <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
     <div class="CriarUser">
         <section>
-            <h3>Preencha os campos abaixo para criar um novo Post</h3>
+            
             <h4>@(ViewBag.Mensagem)</h4>
+          <!--  <div class="contact-form">
             <form method="post" action="/Usuario/Novo">
-                
+                <select name="Usuario" id="Usuario">
+                    @foreach (var C in ViewBag.User) { }
+
+                </select>
 
                 <p> Nick: <input type="text" name="NickU" id="NickU" placeholder="Digite o Nick" required /></p>
                 <p> Nome: <input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
@@ -125,7 +128,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p> Biografia: <textarea rows="10" cols="40" name="BioU" id="BioU" placeholder="Digite Bio" ></textarea></p>
                 <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
             </form>
-        </section>
+                </div>-->
+            <form id="post" action="" method="post" enctype="text/plain">
+                <fieldset id="fs1">
+                    <h2 class="fs-title">Cadastrar novo usuário</h2>
+                    <h3 class="fs-subtitle">Digite suas informações</h3>
+                    <p><input type="text" name="NickU" id="NickU" placeholder="Digite o Nickname" required /></p>
+                    <p><input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
+                    <p><input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Digite o Sobrenome" required /></p>
+                    <p><input type="text" name="EmailU" id="EmailU" placeholder="Digite o E-mail" required /></p>
+                    <p><input type="password" name="SenhaU" id="SenhaU" placeholder="Digite a Senha" required /></p>
+                    <p><input type="file" name="ImagemU" id="ImagemU" placeholder="Imagem Perfil" /></p>
+                    <p><input type="text" name="NascimentoU" id="NascimentoU" placeholder="DD/MM/AAAA" required /></p>
+                    <p><textarea rows="10" cols="40" name="BioU" id="BioU" placeholder="Digite a sua Biografia"></textarea></p>
+                    <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+                </fieldset>
+                </form>
+</section>
 
 
     </div>

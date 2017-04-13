@@ -281,7 +281,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\DLC.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -315,8 +314,6 @@
     <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
-    <Content Include="Views\Adm2\Ver.cshtml" />
-    <Content Include="Views\Adm2\Alterar.cshtml" />
     <Content Include="Views\NovoPost\Index.cshtml" />
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\DLCs\Alterar.cshtml" />
@@ -325,8 +322,10 @@
     <Content Include="Views\Usuario\Novo.cshtml" />
     <Content Include="Views\DLCs\Ver.cshtml" />
     <Content Include="Views\Pacote\Alterar.cshtml" />
-    <Content Include="Views\Adm2\Novo.cshtml" />
     <Content Include="Views\Pacote\Ver.cshtml" />
+    <Content Include="Views\Usuario\Listar.cshtml" />
+    <Content Include="Views\Pacote\Listar.cshtml" />
+    <Content Include="Views\DLCs\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -26,6 +26,7 @@ namespace WebSite.Controllers
             List<DLC> DLCs = DLC.ListarDLC();
             ViewBag.DLCs = DLCs;
 
+
             if (TempData["Mensagem"] != null)
             {
                 ViewBag.Mensagem = TempData["Mensagem"].ToString();

@@ -1236,6 +1236,7 @@ h2.typoh2{
 .contact-form {
     margin: 3em 0 0;
 	padding-bottom: 2em;
+    margin-left:500px;
 }
 .contact-form input[type="text"] {
   display: inline-block;
@@ -2423,6 +2424,55 @@ body {
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #B01030;
 }
+
+
+#post {
+	width: 1200px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#post fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#post fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#post input, #post textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#post .action-button {
+	width: 100px;
+	background: #B01030;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
 /*headings*/
 .fs-title {
 	font-size: 15px;
@@ -2499,7 +2549,7 @@ body {
     margin: 100px auto;
     position: relative;
     margin:2px;
-    padding-left:15%;
+    padding-left:10%;
 }
 
 .nav_tabs h2{
@@ -2566,12 +2616,13 @@ text-align: center;
 .rd_tabs:checked~.content_tab{
     display:block;
     position:absolute;
-    left:15.9%;
+    left:9.69%;
     top:70px;
 }
 
 .Produto{
      background-color: #B01030;
+     padding: 50px 50px;
      
 }
 .texto{
