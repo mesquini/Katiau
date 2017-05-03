@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
+using Website.Models;
 
 namespace WebSite.Models
 {
@@ -108,7 +109,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
+            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -116,6 +117,7 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 Produto P = new Produto();
+                P.ID = ((Int32)Leitor["CategoriaID"]);
                 P.Nome = ((String)Leitor["NomeProduto"]);
                 P.Categoria = (String)Leitor["NomeCategoria"];
                 P.Imagem = ((String)Leitor["ImagemProduto"]);
@@ -176,7 +178,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -184,6 +186,7 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 DLC D = new DLC();
+                D.ID = ((Int32)Leitor["CategoriaID"]);
                 D.Nome = ((String)Leitor["NomeProduto"]);
                 D.Categoria = (String)Leitor["NomeCategoria"];
                 D.Imagem = ((String)Leitor["ImagemProduto"]);
