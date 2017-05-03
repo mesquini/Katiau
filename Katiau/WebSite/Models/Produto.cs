@@ -12,6 +12,7 @@ namespace WebSite.Models
         public Int32 ID { get; set; }
         public Int32 CategoriaID { get; set; }
         public String Nome { get; set; }
+        public int Versao { get; set; }
         public String Categoria { get; set; }
         public String Imagem { get; set; }
         public String Descricao { get; set; }
@@ -34,10 +35,11 @@ namespace WebSite.Models
 
         Leitor.Read();
 
+
         this.ID = (Int32)Leitor["ID"];
-        this.CategoriaID = (Int32)Leitor["CategoriaID"];
+        CategoriaID = (Int32)Leitor["CategoriaID"];
         this.Nome = (String)Leitor["NomeProduto"];
-        this.Categoria = (String)Leitor["NomeCategoria"];
+        Versao = (int)Leitor["VersaoCategoria"];
         this.Imagem = (String)Leitor["ImagemProduto"];
         this.Descricao = (String)Leitor["DescricaoProduto"];
         this.Preco = (Double)Leitor["PrecoProduto"];
@@ -51,7 +53,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (Nome, Categoria, Imagem, Preco) VALUES (@Nome, @Categoria, @Imagem, @Preco);";
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, NomeCategoria, ImagemProduto, PrecoProduto) VALUES (@NomeProduto, @NomeCategoria, @ImagemProduto, @PrecoProduto);";
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
             Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
