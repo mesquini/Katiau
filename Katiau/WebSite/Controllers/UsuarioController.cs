@@ -44,36 +44,32 @@ namespace WebSite.Controllers
             {
                 Usuario U = (Usuario)Session["User"];
 
-                Int32 IDUser = Convert.ToInt32(Request.Form["Usuario"]);
-                Usuario Users = new Usuario(IDUser);
+                String Email = Request.Form["EmailU"];
+                String Nick = Request.Form["NickU"];
+                String Nome = Request.Form["NomeU"];
+                String Sobrenome = Request.Form["SobrenomeU"];
+                String Senha = Request.Form["SenhaU"];
+                String Nascimento = Request.Form["NascimentoU"];
+                String Imagem = Request.Form["ImagemU"];
 
-                String Email = Request.Form["Email"];
-                String Nick = Request.Form["Nick"];
-                String Nome = Request.Form["Nome"];
-                String Sobrenome = Request.Form["Sobrenome"];
-                String Senha = Request.Form["Senha"];
-                String Nascimento = Request.Form["Nascimento"];
-                String Bio = Request.Form["Bio"];
-                String Imagem = Request.Form["ImagemPerfil"];
-
-                Usuario NovoUser = new Usuario(Convert.ToInt32(IDUser));
+                Usuario NovoUser = new Usuario();
 
                 NovoUser.Email = Email;
                 NovoUser.Nick = Nick;
                 NovoUser.Nome = Nome;
                 NovoUser.Sobrenome = Sobrenome;
-                NovoUser.Senha = Senha;
+                NovoUser.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1"); ;
                 NovoUser.Nick = Nick;
                 NovoUser.Nascimento = Nascimento;
                 NovoUser.ImagemPerfil = Imagem;
 
                 if (NovoUser.Novo())
                 {
-                    ViewBag.Mensagem = "Post criado com sucesso!";
+                    ViewBag.Mensagem = "Usuário criado com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar o Usuário. Verifique os dados e tente novamente.";
                 }
             }
 
@@ -87,14 +83,34 @@ namespace WebSite.Controllers
         {
             if (Request.HttpMethod == "POST")
             {
-                Usuario User = new Usuario();
-                User.Email = Request.Form["email"];
-                User.Nick = Request.Form["nick"];
-                User.Nome = Request.Form["fname"];
-                User.Sobrenome = Request.Form["lname"];
-                User.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Request.Form["senha"], "SHA1");
-                User.Nascimento = Request.Form["datepicker"];
-                User.ImagemPerfil = Request.Form["imagemPerfil"];
+                String Email = Request.Form["EmailU"];
+                String Nick = Request.Form["NickU"];
+                String Nome = Request.Form["NomeU"];
+                String Sobrenome = Request.Form["SobrenomeU"];
+                String Senha = Request.Form["SenhaU"];
+                String Nascimento = Request.Form["NascimentoU"];
+                String Imagem = Request.Form["ImagemU"];
+
+                Usuario NovoUser = new Usuario();
+
+                NovoUser.Email = Email;
+                NovoUser.Nick = Nick;
+                NovoUser.Nome = Nome;
+                NovoUser.Sobrenome = Sobrenome;
+                NovoUser.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1"); ;
+                NovoUser.Nick = Nick;
+                NovoUser.Nascimento = Nascimento;
+                NovoUser.ImagemPerfil = Imagem;
+
+                if (NovoUser.Novo())
+                {
+                    ViewBag.Mensagem = "Usuário criado com sucesso!";
+                    Response.Redirect("~/Perfil/Index");
+                }
+                else
+                {
+                    ViewBag.Mensagem = "Falha ao cadastrar, verifique os campos e tente novamente.";
+                }
 
             }
             return View();
