@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <table border="1">
 
                                 <thead>
-                                <tr><a href="/Usuario/Novo/@(ViewBag.ID)">Cadastrar novo Usuário ou Adm</a></tr> 
+                                <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr> 
                                     <tr class="Produto">
                                         <th class="texto">ID</th>
                                         <th class="texto">Nick</th>
@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <section>
                                 <table border="1">
                                     <thead>
-                                        <tr><a href="/Produto/Novo/@(ViewBag.Produto.ID)">Cadastrar um novo Pacote</a></tr> 
+                                        <tr><a href="/Produto/Novo/">Cadastrar um novo Pacote</a></tr> 
                                         <tr class="Produto">
                                             
                                             <th class="texto">Nome</th>
@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var P in ViewBag.Prod)
+                                       @* @foreach (var P in ViewBag.Prod)*@
                                         {
                                             <tr>
                                                 <!--PACOTES-->
@@ -198,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <section>
                         <table border="1">
                             <thead>
-                                <tr><a href="/Produto/Novo/@(ViewBag.DLCs.ID)">Cadastrar uma nova DLC</a></tr> 
+                                <tr><a href="/Produto/Novo/">Cadastrar uma nova DLC</a></tr> 
                                 <tr class="Produto">
 
                                     <th class="texto">Nome</th>
