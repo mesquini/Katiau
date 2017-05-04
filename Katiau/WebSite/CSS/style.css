@@ -697,6 +697,7 @@ a.list-group-item:hover {
 }
 
 .copywrite{
+    margin-top: 124px;
     padding: 8px;
     background: #333;
     width:100%;
@@ -2475,14 +2476,14 @@ body {
 }
 /*headings*/
 .fs-title {
-	font-size: 15px;
+	font-size: 30px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
 }
 .fs-subtitle {
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 22px;
 	color: #666;
 	margin-bottom: 20px;
 }
