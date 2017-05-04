@@ -43,41 +43,39 @@ namespace WebSite.Controllers
             {
                 Usuario U = (Usuario)Session["User"];
 
-                Int32 IDUser = Convert.ToInt32(Request.Form["Usuario"]);
-                Usuario Users = new Usuario(IDUser);
+                Int32 IDProduto = Convert.ToInt32(Request.Form["Produto"]);
+                Produto Prods = new Produto(IDProduto);
 
-                String Email = Request.Form["Email"];
-                String Nick = Request.Form["Nick"];
-                String Nome = Request.Form["Nome"];
-                String Sobrenome = Request.Form["Sobrenome"];
-                String Senha = Request.Form["Senha"];
-                String Nascimento = Request.Form["Nascimento"];
-                String Bio = Request.Form["Bio"];
-                String Imagem = Request.Form["ImagemPerfil"];
+                String Nome = Request.Form["NomeProduto"];
+                Int32 CategoriaID = Int32.Parse (Request.Form["CategoriaID"]);
+                int Versao = int.Parse( Request.Form["Nome"]);
+                String Categoria = Request.Form["NomeCategori"];
+                String Imagem = Request.Form["ImagemProduto"];
+                String Descricao = Request.Form["DescricaoProduto"];
+                Double Preco = Double.Parse(Request.Form["PrecoProduto"]);
 
-                Usuario NovoUser = new Usuario(Convert.ToInt32(IDUser));
+                Produto NovoProduto = new Produto(Convert.ToInt32(IDProduto));
 
-                NovoUser.Email = Email;
-                NovoUser.Nick = Nick;
-                NovoUser.Nome = Nome;
-                NovoUser.Sobrenome = Sobrenome;
-                NovoUser.Senha = Senha;
-                NovoUser.Nick = Nick;
-                NovoUser.Nascimento = Nascimento;
-                NovoUser.ImagemPerfil = Imagem;
+                NovoProduto.Nome = Nome;
+                NovoProduto.Versao = Versao;
+                NovoProduto.Categoria = Categoria;
+                NovoProduto.CategoriaID = CategoriaID;
+                NovoProduto.Imagem = Imagem;
+                NovoProduto.Descricao = Descricao;
+                NovoProduto.Preco = Preco;
 
-                if (NovoUser.Novo())
+                if (NovoProduto.Novo())
                 {
-                    ViewBag.Mensagem = "Post criado com sucesso!";
+                    ViewBag.Mensagem = "DLC criada com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar a DLC. Verifique os dados e tente novamente.";
                 }
             }
 
-            List<Usuario> User = Usuario.ListarU();
-            ViewBag.User = User;
+            List<Produto> Produtos = Produto.ListarP();
+            ViewBag.Produtos = Produtos;
 
             return View();
         }
@@ -90,8 +88,8 @@ namespace WebSite.Controllers
                 Response.Redirect("/Home/Index", false);
             }
 
-            Usuario U = new Usuario(Convert.ToInt32(ID));
-            ViewBag.User = U;
+            Produto Prod = new Produto(Convert.ToInt32(ID));
+            ViewBag.Prod = Prod;
 
             return View();
         }
@@ -103,10 +101,10 @@ namespace WebSite.Controllers
                 Response.Redirect("/Home/Index", false);
             }
 
-            Usuario U = new Usuario(Convert.ToInt32(ID));
+            Produto Prod = new Produto(Convert.ToInt32(ID));
 
 
-            if (U.Apagar())
+            if (Prod.Apagar())
             {
                 TempData["Mensagem"] = "Usuario removido com sucesso!";
             }
