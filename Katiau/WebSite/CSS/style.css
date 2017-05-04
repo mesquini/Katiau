@@ -702,7 +702,14 @@ a.list-group-item:hover {
     width:100%;
     text-align:center;
 }
-
+.copywriteCadastro{
+    padding: 8px;
+    background: #333;
+    width:100%;
+    color:white;
+    text-align:center;
+    margin-top:150px;
+}
 .copywritenovo{
     position: absolute;
     top: 932px;
@@ -2479,12 +2486,14 @@ body {
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
+    font-family:'Times New Roman';
 }
 .fs-subtitle {
 	font-weight: normal;
 	font-size: 13px;
 	color: #666;
 	margin-bottom: 20px;
+    font-family:'Times New Roman';
 }
 /*progressbar*/
 #progressbar {
@@ -2747,13 +2756,21 @@ text-align: center;
     padding-top:10px;
     margin-bottom:10px;
     width:50%;
-    float:right;
+    float:right;  
+    font-family: 'Times New Roman';
 }
 .NivelAcesso1{
     margin-bottom:10px;
     padding-top:10px;
-    width:50%;
+    width:calc(50% - 20px);
     float:right;
+    font-family: 'Times New Roman';
+}
+.voltarLista{
+    text-align:center;
+    margin-top:15px;
+    font-family: 'Times New Roman';
+    font-size: 25px;
 }
 
 
