@@ -2458,7 +2458,7 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;
-	color: #2C3E50;
+	color: #B01030;
 	font-size: 13px;
 }
 /*buttons*/
@@ -2743,8 +2743,18 @@ text-align: center;
     color: gray;
     padding: 1px;
 }
-
-/*Fim da Parte Relacionada a paguser*/
+.NivelAcesso{
+    padding-top:10px;
+    margin-bottom:10px;
+    width:50%;
+    float:right;
+}
+.NivelAcesso1{
+    margin-bottom:10px;
+    padding-top:10px;
+    width:50%;
+    float:right;
+}
 
 
 
