@@ -2476,12 +2476,14 @@ body {
 }
 /*headings*/
 .fs-title {
+    font-family: 'Times New Roman';
 	font-size: 30px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
 }
 .fs-subtitle {
+    font-family: 'Times New Roman';
 	font-weight: normal;
 	font-size: 22px;
 	color: #666;
