@@ -2561,7 +2561,6 @@ body {
     margin: 100px auto;
     position: relative;
     margin-top:15px;
-    padding-left:10%;
 }
 
 .nav_tabs h2{
@@ -2591,12 +2590,11 @@ text-align: center;
 }
 
 .nav_tabs label{
-    width: 350px;
+    width: 436px;
     padding: 25px;
     background-color: #B01030;
     display: block;
     color: #ffffff;
-
     cursor: pointer;
     text-align: center;
 }
@@ -2619,16 +2617,16 @@ text-align: center;
     display: none;
     position:relative;
     height: 600px;
-    width:1400px;
+    width:1744px;
     left:0;
     padding: 10px;
     background-color:#ffffff;
+    padding-bottom: 840px;
 }
 
 .rd_tabs:checked~.content_tab{
     display:block;
     position:absolute;
-    left:9.69%;
     top:70px;
 }
 
@@ -2676,7 +2674,7 @@ text-align: center;
 .seguraTudo .imgEdit{  
     border-radius: 1000px;
     width:15%;
-    height:auto;
+    height:35%;
     float: left;
     padding: 25px;
 }

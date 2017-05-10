@@ -128,8 +128,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                class="imgEdit">
        
         <div style="padding: 60px;">
-           <e class="nicknamae">@ViewBag.NomeU "@ViewBag.NickU" @ViewBag.SobrenomeU</e>
-           <p class="email"> @ViewBag.EmailU </p><br />                
+            <input type="text" id="NomeU" name="NomeU" placeholder="Nome" />
+            <input type="text" id="NickU" name="NickU" placeholder="Nick" />
+            <input type="text" id="SobrenomeU" name="SobrenomeU" placeholder="Sobrenome" /><br />   
+            <input type="text" id="EmailU" name="EmailU" placeholder="Email" /> 
         </div>
         
         <div class="infoDiv">
@@ -139,13 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <strong class="infoText"> Bio do Usuário: </strong>
                 <div class="outBox">
                     <div class="innerBox">
-                        @if (ViewBag.BioU == "Biografia")
-                        {
-                        <p style="padding: 15px;"> Edite sua biografia para visualiza-la! </p>}
-                        else
-                        {
-                        <p style="padding: 15px;"> @ViewBag.BioU </p>
-                        }
+                        <textarea  id="BioU" name="BioU" placeholder="Digite sua Biografia"></textarea>   
                     </div>
                 </div><br/><br/>
                 <strong class="infoText"> Comentários do Usuário: </strong>

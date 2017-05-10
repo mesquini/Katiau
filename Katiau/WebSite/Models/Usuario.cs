@@ -16,6 +16,7 @@ namespace Website.Models
         public String Nascimento { get; set; }
         public String Bio { get; set; }
         public String ImagemPerfil { get; set; }
+        public Boolean Adm { get; set; }
         
         public Usuario() { }
 
@@ -57,6 +58,13 @@ namespace Website.Models
             this.ID = (Int32)Leitor["ID"];
             this.Email = (String)Leitor["EmailU"];
             this.Senha = (String)Leitor["SenhaU"];
+            this.Nick = (String)Leitor["NickU"];
+            this.Nome = (String)Leitor["NomeU"];
+            this.Sobrenome = (String)Leitor["SobrenomeU"];
+            this.ImagemPerfil = (String)Leitor["ImagemU"];
+            this.Bio = (String)Leitor["BioU"];
+            
+
 
             Conexao.Close();
         }
