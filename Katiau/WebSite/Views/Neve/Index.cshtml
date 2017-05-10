@@ -64,34 +64,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="~/JS/index.js"></script>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="/Home/Index">
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
 
-                                                        </fieldset>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </span>
-                                    </li>
+                                            </span>
+                                        </li>
+                                    }
+                                    
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
+                                                            <a href="~/Home/Sair">Sair</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+
                                 </ul>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -115,16 +143,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="top-blog">
                         <a class="fast"> Dirigir na Neve </a>
-                        <p>Postado por <a>Matt</a> no <a >Alt+Tab</a> | <a>4 Comentários</a></p>
+                        <p>Postado por <a>Matt</a> no <a>Alt+Tab</a> | <a>4 Comentários</a></p>
                         <p class="sed">
-                                Dirigir na neve exige cuidados especiais com o veículo e uma atenção redobrada do motorista. A pista fica muito escorregadia 
-                            e as chances de se envolver em um acidente aumentam. 
-                                Na neve, são dois mundos diferentes: um carro leve com tração dianteira é sempre um dançarino desajeitado perto de um utilitário,
-                            esporte ou não, pesadão e com tração nas quatro rodas. O peso maior ajuda aos pneus acharem o asfalto e a tração 4×4 te garantem 
-                            dirigibilidade e tração muito superiores. Basta rodar alguns quilômetros na neve para concordar com os americanos que moram em locais 
+                            Dirigir na neve exige cuidados especiais com o veículo e uma atenção redobrada do motorista. A pista fica muito escorregadia
+                            e as chances de se envolver em um acidente aumentam.
+                            Na neve, são dois mundos diferentes: um carro leve com tração dianteira é sempre um dançarino desajeitado perto de um utilitário,
+                            esporte ou não, pesadão e com tração nas quatro rodas. O peso maior ajuda aos pneus acharem o asfalto e a tração 4×4 te garantem
+                            dirigibilidade e tração muito superiores. Basta rodar alguns quilômetros na neve para concordar com os americanos que moram em locais
                             com inverno rigoroso: um picapão ou suve se torna fator de segurança, principalmente quando o motorista não tem lá muita vocação para piloto de rali.
-                            é importante que saiba duas coisas essenciais para dirigir durante o inverno na Europa. Em muitos países do Velho Continente, é exigido pneus de inverno, 
-                            assim, como correntes de neve. Os países que geralmente exigem esses dois itens, são aqueles que se encontram mais ao norte do continente, onde a 
+                            é importante que saiba duas coisas essenciais para dirigir durante o inverno na Europa. Em muitos países do Velho Continente, é exigido pneus de inverno,
+                            assim, como correntes de neve. Os países que geralmente exigem esses dois itens, são aqueles que se encontram mais ao norte do continente, onde a
                             temperatura é mais baixa e apresenta maior probabilidade de cair neve.
                         </p>
                         <div class="clearfix"> </div>
@@ -156,7 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading"><a >mesquini</a></h4>
+                        <h4 class="media-heading"><a>mesquini</a></h4>
                         <p> Sou obrigado a falar, esse jogo tá uma porr*! </p>
                     </div>
                 </div>
@@ -210,7 +238,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos Reservados | Design by <a href="http://www.w3layouts.com" style="color: #B01030">w3Layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos Reservados | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3Layouts</a></p>
         </div>
     </div>
 

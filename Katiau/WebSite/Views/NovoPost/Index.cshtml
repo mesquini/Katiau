@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li >
+                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -63,6 +63,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="/Home/Index">
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+                                    
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
+                                                            <a href="~/Home/Sair">Sair</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+
                                 </ul>
                             </div>
                             <!--/navbar collapse-->
@@ -77,27 +131,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 
-    <!--TRAB-->                  
+    <!--TRAB-->
 
     <div class="single-middle">
 
         <h3>Criar um novo post</h3>
-       
-    <!---->
-      <!--  <form>
-            <div class="col-md-4 comment">
-                <input type="text"cols="4234234" rows="1" value="Titulo" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Titulo';}">
-            </div>
-            <div class="col-md-4 comment">
-                <input type="file" placeholder="Imagem" name="imagemPerfil" />
-            </div>
-            <div class="clearfix"> </div>
-            <textarea cols="100" rows="6" value="Mensagem" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Mensagem';}">Mensagem</textarea>
-            <br />
-            <br />
-            <input class="botaoenviar" type="submit" value="Enviar">
 
-        </form> -->
+        <!---->
+        <!--  <form>
+              <div class="col-md-4 comment">
+                  <input type="text"cols="4234234" rows="1" value="Titulo" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Titulo';}">
+              </div>
+              <div class="col-md-4 comment">
+                  <input type="file" placeholder="Imagem" name="imagemPerfil" />
+              </div>
+              <div class="clearfix"> </div>
+              <textarea cols="100" rows="6" value="Mensagem" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Mensagem';}">Mensagem</textarea>
+              <br />
+              <br />
+              <input class="botaoenviar" type="submit" value="Enviar">
+
+          </form> -->
         <div class="contact-form">
             <form>
                 <input type="text" placeholder="Titulo" required="">
@@ -108,15 +162,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <input type="reset" value="Limpar Campos" />
             </form>
         </div>
-    <div class="single-bottom">
-        
-    </div>
+        <div class="single-bottom">
+
+        </div>
     </div>
     <!-- /TRAB-->
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030">w3Layouts</a></p>
+            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030;">W3Layouts</a></p>
         </div>
     </div>
 
