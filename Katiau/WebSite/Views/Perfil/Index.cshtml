@@ -124,13 +124,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="seguraTudo">
 
-        <input type="image" title="Editar Informações" id="edit" src="/images/venda-3.jpg" onmouseover="this.src = '/images/useredit - hover.png'" onmouseout="this.src = '/images/venda-3.jpg'" 
+        <input type="image" title="Editar Informações" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'" onmouseout="this.src = '/images/@ViewBag.ImagemU'" 
                class="imgEdit">
        
         <div style="padding: 60px;">
-           <e class="nicknamae">ID: Nick: Nome: Data de Nascimento:</e>
+           <e class="nicknamae">@ViewBag.NomeU "@ViewBag.NickU" @ViewBag.SobrenomeU</e>
            <input type="button" title="Sair" id="logout" value="Log Off" class="butaoSai">
-           <p class="email"> Email: </p><br />                
+           <p class="email"> @ViewBag.EmailU </p><br />                
         </div>
         
         <div class="infoDiv">
@@ -140,7 +140,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <strong class="infoText"> Bio do Usuário: </strong>
                 <div class="outBox">
                     <div class="innerBox">
-                        <p style="padding: 15px;"> Oi, essa é a minha bio! :D Quer ser meu amigo? </p>
+                        @if (ViewBag.BioU == "Biografia")
+                        {
+                        <p style="padding: 15px;"> Edite sua biografia para visualiza-la! </p>}
+                        else
+                        {
+                        <p style="padding: 15px;"> @ViewBag.BioU </p>
+                        }
                     </div>
                 </div><br/><br/>
                 <strong class="infoText"> Comentários do Usuário: </strong>
