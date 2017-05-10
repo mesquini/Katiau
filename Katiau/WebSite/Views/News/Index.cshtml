@@ -64,34 +64,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="contact.html">Contato</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="~/JS/index.js"></script>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="/Home/Index">
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
 
-                                                        </fieldset>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </span>
-                                    </li>
+                                            </span>
+                                        </li>
+                                    }
+
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
+                                                            <a href="~/Home/Sair">Sair</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+
                                 </ul>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -118,21 +146,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p>Postado por <a>Matt</a> no <a>Assuntos Gerais</a> | <a>4 Comentários</a></p>
                         <p class="sed">
 
-                          Saudações Katchuga Destroyers! Sente-se, aperte os cintos e dê um gole nesse energético, 
-                          pois este é o primeiro Alt+Tab! Aqui colocaremos todos as informações sobre atualizações, balanceamentos, novidades sobre um jogo que ainda nem 
-                          foi lançado, mas já está em nossos corações.<br />
-                            
-                          Para começar, a notícia que todos esperavam: o Open Beta foi finalizado. A nossa equipe está trabalhando para absorver todo o feedback da comunidade
-                          e tornar o jogo ainda mais realista e balanceado.<br />
-                            
-                          Em primeiro lugar, a mecânica de direção dos carros foi melhorada, diminuindo o tempo de resposta do joystick, deixando a experiência do jogador mais
-                          emocionante e próxima da realidade.<br />
-                            
-                          Outra mudança interessante ocorreu nas diversas pistas disponíveis no jogo. Não contamos agora somente com pistas oficiais de torneios ao redor do
-                          mundo, mas também áreas urbanas, trilhas na floresta, tem até um lugar especial para aqueles que queiram se aventurar na neve.<br />
+                            Saudações Katchuga Destroyers! Sente-se, aperte os cintos e dê um gole nesse energético,
+                            pois este é o primeiro Alt+Tab! Aqui colocaremos todos as informações sobre atualizações, balanceamentos, novidades sobre um jogo que ainda nem
+                            foi lançado, mas já está em nossos corações.<br />
 
-                          Por último, mas não menos importante, um bug foi corrigido. Nele, sempre que o jogador ganhava um torneio pela a facção "Mesquini", o carro dava um commit.<br />
-                        
+                            Para começar, a notícia que todos esperavam: o Open Beta foi finalizado. A nossa equipe está trabalhando para absorver todo o feedback da comunidade
+                            e tornar o jogo ainda mais realista e balanceado.<br />
+
+                            Em primeiro lugar, a mecânica de direção dos carros foi melhorada, diminuindo o tempo de resposta do joystick, deixando a experiência do jogador mais
+                            emocionante e próxima da realidade.<br />
+
+                            Outra mudança interessante ocorreu nas diversas pistas disponíveis no jogo. Não contamos agora somente com pistas oficiais de torneios ao redor do
+                            mundo, mas também áreas urbanas, trilhas na floresta, tem até um lugar especial para aqueles que queiram se aventurar na neve.<br />
+
+                            Por último, mas não menos importante, um bug foi corrigido. Nele, sempre que o jogador ganhava um torneio pela a facção "Mesquini", o carro dava um commit.<br />
+
                         </p>
                         <p>Outros bugs corrigidos e mudanças feitas:</p>
                         <div class="col-md-6 md-in">
