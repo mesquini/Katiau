@@ -64,34 +64,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="~/JS/index.js"></script>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                    
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="/Home/Index">
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
 
-                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
-
-                                                        </fieldset>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </span>
-                                    </li>
+                                            </span>
+                                        </li>
+                                    }
+                                    
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
+                                                            <a href="~/Home/Sair">Sair</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
                                 </ul>
-                            <!--/navbar collapse-->
+                                <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -117,15 +144,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a class="fast"> Drifting </a>
                         <p>Postado por <a>Victoria</a> no <a>Alt+Tab</a> | <a>4 Comentários</a></p>
                         <p class="sed">
-                               Drift ou Drifting, é uma técnica de direção de carros que consiste em deslizar nas curvas escapando a traseira, 
-                            girar o volante para que as rodas dianteiras estejam sempre em uma direção oposta a curva controlando o nível de derrapagem, fazendo o carro literalmente andar de lado. 
-                            Um corredor de rua chamado Keiichi Tsuchiya ficou particularmente interessado no drift de Takahashi, Tsuchiya começou a praticar suas técnicas de drift nas montanhas do Japão, 
-                            e rapidamente ganhou uma grande reputação. Em 1987, uma revista muito popular de tunning e carros concordou em produzir um vídeo sobre as habilidades de Tsuchiya, esse vídeo 
-                            conhecido como Pluspy se tornou um hit e inspirou milhares de corredores profissionais de drift que correm nos circuitos atualmente. Em 1988 o diretor chefe da Option magazine 
+                            Drift ou Drifting, é uma técnica de direção de carros que consiste em deslizar nas curvas escapando a traseira,
+                            girar o volante para que as rodas dianteiras estejam sempre em uma direção oposta a curva controlando o nível de derrapagem, fazendo o carro literalmente andar de lado.
+                            Um corredor de rua chamado Keiichi Tsuchiya ficou particularmente interessado no drift de Takahashi, Tsuchiya começou a praticar suas técnicas de drift nas montanhas do Japão,
+                            e rapidamente ganhou uma grande reputação. Em 1987, uma revista muito popular de tunning e carros concordou em produzir um vídeo sobre as habilidades de Tsuchiya, esse vídeo
+                            conhecido como Pluspy se tornou um hit e inspirou milhares de corredores profissionais de drift que correm nos circuitos atualmente. Em 1988 o diretor chefe da Option magazine
                             Daijiro Inada ajudou a organizar o primeiro torneio especializado em drift.
 
-                                O drift chegou ao Brasil muito tempo depois, o drift no Brasil só começou a ganhar destaque com a popularização do tuning e a chegada de jogos e filmes relacionados, caso do 
-                            filme <i>"Velozes e Furiosos: Desafio em Tóquio"</i> e divulgação feita pela Drift Brazil. Depois de sua estreia vários documentários e matérias em jornais e revistas começaram a falar 
+                            O drift chegou ao Brasil muito tempo depois, o drift no Brasil só começou a ganhar destaque com a popularização do tuning e a chegada de jogos e filmes relacionados, caso do
+                            filme <i>"Velozes e Furiosos: Desafio em Tóquio"</i> e divulgação feita pela Drift Brazil. Depois de sua estreia vários documentários e matérias em jornais e revistas começaram a falar
                             sobre o drift, o drift está representado por diversos clubes e foruns em Portugal e no Brasil.
                         </p>
                         <div class="clearfix"> </div>
@@ -211,7 +238,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau . All rights reserved | Design by <a href="https://w3layouts.com/">W3Layouts</a></p>
+            <p> © 2017 Katiau . All rights reserved | Design by <a href="https://w3layouts.com/" style="color: #B01030;">W3Layouts</a></p>
         </div>
     </div>
 
