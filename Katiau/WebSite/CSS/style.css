@@ -2674,8 +2674,8 @@ text-align: center;
 }
 
 .seguraTudo .imgEdit{  
-    border-radius: 1000px;
-    width:15%;
+    border-radius: 1000%;
+    width:17%;
     height:auto;
     float: left;
     padding: 25px;
