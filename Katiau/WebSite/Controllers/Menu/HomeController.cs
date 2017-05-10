@@ -46,8 +46,12 @@ namespace WebSite.Controllers
 
             if (Session["User"] != null)
             {
+
                 ViewBag.Logado = Session["User"];
+
+
             }
+           
 
             return View();
         }

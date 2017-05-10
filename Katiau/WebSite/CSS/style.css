@@ -697,12 +697,20 @@ a.list-group-item:hover {
 }
 
 .copywrite{
+    margin-top: 124px;
     padding: 8px;
     background: #333;
     width:100%;
     text-align:center;
 }
-
+.copywriteCadastro{
+    padding: 8px;
+    background: #333;
+    width:100%;
+    color:white;
+    text-align:center;
+    margin-top:150px;
+}
 .copywritenovo{
     position: absolute;
     top: 932px;
@@ -2458,7 +2466,7 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;
-	color: #2C3E50;
+	color: #B01030;
 	font-size: 13px;
 }
 /*buttons*/
@@ -2475,16 +2483,20 @@ body {
 }
 /*headings*/
 .fs-title {
-	font-size: 15px;
+    font-family: 'Times New Roman';
+	font-size: 30px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
+    font-family:'Times New Roman';
 }
 .fs-subtitle {
+    font-family: 'Times New Roman';
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 22px;
 	color: #666;
 	margin-bottom: 20px;
+    font-family:'Times New Roman';
 }
 /*progressbar*/
 #progressbar {
@@ -2661,49 +2673,12 @@ text-align: center;
     top: 15%;
 }
 
-.seguraTudo .imgEdit{
-    -moz-border-radius: 1000px;
-    -webkit-border-radius: 1000px;
+.seguraTudo .imgEdit{  
     border-radius: 1000px;
     width:15%;
     height:auto;
     float: left;
     padding: 25px;
-    animation-delay: 12s;
-}
-
-.seguraTudo .imgEdit1{
-    width: 15%;
-	height: auto;
-	border-radius: 100%;
-	position: relative;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-	cursor: default;
-}
-
-.seguraTudo .imgEdit1Transasao{
-    position: absolute;
-	width: 180px;
-	height: 180px;
-	border-radius: 50%;
-	-webkit-perspective: 800px;
-	-moz-perspective: 800px;
-	-o-perspective: 800px;
-	-ms-perspective: 800px;
-	perspective: 800px;
-
-	-webkit-transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
-	-ms-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
-
-	top: 20px;
-	left: 20px;
-	background: #f9f9f9 url(../images/bg.jpg);
-	box-shadow: 
-		0 0 0 20px rgba(255,255,255,0.2), 
-		inset 0 0 3px rgba(115,114, 23, 0.8);
 }
 
 .seguraTudo .infoDiv{
@@ -2743,8 +2718,26 @@ text-align: center;
     color: gray;
     padding: 1px;
 }
-
-/*Fim da Parte Relacionada a paguser*/
+.NivelAcesso{
+    padding-top:10px;
+    margin-bottom:10px;
+    width:50%;
+    float:right;  
+    font-family: 'Times New Roman';
+}
+.NivelAcesso1{
+    margin-bottom:10px;
+    padding-top:10px;
+    width:calc(50% - 20px);
+    float:right;
+    font-family: 'Times New Roman';
+}
+.voltarLista{
+    text-align:center;
+    margin-top:15px;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+}
 
 
 

@@ -19,33 +19,33 @@ namespace WebSite.Models
         public Double Preco { get; set; }
 
         public Produto() { }
-    
-
-    public Produto(Int32 ID)
-    {
-        SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
-        Conexao.Open();
-
-        SqlCommand Comando = new SqlCommand();
-        Comando.Connection = Conexao;
-        Comando.CommandText = "SELECT * FROM Produto WHERE ID=@ID;";
-        Comando.Parameters.AddWithValue("@ID", ID);
-
-        SqlDataReader Leitor = Comando.ExecuteReader();
-
-        Leitor.Read();
 
 
-        this.ID = (Int32)Leitor["ID"];
-        CategoriaID = (Int32)Leitor["CategoriaID"];
-        this.Nome = (String)Leitor["NomeProduto"];
-        Versao = (int)Leitor["VersaoCategoria"];
-        this.Imagem = (String)Leitor["ImagemProduto"];
-        this.Descricao = (String)Leitor["DescricaoProduto"];
-        this.Preco = (Double)Leitor["PrecoProduto"];
+        public Produto(Int32 ID)
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT * FROM Produto WHERE ID=@ID;";
+            Comando.Parameters.AddWithValue("@ID", ID);
+
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            Leitor.Read();
+
+
+            this.ID = (Int32)Leitor["ID"];
+            this.CategoriaID = (Int32)Leitor["CategoriaID"];
+            this.Nome = (String)Leitor["NomeProduto"];
+            this.Versao = (int)Leitor["VersaoCategoria"];
+            this.Imagem = (String)Leitor["ImagemProduto"];
+            this.Descricao = (String)Leitor["DescricaoProduto"];
+            this.Preco = (Double)Leitor["PrecoProduto"];
 
             Conexao.Close();
-    }
+        }
         public Boolean Novo()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -54,11 +54,12 @@ namespace WebSite.Models
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
             Comando.CommandText = "INSERT INTO Produto (NomeProduto, NomeCategoria, ImagemProduto, PrecoProduto) VALUES (@NomeProduto, @NomeCategoria, @ImagemProduto, @PrecoProduto);";
+            Comando.Parameters.AddWithValue("@ID", this.ID); 
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
             Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
-            Comando.Parameters.AddWithValue("@ID", this.ID);
+            
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -134,9 +135,9 @@ namespace WebSite.Models
 
             return Prods;
         }
-        
 
-       
+
+
     }
     public class DLC
     {
