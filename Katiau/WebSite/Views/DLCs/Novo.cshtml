@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Nova DLC</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
+
 </head>
 <body>
     <!-- header -->
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                   <li class="imagemUser">
+                                    <li class="imagemUser">
                                         <span class="loginform" id="loginform">
                                             <script src="~/JS/index.js"></script>
                                             <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -100,24 +100,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-                    
+                    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-        <h2>Ver Post</h2>
-        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <div>
+    <div class="voltarLista"><a href="/Adm2/Listar">Voltar à listagem</a></div> 
+    <div class="CriarUser">
         <section>
-            <div>
-                <h2>@(ViewBag.Prod.Nome)</h2>
+            
+            <h4>@(ViewBag.Mensagem)</h4>
+          <!--  <div class="contact-form">
+            <form method="post" action="/Usuario/Novo">
+                <select name="Usuario" id="Usuario">
 
-                <h3>Categoria: @(ViewBag.Prod.Categoria) Preço @(ViewBag.Prod.Preco) </h3>
+                </select>
 
-                <p>@(ViewBag.Prod.Descricao)</p>
-            </div>
-        </section>
+                <p> Nick: <input type="text" name="NickU" id="NickU" placeholder="Digite o Nick" required /></p>
+                <p> Nome: <input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
+                <p> Sobrenome: <input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Digite o sobrenome" required /></p>
+                <p> Email: <input type="text" name="EmailU" id="EmailU" placeholder="Digite o sobrenome" required /></p>
+                <p> Senha: <input type="password" name="SenhaU" id="SenhaU" placeholder="Digite a senha" required /></p>
+                <p> Imagem: <input type="file" name="ImagemU" id="ImagemU" placeholder="Imagem Perfil"  /></p>
+                <p> Data: <input type="text" name="NascimentoU" id="NascimentoU" placeholder="DD/MM/AAAA" required /></p>
+                <p> Biografia: <textarea rows="10" cols="40" name="BioU" id="BioU" placeholder="Digite Bio" ></textarea></p>
+                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+            </form>
+                </div>-->
+            <form id="post" action="" method="post" enctype="text/plain">
+                <fieldset id="fs1">
+                    <h2 class="fs-title">Cadastro de novas DLC's</h2>
+                    <h3 class="fs-subtitle">Digite as informações</h3>
+                    <p><input type="text" name="NomeProduto" id="NomeProduto" placeholder="Digite o Nome da DLC" required /></p>
+                    <p><input type="text" name="CategoriaID" id="CategoriaID" value="2" disabled /></p>
+                    <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
+                    <p><input type="text" name="PrecoProduto" id="PrecoProduto" placeholder="Preço" required /></p>
+                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição"></textarea></p>
+                    <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+                </fieldset>
+                </form>
+</section>
 
 
     </div>
@@ -128,3 +151,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
 </html>
+

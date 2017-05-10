@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <table border="1">
 
                                 <thead>
-                                <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
+                                <tr><a href="/Usuario/Novo/@(ViewBag.ID)">Cadastrar novo Usuário ou Adm</a></tr> 
                                     <tr class="Produto">
                                         <th class="texto">ID</th>
                                         <th class="texto">Nick</th>
@@ -127,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Email)</td>
                                         <td>@(U.Senha)</td>
                                         <td>@(U.Nascimento)</td>
-                                        <td>@(U.ImagemPerfil.Substring(0, Math.Min(U.ImagemPerfil.Length, 12)) + "...")</td>
+                                        <td>@(U.ImagemPerfil)</td>
                                         <td>
                                             
                                             <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
            
                 </li>
-            <!--PACOTES-->
+            
                 <li class="tabs">
                     <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                     <label for="tab2"> Pacotes </label>
@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <section>
                                 <table border="1">
                                     <thead>
-                                        <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr> 
+                                        <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar um novo Pacote</a></tr> 
                                         <tr class="Produto">
                                             
                                             <th class="texto">Nome</th>
@@ -168,17 +168,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         @foreach (var P in ViewBag.Prod)
                                         {
                                             <tr>
-                                                
+                                                <!--PACOTES-->
 
                                                 <td>@(P.Nome)</td>
-                                                <td>@(P.Versao)</td>
+                                                <td>@(P.Categoria)</td>
                                                 <td>@(P.Imagem)</td>
                                                 <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
                                                 <td>R$@(P.Preco)</td>
                                                 <td>
-                                                    <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
-                                                    <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                                    <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
+                                                    <a href="/Produto/Ver/@(P.CategoriaID)">Ver</a> |
+                                                    <a href="/Produto/Alterar/@(P.CategoriaID)">Alterar</a> |
+                                                    <a href="/Produto/Apagar/@(P.CategoriaID)">Apagar</a>
                                                 </td>
                                             </tr>
                                             
@@ -189,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     
                 </li>
-            <!--DLC-->
+
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                 <label for="tab3"> DLC </label>
@@ -198,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <section>
                         <table border="1">
                             <thead>
-                                <tr><a href="/DLCs/Novo/">Cadastrar uma nova DLC</a></tr>
+                                <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar uma nova DLC</a></tr> 
                                 <tr class="Produto">
 
                                     <th class="texto">Nome</th>
@@ -213,7 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 @foreach (var D in ViewBag.DLCs)
                                 {
                                     <tr>
-                                        
+                                        <!--DLC-->
 
                                         <td>@(D.Nome)</td>
                                         <td>@(D.Categoria)</td>
@@ -221,9 +221,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 88)) + "...")</td>
                                         <td>R$@(D.Preco)</td>
                                         <td>
-                                            <a href="/DLCs/Ver/@(D.ID)">Ver</a> |
-                                            <a href="/DLCs/Alterar/@(D.ID)">Alterar</a> |
-                                            <a href="/DLCs/Apagar/@(D.ID)">Apagar</a>
+                                            <a href="/Produto/Ver/@(D.CategoriaID)">Ver</a> |
+                                            <a href="/Produto/Alterar/@(D.CategoriaID)">Alterar</a> |
+                                            <a href="/Produto/Apagar/@(D.CategoriaID)">Apagar</a>
                                         </td>
                                     </tr>
 }

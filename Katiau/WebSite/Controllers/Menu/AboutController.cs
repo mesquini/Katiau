@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Website.Models;
-using WebSite.Models;
 
-namespace WebSite.Controllers
+namespace WebSite.Views
 {
-    public class HomeController : Controller
+    public class AboutController : Controller
     {
         // GET: Home
         public ActionResult Index()
         {
-            
-
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();
@@ -34,7 +33,7 @@ namespace WebSite.Controllers
 
                         Usuario U = new Usuario(Email, SenhaEncriptada);
                         Session["User"] = U;
-                        Response.Redirect("/Cadastro/Index", false);
+                        Response.Redirect("/Perfil/Index", false);
 
                         break;
 
@@ -44,28 +43,20 @@ namespace WebSite.Controllers
 
                 }
             }
-            List<Usuario> User = Usuario.ListarU();
-            ViewBag.User = User;
 
-            List<Pacote> Prod = Pacote.ListarP();
-            ViewBag.Prod = Prod;
-
-            List<DLC> DLCs = DLC.ListarDLC();
-            ViewBag.DLCs = DLCs;
+            if (Session["User"] != null)
+            {
+                ViewBag.Logado = Session["User"];
+            }
 
             return View();
         }
-        
-            
-
-        public ActionResult Sair()
+        public void Sair()
         {
             Session.Abandon();
             Session.Clear();
 
-            return RedirectToAction("Autenticar");
+            Response.Redirect("/Home/Index", false);
         }
-
-        
     }
 }

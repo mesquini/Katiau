@@ -184,9 +184,10 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
+
 td,
 th {
-  padding: 5px;
+  padding: 5px 10px;
   color: #b01030;
   text-align: center;
 }

@@ -60,8 +60,9 @@ namespace Website.Models
 
             Conexao.Close();
         }
-        public Boolean Salvar(String Email, String senha, String nome, String sobrenome, String Nascimento, String bio, String imagemp,Boolean adm)
+        public Boolean NovoUser(String email, String senha, String nick, String nome, String lnome, String Nascimento, String Imagemperfil)
         {
+
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
@@ -75,7 +76,7 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Nome", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
-            Comando.Parameters.AddWithValue("@Nascimeto", this.Nascimento);
+            Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
             Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
             Comando.Parameters.AddWithValue("@Adm", 0);
@@ -88,7 +89,35 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
-        
+
+        public Boolean Novo()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "INSERT INTO Usuario (EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Administrador)"
+              + "VALUES (@Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
+            Comando.Parameters.AddWithValue("@Email", this.Email);
+            Comando.Parameters.AddWithValue("@NickU", this.Nick);
+            Comando.Parameters.AddWithValue("@Nome", this.Nome);
+            Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
+            Comando.Parameters.AddWithValue("@Senha", this.Senha);
+            Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
+            Comando.Parameters.AddWithValue("@Bio", "Biografia");
+            Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
+            Comando.Parameters.AddWithValue("@Adm", 0);
+
+
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
+
         public static List<Usuario> ListarU()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -122,26 +151,26 @@ namespace Website.Models
 
             return Users;
         }
-        public Boolean Salvar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Boolean Alterar()
-        {
-            throw new NotImplementedException();
-        }
-
+        
+        
         public Boolean Apagar()
         {
-            throw new NotImplementedException();
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "DELETE FROM Usuario WHERE ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            
+
+            return Resultado > 0 ? true : false;
         }
-        public static List<Categoria> Lista()
-        {
-            throw new NotImplementedException();
-        }
-        public static String Autenticar(String Email, String Senha)
-        {
+        
+        public static String Autenticar(String Email, String Senha){
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
 
             Conexao.Open();
