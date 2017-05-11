@@ -63,12 +63,13 @@ namespace Website.Models
             this.Sobrenome = (String)Leitor["SobrenomeU"];
             this.ImagemPerfil = (String)Leitor["ImagemU"];
             this.Bio = (String)Leitor["BioU"];
+            this.Adm = (Boolean)Leitor["Administrador"];
             
 
 
             Conexao.Close();
         }
-        public Boolean NovoUser(String email, String senha, String nick, String nome, String lnome, String Nascimento, String Imagemperfil)
+        public Boolean NovoUser()
         {
 
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
@@ -87,7 +88,7 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
             Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
-            Comando.Parameters.AddWithValue("@Adm", 0);
+            Comando.Parameters.AddWithValue("@Adm", Adm);
 
 
 
@@ -115,7 +116,7 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
             Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
-            Comando.Parameters.AddWithValue("@Adm", 0);
+            Comando.Parameters.AddWithValue("@Adm", Adm);
 
 
 
@@ -150,6 +151,7 @@ namespace Website.Models
                 U.Nascimento = (String)Leitor["NascimentoU"];
                 U.Bio = (String)Leitor["BioU"];
                 U.ImagemPerfil = (String)Leitor["ImagemU"];
+                U.Adm = (Boolean)Leitor["Administrador"];
                 
 
                 Users.Add(U);

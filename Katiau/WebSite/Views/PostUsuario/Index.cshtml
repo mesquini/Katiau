@@ -9,11 +9,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Katiau</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -21,6 +20,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
     <!-- Custom Theme files -->
+    <link rel="stylesheet" type="text/css" href="~/CSS/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/style4.css" />
+    <script type="text/javascript" src="~/JS/modernizr.custom.79639.js"></script>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- Custom Theme files -->
     <!--//theme-style-->
@@ -58,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -80,14 +82,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <div class="arrow-up"></div>
                                                 <div class="formholder" style="display: block;">
                                                     <div class="randompad">
-                                                        <fieldset>
+                                                        <h4>@(ViewBag.Mensagem)</h4>
+                                                        <h4>Informações da Conta</h4>
+                                                        <form>
+                                                            <label class="nome" name="nome">Nome</label>
                                                             <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
-                                                        </fieldset>
+                                                            <input type="submit" value="Logout" />
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -105,43 +106,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
     </div>
-   <div class="voltarLista"><a href="/Adm2/Listar">Voltar à listagem</a></div> 
-    <div class="voltarLista">
-        <h4>@(ViewBag.Mensagem)</h4>
-    </div> 
-        <div class="CriarUser">
-            <section>
-                <form id="post" action="/Usuario/Novo" method="post">
-                    <fieldset id="fs1">
-                        <h2 class="fs-title">Cadastrar novo usuário</h2>
-                        <h3 class="fs-subtitle">Digite suas informações</h3>
+    <!---->
 
-                        <p class="NivelAcesso"><input type="radio" name="NivelAcesso" value="True" id="NivelAcesso"> Administrador</p>
-                        <p class="NivelAcesso1"><input type="radio" name="NivelAcesso" value="False" id="NivelAcesso" checked> Usuario</p>
-
-                        <p><input type="text" name="NickU" id="NickU" placeholder="Digite o Nickname" required /></p>
-                        <p><input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
-                        <p><input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Digite o Sobrenome" required /></p>
-                        <p><input type="text" name="EmailU" id="EmailU" placeholder="Digite o E-mail" required /></p>
-                        <p><input type="password" name="SenhaU" id="SenhaU" placeholder="Digite a Senha" required /></p>
-                        <p><input type="file" name="ImagemU" id="ImagemU" placeholder="Imagem Perfil" required /></p>
-                        <p><input type="text" name="NascimentoU" id="NascimentoU" placeholder="DD/MM/AAAA" required /></p>
-                        <p><textarea rows="10" cols="40" name="BioU" id="BioU" placeholder="Digite a sua Biografia"></textarea></p>
-
-                        <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
-                    </fieldset>
-                </form>
-            </section>
-
-
-        </div>
-        <div class="copywriteLoja">
-            <div class="container">
-                <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+    <div class="nav_tabs">
+            <h2>Posts</h2>
+            <div class="content_tab">
+                <label>
+                     lalala
+                </label>
             </div>
+    </div>
+
+    <div class="copywrite">
+        <div class="container">
+            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
         </div>
+    </div>
+    
 </body>
 </html>
-

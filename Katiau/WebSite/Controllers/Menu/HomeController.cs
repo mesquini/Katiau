@@ -46,10 +46,12 @@ namespace WebSite.Controllers
 
             if (Session["User"] != null)
             {
-
                 ViewBag.Logado = Session["User"];
-
-
+                Usuario User = (Usuario)Session["User"];
+                if (User.Adm)
+                {
+                    ViewBag.NivelAcesso = User.Adm;
+                }
             }
            
 
