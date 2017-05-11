@@ -63,6 +63,7 @@ namespace Website.Models
             this.Sobrenome = (String)Leitor["SobrenomeU"];
             this.ImagemPerfil = (String)Leitor["ImagemU"];
             this.Bio = (String)Leitor["BioU"];
+            this.Adm = (Boolean)Leitor["Administrador"];
             
 
 
