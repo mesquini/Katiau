@@ -6,6 +6,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 */
 @import "compass/css3";
 
+bioEdit{
+    background-color: lightgray;
+    border-radius: 15px;
+    width: 99%;
+    resize: none;
+   
+}
+#BioU{
+    background-color:#d3d3d3;
+    resize:none;
+    width:100%;
+    height:auto;
+    border-radius:15px;
+    padding: 5px;
+}
+#NickU{
+    text-align: center;
+    border-style: none;
+}
+
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0; padding:0;}
