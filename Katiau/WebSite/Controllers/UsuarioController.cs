@@ -51,6 +51,7 @@ namespace WebSite.Controllers
                 String Senha = Request.Form["SenhaU"];
                 String Nascimento = Request.Form["NascimentoU"];
                 String Imagem = Request.Form["ImagemU"];
+                Boolean NivelAcesso = Boolean.Parse(Request.Form["NivelAcesso"]);
 
                 Usuario NovoUser = new Usuario();
 
@@ -58,10 +59,11 @@ namespace WebSite.Controllers
                 NovoUser.Nick = Nick;
                 NovoUser.Nome = Nome;
                 NovoUser.Sobrenome = Sobrenome;
-                NovoUser.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1"); ;
+                NovoUser.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1");
                 NovoUser.Nick = Nick;
                 NovoUser.Nascimento = Nascimento;
                 NovoUser.ImagemPerfil = Imagem;
+                NovoUser.Adm = NivelAcesso;
 
                 if (NovoUser.Novo())
                 {
