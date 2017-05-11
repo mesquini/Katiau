@@ -51,6 +51,7 @@ namespace WebSite.Controllers
                 String Senha = Request.Form["SenhaU"];
                 String Nascimento = Request.Form["NascimentoU"];
                 String Imagem = Request.Form["ImagemU"];
+                String Bio = Request.Form["BioU"];
                 Boolean NivelAcesso = Boolean.Parse(Request.Form["NivelAcesso"]);
 
                 Usuario NovoUser = new Usuario();
@@ -63,11 +64,13 @@ namespace WebSite.Controllers
                 NovoUser.Nick = Nick;
                 NovoUser.Nascimento = Nascimento;
                 NovoUser.ImagemPerfil = Imagem;
+                NovoUser.Bio = Bio;
                 NovoUser.Adm = NivelAcesso;
 
-                if (NovoUser.Novo())
+                if (NovoUser.NovoUser())
                 {
                     ViewBag.Mensagem = "Usuário criado com sucesso!";
+
                 }
                 else
                 {
