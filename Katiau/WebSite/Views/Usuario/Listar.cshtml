@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 
@@ -69,6 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
+
                                 </ul>
                             </div>
                             <!--/navbar collapse-->
@@ -76,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-                    
+
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -85,41 +86,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--USUARIOS-->
     <div class="nav_tabs">
         <ul>
-          
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                    <label for="tab1"> Usuários </label>
 
-          
-                    <div class="content_tab">
-                        <section>
-                            
-                            <table border="1">
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <label for="tab1"> Usuários </label>
 
-                                <thead>
-                                <tr><a href="/Usuario/Novo/@(ViewBag.ID)">Cadastrar novo Usuário ou Adm</a></tr> 
-                                    <tr class="Produto">
-                                        <th class="texto">ID</th>
-                                        <th class="texto">Nick</th>
-                                        <th class="texto">Nome</th>
-                                        <th class="texto">Sobrenome</th>
-                                        <th class="texto">Email</th>
-                                        <th class="texto">Senha</th>
-                                        <th class="texto">Nascimento</th>
-                                        <th class="texto">ImagemPerfil</th>
-                                        <th class="texto">Ações</th>
-                                    </tr>
-                                  
-                                    
-                                  
-                                </thead>
 
-                                <tbody>
-                               @foreach (var U in ViewBag.User)
-                               {
+                <div class="content_tab">
+                    <section>
+
+                        <table border="1">
+
+                            <thead>
+                                <tr><a href="/Usuario/Novo/@(ViewBag.ID)">Cadastrar novo Usuário ou Adm</a></tr>
+                                <tr class="Produto">
+                                    <th class="texto">ID</th>
+                                    <th class="texto">Nick</th>
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Sobrenome</th>
+                                    <th class="texto">Email</th>
+                                    <th class="texto">Senha</th>
+                                    <th class="texto">Nascimento</th>
+                                    <th class="texto">ImagemPerfil</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
+
+
+
+                            </thead>
+
+                            <tbody>
+                                @foreach (var U in ViewBag.User)
+                                {
 
                                     <tr>
-                                        
+
                                         <td>@(U.ID)</td>
                                         <td>@(U.Nick)</td>
                                         <td>@(U.Nome)</td>
@@ -129,76 +130,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Nascimento)</td>
                                         <td>@(U.ImagemPerfil)</td>
                                         <td>
-                                            
+
                                             <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
                                         </td>
                                     </tr>
-                               }
-                                </tbody>
-                                
-                            </table>
+                                }
+                            </tbody>
 
-                        </section>
-                    </div>
-           
-                </li>
-            
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                    <label for="tab2"> Pacotes </label>
+                        </table>
 
-                    
-                        <div class="content_tab">
-                            <section>
-                                <table border="1">
-                                    <thead>
-                                        <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar um novo Pacote</a></tr> 
-                                        <tr class="Produto">
-                                            
-                                            <th class="texto">Nome</th>
-                                            <th class="texto">Categoria</th>
-                                            <th class="texto">Imagem</th>
-                                            <th class="texto">Descrição</th>
-                                            <th class="texto">Preço</th>
-                                            <th class="texto">Ações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                    </section>
+                </div>
 
-                                        @foreach (var P in ViewBag.Prod)
-                                        {
-                                            <tr>
-                                                <!--PACOTES-->
-
-                                                <td>@(P.Nome)</td>
-                                                <td>@(P.Categoria)</td>
-                                                <td>@(P.Imagem)</td>
-                                                <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
-                                                <td>R$@(P.Preco)</td>
-                                                <td>
-                                                    <a href="/Produto/Ver/@(P.CategoriaID)">Ver</a> |
-                                                    <a href="/Produto/Alterar/@(P.CategoriaID)">Alterar</a> |
-                                                    <a href="/Produto/Apagar/@(P.CategoriaID)">Apagar</a>
-                                                </td>
-                                            </tr>
-                                            
-                                        }
-                                            </tbody>
-</table>
-                            </section>
-                        </div>
-                    
-                </li>
+            </li>
 
             <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
-                <label for="tab3"> DLC </label>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2"> Pacotes </label>
+
+
                 <div class="content_tab">
-                    
                     <section>
                         <table border="1">
                             <thead>
-                                <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar uma nova DLC</a></tr> 
+                                <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar um novo Pacote</a></tr>
                                 <tr class="Produto">
 
                                     <th class="texto">Nome</th>
@@ -210,7 +165,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </tr>
                             </thead>
                             <tbody>
-@foreach (var D in ViewBag.DLCs)
+
+                                @foreach (var P in ViewBag.Prod)
+                                {
+                                    <tr>
+                                        <!--PACOTES-->
+
+                                        <td>@(P.Nome)</td>
+                                        <td>@(P.Categoria)</td>
+                                        <td>@(P.Imagem)</td>
+                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
+                                        <td>R$@(P.Preco)</td>
+                                        <td>
+                                            <a href="/Produto/Ver/@(P.CategoriaID)">Ver</a> |
+                                            <a href="/Produto/Alterar/@(P.CategoriaID)">Alterar</a> |
+                                            <a href="/Produto/Apagar/@(P.CategoriaID)">Apagar</a>
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+            </li>
+
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
+                <label for="tab3"> DLC </label>
+                <div class="content_tab">
+
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="/Produto/Novo/@(ViewBag.CategoriaID)">Cadastrar uma nova DLC</a></tr>
+                                <tr class="Produto">
+
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Categoria</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Preço</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var D in ViewBag.DLCs)
                                 {
                                     <tr>
                                         <!--DLC-->
@@ -226,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <a href="/Produto/Apagar/@(D.CategoriaID)">Apagar</a>
                                         </td>
                                     </tr>
-}
+                                }
                             </tbody>
                         </table>
                     </section>
@@ -249,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
     <!---->
