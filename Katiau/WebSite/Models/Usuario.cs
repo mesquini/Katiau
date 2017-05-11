@@ -77,18 +77,17 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Usuario (ID, EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Adm)"
-              + "VALUES (@ID, @Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
-            Comando.Parameters.AddWithValue("@IDUsuario", this.ID);
+            Comando.CommandText = "INSERT INTO Usuario (EmailU, NickU, NomeU, SobrenomeU, SenhaU, NascimentoU, BioU, ImagemU, Administrador)"
+              + "VALUES (@Email, @NickU, @Nome, @Sobrenome, @Senha, @Nascimento, @Bio, @ImagemPerfil, @Adm);";
             Comando.Parameters.AddWithValue("@Email", this.Email);
             Comando.Parameters.AddWithValue("@NickU", this.Nick);
             Comando.Parameters.AddWithValue("@Nome", this.Nome);
             Comando.Parameters.AddWithValue("@Sobrenome", this.Sobrenome);
             Comando.Parameters.AddWithValue("@Senha", this.Senha);
             Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
-            Comando.Parameters.AddWithValue("@Bio", "Biografia");
+            Comando.Parameters.AddWithValue("@Bio", this.Bio);
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
-            Comando.Parameters.AddWithValue("@Adm", Adm);
+            Comando.Parameters.AddWithValue("@Adm", this.Adm);
 
 
 
@@ -116,7 +115,7 @@ namespace Website.Models
             Comando.Parameters.AddWithValue("@Nascimento", this.Nascimento);
             Comando.Parameters.AddWithValue("@Bio", "Biografia");
             Comando.Parameters.AddWithValue("@ImagemPerfil", this.ImagemPerfil);
-            Comando.Parameters.AddWithValue("@Adm", Adm);
+            Comando.Parameters.AddWithValue("@Adm", 0);
 
 
 
