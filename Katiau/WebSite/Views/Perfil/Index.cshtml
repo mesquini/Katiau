@@ -83,25 +83,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     @if (ViewBag.Logado != null)
                                     {
                                         <li><a href="~/Adm2/Listar">ADM</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
                                                 <script src="~/JS/index.js"></script>
                                                 <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
 
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
                                                             <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
                                                             <a href="~/Home/Sair">Sair</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </span>
-                                    </li>
+                                            </span>
+                                        </li>
                                     }
 
                                 </ul>
@@ -120,45 +120,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="seguraTudo">
 
-        <input type="image" title="Editar Informações" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'"
-                onmouseout="this.src = '/images/@ViewBag.ImagemU'" class="imgEdit"/>
-       
+        <input type="image" title="Editar Informações" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'" onmouseout="this.src = '/images/@ViewBag.ImagemU'"
+               class="imgEdit">
+
         <div style="padding: 60px;">
-           <e class="nicknamae">@ViewBag.NomeU "@ViewBag.NickU" @ViewBag.SobrenomeU</e>
-           <p class="email"> @ViewBag.EmailU </p><br />                
+            <e class="nicknamae">@ViewBag.NomeU "@ViewBag.NickU" @ViewBag.SobrenomeU</e>
+            <p class="email"> @ViewBag.EmailU </p><br />
         </div>
-        
+
         <div class="infoDiv">
-
-                <p class="infoText"> Versões do Game Adquiridas: </p>
-            <p class="infoText"> DLC's Adquiridas: </p><br /><br />
-                <strong class="infoText"> Bio do Usuário: </strong>
-                <div class="outBox">
-                    <div class="innerBox">
-                        @if (ViewBag.BioU == "Biografia")
-                        {
+            <strong class="infoText"> Bio do Usuário: </strong>
+            <div class="outBox">
+                <div class="innerBox">
+                    @if (ViewBag.BioU == "Biografia")
+                    {
                         <p style="padding: 15px;"> Edite sua biografia para visualiza-la! </p>}
-                        else
-                        {
+                    else
+                    {
                         <p style="padding: 15px;"> @ViewBag.BioU </p>
-                        }
-                    </div>
+                    }
+                </div>
             </div><br /><br />
-                <strong class="infoText"> Comentários do Usuário: </strong>
+            <strong class="infoText"> Comentários do Usuário: </strong>
 
-                
-                @** Parte dos comentários, replicar isso com o JavaScript *@
-                <div class="outBox">
-                    <div class="innerBox">
-                        <p style="padding: 15px;">
-                            Aqui ficam os comentários.
-                        </p>
+
+            @** Parte dos comentários, replicar isso com o JavaScript *@
+            <div class="outBox">
+                <div class="innerBox">
+                    <p style="padding: 15px;">
+                        Aqui ficam os comentários.
+                    </p>
                     <h1 class="horacioohorariofeliz"> 30/03/17 às 13h37m </h1><br />
-                    </div>
                 </div>
             </div>
+        </div>
 
-</div>
+    </div>
 
     <div class="copywriteLoja" style="position: absolute; bottom: 0px;">
         <div class="container">

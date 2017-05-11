@@ -123,35 +123,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <input type="image" title="Editar Informações" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'" onmouseout="this.src = '/images/@ViewBag.ImagemU'" 
                class="imgEdit">
        
-        <div style="padding: 60px;">
-            <input type="text" id="NomeU" name="NomeU" placeholder="Nome" />
-            <input type="text" id="NickU" name="NickU" placeholder="Nick" />
-            <input type="text" id="SobrenomeU" name="SobrenomeU" placeholder="Sobrenome" /><br />   
-            <input type="text" id="EmailU" name="EmailU" placeholder="Email" /> 
+        <div class="editaTudo"style="padding: 60px;">
+
+            <e class="nicknamae">@ViewBag.NomeU "</e>
+            <input type="text" id="NickU" name="NickU" placeholder="Editar Nick" value="@ViewBag.NickU" />
+            <e class="nicknamae">" @ViewBag.SobrenomeU</e>
         </div>
         
         <div class="infoDiv">
-
-                <p class="infoText"> Versões do Game Adquiridas: </p>
-                <p class="infoText"> DLC's Adquiridas: </p><br/><br/>
                 <strong class="infoText"> Bio do Usuário: </strong>
                 <div class="outBox">
                     <div class="innerBox">
                     <textarea id="BioU" name="BioU" placeholder="Digite sua Biografia"></textarea>
                     </div>
-            </div><br /><br />
-                <strong class="infoText"> Comentários do Usuário: </strong>
-
-                
-                @** Parte dos comentários, replicar isso com o JavaScript *@
-                <div class="outBox">
-                    <div class="innerBox">
-                        <p style="padding: 15px;">
-                            Aqui ficam os comentários.
-                        </p>
-                    <h1 class="horacioohorariofeliz"> 30/03/17 às 13h37m </h1><br />
-                    </div>
-                </div>
+                </div><br/><br/>
             </div>
 
 </div>
