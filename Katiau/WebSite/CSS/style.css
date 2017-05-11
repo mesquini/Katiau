@@ -11,6 +11,19 @@ bioEdit{
     border-radius: 15px;
     width: 99%;
     resize: none;
+   
+}
+#BioU{
+    background-color:#d3d3d3;
+    resize:none;
+    width:100%;
+    height:auto;
+    border-radius:15px;
+    padding: 5px;
+}
+#NickU{
+    text-align: center;
+    border-style: none;
 }
 
 h4, h5, h6,

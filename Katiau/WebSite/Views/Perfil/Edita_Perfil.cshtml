@@ -79,35 +79,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li>
                                         <a href="/Contact/Index">Contato</a>
                                     </li>
+
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
                                     <li class="imagemUser">
                                         <span class="loginform" id="loginform">
-                                            <script src="/JS/index.js"></script>
                                             <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-                                            <img class="login-sign-image" src="/images/usuarioHover.png"
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
                                                  onmouseover="this.src='/images/usuario.png'"
                                                  onmouseout="this.src='/images/usuarioHover.png'" />
+
                                             <div class="login">
                                                 <div class="arrow-up"></div>
                                                 <div class="formholder" style="display: block;">
                                                     <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">
-                                                                Não possui uma conta?
-                                                                <a href="/Cadastro/Index"><b>Cadastre-se </b></a>
-                                                            </h4>
-
-                                                        </fieldset>
+                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
+                                                            <a href="~/Home/Sair">Sair</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </span>
                                     </li>
+                                    }
+
                                 </ul>
                             </div>
                             <!--/navbar collapse-->
@@ -129,16 +125,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        
         <div class="editaTudo"style="padding: 60px;">
 
-            <e class="nicknamae">@ViewBag.NomeU</e>
-            <input type="text" id="NickU" name="NickU" placeholder="Nick" />
-            <e class="nicknamae">@ViewBag.SobrenomeU</e>
+            <e class="nicknamae">@ViewBag.NomeU "</e>
+            <input type="text" id="NickU" name="NickU" placeholder="Editar Nick" value="@ViewBag.NickU" />
+            <e class="nicknamae">" @ViewBag.SobrenomeU</e>
         </div>
         
         <div class="infoDiv">
                 <strong class="infoText"> Bio do Usuário: </strong>
                 <div class="outBox">
                     <div class="innerBox">
-                        <textarea  id="BioU" name="BioU" placeholder="Digite sua Biografia"></textarea>   
+                    <textarea id="BioU" name="BioU" placeholder="Digite sua Biografia"></textarea>
                     </div>
                 </div><br/><br/>
             </div>
@@ -148,8 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="copywriteLoja" style="position: absolute; bottom: 0px;">
         <div class="container">
             <p>
-                © 2017 Katiau. All rights reserved | Design by
-                <a href="http://www.w3layouts.com" style="color: #B01030">w3Layouts</a>
+                © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3Layouts</a>
             </p>
         </div>
     </div>
