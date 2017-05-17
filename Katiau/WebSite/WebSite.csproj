@@ -224,6 +224,7 @@
     <Content Include="JS\jquery.min.js" />
     <Content Include="JS\lightbox-plus-jquery.min.js" />
     <Content Include="JS\modernizr.custom.79639.js" />
+    <Content Include="JS\Redirecionamento.js" />
     <Content Include="JS\responsiveslides.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

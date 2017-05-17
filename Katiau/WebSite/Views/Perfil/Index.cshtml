@@ -25,8 +25,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="keywords" content="Game Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="text/javascript" src="~/JS/Redirecionamento.js"></script>
 </head>
-<body>
+<body >
 
     <!-- header -->
     <div class="banner banner2">
@@ -120,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="seguraTudo">
 
-        <input type="image" title="Editar Informações" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'"
+        <input type="image" title="Editar Informações" onclick="EditaPerfil()" id="edit" src="/images/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'"
                 onmouseout="this.src = '/images/@ViewBag.ImagemU'" class="imgEdit"/>
 
         <div style="padding: 60px;">
@@ -141,18 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     }
                 </div>
             </div><br /><br />
-            <strong class="infoText"> Comentários do Usuário: </strong>
 
-
-            @** Parte dos comentários, replicar isso com o JavaScript *@
-            <div class="outBox">
-                <div class="innerBox">
-                    <p style="padding: 15px;">
-                        Aqui ficam os comentários.
-                    </p>
-                    <h1 class="horacioohorariofeliz"> 30/03/17 às 13h37m </h1><br />
-                </div>
-            </div>
         </div>
 
     </div>
