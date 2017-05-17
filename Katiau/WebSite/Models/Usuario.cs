@@ -97,6 +97,24 @@ namespace Website.Models
 
             return Resultado > 0 ? true : false;
         }
+        public Boolean NovaBio()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "UPDATE Usuario SET BioU = @Bio WHERE NickU = @Nick;";
+            Comando.Parameters.AddWithValue("@Nick", this.Nick);
+            Comando.Parameters.AddWithValue("@Bio", this.Bio);
+
+            Int32 Resultado = Comando.ExecuteNonQuery();
+
+            Conexao.Close();
+
+            return Resultado > 0 ? true : false;
+        }
 
         public Boolean Novo()
         {

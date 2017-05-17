@@ -224,6 +224,7 @@
     <Content Include="JS\jquery.min.js" />
     <Content Include="JS\lightbox-plus-jquery.min.js" />
     <Content Include="JS\modernizr.custom.79639.js" />
+    <Content Include="JS\Redirecionamento.js" />
     <Content Include="JS\responsiveslides.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -326,6 +327,7 @@
     <Content Include="Views\Pacote\Listar.cshtml" />
     <Content Include="Views\DLCs\Listar.cshtml" />
     <Content Include="Views\Perfil\Edita_Perfil.cshtml" />
+    <Content Include="Views\Store\TuViewIsso.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
