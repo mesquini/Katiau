@@ -50,7 +50,7 @@ namespace WebSite.Controllers
                 String Sobrenome = Request.Form["SobrenomeU"];
                 String Senha = Request.Form["SenhaU"];
                 String Nascimento = Request.Form["NascimentoU"];
-                String Imagem = Request.Form["ImagemU"];
+               // String Imagem = Request.Form["ImagemU"];
                 String Bio = Request.Form["BioU"];
                 Boolean NivelAcesso = Boolean.Parse(Request.Form["NivelAcesso"]);
 
@@ -63,7 +63,7 @@ namespace WebSite.Controllers
                 NovoUser.Senha = FormsAuthentication.HashPasswordForStoringInConfigFile(Senha, "SHA1");
                 NovoUser.Nick = Nick;
                 NovoUser.Nascimento = Nascimento;
-                NovoUser.ImagemPerfil = Imagem;
+              //  NovoUser.ImagemPerfil = Imagem;
                 NovoUser.Bio = Bio;
                 NovoUser.Adm = NivelAcesso;
 
