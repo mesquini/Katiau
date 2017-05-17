@@ -12,32 +12,36 @@ namespace WebSite.Controllers
 
        public ActionResult Listar()
         {
-            if (Session["User"] == null)
+            if (Session["User"] != null)
             {
-                Response.Redirect("/Home/Index", false);
+                ViewBag.Logado = Session["User"];
+                Usuario Users = (Usuario)Session["User"];
+                if (!Users.Adm)
+                {
+                    Response.Redirect("/Home/Index", false);
+                }
+
+                List<Usuario> User = Usuario.ListarU();
+                ViewBag.User = User;
+
+                List<Produto> Prod = Produto.ListarP();
+                ViewBag.Prod = Prod;
+
+                List<DLC> DLCs = DLC.ListarDLC();
+                ViewBag.DLCs = DLCs;
+
+
+                if (TempData["Mensagem"] != null)
+                {
+                    ViewBag.Mensagem = TempData["Mensagem"].ToString();
+                }
             }
-
-            List<Usuario> User = Usuario.ListarU();
-            ViewBag.User = User;
-
-            List<Produto> Prod = Produto.ListarP();
-            ViewBag.Prod = Prod;
-
-            List<DLC> DLCs = DLC.ListarDLC();
-            ViewBag.DLCs = DLCs;
-
-
-            if (TempData["Mensagem"] != null)
-            {
-                ViewBag.Mensagem = TempData["Mensagem"].ToString();
-            }
-
             return View(); 
         }
       
         public ActionResult Novo()
         {
-            if (Session["User"] == null)
+            if (Session["User"] != null)
             {
                 Response.Redirect("/Home/Index", false);
             }
