@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 
@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-                    
+
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -85,42 +85,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--USUARIOS-->
     <div class="nav_tabs">
         <ul>
-          
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                    <label for="tab1"> Usuários </label>
 
-          
-                    <div class="content_tab">
-                        <section>
-                            
-                            <table border="1">
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <label for="tab1"> Usuários </label>
 
-                                <thead>
+
+                <div class="content_tab">
+                    <section>
+
+                        <table border="1">
+
+                            <thead>
                                 <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
-                                    <tr class="Produto">
-                                        <th class="texto">ID</th>
-                                        <th class="texto">Nick</th>
-                                        <th class="texto">Nome</th>
-                                        <th class="texto">Sobrenome</th>
-                                        <th class="texto">Email</th>
-                                        <th class="texto">Senha</th>
-                                        <th class="texto">Nascimento</th>
-                                        <th class="texto">ImagemPerfil</th>
-                                        <th class="texto">Administrador</th>
-                                        <th class="texto">Ações</th>
-                                    </tr>
-                                  
-                                    
-                                  
-                                </thead>
+                                <tr class="Produto">
+                                    <th class="texto">ID</th>
+                                    <th class="texto">Nick</th>
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Sobrenome</th>
+                                    <th class="texto">Email</th>
+                                    <th class="texto">Senha</th>
+                                    <th class="texto">Nascimento</th>
+                                    <th class="texto">ImagemPerfil</th>
+                                    <th class="texto">Administrador</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
 
-                                <tbody>
-                               @foreach (var U in ViewBag.User)
-                               {
+
+
+                            </thead>
+
+                            <tbody>
+                                @foreach (var U in ViewBag.User)
+                                {
 
                                     <tr>
-                                        
+
                                         <td>@(U.ID)</td>
                                         <td>@(U.Nick)</td>
                                         <td>@(U.Nome)</td>
@@ -131,72 +131,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.ImagemPerfil)</td>
                                         <td>@(U.Adm)</td>
                                         <td>
-                                            
+
                                             <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
                                         </td>
                                     </tr>
-                               } 
-                                </tbody>
-                                
-                            </table>
+                                }
+                            </tbody>
 
-                        </section>
-                    </div>
-           
-                </li>
+                        </table>
+
+                    </section>
+                </div>
+
+            </li>
             <!--PACOTES-->
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                    <label for="tab2"> Pacotes </label>
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2"> Pacotes </label>
 
-                    
-                        <div class="content_tab">
-                            <section>
-                                <table border="1">
-                                    <thead>
-                                        <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr> 
-                                        <tr class="Produto">
-                                            
-                                            <th class="texto">Nome</th>
-                                            <th class="texto">Categoria</th>
-                                            <th class="texto">Imagem</th>
-                                            <th class="texto">Descrição</th>
-                                            <th class="texto">Preço</th>
-                                            <th class="texto">Ações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
 
-                                        @foreach (var P in ViewBag.Prod)
-                                        {
-                                            <tr>
-                                                
+                <div class="content_tab">
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr>
+                                <tr class="Produto">
 
-                                                <td>@(P.Nome)</td>
-                                                <td>@(P.Versao)</td>
-                                                <td>@(P.Imagem)</td>
-                                                <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
-                                                <td>R$@(P.Preco)</td>
-                                                <td>
-                                                    <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
-                                                    <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                                    <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
-                                                </td>
-                                            </tr>
-                                            
-                                        }
-                                            </tbody>
-</table>
-                            </section>
-                        </div>
-                    
-                </li>
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Categoria</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Preço</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var P in ViewBag.Prod)
+                                {
+                                    <tr>
+
+
+                                        <td>@(P.Nome)</td>
+                                        <td>@(P.Versao)</td>
+                                        <td>@(P.Imagem)</td>
+                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
+                                        <td>R$@(P.Preco)</td>
+                                        <td>
+                                            <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
+                                            <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
+                                            <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+            </li>
             <!--DLC-->
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab3">
                 <label for="tab3"> DLC </label>
                 <div class="content_tab">
-                    
+
                     <section>
                         <table border="1">
                             <thead>
@@ -212,10 +212,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </tr>
                             </thead>
                             <tbody>
-@foreach (var D in ViewBag.DLCs)
+                                @foreach (var D in ViewBag.DLCs)
                                 {
                                     <tr>
-                                        
+
 
                                         <td>@(D.Nome)</td>
                                         <td>@(D.Categoria)</td>
@@ -228,7 +228,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <a href="/DLCs/Apagar/@(D.ID)">Apagar</a>
                                         </td>
                                     </tr>
-}
+                                }
                             </tbody>
                         </table>
                     </section>

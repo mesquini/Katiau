@@ -193,17 +193,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </a>
                     </li>
+
+                    @foreach (var D in ViewBag.DLCs)
+                    {
+
+                        <li>
+                            <!-- DLCs -->
+                            <a href="#">
+                                <!--@@ViewBag.Link-->
+                                <div class="ch-item ch-img-venda-3">
+                                    <div class="ch-info-wrap-vendas">
+                                        <div class="ch-info-vendas">
+                                            <div class="ch-info-front ch-img-venda-3"></div>
+                                            <div class="ch-info-back">
+                                                <h3>@(D.Nome)</h3>
+                                                <p> COMPRAR </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    }
                 </ul>
             </div>
         </div>
-
     </div>
     <!---->
     <!-- para dar o espaçamento-->
     <div class="storeImagem">
     </div>
     <!--teamend-->
-    <div class="copywritenovissimo">
+    <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
