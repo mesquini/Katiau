@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Sobre</title>
+    <title>Loja</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -28,15 +28,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Game Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    <meta name="keywords" content="Katiau Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 </head>
 <body>
-    <!-- header -->
-    <div class="banner banner2">
+    <!-- banner -->
+    <div class="banner bannerStore">
         <div class="container">
             <div class="headr-right">
             </div>
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
-                                    <li class="active"><a href="~/About/Index">Sobre</a></li>
+                                    <li><a href="~/About/Index">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
@@ -68,9 +68,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </ul>
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
+                                    <li class="active"><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                   @if (ViewBag.Logado == null)
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -98,9 +99,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </span>
                                         </li>
                                     }
+
                                     @if (ViewBag.Logado != null)
                                     {
-                                    <li><a href="~/Adm2/Listar">ADM</a></li>
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
                                                 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -121,7 +123,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </span>
                                         </li>
                                     }
+
                                 </ul>
+                            </div>
                             <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
@@ -132,138 +136,95 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-    </div>
-    <!---->
-    <div class="about">
-        <div class="container">
-            <h2>Sobre Nós:</h2>
-            <div class="about-text">
-                <div class="col-md-6 about-text-left">
-                    <img src="~/images/nos.jpg" class="img-responsive" alt="" />
-                </div>
-                <div class="col-md-6 about-text-right">
-                    <p class="sobre">
-                        <br/>
-                        <br/>
-                        Somos sete estudantes do terceiro termo do curso técnico de Informática na Escola Senai Prof. Dr. Euryclides de  Jesus Zerbini. Nos conhecemos no frio
-                        inverno russo, em Novembro de 2013. O interesse no desenvolvimento de websites começou após esbarrarmos  com Bill Gates em um beco em Marrocos, em 2014.
-                        O mesmo nos levou para sua base secreta em Dnipropetrovsk, antiga URSS (atual Ucrânia), onde fabricava armamentos nucleares para a KGB. Ele nos encorajou
-                        a desenvolver projetos para Web e desde o início de 2015 não paramos mais. No passado, já desenvolvemos sites para diversas finalidades, inclusive investir 
-                        em armamentos para radicais na Síria e Irã, fornecer maquinário para agricultores que desejam desmatar a Amazônia, contribuir para pesquisa científica
-                        e tráfico de crianças chinesas. Esse site foi criado arrecadar fundos e financiar o cartel de drogas no México (e um pouco da renda é direcionada ao Boldrini).
-                    </p>
-                    <ul>
- 
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <!--SOBRE O TIME-->
-            <div class="team">
-                <div class="team-top">
-                    <h3>Nosso Time:</h3>
-                </div>
-                <div class="team-bottom">
-                    <ul class="ch-grid">
-                        <li>
-                            <div class="ch-item ch-img-1">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-1"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Ana Carolina </h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-2">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-2"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Marcelli Rodrigues</h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-3">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-3"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Pedro Matias</h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-4">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-4"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Thiago Silva</h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-5">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-5"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Victor Rodrigues</h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-6">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-6"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Victor Mesquini</h3>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ch-item ch-img-7">
-                                <div class="ch-info-wrap">
-                                    <div class="ch-info">
-                                        <div class="ch-info-front ch-img-7"></div>
-                                        <div class="ch-info-back">
-                                            <h3>Victoria Oliveira</h3>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--teamend-->
 
+        <!--teamstarts-->
+        <div class="team">
+            <div class="team-top">
+                <h3>Compre Já</h3>
+            </div>
+            <div class="team-bottom">
+                <ul class="ch-grid">
+                    <li>
+                        <!-- Colocar Link da Pág XBOX -->
+                        <a href="~/Xbox/Index">
+                            <div class="ch-item ch-img-venda-1">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-1"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>XBOX ONE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!-- Link Pág. PlayStation4 PRO -->
+                        <a href="~/Play/Index">
+                            <div class="ch-item ch-img-venda-2">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-2"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PlayStation4 PRO</p>
+                                        </div>
+                                    </div>-
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Link PC GAME -->
+                        <a href="~/PC/Index">
+                            <div class="ch-item ch-img-venda-3">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-3"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PCGAME</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    @foreach (var D in ViewBag.DLCs)
+                    {
+
+                        <li>
+                            <!-- DLCs -->
+                            <a href="#">
+                                <!--@@ViewBag.Link-->
+                                <div class="ch-item ch-img-venda-3">
+                                    <div class="ch-info-wrap-vendas">
+                                        <div class="ch-info-vendas">
+                                            <div class="ch-info-front ch-img-venda-3"></div>
+                                            <div class="ch-info-back">
+                                                <h3>@(D.Nome)</h3>
+                                                <p> COMPRAR </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    }
+                </ul>
+            </div>
         </div>
     </div>
-
+    <!---->
+    <!-- para dar o espaçamento-->
+    <div class="storeImagem">
+    </div>
+    <!--teamend-->
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>

@@ -14,5 +14,11 @@ namespace WebSite.Controllers
             return View();
         }
 
+
+        // GET: DLCs
+        public ActionResult TuViewIsso()
+        {
+            return View();
+        }
     }
 }
