@@ -68,10 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
-                                    @if (ViewBag.NivelAcesso == true)
-                                    {
-                                        <li><a href="~/Adm2/Listar">ADM</a></li>
-                                    }
+                                    
                                     @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
@@ -100,9 +97,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </span>
                                         </li>
                                     }
-                                    @if (ViewBag.Logado != null)
+                                    @if (ViewBag.NivelAcesso == true)
                                     {
-                                    <li><a href="~/Adm2/Listar">ADM</a></li>
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
                                                 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -125,9 +121,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     }
                                 </ul>
                             </div>
-                            <!--/navbar collapse-->
+                            
                         </nav>
-                        <!--/navbar-->
+                       
                     </div>
                     <div class="clearfix"></div>
                     <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
