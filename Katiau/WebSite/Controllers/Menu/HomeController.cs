@@ -38,7 +38,7 @@ namespace WebSite.Controllers
                         break;
 
                     default:
-
+                        ViewBag.MsgErro = "Usuário e/ou Senha incorretos!";
                         break;
 
                 }
