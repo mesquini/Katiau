@@ -48,6 +48,10 @@ namespace WebSite.Controllers
             {
                 ViewBag.Logado = Session["User"];
                 Usuario User = (Usuario)Session["User"];
+                ViewBag.ImagemU = User.ImagemPerfil;
+                ViewBag.NickU = User.Nick;
+                ViewBag.NomeU = User.Nome;
+                ViewBag.SobrenomeU = User.Sobrenome;
                 if (User.Adm)
                 {
                     ViewBag.NivelAcesso = User.Adm;

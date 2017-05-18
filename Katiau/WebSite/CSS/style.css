@@ -157,10 +157,11 @@ fieldset {
 
 .login {
   position: absolute;
-  width: 350px;
+  width: 320px;
   display: none;
-  top: 60px;
+  top: 55px;
   left: -27px;
+  cursor: default;
 }
 label.email{
     color:#B01030;
@@ -2769,6 +2770,30 @@ text-align: center;
     margin-top:15px;
     font-family: 'Times New Roman';
     font-size: 25px;
+}
+.imagem-logado{
+border-radius: 60%;
+width: 80%;
+height: 80%;
+padding-right: 5px;
+}
+.deslogar-bt{
+    margin-top:80px;
+}
+
+.nick-login{
+    color: #B01030;
+    font-family:sans-serif;
+    font-size: 22px;
+    width: 80%;
+}
+
+.login-user-info{
+    color: #B01030;
+    font-family:sans-serif;
+    font-size: 20px;
+    width: 95%;
+    padding-left:20px;
 }
 
 

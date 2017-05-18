@@ -12,7 +12,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] != null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("/Contact/Index", false);
             }
 
             if (Request.HttpMethod == "POST")

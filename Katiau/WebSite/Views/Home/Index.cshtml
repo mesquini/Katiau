@@ -115,8 +115,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="arrow-up"></div>
                                                     <div class="formholder" style="display: block;">
                                                         <div class="randompad">
-                                                            <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
-                                                            <a href="~/Home/Sair">Sair</a>
+                                                            <a href="~/Perfil/Index">
+                                                            <img class="imagem-logado" src="~/images/@ViewBag.ImagemU" /></a>
+                                                            <p class="login-user-info">@ViewBag.NomeU "<e class="nick-login">@ViewBag.NickU</e>"<k class="login-user-info">@ViewBag.SobrenomeU</k></p>
+                                                            <a class="deslogar-bt" href="~/Home/Sair">Sair</a>
                                                         </div>
                                                     </div>
                                                 </div>
