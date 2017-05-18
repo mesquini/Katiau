@@ -55,8 +55,23 @@ namespace WebSite.Controllers
                     NovoPerfil = (Usuario)Session["User"];
                     NovoPerfil.Bio = Bio;
                     NovoPerfil.Nick = Nick;
+                    int ID = NovoPerfil.ID;
 
-                    
+                    foreach (string fileName in Request.Files)
+                    {
+                        HttpPostedFileBase postedFile = Request.Files[fileName];
+                        int contentLength = postedFile.ContentLength;
+                        string contentType = postedFile.ContentType;
+                        string nome = postedFile.FileName;
+
+                        if (contentType.IndexOf("jpeg") > 0)
+                            postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_users\\" + "imagemPerfil" + ID + ".jpg");
+                        //  postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_users\" + "imagemPerfil" + ID + ".jpg");
+                        //else
+                        // postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\" + Request.Form["Desc"] + ".txt");
+
+                    }
+
                     if (NovoPerfil.NovaBio())
                     {
                         ViewBag.Mensagem = "Perfil alterado com sucesso!";

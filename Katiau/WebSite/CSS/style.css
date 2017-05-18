@@ -239,6 +239,25 @@ h4.cadastrar{
     color:#B01030;
 }
 
+.msg-login{
+    position:absolute;
+    display:none;
+    height:auto;
+    width:auto;
+    background: #ecf0f1;
+
+}
+
+.msg-erro-login{
+    font-size:23.8px;
+    font-family:sans-serif;
+    color:white;
+    background:#B01030;
+    width:98%;
+    border:#B01030;
+    border-radius:4%;    
+}
+
 .banner-head {
     margin-bottom: 2em;
 }
