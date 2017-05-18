@@ -107,34 +107,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <div>
+    <div class="CriarUser">
         <section>
-            <h3>Preencha os campos abaixo para alterar o Post selecionado</h3>
-            <h4>@(ViewBag.Mensagem)</h4>
-            <form method="post" action="/Post/Alterar/@(ViewBag.Post.ID)">
-                <p>
-                    Categoria:
-                    <select name="Categoria" id="Categoria">
-                        @foreach (var C in ViewBag.Categorias)
-                        {
-                            if (C.ID == ViewBag.Post.Categoria.ID)
-                            {
-                                <option value="@(C.ID)" selected>@(C.Titulo)</option>
-                            }
-                            else
-                            {
-                                <option value="@(C.ID)">@(C.Titulo)</option>
-                            }
-                        }
-                    </select>
-                </p>
 
-                <p><input type="text" name="Titulo" id="Titulo" placeholder="Digite o título do Post" value="@(ViewBag.Post.Titulo)" required /></p>
-                <p><textarea rows="10" cols="40" name="Texto" id="Texto" placeholder="Digite o texto do Post" required>@(ViewBag.Post.Texto)</textarea></p>
-                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+            <h4 class="voltarLista">@(ViewBag.Mensagem)</h4>
+            <form id="post" action="~/Pacote/Alterar" method="post">
+                <fieldset id="fs1">
+                    <h3 class="fs-subtitle">Digite as informações</h3>
+                    <p><input type="text" name="NomeProduto" id="NomeProduto" value="@(ViewBag.Prod.Nome)" required /></p>
+                    <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
+                    <p><input type="text" name="PrecoProduto" id="PrecoProduto" value="@(ViewBag.Prod.Preco)" required /></p>
+                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" >@(ViewBag.Prod.Descricao)</textarea></p>
+                    <p><input type="submit" name="Enviar" id="Enviar" value="Alterar" /></p>
+                </fieldset>
             </form>
         </section>
-
 
 
     </div>

@@ -113,6 +113,47 @@ namespace WebSite.Controllers
 
             return RedirectToAction("Listar");
         }
+        public ActionResult Alterar(String ID)
+
+        {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("/Home/Index", false);
+            }
+
+            if (Request.HttpMethod == "POST")
+            {
+                String Nome = Request.Form["NomeProduto"];
+                Int32 CategoriaID = Int32.Parse("2");
+                Int32 Versao = Int32.Parse("1");
+                String Imagem = Request.Form["ImagemProduto"];
+                String Descricao = Request.Form["DescricaoProduto"];
+                Double Preco = Double.Parse(Request.Form["PrecoProduto"]);
+
+                Produto NovoProduto = new Produto();
+
+                NovoProduto.Nome = Nome;
+                NovoProduto.CategoriaID = CategoriaID;
+                NovoProduto.Versao = Versao;
+                NovoProduto.Imagem = Imagem;
+                NovoProduto.Descricao = Descricao;
+                NovoProduto.Preco = Preco;
+
+
+                if (NovoProduto.AlterarProd())
+                {
+                    ViewBag.Mensagem = "Pacote alterado com sucesso!";
+                }
+                else
+                {
+                    ViewBag.Mensagem = "Houve um erro ao criar o Pacote. Verifique os dados e tente novamente.";
+                }
+            }
+
+
+
+            return View();
+        }
     }
 }
 
