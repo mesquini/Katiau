@@ -43,28 +43,26 @@ namespace WebSite.Controllers
             {
                 Usuario U = (Usuario)Session["User"];
 
-                Int32 IDProduto = Convert.ToInt32(Request.Form["Produto"]);
-                Produto Prods = new Produto(IDProduto);
+                //Int32 IDProduto = Convert.ToInt32(Request.Form["Produto"]);
+                //Produto Prods = new Produto(IDProduto);
 
                 String Nome = Request.Form["NomeProduto"];
-                Int32 CategoriaID = Int32.Parse (Request.Form["CategoriaID"]);
-                int Versao = int.Parse( Request.Form["Nome"]);
-                String Categoria = Request.Form["NomeCategori"];
+                Int32 CategoriaID = Int32.Parse ("3");
+                Int32 Versao = Int32.Parse("1");
                 String Imagem = Request.Form["ImagemProduto"];
                 String Descricao = Request.Form["DescricaoProduto"];
                 Double Preco = Double.Parse(Request.Form["PrecoProduto"]);
 
-                Produto NovoProduto = new Produto(Convert.ToInt32(IDProduto));
+                Produto NovoProduto = new Produto();
 
                 NovoProduto.Nome = Nome;
-                NovoProduto.Versao = Versao;
-                NovoProduto.Categoria = Categoria;
                 NovoProduto.CategoriaID = CategoriaID;
+                NovoProduto.Versao = Versao;
                 NovoProduto.Imagem = Imagem;
                 NovoProduto.Descricao = Descricao;
                 NovoProduto.Preco = Preco;
 
-                if (NovoProduto.Novo())
+                if (NovoProduto.NovoProd())
                 {
                     ViewBag.Mensagem = "Pacote criada com sucesso!";
                 }
