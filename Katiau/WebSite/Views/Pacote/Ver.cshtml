@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Cadastrar Pacote</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -105,23 +105,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        <h2>Ver Post</h2>
-        <a href="/Adm2/Listar">Voltar à listagem</a>
     </div>
-    <div>
+    <div class="textoPacote">
         <section>
             <div>
-                <h2>@(ViewBag.DLCs.Nome)</h2>
+                <a class="voltarLista" href="/Adm2/Listar" >Voltar à listagem</a>
+                <h2 class="titulo">@(ViewBag.Prod.Nome) - Preço: R$@(ViewBag.Prod.Preco)</h2>
+                <hr/>
+                <h3 class="descricao">Categoria: @(ViewBag.Prod.CategoriaID) Imagem: @(ViewBag.Prod.Imagem) </h3>
 
-                <h3>Categoria: @(ViewBag.DLCs.Categoria) Imagem: @(ViewBag.DLCs.Imagem) Preço: R$@(ViewBag.DLCs.Preco)</h3>
-
-                <p>@(ViewBag.DLCs.Descricao)</p>
+                <p class="descricao">@(ViewBag.Prod.Descricao)</p>
             </div>
         </section>
 
-
     </div>
-    <div class="copywriteLoja">
+    <div class="copywriteVer">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
