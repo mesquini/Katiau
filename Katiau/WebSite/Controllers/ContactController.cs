@@ -10,11 +10,6 @@ namespace WebSite.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            if (Session["User"] != null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
-
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();

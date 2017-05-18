@@ -162,10 +162,11 @@ fieldset {
 
 .login {
   position: absolute;
-  width: 350px;
+  width: auto;
   display: none;
-  top: 60px;
+  top: 55px;
   left: -27px;
+  cursor: default;
 }
 label.email{
     color:#B01030;
@@ -2692,12 +2693,7 @@ text-align: center;
     font-size: 26px;
     width: 80%;
 }
-.seguraTudo .nickU{
-    color: #333;
-    font-family:sans-serif;
-    font-size: 26px;
-    border-bottom: 1px solid;
-}
+
 .seguraTudo .email{
     color: #808080;
     font-family:sans-serif;
@@ -2779,6 +2775,43 @@ text-align: center;
     margin-top:15px;
     font-family: 'Times New Roman';
     font-size: 25px;
+}
+.imagem-logado{
+border-radius: 2%;
+width: 100%;
+border: 2px solid #B01030
+}
+.deslogar-bt{
+    margin-left:40%;
+    padding-right:1%;
+    padding-left:1%;
+    font-size:20px;
+    border: 3px solid #B01030;
+    border-radius: 5%;
+    background:white;
+    text-decoration: none;
+}
+.deslogar-bt:hover{
+    background:#B01030;
+    color:white;
+    border: 3px solid white;
+    text-decoration:none;
+}
+
+.nick-login{
+    color: #B01030;
+    font-family:sans-serif;
+    font-size: 22px;
+    text-size-adjust:auto;
+    width: auto;
+}
+
+.login-user-nome{
+    color: #B01030;
+    font-family:sans-serif;
+    font-size: 20px;
+    width: 95%;
+    margin-left: auto;
 }
 
 .descricao{
