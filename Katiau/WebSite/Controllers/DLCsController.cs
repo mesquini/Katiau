@@ -63,11 +63,11 @@ namespace WebSite.Controllers
 
                 if (NovoDLC.Novo())
                 {
-                    ViewBag.Mensagem = "NovoDLC criado com sucesso!";
+                    ViewBag.Mensagem = "Nova DLC criado com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o NovoDLC. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar uma Nova DLC. Verifique os dados e tente novamente.";
                 }
             }
 
@@ -125,13 +125,6 @@ namespace WebSite.Controllers
             {
                 Response.Redirect("/Home/Index", false);
             }
-
-            Usuario U = new Usuario(Convert.ToInt32(ID));
-            ViewBag.User = U;
-
-            Produto P = new Produto(Convert.ToInt32(ID));
-            ViewBag.Prod = P;
-
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
 

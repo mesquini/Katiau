@@ -99,7 +99,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <thead>
                                 <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
                                 <tr class="Produto">
-                                    <th class="texto">ID</th>
                                     <th class="texto">Nick</th>
                                     <th class="texto">Nome</th>
                                     <th class="texto">Sobrenome</th>
@@ -121,7 +120,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                     <tr>
 
-                                        <td>@(U.ID)</td>
                                         <td>@(U.Nick)</td>
                                         <td>@(U.Nome)</td>
                                         <td>@(U.Sobrenome)</td>
@@ -171,11 +169,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 {
                                     <tr>
 
-
                                         <td>@(P.Nome)</td>
-                                        <td>@(P.Versao)</td>
+                                        <td>@(P.Categoria)</td>
                                         <td>@(P.Imagem)</td>
-                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
+                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
                                         <td>R$@(P.Preco)</td>
                                         <td>
                                             <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
@@ -216,11 +213,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 {
                                     <tr>
 
-
                                         <td>@(D.Nome)</td>
                                         <td>@(D.Categoria)</td>
                                         <td>@(D.Imagem)</td>
-                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 88)) + "...")</td>
+                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 115)) + "...")</td>
                                         <td>R$@(D.Preco)</td>
                                         <td>
                                             <a href="/DLCs/Ver/@(D.ID)">Ver</a> |

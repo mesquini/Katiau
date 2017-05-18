@@ -28,7 +28,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Produto WHERE ID=@ID;";
+            Comando.CommandText = "SELECT * From Produto WHERE ID = @ID; ";
             Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
@@ -36,10 +36,10 @@ namespace WebSite.Models
             Leitor.Read();
 
 
-            this.ID = (Int32)Leitor["ID"];
+            this.ID = (int)Leitor["ID"];
             this.CategoriaID = (Int32)Leitor["CategoriaID"];
             this.Nome = (String)Leitor["NomeProduto"];
-            this.Versao = (int)Leitor["VersaoCategoria"];
+            //this.Versao = (int)Leitor["VersaoCategoria"];
             this.Imagem = (String)Leitor["ImagemProduto"];
             this.Descricao = (String)Leitor["DescricaoProduto"];
             this.Preco = (Double)Leitor["PrecoProduto"];
@@ -53,11 +53,12 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (NomeProduto, NomeCategoria, ImagemProduto, PrecoProduto) VALUES (@NomeProduto, @NomeCategoria, @ImagemProduto, @PrecoProduto);";
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, ImagemProduto, DescricaoProduto, PrecoProduto) VALUES (@NomeProduto, @CategoriaID, @ImagemProduto, @DescricaoProduto, @PrecoProduto);";
             Comando.Parameters.AddWithValue("@ID", this.ID); 
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
+            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
+            Comando.Parameters.AddWithValue("@DescricaoProduto", this.Descricao);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
             
 
@@ -112,7 +113,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
+            Comando.CommandText = "SELECT Produto.ID, NomeProduto,Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -120,7 +121,7 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 Produto P = new Produto();
-                P.ID = ((Int32)Leitor["CategoriaID"]);
+                P.ID = ((Int32)Leitor["ID"]);
                 P.Nome = ((String)Leitor["NomeProduto"]);
                 P.Categoria = (String)Leitor["NomeCategoria"];
                 P.Imagem = ((String)Leitor["ImagemProduto"]);
@@ -157,8 +158,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
-            Comando.Parameters.AddWithValue("CategoriaID", ID);
+            Comando.CommandText = "SELECT * FROM Produto WHERE ID = @ID";
+            Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -167,7 +168,7 @@ namespace WebSite.Models
             this.ID = (Int32)Leitor["ID"];
             this.CategoriaID = (Int32)Leitor["CategoriaID"];
             this.Nome = (String)Leitor["NomeProduto"];
-            this.Categoria = (String)Leitor["NomeCategoria"];
+            //this.Categoria = (String)Leitor["NomeCategoria"];
             this.Imagem = (String)Leitor["ImagemProduto"];
             this.Descricao = (String)Leitor["DescricaoProduto"];
             this.Preco = (Double)Leitor["PrecoProduto"];
@@ -181,7 +182,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.CommandText = "SELECT Produto.ID, CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -189,7 +190,8 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 DLC D = new DLC();
-                D.ID = ((Int32)Leitor["CategoriaID"]);
+                D.ID = ((Int32)Leitor["ID"]);
+                D.CategoriaID = ((Int32)Leitor["CategoriaID"]);
                 D.Nome = ((String)Leitor["NomeProduto"]);
                 D.Categoria = (String)Leitor["NomeCategoria"];
                 D.Imagem = ((String)Leitor["ImagemProduto"]);

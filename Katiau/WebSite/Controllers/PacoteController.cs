@@ -66,11 +66,11 @@ namespace WebSite.Controllers
 
                 if (NovoProduto.Novo())
                 {
-                    ViewBag.Mensagem = "DLC criada com sucesso!";
+                    ViewBag.Mensagem = "Pacote criada com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar a DLC. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar um pacote. Verifique os dados e tente novamente.";
                 }
             }
 
