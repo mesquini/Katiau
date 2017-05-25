@@ -140,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <ul>
 
             <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" >
                 <label for="tab1"> Usuários </label>
 
 
@@ -199,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </li>
             <!--PACOTES-->
             <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2" checked>
                 <label for="tab2"> Pacotes </label>
 
 
@@ -231,9 +231,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
                                         <td>R$@(P.Preco)</td>
                                         <td>
-                                            <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
-                                            <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                            <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
+                                            <a href="~/Pacote/Ver/@(P.ID)">Ver</a> |
+                                            <a href="~/Pacote/Alterar/@(P.ID)">Alterar</a> |
+                                            <a href="~/Pacote/Apagar/@(P.ID)">Apagar</a>
                                         </td>
                                     </tr>
 

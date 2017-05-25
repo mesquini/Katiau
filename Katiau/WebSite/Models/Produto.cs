@@ -46,17 +46,17 @@ namespace WebSite.Models
 
             Conexao.Close();
         }
-        public Boolean Novo()
+        public Boolean NovoProd()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, ImagemProduto, DescricaoProduto, PrecoProduto) VALUES (@NomeProduto, @CategoriaID, @ImagemProduto, @DescricaoProduto, @PrecoProduto);";
-            Comando.Parameters.AddWithValue("@ID", this.ID); 
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, VersaoProduto, ImagemProduto, DescricaoProduto, PrecoProduto) VALUES (@NomeProduto, @CategoriaID, @Versao, @ImagemProduto, @DescricaoProduto, @PrecoProduto);";
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
             Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.Parameters.AddWithValue("@Versao", this.Versao);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
             Comando.Parameters.AddWithValue("@DescricaoProduto", this.Descricao);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
@@ -69,7 +69,7 @@ namespace WebSite.Models
             return Resultado > 0 ? true : false;
         }
 
-        public Boolean Alterar()
+        public Boolean AlterarProd()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -97,8 +97,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "DELETE FROM Produto WHERE CategoriaID = @CategoriaID;";
-            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.CommandText = "DELETE FROM Produto WHERE Produto.ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -147,6 +147,8 @@ namespace WebSite.Models
         public String Nome { get; set; }
         public String Categoria { get; set; }
         public String Imagem { get; set; }
+
+        public int Versao { get; set; }
         public String Descricao { get; set; }
         public Double Preco { get; set; }
 
@@ -168,7 +170,6 @@ namespace WebSite.Models
             this.ID = (Int32)Leitor["ID"];
             this.CategoriaID = (Int32)Leitor["CategoriaID"];
             this.Nome = (String)Leitor["NomeProduto"];
-            //this.Categoria = (String)Leitor["NomeCategoria"];
             this.Imagem = (String)Leitor["ImagemProduto"];
             this.Descricao = (String)Leitor["DescricaoProduto"];
             this.Preco = (Double)Leitor["PrecoProduto"];
@@ -206,19 +207,21 @@ namespace WebSite.Models
 
             return DLC;
         }
-        public Boolean Novo()
+        public Boolean NovaDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (Nome, Categoria, Imagem, Preco) VALUES (@Nome, @Categoria, @Imagem, @Preco);";
-            Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
-            Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
-            Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
-            Comando.Parameters.AddWithValue("@ID", this.ID);
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, VersaoProduto, ImagemProduto, PrecoProduto, DescricaoProduto) VALUES (@Nome, @CategoriaID, @VersaoProduto, @Imagem, @Preco, @Descricao);";
+            Comando.Parameters.AddWithValue("@Nome", this.Nome);
+            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.Parameters.AddWithValue("@VersaoProduto", this.Versao);
+            Comando.Parameters.AddWithValue("@Imagem", this.Imagem);
+            Comando.Parameters.AddWithValue("@Preco", this.Preco);
+            Comando.Parameters.AddWithValue("@Descricao", this.Descricao);
+
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -226,19 +229,18 @@ namespace WebSite.Models
 
             return Resultado > 0 ? true : false;
         }
-        public Boolean Alterar()
+        public Boolean AlterarDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "UPDATE Produto SET NomeProduto = @NomeProduto, NomeCategoria = @NomeCategoria, ImagemProduto = @ImagemProduto, PrecoProduto = @PrecoProduto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.CommandText = "UPDATE Produto SET NomeProduto = @NomeProduto, ImagemProduto = @ImagemProduto, PrecoProduto = @PrecoProduto, DescricaoProduto = @DescricaoProduto WHERE Produto.CategoriaID = 2;";
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
-            Comando.Parameters.AddWithValue("@ID", this.ID);
+            Comando.Parameters.AddWithValue("@DescricaoProduto", this.Descricao);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -253,8 +255,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "DELETE FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
-            Comando.Parameters.AddWithValue("Produto.CategoriaID", this.CategoriaID);
+            Comando.CommandText = "DELETE FROM Produto WHERE Produto.ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
