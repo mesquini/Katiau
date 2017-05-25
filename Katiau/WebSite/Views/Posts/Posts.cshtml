@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -10,11 +9,12 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html>
 <head>
-    <title>Review | PC World</title>
-
+    <meta name="viewport" content="width=device-width" />
+    <title>Review | TechMundo</title>
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
 
@@ -67,7 +67,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -133,26 +135,84 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
     </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
-
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
-            </div>
-        </section>
-
-
-    </div>
-    <div class="copywriteVer">
+    <div class="review">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <h2>Reviews</h2>
+            <div class="review-sec">
+                <div class="review-grids">
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a><img src="~/images/cars-1.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a>Sobre o jogo</a></h4>
+                                <p>
+                                    Project CARS (Community Assisted Racing Simulator) é um jogo do gênero simulador de corrida desenvolvido pela
+                                    companhia Slightly Mad Studios... <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
+                                </p>
+     
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a><img src="~/images/cars-4.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a>Simulador realístico</a></h4>
+                                <p>
+                                    A Slightly Mad Studios tem como alvo um simulador realístico. Para diferenciar o jogo de líderes estabelecidos como
+                                    Gran Turismo ou Forza Motorsport... <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="review-grids">
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a><img src="~/images/cars-6.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a>Vantagens</a></h4>
+                                <p>
+                                    O jogo utiliza o Madness Engine, que foi usado nos jogos Need for Speed Shift também e que foi modificado durante o desenvolvimento...<a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a><img src="~/images/cars3.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a>Execução e recompensa</a></h4>
+                                <p>
+                                    Mesmo com um bom periférico de volante, Project CARS não é exatamente um jogo fácil. Ou, pelo menos, não é um jogo que possa...<a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
         </div>
     </div>
-</body>
+
+    <div class="copywritenovo">
+        <div class="container">
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a>
+        </div>
+    </div>    
+    </body>
 </html>

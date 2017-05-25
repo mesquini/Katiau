@@ -69,9 +69,63 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
                                     <li><a href="~/Contact/Index">Contato</a></li>
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="/Home/Index">
+                                                                <e class="msg-erro-login">@ViewBag.MsgErro</e>
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+                                    @if (ViewBag.NivelAcesso == true)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                    }
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
+                                                            <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
+                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
                                 </ul>
-                            </div>
-                            <!--/navbar collapse-->
+                            </div>>
                         </nav>
                         <!--/navbar-->
                     </div>

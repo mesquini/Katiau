@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -9,20 +8,16 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title> Criar novo post! :D  </title>
 
-    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
-    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -58,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li>
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -67,7 +62,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -133,26 +130,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
+    </div>
+
+    <!--TRAB-->                  
+
+    <div class="single-middle">
+
+        <h3>Criar um novo post</h3>
+       
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Titulo" required="">
+                <input type="file" placeholder="Imagem" name="imagemPerfil" required="" />
+                <br />
+                <textarea placeholder="Mensagem" required=""></textarea>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar Campos" />
+            </form>
+        </div>
+    <div class="single-bottom">
         
     </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
-
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
-            </div>
-        </section>
-
-
     </div>
-    <div class="copywriteVer">
+    <!-- /TRAB-->
+
+    <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030;">W3Layouts</a></p>
         </div>
     </div>
+
 </body>
 </html>

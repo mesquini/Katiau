@@ -9,14 +9,14 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Galeria</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="~/CSS/lightbox.css">
 
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
@@ -56,18 +56,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+
+                                    <li class="active"><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -87,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -115,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,26 +136,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
     </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
-
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
+    <!---->
+    <!---->
+    <div class="gallery">
+        <div class="container">
+            <h2>Galeria</h2>
+            <div class="gallery-bottom">
+                <div class="gallery-1">
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g1.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g1.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g2.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g2.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g3.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g3.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g4.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g4.jpg" alt="" /></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="gallery-1">
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g5.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g5.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g7.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g7.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g8.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g8.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g9.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g9.jpg" alt="" /></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="gallery-1">
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g10.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g10.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g11.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g11.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g12.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g12.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 gallery-grid">
+                        <a class="example-image-link" href="~/images/g6.jpg" data-lightbox="example-set"><img class="example-image" src="~/images/g6.jpg" alt="" /></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
-        </section>
-
-
+        </div>
     </div>
-    <div class="copywriteVer">
+    <script src="~/JS/lightbox-plus-jquery.min.js"></script>
+
+
+    <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
+    <!---->
+
 </body>
 </html>

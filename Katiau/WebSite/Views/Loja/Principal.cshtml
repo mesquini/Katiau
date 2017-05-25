@@ -9,11 +9,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Loja</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -21,20 +20,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
     <!-- Custom Theme files -->
+    <link rel="stylesheet" type="text/css" href="~/CSS/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/style4.css" />
+    <script type="text/javascript" src="~/JS/modernizr.custom.79639.js"></script>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Game Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    <meta name="keywords" content="Katiau Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 </head>
 <body>
-    <!-- header -->
-    <div class="banner banner2">
+    <!-- banner -->
+    <div class="banner bannerStore">
         <div class="container">
             <div class="headr-right">
             </div>
@@ -56,18 +58,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li class="active"><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -87,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -115,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,26 +138,79 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
-    </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
 
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
+        <!--teamstarts-->
+        <div class="team">
+            <div class="team-top">
+                <h3>Compre Já</h3>
             </div>
-        </section>
+            <div class="team-bottom">
+                <ul class="ch-grid">
+                    <li>
+                        <!-- Colocar Link da Pág XBOX -->
+                        <a href="~/Loja/Xbox">
+                            <div class="ch-item ch-img-venda-1">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-1"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>XBOX ONE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
 
+                    <li>
+                        <!-- Link Pág. PlayStation4 PRO -->
+                        <a href="~/Loja/Playstation">
+                            <div class="ch-item ch-img-venda-2">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-2"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PlayStation4 PRO</p>
+                                        </div>
+                                    </div>-
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Link PC GAME -->
+                        <a href="~/Loja/PC">
+                            <div class="ch-item ch-img-venda-3">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-3"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PCGAME</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
     </div>
-    <div class="copywriteVer">
+    <!---->
+    <!-- para dar o espaçamento-->
+    <div class="storeImagem">
+    </div>
+    <!--teamend-->
+    <div class="copywritenovissimo">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
+    <!---->
+
 </body>
 </html>

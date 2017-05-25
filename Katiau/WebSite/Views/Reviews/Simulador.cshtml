@@ -9,20 +9,16 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title> alt+Tab #4 Simuladores à todo vapor!  </title>
 
-    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
-    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -67,7 +63,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -133,26 +131,117 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
     </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
+    <!---->
+    <div class="container">
+        <div class="single">
+            <div class="blog-to">
 
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
+                <img class="img-responsive sin-on" src="~/images/g1.jpg" alt="" />
+                <div class="blog-top">
+                    <div class="blog-left">
+                        <b>22</b>
+                        <span>Feb</span>
+                    </div>
+                    <div class="top-blog">
+                        <a class="fast"> Simulador </a>
+                        <p>Postado por <a>Ana Carolina</a> no <a>Assuntos Gerais</a> | <a>4 Comentários</a></p>
+
+                        <p class="sed">
+                            Um jogo de simulação descreve uma diversa categoria de jogos eletrônicos para computadores e videogames,Os jogos de simulação que também podem ser chamados de jogos de estratégia,
+                            testam e desenvolvem as habilidades de construção e gerenciamento do jogador, obtendo o objetivo de simular o mundo real.O realismo é a marca registrada destes simuladores que vão lhe possibilitar a sensação de encarar a máquina dos seus sonhos.
+                            Os simuladores são utilizados tanto para diversão como para treinamento de profissionais,haja vista os equipamentos que imitam a ausência de gravidade,
+                            usados pela NASA.Há varios tipos de simuladores atualmente todos com diferente aspecto que são usados em empresas,jogos,investimentos,AutoEscolas e varios outros locais.
+
+                            <div class="col-md-6 md-in">
+                                <ul class="grid-part"></ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
             </div>
-        </section>
 
 
-    </div>
-    <div class="copywriteVer">
-        <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+
+            <div class="single-middle">
+
+                <h3>4 Comentários</h3>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>gamerBoy12</a></h4>
+                        <p>A Beta estava meio bugada, mas os carros estão 'zika' kkkj</p>
+                    </div>
+                </div>
+                <div class="media in-media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>mesquini</a></h4>
+                        <p> Sou obrigado a falar, esse jogo tá uma porr*! </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>Emankcin</a></h4>
+                        <p> O site está bem legal, as fotos estão 10/10.. Se eu fosse um professor daria 10 não é clã? </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>KilleroftheNightDark666</a></h4>
+                        <p> Baixei só pra testar os carros, se eu curtir eu compro </p>
+                    </div>
+                </div>
+
+            </div>
+            <!---->
+            <div class="single-bottom">
+
+                <h3>Deixe um Comentário</h3>
+                <form>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Nome" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                    </div>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    </div>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Assunto" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Mensagem</textarea>
+
+                    <input type="submit" value="Enviar">
+
+                </form>
+            </div>
         </div>
     </div>
+
+    <div class="copywrite">
+        <div class="container">
+            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030;">W3Layouts</a></p>
+        </div>
+    </div>
+
 </body>
 </html>

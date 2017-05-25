@@ -9,11 +9,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title>Contato</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -56,18 +55,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li class="active"><a href="~/Menu/Contato">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -87,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -115,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -133,26 +135,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
             </div>
         </div>
-        
     </div>
-    <div>
-        <section>
-            <div>
-                <a class="voltarLista" href="/Adm2/Listar">Voltar à listagem</a>
-                <h2 class="titulo">@(ViewBag.DLCs.Nome) - Preço: R$ @(ViewBag.DLCs.Preco)</h2>
-                <hr/>
-                <h3 class="descricao"> Categoria: @(ViewBag.DLCs.CategoriaID)  Imagem: @(ViewBag.DLCs.Imagem)</h3>
-
-                <p class="descricao" >Descrição: @(ViewBag.DLCs.Descricao)</p>
-            </div>
-        </section>
-
-
-    </div>
-    <div class="copywriteVer">
+    <!---->
+    <div class="contact">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <h2>Contato</h2>
+            <div class="map">
+                <h4>Onde nos encontrar:</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3090.269682941242!2d-47.059012458982835!3d-22.914451744047835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf3303ceff43%3A0xea485c60a4b21ef5!2sEscola+SENAI+Prof.+Dr.+Euryclides+de+Jesus+Zerbini!5e0!3m2!1spt-BR!2sbr!4v1485457042632" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="address">
+                <div class="col-md-4 address-grids">
+                    <h4>Nome :</h4>
+                    <ul>
+                        <li>
+                            <p>
+                                Ana Carolina<br>
+                                Marcelli<br>
+                                Pedro/Matias<br>
+                                Thiago<br>
+                                Victor<br>
+                                Victão<br>
+                                Victoria
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 address-grids">
+                    <h4>Telefone :</h4>
+                    <p>
+                        +2 987 654 701<br>
+                        +2 987 654 302<br>
+                        +2 987 654 303<br>
+                        +2 987 654 304<br>
+                        +2 987 654 305<br>
+                        +2 987 654 306<br>
+                        +2 987 654 307
+                    </p>
+                </div>
+                <div class="col-md-4 address-grids">
+                    <h4>E-mail :</h4>
+                    <p><a href="mailto:example@email.com">Ana@example.com</a><br>
+                    <p>
+                        <a href="mailto:example@email.com">Marcelli@katiau.com</a><br>
+                        <a href="mailto:example@email.com">Pedro@katiau.com</a><br>
+                        <a href="mailto:example@email.com">Thiago@katiau.com</a><br>
+                        <a href="mailto:example@email.com">Victor@katiau.com</a><br>
+                        <a href="mailto:example@email.com">Victão@katiau.com</a><br>
+                        <a href="mailto:example@email.com">Victoria@katiau.com</a>
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="contact-form">
+                <h4>Formulário de Contato</h4>
+                <form>
+                    <input type="text" placeholder="Nome" required="">
+                    <input type="email" placeholder="Email" required="">
+                    <input type="text" placeholder="Telefone" required="">
+                    <textarea placeholder="Mensagem" required=""></textarea>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar Campos" />
+                </form>
+            </div>
         </div>
     </div>
+    <!-- //contact -->
+
+
+    <div class="copywrite">
+        <div class="container">
+            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        </div>
+    </div>
+    <!---->
+
 </body>
 </html>

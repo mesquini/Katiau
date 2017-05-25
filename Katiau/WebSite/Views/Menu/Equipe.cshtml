@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Katiau</title>
+    <title>Sobre</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -58,18 +58,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li class="active"><a href="~/Menu/Equipe">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
 
                                     @if (ViewBag.Logado == null)
                                     {
@@ -91,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -119,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,21 +140,142 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!---->
-
-    <div class="nav_tabs">
-            <h2>Posts</h2>
-            <div class="content_tab">
-                <label>
-                     lalala
-                </label>
+    <div class="about">
+        <div class="container">
+            <h2>Sobre Nós:</h2>
+            <div class="about-text">
+                <div class="col-md-6 about-text-left">
+                    <img src="~/images/nos.jpg" class="img-responsive" alt="" />
+                </div>
+                <div class="col-md-6 about-text-right">
+                    <p class="sobre">
+                        <br/>
+                        <br/>
+                        Somos sete estudantes do terceiro termo do curso técnico de Informática na Escola Senai Prof. Dr. Euryclides de  Jesus Zerbini. Nos conhecemos no frio
+                        inverno russo, em Novembro de 2013. O interesse no desenvolvimento de websites começou após esbarrarmos  com Bill Gates em um beco em Marrocos, em 2014.
+                        O mesmo nos levou para sua base secreta em Dnipropetrovsk, antiga URSS (atual Ucrânia), onde fabricava armamentos nucleares para a KGB. Ele nos encorajou
+                        a desenvolver projetos para Web e desde o início de 2015 não paramos mais. No passado, já desenvolvemos sites para diversas finalidades, inclusive investir 
+                        em armamentos para radicais na Síria e Irã, fornecer maquinário para agricultores que desejam desmatar a Amazônia, contribuir para pesquisa científica
+                        e tráfico de crianças chinesas. Esse site foi criado arrecadar fundos e financiar o cartel de drogas no México (e um pouco da renda é direcionada ao Boldrini).
+                    </p>
+                    <ul>
+ 
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
             </div>
+            <!--SOBRE O TIME-->
+            <div class="team">
+                <div class="team-top">
+                    <h3>Nosso Time:</h3>
+                </div>
+                <div class="team-bottom">
+                    <ul class="ch-grid">
+                        <li>
+                            <div class="ch-item ch-img-1">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-1"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Ana Carolina </h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-2">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-2"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Marcelli Rodrigues</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-3">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-3"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Pedro Matias</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-4">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-4"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Thiago Silva</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-5">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-5"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Victor Rodrigues</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-6">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-6"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Victor Mesquini</h3>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch-item ch-img-7">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-7"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Victoria Oliveira</h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--teamend-->
+
+        </div>
     </div>
 
     <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
-    
+    <!---->
+
 </body>
 </html>
