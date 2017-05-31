@@ -13,7 +13,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
 
@@ -38,7 +38,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -85,7 +85,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             if (Request.HttpMethod == "POST")
@@ -124,7 +124,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
@@ -136,7 +136,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             DLC dlc = new DLC(Convert.ToInt32(ID));
