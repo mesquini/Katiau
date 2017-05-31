@@ -53,16 +53,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Menu/Home">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
+                                    <li><a href="~~/Menu/Equipe">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Review TechMundo</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
                                     <li><a href="contact.html">Contato</a></li>
 
                                     @if (ViewBag.Logado == null)
@@ -113,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
