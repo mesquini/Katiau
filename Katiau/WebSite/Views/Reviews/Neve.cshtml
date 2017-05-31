@@ -9,20 +9,16 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title> Alt+Tab | Dirigir na neve </title>
 
-    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
-    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -58,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li>
+                                    <li class="active">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -67,7 +63,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -134,32 +131,117 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-    <div class="voltarLista"><a href="/Adm2/Listar">Voltar à listagem</a></div> 
-    <div class="CriarUser">
-        <section>
-            
-            <h4 class="voltarLista">@(ViewBag.Mensagem)</h4>
-            <form id="post" action="~/Pacote/Novo" method="post" >
-                <fieldset id="fs1">
-                    <h2 class="fs-title">Cadastro novos Pacotes</h2>
-                    <h3 class="fs-subtitle">Digite suas informações</h3>
-                    <p><input type="text" name="NomeProduto" id="NomeProduto" placeholder="Digite o Nome do Pacote" required /></p>
-                    <p><input type="text" name="CategoriaID" id="CategoriaID" value="3" disabled /></p>
-                    <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
-                    <p><input type="text" name="PrecoProduto" id="PrecoProduto" placeholder="Preço do pacote" required /></p>
-                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição"></textarea></p>
-                    <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
-                </fieldset>
+    <!---->
+    <div class="container">
+        <div class="single">
+            <div class="blog-to">
+
+                <img class="img-responsive sin-on" src="~/images/g8.jpg" alt="" />
+                <div class="blog-top">
+                    <div class="blog-left">
+                        <b>22</b>
+                        <span>Fev</span>
+                    </div>
+                    <div class="top-blog">
+                        <a class="fast"> Dirigir na Neve </a>
+                        <p>Postado por <a>Matt</a> no <a>Alt+Tab</a> | <a>4 Comentários</a></p>
+                        <p class="sed">
+                            Dirigir na neve exige cuidados especiais com o veículo e uma atenção redobrada do motorista. A pista fica muito escorregadia
+                            e as chances de se envolver em um acidente aumentam.
+                            Na neve, são dois mundos diferentes: um carro leve com tração dianteira é sempre um dançarino desajeitado perto de um utilitário,
+                            esporte ou não, pesadão e com tração nas quatro rodas. O peso maior ajuda aos pneus acharem o asfalto e a tração 4×4 te garantem
+                            dirigibilidade e tração muito superiores. Basta rodar alguns quilômetros na neve para concordar com os americanos que moram em locais
+                            com inverno rigoroso: um picapão ou suve se torna fator de segurança, principalmente quando o motorista não tem lá muita vocação para piloto de rali.
+                            é importante que saiba duas coisas essenciais para dirigir durante o inverno na Europa. Em muitos países do Velho Continente, é exigido pneus de inverno,
+                            assim, como correntes de neve. Os países que geralmente exigem esses dois itens, são aqueles que se encontram mais ao norte do continente, onde a
+                            temperatura é mais baixa e apresenta maior probabilidade de cair neve.
+                        </p>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+
+
+            <div class="single-middle">
+
+                <h3>4 Comentários</h3>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>gamerBoy12</a></h4>
+                        <p>A Beta estava meio bugada, mas os carros estão 'zika' kkkj</p>
+                    </div>
+                </div>
+                <div class="media in-media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>mesquini</a></h4>
+                        <p> Sou obrigado a falar, esse jogo tá uma porr*! </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>Emankcin</a></h4>
+                        <p> O site está bem legal, as fotos estão 10/10.. Se eu fosse um professor daria 10 não é clã? </p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a>
+                            <img class="media-object" src="~/images/co.png" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a>KilleroftheNightDark666</a></h4>
+                        <p> Baixei só pra testar os carros, se eu curtir eu compro </p>
+                    </div>
+                </div>
+
+            </div>
+            <!---->
+            <div class="single-bottom">
+
+                <h3>Deixe um Comentário</h3>
+                <form>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Nome" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nome';}">
+                    </div>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    </div>
+                    <div class="col-md-4 comment">
+                        <input type="text" value="Assunto" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Assunto';}">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Mensagem';}">Mensagem</textarea>
+
+                    <input type="submit" value="Enviar">
+
                 </form>
-</section>
-
-
-    </div>
-    <div class="copywriteLoja">
-        <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            </div>
         </div>
     </div>
+
+    <div class="copywrite">
+        <div class="container">
+            <p> © 2017 Katiau. Todos os direitos Reservados | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3Layouts</a></p>
+        </div>
+    </div>
+
 </body>
 </html>
-

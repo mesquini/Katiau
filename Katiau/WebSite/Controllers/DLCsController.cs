@@ -45,29 +45,32 @@ namespace WebSite.Controllers
             {
                 Usuario U = (Usuario)Session["User"];
 
-                Int32 ID = Convert.ToInt32(Request.Form["DLC"]);
-                DLC C = new DLC(ID);
+                //Int32 ID = Convert.ToInt32(Request.Form["DLC"]);
+                //DLC DLC = new DLC(ID);
             
                 String Nome = Request.Form["NomeProduto"];
-                String Categoria = Request.Form["NomeCategoria"];
+                Int32 CategoriaID = Int32.Parse(Request.Form["2"]);
+                Int32 Versao = Int32.Parse("1");
                 String Imagem = Request.Form["ImagemProduto"];
                 String Descricao = Request.Form["DescricaoProduto"];
                 Double Preco = Double.Parse(Request.Form["PrecoProduto"]);
 
-                DLC NovoDLC = new DLC(Convert.ToInt32(ID));
-                NovoDLC.Nome = Nome;
-                NovoDLC.Categoria = Categoria;
-                NovoDLC.Imagem = Imagem;
-                NovoDLC.Descricao = Descricao;
-                NovoDLC.Preco = Preco;
+                // DLC NovoDLC = new DLC(Convert.ToInt32(ID));
+                DLC NovaDLC = new DLC();
+                NovaDLC.Nome = Nome;
+                NovaDLC.CategoriaID = CategoriaID;
+                NovaDLC.Versao = Versao;
+                NovaDLC.Imagem = Imagem;
+                NovaDLC.Descricao = Descricao;
+                NovaDLC.Preco = Preco;
 
-                if (NovoDLC.Novo())
+                if (NovaDLC.NovaDLC())
                 {
-                    ViewBag.Mensagem = "NovoDLC criado com sucesso!";
+                    ViewBag.Mensagem = "Nova DLC criado com sucesso!";
                 }
                 else
                 {
-                    ViewBag.Mensagem = "Houve um erro ao criar o NovoDLC. Verifique os dados e tente novamente.";
+                    ViewBag.Mensagem = "Houve um erro ao criar uma Nova DLC. Verifique os dados e tente novamente.";
                 }
             }
 
@@ -87,26 +90,24 @@ namespace WebSite.Controllers
 
             if (Request.HttpMethod == "POST")
             {
-                Int32 IDCategoria = Convert.ToInt32(Request.Form["Produto.CategoriaID"]);
-                Categoria C = new Categoria(IDCategoria);
+                //Int32 IDCategoria = Convert.ToInt32(Request.Form["Produto.CategoriaID"]);
+                //Categoria C = new Categoria(IDCategoria);
 
                 String Nome = Request.Form["NomeProduto"];
-                String Categoria = Request.Form["NomeCategoria"];
                 String Imagem = Request.Form["ImagemProduto"];
                 String Descricao = Request.Form["DescricaoProduto"];
                 Double Preco = Double.Parse( Request.Form["PrecoProduto"]);
 
-                DLC NovoDLC = new DLC(Convert.ToInt32(ID));
+                DLC NovoDLC = new DLC();
                 NovoDLC.Nome = Nome;
-                NovoDLC.Categoria = Categoria;
                 NovoDLC.Imagem = Imagem;
                 NovoDLC.Descricao = Descricao;
                 NovoDLC.Preco = Preco;
                     
 
-                if (NovoDLC.Alterar())
+                if (NovoDLC.AlterarDLC())
                 {
-                    ViewBag.Mensagem = "DLC alterado com sucesso!";
+                    ViewBag.Mensagem = "DLC alterada com sucesso!";
                 }
                 else
                 {
@@ -125,13 +126,6 @@ namespace WebSite.Controllers
             {
                 Response.Redirect("/Home/Index", false);
             }
-
-            Usuario U = new Usuario(Convert.ToInt32(ID));
-            ViewBag.User = U;
-
-            Produto P = new Produto(Convert.ToInt32(ID));
-            ViewBag.Prod = P;
-
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
 

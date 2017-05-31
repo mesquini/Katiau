@@ -234,7 +234,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <None Include="Views\About\Index.cshtml" />
+    <None Include="Views\Menu\Equipe.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
@@ -242,7 +242,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\gallery.html" />
-    <Content Include="Views\Loja.html" />
     <Content Include="Views\review.html" />
     <Content Include="Views\single.html" />
     <Content Include="Web.config" />
@@ -250,33 +249,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Adm2Controller.cs" />
-    <Compile Include="Controllers\CadastroController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DLCsController.cs" />
-    <Compile Include="Controllers\DriftController.cs" />
-    <Compile Include="Controllers\ExecuçaoController.cs" />
-    <Compile Include="Controllers\Menu\GalleryController.cs" />
-    <Compile Include="Controllers\Menu\HomeController.cs" />
-    <Compile Include="Controllers\NeveController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\NovoPostController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\LojaController.cs" />
     <Compile Include="Controllers\PacoteController.cs" />
-    <Compile Include="Controllers\PCController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
-    <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\PostUsuarioController.cs" />
-    <Compile Include="Controllers\SimuladorController.cs" />
-    <Compile Include="Controllers\SimuladorRealisticoController.cs" />
-    <Compile Include="Controllers\SingleController.cs" />
-    <Compile Include="Controllers\SobreJogoController.cs" />
-    <Compile Include="Controllers\SobreOJogoController.cs" />
-    <Compile Include="Controllers\Menu\StoreController.cs" />
-    <Compile Include="Controllers\TechMundoController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VantagensController.cs" />
-    <Compile Include="Controllers\VantagensTechMundoController.cs" />
-    <Compile Include="Controllers\VantangensController.cs" />
-    <Compile Include="Controllers\XboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,36 +266,30 @@
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\ReviewController.cs" />
-    <Compile Include="Controllers\Menu\AboutController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Store\Index.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Review\Index.cshtml" />
-    <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\Single\Index.cshtml" />
+    <Content Include="Views\Menu\Contato.cshtml" />
+    <Content Include="Views\Loja\Principal.cshtml" />
+    <Content Include="Views\Posts\Noticias.cshtml" />
+    <Content Include="Views\Menu\Home.cshtml" />
+    <Content Include="Views\Reviews\Reviews.cshtml" />
+    <Content Include="Views\Menu\Galeria.cshtml" />
+    <Content Include="Views\Posts\Padrao.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\PC\Index.cshtml" />
-    <Content Include="Views\Play\Index.cshtml" />
-    <Content Include="Views\Xbox\Index.cshtml" />
-    <Content Include="Views\Drift\Index.cshtml" />
-    <Content Include="Views\Simulador\Index.cshtml" />
-    <Content Include="Views\Neve\Index.cshtml" />
-    <Content Include="Views\TechMundo\Index.cshtml" />
-    <Content Include="Views\Vantagens\Index.cshtml" />
-    <Content Include="Views\Cadastro\Index.cshtml" />
+    <Content Include="Views\Loja\PC.cshtml" />
+    <Content Include="Views\Loja\Playstation.cshtml" />
+    <Content Include="Views\Loja\Xbox.cshtml" />
+    <Content Include="Views\Reviews\Drift.cshtml" />
+    <Content Include="Views\Reviews\Simulador.cshtml" />
+    <Content Include="Views\Reviews\Neve.cshtml" />
+    <Content Include="Views\Posts\Posts.cshtml" />
+    <Content Include="Views\Reviews\Vantagens.cshtml" />
+    <Content Include="Views\Menu\Cadastro.cshtml" />
     <Content Include="Views\SobreOJogo.cshtml" />
-    <Content Include="Views\SobreOJogo\Index.cshtml" />
-    <Content Include="Views\VantagensTechMundo\Index.cshtml" />
-    <Content Include="Views\SimuladorRealistico\Index.cshtml" />
-    <Content Include="Views\Execuçao\Index.cshtml" />
     <Content Include="Views\Adm2\Listar.cshtml" />
     <Content Include="Views\PostUsuario\Index.cshtml" />
-    <Content Include="Views\NovoPost\Index.cshtml" />
+    <Content Include="Views\Posts\NovoPost.cshtml" />
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\DLCs\Alterar.cshtml" />
     <Content Include="Views\DLCs\Novo.cshtml" />
@@ -327,7 +302,7 @@
     <Content Include="Views\Pacote\Listar.cshtml" />
     <Content Include="Views\DLCs\Listar.cshtml" />
     <Content Include="Views\Perfil\Edita_Perfil.cshtml" />
-    <Content Include="Views\Store\TuViewIsso.cshtml" />
+    <Content Include="Views\Loja\DLC.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

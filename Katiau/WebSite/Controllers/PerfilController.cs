@@ -23,9 +23,9 @@ namespace WebSite.Controllers
                 ViewBag.BioU = us.Bio;
                 ViewBag.ImagemU = us.ImagemPerfil;
 
-                 return View();
+                return View();            
             }
-            Response.Redirect("/Home/Index", false);
+            Response.Redirect("/Menu/Home", false);
             return View();
         }
         public ActionResult Edita_Perfil()
@@ -55,13 +55,33 @@ namespace WebSite.Controllers
                     NovoPerfil = (Usuario)Session["User"];
                     NovoPerfil.Bio = Bio;
                     NovoPerfil.Nick = Nick;
+                    int ID = NovoPerfil.ID;
 
-                    
+                    foreach (string fileName in Request.Files)
+                    {
+                        HttpPostedFileBase postedFile = Request.Files[fileName];
+                        int contentLength = postedFile.ContentLength;
+                        string contentType = postedFile.ContentType;
+                        string nome = postedFile.FileName;
+
+                        if (contentType.IndexOf("jpeg") > 0)
+                        {
+                            postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_users\\" + "imagemPerfil" + ID + ".jpg");
+                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_users\" + "imagemPerfil" + ID + ".jpg");
+                        }
+                        else
+                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\" + Request.Form["Desc"] + ".txt");
+
+                    }
+
+                    NovoPerfil.ImagemPerfil = "imagemPerfil" + ID +".jpg";
+
                     if (NovoPerfil.NovaBio())
                     {
                         ViewBag.Mensagem = "Perfil alterado com sucesso!";
                         ViewBag.BioU = Bio;
-                        Response.Redirect("/Perfil/Index", false);
+                        ViewBag.ImagemU = NovoPerfil.ImagemPerfil;
+                        Response.Redirect("~/Perfil/Index", false);
                        }
                     else
                     {
@@ -70,7 +90,7 @@ namespace WebSite.Controllers
                 }
                 return View();
             }
-            Response.Redirect("/Home/Index", false);
+            Response.Redirect("/Menu/Home", false);
             return View();
         }
 

@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="banner_head_top">
                 <div class="logo">
-                    <h1><a href="~/Home/Index">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
+                    <h1><a href="~/Menu/Home">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
                 </div>
                 <div class="top-menu">
                     <div class="content white">
@@ -56,46 +56,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
-                                    <li>
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li>
-                                    <li class="imagemUser">
-                                        <span class="loginform" id="loginform">
-                                            <script src="~/JS/index.js"></script>
-                                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-                                            <img class="login-sign-image" src="~/images/usuarioHover.png"
-                                                 onmouseover="this.src='/images/usuario.png'"
-                                                 onmouseout="this.src='/images/usuarioHover.png'" />
-                                            <div class="login">
-                                                <div class="arrow-up"></div>
-                                                <div class="formholder" style="display: block;">
-                                                    <div class="randompad">
-                                                        <fieldset>
-                                                            <label class="email" name="email">Email</label>
-                                                            <input type="email" />
-                                                            <label class="senha" name="password">Password</label>
-                                                            <input type="password" />
-                                                            <input type="submit" value="Login" />
-                                                            <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><b>Cadastre-se </b></a></h4>
-                                                        </fieldset>
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
+                                     @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="~/Menu/Home">
+                                                                <e class="msg-erro-login">@ViewBag.MsgErro</e>
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </span>
-                                    </li>
+                                            </span>
+                                        </li>
+                                    }
+                                    @if (ViewBag.NivelAcesso == true)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                    }
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
+                                                            <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
                                 </ul>
                             </div>
-                            <!--/navbar collapse-->
                         </nav>
                         <!--/navbar-->
                     </div>
@@ -110,25 +140,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="CriarUser">
         <section>
 
-            <h4>@(ViewBag.Mensagem)</h4>
-            <!--  <div class="contact-form">
-              <form method="post" action="/Usuario/Novo">
-                  <select name="Usuario" id="Usuario">
-
-                  </select>
-
-                  <p> Nick: <input type="text" name="NickU" id="NickU" placeholder="Digite o Nick" required /></p>
-                  <p> Nome: <input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
-                  <p> Sobrenome: <input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Digite o sobrenome" required /></p>
-                  <p> Email: <input type="text" name="EmailU" id="EmailU" placeholder="Digite o sobrenome" required /></p>
-                  <p> Senha: <input type="password" name="SenhaU" id="SenhaU" placeholder="Digite a senha" required /></p>
-                  <p> Imagem: <input type="file" name="ImagemU" id="ImagemU" placeholder="Imagem Perfil"  /></p>
-                  <p> Data: <input type="text" name="NascimentoU" id="NascimentoU" placeholder="DD/MM/AAAA" required /></p>
-                  <p> Biografia: <textarea rows="10" cols="40" name="BioU" id="BioU" placeholder="Digite Bio" ></textarea></p>
-                  <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
-              </form>
-                  </div>-->
-            <form id="post" action="" method="post" enctype="text/plain">
+            <h4 class="voltarLista">@(ViewBag.Mensagem)</h4>
+            <form id="post" action="~/DLCs/Novo" method="post" >
                 <fieldset id="fs1">
                     <h2 class="fs-title">Cadastro de novas DLC's</h2>
                     <h3 class="fs-subtitle">Digite as informações</h3>
@@ -136,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <p><input type="text" name="CategoriaID" id="CategoriaID" value="2" disabled /></p>
                     <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
                     <p><input type="text" name="PrecoProduto" id="PrecoProduto" placeholder="Preço" required /></p>
-                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição"></textarea></p>
+                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição" required></textarea></p>
                     <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
                 </fieldset>
             </form>

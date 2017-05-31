@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -11,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Katiau</title>
+    <title>Loja | Katiau PC</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -19,9 +20,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
     <!-- Custom Theme files -->
-    <link rel="stylesheet" type="text/css" href="~/CSS/common.css" />
-    <link rel="stylesheet" type="text/css" href="~/CSS/style4.css" />
-    <script type="text/javascript" src="~/JS/modernizr.custom.79639.js"></script>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- Custom Theme files -->
     <!--//theme-style-->
@@ -31,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
+
 </head>
 <body>
     <!-- header -->
@@ -68,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
 
                                     <li><a href="~/Menu/Galeria">Galeria</a></li>
-                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li class="active"><a href="~/Loja/Principal">Loja</a></li>
                                     <li><a href="~/Menu/Contato">Contato</a></li>
 
                                     @if (ViewBag.Logado == null)
@@ -91,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -133,180 +131,155 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="clearfix"></div>
 
+                    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <!--USUARIOS-->
-    <div class="nav_tabs">
-        <ul>
 
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                <label for="tab1"> Usuários </label>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
-                <div class="content_tab">
-                    <section>
-
-                        <table border="1">
-
-                            <thead>
-                                <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
-                                <tr class="Produto">
-                                    <th class="texto">Nick</th>
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Sobrenome</th>
-                                    <th class="texto">Email</th>
-                                    <th class="texto">Senha</th>
-                                    <th class="texto">Nascimento</th>
-                                    <th class="texto">ImagemPerfil</th>
-                                    <th class="texto">Administrador</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-
-
-
-                            </thead>
-
-                            <tbody>
-                                @foreach (var U in ViewBag.User)
-                                {
-
-                                    <tr>
-
-                                        <td>@(U.Nick)</td>
-                                        <td>@(U.Nome)</td>
-                                        <td>@(U.Sobrenome)</td>
-                                        <td>@(U.Email)</td>
-                                        <td>@(U.Senha)</td>
-                                        <td>@(U.Nascimento)</td>
-                                        <td>@(U.ImagemPerfil)</td>
-                                        <td>@(U.Adm)</td>
-                                        <td>
-
-                                            <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-
-                        </table>
-
-                    </section>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <!--TITULO E IMAGEM-->
+                <h1 class="titulo">Katiau PC</h1>
+                <div class="capaPC">
+                    <img src="~/images/Logos/pcgame_com_logo.jpg" width="500" height="700" />
                 </div>
 
-            </li>
-            <!--PACOTES-->
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                <label for="tab2"> Pacotes </label>
 
-
-                <div class="content_tab">
-                    <section>
-                        <table border="1">
-                            <thead>
-                                <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr>
-                                <tr class="Produto">
-
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Categoria</th>
-                                    <th class="texto">Imagem</th>
-                                    <th class="texto">Descrição</th>
-                                    <th class="texto">Preço</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach (var P in ViewBag.Prod)
-                                {
-                                    <tr>
-
-                                        <td>@(P.Nome)</td>
-                                        <td>@(P.Categoria)</td>
-                                        <td>@(P.Imagem)</td>
-                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
-                                        <td>R$@(P.Preco)</td>
-                                        <td>
-                                            <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
-                                            <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                            <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-
-            </li>
-            <!--DLC-->
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
-                <label for="tab3"> DLC </label>
-                <div class="content_tab">
-
-                    <section>
-                        <table border="1">
-                            <thead>
-                                <tr><a href="/DLCs/Novo/">Cadastrar uma nova DLC</a></tr>
-                                <tr class="Produto">
-
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Categoria</th>
-                                    <th class="texto">Imagem</th>
-                                    <th class="texto">Descrição</th>
-                                    <th class="texto">Preço</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var D in ViewBag.DLCs)
-                                {
-                                    <tr>
-
-                                        <td>@(D.Nome)</td>
-                                        <td>@(D.Categoria)</td>
-                                        <td>@(D.Imagem)</td>
-                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 115)) + "...")</td>
-                                        <td>R$@(D.Preco)</td>
-                                        <td>
-                                            <a href="/DLCs/Ver/@(D.ID)">Ver</a> |
-                                            <a href="/DLCs/Alterar/@(D.ID)">Alterar</a> |
-                                            <a href="/DLCs/Apagar/@(D.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </section>
-
+                <!--CARRINHO DE COMPRAS-->
+                <div class="carrinho">
+                    <!--BOTÃO COMPRAR-->
+                    <strong class="preco">R$ 199,91</strong>
+                    <form target="pagseguro" method="post" action="https://pagseguro.uol.com.br/checkout/checkout.jhtml">
+                        <input type="hidden" name="email_cobranca" value="suporte@lojamodelo.com.br" />
+                        <input type="hidden" name="tipo" value="CBR" />
+                        <input type="hidden" name="moeda" value="BRL" />
+                        <input type="hidden" name="item_id" value="12345" />
+                        <input type="hidden" name="item_descr" value="Katiau PC" />
+                        <input type="hidden" name="item_quant" value="1" />
+                        <input type="hidden" name="item_valor" value="19991" />
+                        <input type="hidden" name="frete" value="0" />
+                        <input type="hidden" name="peso" value="0" />
+                        <input class="bot_comprar" type="image" name="submit" src="http://static.kabum.com.br/conteudo/temas/001/imagens/icones/comprar_detalhes.png" />
+                    </form>
 
                 </div>
-            </li>
 
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab4">
-                <label for="tab4"> Outros </label>
-                <div class="content_tab">
+                <!--SOBRE O JOGO-->
+
+                <div class="detalhes">
+                    <p class="sobre"><strong>Sobre o Jogo</strong></p>
+
+                    <p>
+                        Katiau insere o jogador na pele de um piloto de corrida. Sua imersão permite que o usuário vivencie a adrenalina de participar de competições emocionantes, dirigindo um carro de alta potência, totalmente customizável.
+                        O jogo utiliza uma engine com física realística, o que aumenta ainda mais ainda a complexidade e o detalhamento deste que é considerado pela crítica como o melhor simulador desse gênero disponível no mercado.
+                    </p>
+                </div>
+
+                <!--ESPECIFICAÇÕES TECNICAS DO JOGO-->
+                <p class="detalhes">
+                    <strong>Características:</strong> <br />
+                    - Marca: Positivo<br />
+                    - Game: Katiau<br />
+
+                    <strong>Especificações:</strong> <br />
+                    - Plataforma: PC;<br />
+                    - Desenvolvedor: Katiau Enterprise;<br />
+                    - Gênero: Simulador;<br />
+                    - Idioma: Audio e Legenda Portugues-BR;<br />
+                    - Número de Jogadores:  01 Offline / até 32 Multiplayer Online;<br />
+                    - Espaço Requerido no Disco Rígido: Requer 30.2GB;<br />
+                    - Saída de Vídeo: 4096x2160 @@60Hz / 1280x720 at144Hz;<br />
+                    - Classificação: 14 anos.
+
+                </p>
+            </div>
+
+            <div class="item">
+                <!--TITULO E IMAGEM-->
+                <h1 class="titulo">Katiau PC - Deluxe Edition</h1>
+                <div class="capaPC">
+                    <img src="~/images/Logos/pcgame_com_logo_deluxe.png" width="500" height="700" />
+                </div>
 
 
+                <!--CARRINHO DE COMPRAS-->
+                <div class="carrinho">
+                    <!--BOTÃO COMPRAR-->
+                    <strong class="preco">R$ 359,99</strong>
+                    <form target="pagseguro" method="post" action="https://pagseguro.uol.com.br/checkout/checkout.jhtml">
+                        <input type="hidden" name="email_cobranca" value="suporte@lojamodelo.com.br" />
+                        <input type="hidden" name="tipo" value="CBR" />
+                        <input type="hidden" name="moeda" value="BRL" />
+                        <input type="hidden" name="item_id" value="12345" />
+                        <input type="hidden" name="item_descr" value="Katiau PC - Deluxe Edition" />
+                        <input type="hidden" name="item_quant" value="1" />
+                        <input type="hidden" name="item_valor" value="35999" />
+                        <input type="hidden" name="frete" value="0" />
+                        <input type="hidden" name="peso" value="0" />
+                        <input class="bot_comprar" type="image" name="submit" src="http://static.kabum.com.br/conteudo/temas/001/imagens/icones/comprar_detalhes.png" />
+                    </form>
 
                 </div>
-            </li>
-        </ul>
+
+                <!--SOBRE O JOGO-->
+
+                <div class="detalhes">
+                    <p class="sobre"><strong>Sobre o Jogo</strong></p>
+
+                    <p>
+                        Katiau insere o jogador na pele de um piloto de corrida. Sua imersão permite que o usuário vivencie a adrenalina de participar de competições emocionantes, dirigindo um carro de alta potência, totalmente customizável.
+                        Na versão Deluxe, o jogo conta com o Season Pass incluindo todos os pacotes de carros adicionais, tanto os existentes, quanto os que possam ser lançados futuramente.
+                    </p>
+                </div>
+
+                <!--ESPECIFICAÇÕES TECNICAS DO JOGO-->
+                <p class="detalhes">
+                    <strong>Características:</strong> <br />
+                    - Marca: Positivo<br />
+                    - Game: Katiau<br />
+
+                    <strong>Especificações:</strong> <br />
+                    - Plataforma: PC;<br />
+                    - Desenvolvedor: Katiau Enterprise;<br />
+                    - Gênero: Simulador;<br />
+                    - Número de Jogadores:  01 Offline / até 32 Multiplayer Online;<br />
+                    - Espaço Requerido no Disco Rígido: Requer 30.2GB;<br />
+                    - Saída de Vídeo: 4096x2160 @@60Hz / 1280x720 at144Hz;<br />
+                    - Classificação: 14 anos.
+
+                </p>
+            </div>
+        </div>
+
+
+
     </div>
 
-    <div class="copywrite">
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+
+    <div class="copywriteLoja">
         <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos reservados. | Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
     <!---->
+
 
 </body>
 </html>

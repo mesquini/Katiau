@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="banner_head_top">
                 <div class="logo">
-                    <h1><a href="~/Home/Index">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
+                    <h1><a href="~/Menu/Home">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
                 </div>
                 <div class="top-menu">
                     <div class="content white">
@@ -57,26 +57,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
+                                    @if (ViewBag.Logado == null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <form method="post" action="~/Menu/Home">
+                                                                <e class="msg-erro-login">@ViewBag.MsgErro</e>
+                                                                <label class="email" name="email">Email</label>
+                                                                <input type="email" id="email" name="email" />
+                                                                <label class="senha" name="password">Password</label>
+                                                                <input type="password" id="senha" name="senha" />
+                                                                <input type="submit" value="Login" />
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
+                                    @if (ViewBag.NivelAcesso == true)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
+                                    }
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li class="imagemUser">
+                                            <span class="loginform" id="loginform">
+                                                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                <script src="~/JS/index.js"></script>
+                                                <img class="login-sign-image" src="~/images/usuarioHover.png"
+                                                     onmouseover="this.src='/images/usuario.png'"
+                                                     onmouseout="this.src='/images/usuarioHover.png'" />
+
+                                                <div class="login">
+                                                    <div class="arrow-up"></div>
+                                                    <div class="formholder" style="display: block;">
+                                                        <div class="randompad">
+                                                            <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
+                                                            <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
+                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    }
                                 </ul>
-                            </div>
-                            <!--/navbar collapse-->
+                            </div>>
                         </nav>
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-                    
+
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -85,41 +140,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--USUARIOS-->
     <div class="nav_tabs">
         <ul>
-          
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                    <label for="tab1"> Usuários </label>
 
-          
-                    <div class="content_tab">
-                        <section>
-                            
-                            <table border="1">
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab1" >
+                <label for="tab1"> Usuários </label>
 
-                                <thead>
-                                <tr><a href="/Usuario/Novo/@(ViewBag.ID)">Cadastrar novo Usuário ou Adm</a></tr> 
-                                    <tr class="Produto">
-                                        <th class="texto">ID</th>
-                                        <th class="texto">Nick</th>
-                                        <th class="texto">Nome</th>
-                                        <th class="texto">Sobrenome</th>
-                                        <th class="texto">Email</th>
-                                        <th class="texto">Senha</th>
-                                        <th class="texto">Nascimento</th>
-                                        <th class="texto">ImagemPerfil</th>
-                                        <th class="texto">Ações</th>
-                                    </tr>
-                                  
-                                    
-                                  
-                                </thead>
 
-                                <tbody>
-                               @foreach (var U in ViewBag.User)
-                               {
+                <div class="content_tab">
+                    <section>
+
+                        <table border="1">
+
+                            <thead>
+                                <tr><a href="~/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
+                                <tr class="Produto">
+                                    <th class="texto">ID</th>
+                                    <th class="texto">Nick</th>
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Sobrenome</th>
+                                    <th class="texto">Email</th>
+                                    <th class="texto">Senha</th>
+                                    <th class="texto">Nascimento</th>
+                                    <th class="texto">ImagemPerfil</th>
+                                    <th class="texto">Administrador</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
+
+
+
+                            </thead>
+
+                            <tbody>
+                                @foreach (var U in ViewBag.User)
+                                {
 
                                     <tr>
-                                        
+
                                         <td>@(U.ID)</td>
                                         <td>@(U.Nick)</td>
                                         <td>@(U.Nome)</td>
@@ -128,77 +184,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td>@(U.Senha)</td>
                                         <td>@(U.Nascimento)</td>
                                         <td>@(U.ImagemPerfil)</td>
+                                        <td>@(U.Adm)</td>
                                         <td>
-                                            
-                                            <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
+
+                                            <a href="~/Usuario/Apagar/@(U.ID)">Apagar</a>
                                         </td>
                                     </tr>
-                               }
-                                </tbody>
-                                
-                            </table>
+                                }
+                            </tbody>
 
-                        </section>
-                    </div>
-           
-                </li>
-            
-                <li class="tabs">
-                    <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                    <label for="tab2"> Pacotes </label>
+                        </table>
 
-                    
-                        <div class="content_tab">
-                            <section>
-                                <table border="1">
-                                    <thead>
-                                        <tr><a href="/Produto/Novo/@(ViewBag.Prod.ID)">Cadastrar um novo Pacote</a></tr> 
-                                        <tr class="Produto">
-                                            
-                                            <th class="texto">Nome</th>
-                                            <th class="texto">Categoria</th>
-                                            <th class="texto">Imagem</th>
-                                            <th class="texto">Descrição</th>
-                                            <th class="texto">Preço</th>
-                                            <th class="texto">Ações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                    </section>
+                </div>
 
-                                        @foreach (var P in ViewBag.Prod)
-                                        {
-                                            <tr>
-                                                <!--PACOTES-->
-
-                                                <td>@(P.Nome)</td>
-                                                <td>@(P.Categoria)</td>
-                                                <td>@(P.Imagem)</td>
-                                                <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 70)) + "...")</td>
-                                                <td>R$@(P.Preco)</td>
-                                                <td>
-                                                    <a href="/Produto/Ver/@(P.Prod.ID)">Ver</a> |
-                                                    <a href="/Produto/Alterar/@(P.Prod.ID)">Alterar</a> |
-                                                    <a href="/Produto/Apagar/@(P.Prod.ID)">Apagar</a>
-                                                </td>
-                                            </tr>
-                                            
-                                        }
-                                            </tbody>
-</table>
-                            </section>
-                        </div>
-                    
-                </li>
-
+            </li>
+            <!--PACOTES-->
             <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
-                <label for="tab3"> DLC </label>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
+                <label for="tab2"> Pacotes </label>
+
+
                 <div class="content_tab">
-                    
                     <section>
                         <table border="1">
                             <thead>
-                                <tr><a href="/Produto/Novo/@(ViewBag.DLCs.ID)">Cadastrar uma nova DLC</a></tr> 
+                                <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr>
                                 <tr class="Produto">
 
                                     <th class="texto">Nome</th>
@@ -210,23 +221,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </tr>
                             </thead>
                             <tbody>
-@foreach (var D in ViewBag.DLCs)
+
+                                @foreach (var P in ViewBag.Prod)
                                 {
                                     <tr>
-                                        <!--DLC-->
+
+
+                                        <td>@(P.Nome)</td>
+                                        <td>@(P.Versao)</td>
+                                        <td>@(P.Imagem)</td>
+                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
+                                        <td>R$@(P.Preco)</td>
+                                        <td>
+                                            <a href="~/Pacote/Ver/@(P.ID)">Ver</a> |
+                                            <a href="~/Pacote/Alterar/@(P.ID)">Alterar</a> |
+                                            <a href="~/Pacote/Apagar/@(P.ID)">Apagar</a>
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+            </li>
+            <!--DLC-->
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab3" checked>
+                <label for="tab3"> DLC </label>
+                <div class="content_tab">
+
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="~/DLCs/Novo/">Cadastrar uma nova DLC</a></tr>
+                                <tr class="Produto">
+
+                                    <th class="texto">Nome</th>
+                                    <th class="texto">Categoria</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Preço</th>
+                                    <th class="texto">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var D in ViewBag.DLCs)
+                                {
+                                    <tr>
+
 
                                         <td>@(D.Nome)</td>
                                         <td>@(D.Categoria)</td>
                                         <td>@(D.Imagem)</td>
-                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 88)) + "...")</td>
+                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 115)) + "...")</td>
                                         <td>R$@(D.Preco)</td>
                                         <td>
-                                            <a href="/Produto/Ver/@(D.DLCs.ID)">Ver</a> |
-                                            <a href="/Produto/Alterar/@(D.DLCs.ID)">Alterar</a> |
-                                            <a href="/Produto/Apagar/@(D.DLCs.ID)">Apagar</a>
+                                            <a href="~/DLCs/Ver/@(D.ID)">Ver</a> |
+                                            <a href="~/DLCs/Alterar/@(D.ID)">Alterar</a> |
+                                            <a href="~/DLCs/Apagar/@(D.ID)">Apagar</a>
                                         </td>
                                     </tr>
-}
+                                }
                             </tbody>
                         </table>
                     </section>

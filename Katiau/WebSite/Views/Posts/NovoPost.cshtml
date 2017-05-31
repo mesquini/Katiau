@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -9,20 +8,16 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Review | PC World</title>
+    <title> Criar novo post! :D  </title>
 
-    <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
-    <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -67,7 +62,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -134,32 +131,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-    <div class="voltarLista"><a href="/Adm2/Listar">Voltar à listagem</a></div> 
-    <div class="CriarUser">
-        <section>
-            
-            <h4 class="voltarLista">@(ViewBag.Mensagem)</h4>
-            <form id="post" action="~/Pacote/Novo" method="post" >
-                <fieldset id="fs1">
-                    <h2 class="fs-title">Cadastro novos Pacotes</h2>
-                    <h3 class="fs-subtitle">Digite suas informações</h3>
-                    <p><input type="text" name="NomeProduto" id="NomeProduto" placeholder="Digite o Nome do Pacote" required /></p>
-                    <p><input type="text" name="CategoriaID" id="CategoriaID" value="3" disabled /></p>
-                    <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
-                    <p><input type="text" name="PrecoProduto" id="PrecoProduto" placeholder="Preço do pacote" required /></p>
-                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição"></textarea></p>
-                    <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
-                </fieldset>
-                </form>
-</section>
 
+    <!--TRAB-->                  
 
+    <div class="single-middle">
+
+        <h3>Criar um novo post</h3>
+       
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Titulo" required="">
+                <input type="file" placeholder="Imagem" name="imagemPerfil" required="" />
+                <br />
+                <textarea placeholder="Mensagem" required=""></textarea>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar Campos" />
+            </form>
+        </div>
+    <div class="single-bottom">
+        
     </div>
-    <div class="copywriteLoja">
+    </div>
+    <!-- /TRAB-->
+
+    <div class="copywrite">
         <div class="container">
-            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <p> © 2017 Katiau. All rights reserved | Design by <a href="#" style="color: #B01030;">W3Layouts</a></p>
         </div>
     </div>
+
 </body>
 </html>
-

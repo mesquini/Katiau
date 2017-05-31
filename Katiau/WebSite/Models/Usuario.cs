@@ -105,9 +105,11 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "UPDATE Usuario SET BioU = @Bio WHERE NickU = @Nick;";
+            Comando.CommandText = "UPDATE Usuario SET BioU = @Bio , NickU = @Nick, ImagemU = @Imagem WHERE ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
             Comando.Parameters.AddWithValue("@Nick", this.Nick);
             Comando.Parameters.AddWithValue("@Bio", this.Bio);
+            Comando.Parameters.AddWithValue("@Imagem", this.ImagemPerfil);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 

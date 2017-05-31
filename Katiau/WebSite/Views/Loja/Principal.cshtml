@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -11,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Katiau</title>
+    <title>Loja</title>
 
     <link href="~/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -27,15 +28,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Game Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    <meta name="keywords" content="Katiau Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
+
 </head>
 <body>
-    <!-- header -->
-    <div class="banner banner2">
+    <!-- banner -->
+    <div class="banner bannerStore">
         <div class="container">
             <div class="headr-right">
             </div>
@@ -68,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
 
                                     <li><a href="~/Menu/Galeria">Galeria</a></li>
-                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li class="active"><a href="~/Loja/Principal">Loja</a></li>
                                     <li><a href="~/Menu/Contato">Contato</a></li>
 
                                     @if (ViewBag.Logado == null)
@@ -91,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -132,178 +133,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-
+                    <script type="text/javascript" src="~/JS/bootstrap-3.1.1.min.js"></script>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
+
+        <!--teamstarts-->
+        <div class="team">
+            <div class="team-top">
+                <h3>Compre Já</h3>
+            </div>
+            <div class="team-bottom">
+                <ul class="ch-grid">
+                    <li>
+                        <!-- Colocar Link da Pág XBOX -->
+                        <a href="~/Loja/Xbox">
+                            <div class="ch-item ch-img-venda-1">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-1"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>XBOX ONE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!-- Link Pág. PlayStation4 PRO -->
+                        <a href="~/Loja/Playstation">
+                            <div class="ch-item ch-img-venda-2">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-2"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PlayStation4 PRO</p>
+                                        </div>
+                                    </div>-
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Link PC GAME -->
+                        <a href="~/Loja/PC">
+                            <div class="ch-item ch-img-venda-3">
+                                <div class="ch-info-wrap-vendas">
+                                    <div class="ch-info-vendas">
+                                        <div class="ch-info-front ch-img-venda-3"></div>
+                                        <div class="ch-info-back">
+                                            <h3>Katiau</h3>
+                                            <p>PCGAME</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-    <!--USUARIOS-->
-    <div class="nav_tabs">
-        <ul>
-
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab1" checked>
-                <label for="tab1"> Usuários </label>
-
-
-                <div class="content_tab">
-                    <section>
-
-                        <table border="1">
-
-                            <thead>
-                                <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
-                                <tr class="Produto">
-                                    <th class="texto">Nick</th>
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Sobrenome</th>
-                                    <th class="texto">Email</th>
-                                    <th class="texto">Senha</th>
-                                    <th class="texto">Nascimento</th>
-                                    <th class="texto">ImagemPerfil</th>
-                                    <th class="texto">Administrador</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-
-
-
-                            </thead>
-
-                            <tbody>
-                                @foreach (var U in ViewBag.User)
-                                {
-
-                                    <tr>
-
-                                        <td>@(U.Nick)</td>
-                                        <td>@(U.Nome)</td>
-                                        <td>@(U.Sobrenome)</td>
-                                        <td>@(U.Email)</td>
-                                        <td>@(U.Senha)</td>
-                                        <td>@(U.Nascimento)</td>
-                                        <td>@(U.ImagemPerfil)</td>
-                                        <td>@(U.Adm)</td>
-                                        <td>
-
-                                            <a href="/Usuario/Apagar/@(U.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-
-                        </table>
-
-                    </section>
-                </div>
-
-            </li>
-            <!--PACOTES-->
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
-                <label for="tab2"> Pacotes </label>
-
-
-                <div class="content_tab">
-                    <section>
-                        <table border="1">
-                            <thead>
-                                <tr><a href="/Pacote/Novo/">Cadastrar um novo Pacote</a></tr>
-                                <tr class="Produto">
-
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Categoria</th>
-                                    <th class="texto">Imagem</th>
-                                    <th class="texto">Descrição</th>
-                                    <th class="texto">Preço</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach (var P in ViewBag.Prod)
-                                {
-                                    <tr>
-
-                                        <td>@(P.Nome)</td>
-                                        <td>@(P.Categoria)</td>
-                                        <td>@(P.Imagem)</td>
-                                        <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
-                                        <td>R$@(P.Preco)</td>
-                                        <td>
-                                            <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
-                                            <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                            <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-
-            </li>
-            <!--DLC-->
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab3">
-                <label for="tab3"> DLC </label>
-                <div class="content_tab">
-
-                    <section>
-                        <table border="1">
-                            <thead>
-                                <tr><a href="/DLCs/Novo/">Cadastrar uma nova DLC</a></tr>
-                                <tr class="Produto">
-
-                                    <th class="texto">Nome</th>
-                                    <th class="texto">Categoria</th>
-                                    <th class="texto">Imagem</th>
-                                    <th class="texto">Descrição</th>
-                                    <th class="texto">Preço</th>
-                                    <th class="texto">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var D in ViewBag.DLCs)
-                                {
-                                    <tr>
-
-                                        <td>@(D.Nome)</td>
-                                        <td>@(D.Categoria)</td>
-                                        <td>@(D.Imagem)</td>
-                                        <td>@(D.Descricao.Substring(0, Math.Min(D.Descricao.Length, 115)) + "...")</td>
-                                        <td>R$@(D.Preco)</td>
-                                        <td>
-                                            <a href="/DLCs/Ver/@(D.ID)">Ver</a> |
-                                            <a href="/DLCs/Alterar/@(D.ID)">Alterar</a> |
-                                            <a href="/DLCs/Apagar/@(D.ID)">Apagar</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </section>
-
-
-                </div>
-            </li>
-
-            <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab4">
-                <label for="tab4"> Outros </label>
-                <div class="content_tab">
-
-
-
-                </div>
-            </li>
-        </ul>
+    <!---->
+    <!-- para dar o espaçamento-->
+    <div class="storeImagem">
     </div>
-
-    <div class="copywrite">
+    <!--teamend-->
+    <div class="copywritenovissimo">
         <div class="container">
-            <p> © 2017 Katiau .Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
+            <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
     <!---->

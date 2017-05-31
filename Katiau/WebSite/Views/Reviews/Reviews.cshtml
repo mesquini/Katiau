@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Home/Index">Home</a></li>
                                     <li><a href="~/About/Index">Sobre</a></li>
-                                    <li>
+                                    <li class="active">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
@@ -67,7 +67,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                     <li><a href="~/Gallery/Index">Galeria</a></li>
                                     <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li> @if (ViewBag.Logado == null)
+                                    <li><a href="~/Contact/Index">Contato</a></li>
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -134,27 +136,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-    <div class="voltarLista"><a href="/Adm2/Listar">Voltar à listagem</a></div> 
-    <div class="CriarUser">
-        <section>
-            
-            <h4 class="voltarLista">@(ViewBag.Mensagem)</h4>
-            <form id="post" action="~/Pacote/Novo" method="post" >
-                <fieldset id="fs1">
-                    <h2 class="fs-title">Cadastro novos Pacotes</h2>
-                    <h3 class="fs-subtitle">Digite suas informações</h3>
-                    <p><input type="text" name="NomeProduto" id="NomeProduto" placeholder="Digite o Nome do Pacote" required /></p>
-                    <p><input type="text" name="CategoriaID" id="CategoriaID" value="3" disabled /></p>
-                    <p><input type="file" name="ImagemProduto" id="ImagemProduto" placeholder="" required /></p>
-                    <p><input type="text" name="PrecoProduto" id="PrecoProduto" placeholder="Preço do pacote" required /></p>
-                    <p><textarea rows="10" cols="40" name="DescricaoProduto" id="DescricaoProduto" placeholder="Digite a descrição"></textarea></p>
-                    <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
-                </fieldset>
-                </form>
-</section>
-
-
+    <!---->
+    <div class="review">
+        <div class="container">
+            <h2>Reviews</h2>
+            <div class="review-sec">
+                <div class="review-grids">
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a href="~/Reviews/Drift"><img src="~/images/g7.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a href="~/Reviews/Drift">Drift</a></h4>
+                                <p>
+                                    Drift ou Drifting , é uma técnica de direção de carros que consiste em deslizar nas curvas escapando a traseira,
+                                    girar o volante para que as rodas dianteiras... <a href="~/Reviews/Drift" style="color: #B01030">Veja mais</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a href="~/Reviews/Neve"><img src="~/images/g8.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a href="~/Reviews/Neve">Dirigir na neve</a></h4>
+                                <p>
+                                    Dirigir na neve exige cuidados especiais com o veículo e uma atenção redobrada do motorista.
+                                    A pista fica muito escorregadia e as chances de se envolver...<a href="~/Reviews/Neve" style="color: #B01030">Veja mais</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="review-grids">
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a href="~/Reviews/Vantagens"><img src="~/images/g2.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a href="~/Reviews/Vantagens">Vantagem em jogar video-game</a></h4>
+                                <p>
+                                    Pesquisas mostram que vídeo games podem aumentar a coordenação motora e a coordenação entre o olho e a mão.
+                                    Um estudo realizado na Universidade de Iowa (EUA) mostra que jogar três horas semanais de vídeo games ajuda a... <a href="~/Reviews/Vantagens" style="color: #B01030">Veja mais</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 revw">
+                        <div class="rft-grid">
+                            <div class="col-md-5 rft-pic">
+                                <a href="~/Reviews/Simulador"><img src="~/images/g1.jpg" class="img-responsive" alt="" /></a>
+                            </div>
+                            <div class="col-md-7 rft-pic-info">
+                                <h4><a href="~/Reviews/Simulador">Simulador</a></h4>
+                                <p>
+                                    Os jogos de corrida sempre foram mais conhecidos por seus simuladores que tentavam passar uma experiência mais realista ao dirigir,
+                                    mas muitos títulos tentaram criar competições...<a href="~/Reviews/Simulador" style="color: #B01030">Veja mais</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="copywriteLoja">
         <div class="container">
             <p> © 2017 Katiau. Todos os direitos reservados| Design by <a href="http://w3layouts.com/" style="color: #B01030;">W3layouts</a></p>
@@ -162,4 +218,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </body>
 </html>
-

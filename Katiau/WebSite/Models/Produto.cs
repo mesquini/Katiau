@@ -28,7 +28,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Produto WHERE ID=@ID;";
+            Comando.CommandText = "SELECT * From Produto WHERE ID = @ID; ";
             Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
@@ -36,28 +36,29 @@ namespace WebSite.Models
             Leitor.Read();
 
 
-            this.ID = (Int32)Leitor["ID"];
+            this.ID = (int)Leitor["ID"];
             this.CategoriaID = (Int32)Leitor["CategoriaID"];
             this.Nome = (String)Leitor["NomeProduto"];
-            this.Versao = (int)Leitor["VersaoCategoria"];
+            //this.Versao = (int)Leitor["VersaoCategoria"];
             this.Imagem = (String)Leitor["ImagemProduto"];
             this.Descricao = (String)Leitor["DescricaoProduto"];
             this.Preco = (Double)Leitor["PrecoProduto"];
 
             Conexao.Close();
         }
-        public Boolean Novo()
+        public Boolean NovoProd()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (NomeProduto, NomeCategoria, ImagemProduto, PrecoProduto) VALUES (@NomeProduto, @NomeCategoria, @ImagemProduto, @PrecoProduto);";
-            Comando.Parameters.AddWithValue("@ID", this.ID); 
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, VersaoProduto, ImagemProduto, DescricaoProduto, PrecoProduto) VALUES (@NomeProduto, @CategoriaID, @Versao, @ImagemProduto, @DescricaoProduto, @PrecoProduto);";
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
+            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.Parameters.AddWithValue("@Versao", this.Versao);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
+            Comando.Parameters.AddWithValue("@DescricaoProduto", this.Descricao);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
             
 
@@ -68,7 +69,7 @@ namespace WebSite.Models
             return Resultado > 0 ? true : false;
         }
 
-        public Boolean Alterar()
+        public Boolean AlterarProd()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
@@ -96,8 +97,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "DELETE FROM Produto WHERE CategoriaID = @CategoriaID;";
-            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.CommandText = "DELETE FROM Produto WHERE Produto.ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -112,7 +113,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
+            Comando.CommandText = "SELECT Produto.ID, NomeProduto,Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 3 AND Categoria.NomeCategoria = 'Pacote'; ";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -120,7 +121,7 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 Produto P = new Produto();
-                P.ID = ((Int32)Leitor["CategoriaID"]);
+                P.ID = ((Int32)Leitor["ID"]);
                 P.Nome = ((String)Leitor["NomeProduto"]);
                 P.Categoria = (String)Leitor["NomeCategoria"];
                 P.Imagem = ((String)Leitor["ImagemProduto"]);
@@ -146,6 +147,8 @@ namespace WebSite.Models
         public String Nome { get; set; }
         public String Categoria { get; set; }
         public String Imagem { get; set; }
+
+        public int Versao { get; set; }
         public String Descricao { get; set; }
         public Double Preco { get; set; }
 
@@ -157,8 +160,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
-            Comando.Parameters.AddWithValue("CategoriaID", ID);
+            Comando.CommandText = "SELECT * FROM Produto WHERE ID = @ID";
+            Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -167,7 +170,6 @@ namespace WebSite.Models
             this.ID = (Int32)Leitor["ID"];
             this.CategoriaID = (Int32)Leitor["CategoriaID"];
             this.Nome = (String)Leitor["NomeProduto"];
-            this.Categoria = (String)Leitor["NomeCategoria"];
             this.Imagem = (String)Leitor["ImagemProduto"];
             this.Descricao = (String)Leitor["DescricaoProduto"];
             this.Preco = (Double)Leitor["PrecoProduto"];
@@ -181,7 +183,7 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.CommandText = "SELECT Produto.ID, CategoriaID, NomeProduto, Categoria.NomeCategoria, ImagemProduto, DescricaoProduto, PrecoProduto FROM Produto,Categoria WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -189,7 +191,8 @@ namespace WebSite.Models
             while (Leitor.Read())
             {
                 DLC D = new DLC();
-                D.ID = ((Int32)Leitor["CategoriaID"]);
+                D.ID = ((Int32)Leitor["ID"]);
+                D.CategoriaID = ((Int32)Leitor["CategoriaID"]);
                 D.Nome = ((String)Leitor["NomeProduto"]);
                 D.Categoria = (String)Leitor["NomeCategoria"];
                 D.Imagem = ((String)Leitor["ImagemProduto"]);
@@ -204,19 +207,21 @@ namespace WebSite.Models
 
             return DLC;
         }
-        public Boolean Novo()
+        public Boolean NovaDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Produto (Nome, Categoria, Imagem, Preco) VALUES (@Nome, @Categoria, @Imagem, @Preco);";
-            Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
-            Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
-            Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
-            Comando.Parameters.AddWithValue("@ID", this.ID);
+            Comando.CommandText = "INSERT INTO Produto (NomeProduto, CategoriaID, VersaoProduto, ImagemProduto, PrecoProduto, DescricaoProduto) VALUES (@Nome, @CategoriaID, @VersaoProduto, @Imagem, @Preco, @Descricao);";
+            Comando.Parameters.AddWithValue("@Nome", this.Nome);
+            Comando.Parameters.AddWithValue("@CategoriaID", this.CategoriaID);
+            Comando.Parameters.AddWithValue("@VersaoProduto", this.Versao);
+            Comando.Parameters.AddWithValue("@Imagem", this.Imagem);
+            Comando.Parameters.AddWithValue("@Preco", this.Preco);
+            Comando.Parameters.AddWithValue("@Descricao", this.Descricao);
+
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -224,19 +229,18 @@ namespace WebSite.Models
 
             return Resultado > 0 ? true : false;
         }
-        public Boolean Alterar()
+        public Boolean AlterarDLC()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "UPDATE Produto SET NomeProduto = @NomeProduto, NomeCategoria = @NomeCategoria, ImagemProduto = @ImagemProduto, PrecoProduto = @PrecoProduto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
+            Comando.CommandText = "UPDATE Produto SET NomeProduto = @NomeProduto, ImagemProduto = @ImagemProduto, PrecoProduto = @PrecoProduto, DescricaoProduto = @DescricaoProduto WHERE Produto.CategoriaID = 2;";
             Comando.Parameters.AddWithValue("@NomeProduto", this.Nome);
-            Comando.Parameters.AddWithValue("@NomeCategoria", this.Categoria);
             Comando.Parameters.AddWithValue("@ImagemProduto", this.Imagem);
             Comando.Parameters.AddWithValue("@PrecoProduto", this.Preco);
-            Comando.Parameters.AddWithValue("@ID", this.ID);
+            Comando.Parameters.AddWithValue("@DescricaoProduto", this.Descricao);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -251,8 +255,8 @@ namespace WebSite.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "DELETE FROM Produto WHERE Produto.CategoriaID = 2 AND Categoria.NomeCategoria = 'DLC';";
-            Comando.Parameters.AddWithValue("Produto.CategoriaID", this.CategoriaID);
+            Comando.CommandText = "DELETE FROM Produto WHERE Produto.ID = @ID;";
+            Comando.Parameters.AddWithValue("@ID", this.ID);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
