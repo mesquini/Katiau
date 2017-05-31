@@ -18,7 +18,7 @@ namespace WebSite.Controllers
                 Usuario Users = (Usuario)Session["User"];
                 if (!Users.Adm)
                 {
-                    Response.Redirect("/Home/Index", false);
+                    Response.Redirect("/Menu/Home", false);
                 }
 
                 List<Usuario> User = Usuario.ListarU();
@@ -39,90 +39,11 @@ namespace WebSite.Controllers
             return View(); 
         }
       
-        public ActionResult Novo()
-        {
-            if (Session["User"] != null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
-
-            if (Request.HttpMethod == "POST")
-            {
-                Usuario U = (Usuario)Session["User"];
-
-                Int32 IDCategoria = Convert.ToInt32(Request.Form["Categoria"]);
-                Categoria C = new Categoria(IDCategoria);
-
-                String Titulo = Request.Form["Titulo"];
-                String Texto = Request.Form["Texto"];
-
-                Post NovoPost = new Post();
-                NovoPost.Usuario = U;
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
-
-                if (NovoPost.Salvar())
-                {
-                    ViewBag.Mensagem = "Post criado com sucesso!";
-                }
-                else
-                {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
-                }
-            }
-
-            List<Categoria> Categorias = Categoria.Lista();
-            ViewBag.Categorias = Categorias;
-
-            return View();
-        }
-
-        public ActionResult Alterar(String ID)
-
-        {
-            if (Session["User"] == null)
-            {
-                Response.Redirect("/Home/Index", false);
-            }
-
-            if (Request.HttpMethod == "POST")
-            {
-                Int32 IDCategoria = Convert.ToInt32(Request.Form["Categoria"]);
-                Categoria C = new Categoria(IDCategoria);
-
-                String Titulo = Request.Form["Titulo"];
-                String Texto = Request.Form["Texto"];
-
-                Post NovoPost = new Post(Convert.ToInt32(ID));
-                NovoPost.Categoria = C;
-                NovoPost.Titulo = Titulo;
-                NovoPost.Texto = Texto;
-
-                if (NovoPost.Alterar())
-                {
-                    ViewBag.Mensagem = "Post alterado com sucesso!";
-                }
-                else
-                {
-                    ViewBag.Mensagem = "Houve um erro ao criar o Post. Verifique os dados e tente novamente.";
-                }
-            }
-
-            List<Categoria> Categorias = Categoria.Lista();
-            ViewBag.Categorias = Categorias;
-
-            Categoria P = new Categoria(Convert.ToInt32(ID));
-            ViewBag.Post = P;
-
-            return View();
-        }
-
         public ActionResult Ver(String ID)
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("/Menu/Home", false);
             }
 
             Usuario U = new Usuario(Convert.ToInt32(ID));
@@ -141,7 +62,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("/Menu/Home", false);
             }
 
             Categoria P = new Categoria(Convert.ToInt32(ID));

@@ -23,9 +23,10 @@ namespace WebSite.Controllers
                 ViewBag.BioU = us.Bio;
                 ViewBag.ImagemU = us.ImagemPerfil;
 
-                return View();            
+                return View();
             }
-            Response.Redirect("/Menu/Home", false);
+
+            Response.Redirect("~/Menu/Home", false);
             return View();
         }
         public ActionResult Edita_Perfil()
@@ -90,7 +91,7 @@ namespace WebSite.Controllers
                 }
                 return View();
             }
-            Response.Redirect("/Menu/Home", false);
+            Response.Redirect("~/Menu/Home", false);
             return View();
         }
 

@@ -10,11 +10,11 @@ namespace Website.Models
     public class Post
     {
         public Int32 ID { get; set; }
-        public Usuario Usuario { get; set; }
-        public Categoria Categoria { get; set; }
         public String Titulo { get; set; }
         public String Texto { get; set; }
-        public DateTime DataPostagem { get; set; }
+        public int Autor { get; set; }
+        public String Imagem { get; set; }
+        public String Data { get; set; }
 
         public Post() { }
 
@@ -25,7 +25,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Post WHERE ID=@ID;";
+            Comando.CommandText = "SELECT * FROM Post WHERE Autor=@ID;";
             Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
@@ -33,25 +33,23 @@ namespace Website.Models
             Leitor.Read();
 
             this.ID = (Int32)Leitor["ID"];
-            this.Usuario = new Usuario((Int32)Leitor["IDUsuario"]);
-            this.Categoria = new Categoria((Int32)Leitor["IDCategoria"]);
+            this.Autor = (Int32)Leitor["Autor"];
             this.Titulo = (String)Leitor["Titulo"];
             this.Texto = (String)Leitor["Texto"];
-            this.DataPostagem = (DateTime)Leitor["DataPostagem"];
+            this.Data = (String)Leitor["Data"];
 
             Conexao.Close();
         }
 
-        public Boolean Salvar()
+        public Boolean Salvar(int idUser)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Post (IDUsuario, IDCategoria, Titulo, Texto, DataPostagem) VALUES (@IDUsuario, @IDCategoria, @Titulo, @Texto, GETDATE());";
-            Comando.Parameters.AddWithValue("@IDUsuario", this.Usuario.ID);
-            Comando.Parameters.AddWithValue("@IDCategoria", this.Categoria.ID);
+            Comando.CommandText = "INSERT INTO Posts (Autor, Titulo, Texto, Data, Imagem) VALUES (@Autor, @Titulo, @Texto, GETDATE());";
+            Comando.Parameters.AddWithValue("@Autor", idUser);
             Comando.Parameters.AddWithValue("@Titulo", this.Titulo);
             Comando.Parameters.AddWithValue("@Texto", this.Texto);
 
@@ -62,15 +60,15 @@ namespace Website.Models
             return Resultado > 0 ? true : false;
         }
 
-        public Boolean Alterar()
+        public Boolean Alterar(int ID)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "UPDATE Post SET IDCategoria = @IDCategoria, Titulo = @Titulo, Texto = @Texto WHERE ID = @ID;";
-            Comando.Parameters.AddWithValue("@IDCategoria", this.Categoria.ID);
+            Comando.CommandText = "UPDATE Post SET Titulo = @Titulo, Texto = @Texto, Imagem = @Imagem WHERE ID = @ID;";
+            Comando.Parameters.AddWithValue("@Imagem", this.Imagem);
             Comando.Parameters.AddWithValue("@Titulo", this.Titulo);
             Comando.Parameters.AddWithValue("@Texto", this.Texto);
             Comando.Parameters.AddWithValue("@ID", this.ID);
@@ -115,11 +113,8 @@ namespace Website.Models
             {
                 Post P = new Post();
                 P.ID = (Int32)Leitor["ID"];
-                P.Usuario = new Usuario((Int32)Leitor["IDUsuario"]);
-                P.Categoria = new Categoria((Int32)Leitor["IDCategoria"]);
                 P.Titulo = (String)Leitor["Titulo"];
                 P.Texto = (String)Leitor["Texto"];
-                P.DataPostagem = (DateTime)Leitor["DataPostagem"];
 
                 Posts.Add(P);
             }
