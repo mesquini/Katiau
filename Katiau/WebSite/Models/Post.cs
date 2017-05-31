@@ -14,7 +14,7 @@ namespace Website.Models
         public String Texto { get; set; }
         public int Autor { get; set; }
         public String Imagem { get; set; }
-        public String Data { get; set; }
+        public DateTime Data { get; set; }
 
         public Post() { }
 
@@ -25,7 +25,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Post WHERE Autor=@ID;";
+            Comando.CommandText = "SELECT * FROM Posts WHERE Autor=@ID;";
             Comando.Parameters.AddWithValue("@ID", ID);
 
             SqlDataReader Leitor = Comando.ExecuteReader();
@@ -36,7 +36,7 @@ namespace Website.Models
             this.Autor = (Int32)Leitor["Autor"];
             this.Titulo = (String)Leitor["Titulo"];
             this.Texto = (String)Leitor["Texto"];
-            this.Data = (String)Leitor["Data"];
+            this.Data = (DateTime)Leitor["Data"];
 
             Conexao.Close();
         }
@@ -48,7 +48,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Posts (Autor, Titulo, Texto, Data, Imagem) VALUES (@Autor, @Titulo, @Texto, GETDATE());";
+            Comando.CommandText = "INSERT INTO Posts (Autor, Titulo, Texto, Data) VALUES (@Autor, @Titulo, @Texto, GETDATE());";
             Comando.Parameters.AddWithValue("@Autor", idUser);
             Comando.Parameters.AddWithValue("@Titulo", this.Titulo);
             Comando.Parameters.AddWithValue("@Texto", this.Texto);
@@ -67,7 +67,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "UPDATE Post SET Titulo = @Titulo, Texto = @Texto, Imagem = @Imagem WHERE ID = @ID;";
+            Comando.CommandText = "UPDATE Posts SET Titulo = @Titulo, Texto = @Texto, Imagem = @Imagem WHERE ID = @ID;";
             Comando.Parameters.AddWithValue("@Imagem", this.Imagem);
             Comando.Parameters.AddWithValue("@Titulo", this.Titulo);
             Comando.Parameters.AddWithValue("@Texto", this.Texto);
