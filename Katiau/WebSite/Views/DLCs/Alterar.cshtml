@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="banner_head_top">
                 <div class="logo">
-                    <h1><a href="~/Home/Index">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
+                    <h1><a href="~/Menu/Home">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
                 </div>
                 <div class="top-menu">
                     <div class="content white">
@@ -56,19 +56,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="~/Home/Index">Home</a></li>
-                                    <li><a href="~/About/Index">Sobre</a></li>
-                                    <li class="active">
+                                    <li><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
+                                    <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/TechMundo/Index">Review TechMundo</a></li>
-                                            <li><a href="~/Review/Index">Review PC World</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="~/Gallery/Index">Galeria</a></li>
-                                    <li><a href="~/Store/Index">Loja</a></li>
-                                    <li><a href="~/Contact/Index">Contato</a></li>
 
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
 
                                     @if (ViewBag.Logado == null)
                                     {
@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="arrow-up"></div>
                                                     <div class="formholder" style="display: block;">
                                                         <div class="randompad">
-                                                            <form method="post" action="/Home/Index">
+                                                            <form method="post" action="~/Menu/Home">
                                                                 <label class="email" name="email">Email</label>
                                                                 <input type="email" id="email" name="email" />
                                                                 <label class="senha" name="password">Password</label>
@@ -99,9 +99,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </li>
                                     }
 
-                                   @if (ViewBag.Logado != null)
-                                   {
-                                    <li><a href="~/Adm2/Listar">ADM</a></li>
+                                    @if (ViewBag.Logado != null)
+                                    {
+                                        <li><a href="~/Adm2/Listar">ADM</a></li>
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
                                                 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -115,13 +115,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="formholder" style="display: block;">
                                                         <div class="randompad">
                                                             <img class="imagem-user-logado" src="~/images/usuarioHover.png" />
-                                                            <a href="~/Home/Sair">Sair</a>
+                                                            <a href="~/Menu/Sair">Sair</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </span>
                                         </li>
-                                   }
+                                    }
 
                                 </ul>
                                 <!--/navbar collapse-->
