@@ -158,6 +158,54 @@ namespace WebSite.Controllers
             return View();
         }
 
+        public Boolean CriarPost()
+        {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("~/Posts/Posts");
+            }
+            Boolean Resultado = false;
+
+            if (Request.HttpMethod == "POST")
+            {
+                Usuario user = (Usuario)Session["User"];
+                Post novo = new Post();
+
+                novo.Texto = Request.Form["Texto"].ToString();
+                novo.Titulo = Request.Form["Titulo"].ToString();
+                novo.Autor = user.ID;
+
+                if (novo.Salvar(user.ID))
+                {
+                    Post post = new Post(user.ID);
+
+                    foreach (string fileName in Request.Files)
+                    {
+                        HttpPostedFileBase postedFile = Request.Files[fileName];
+                        int contentLength = postedFile.ContentLength;
+                        string contentType = postedFile.ContentType;
+                        string nome = postedFile.FileName;
+
+                        if (contentType.IndexOf("jpeg") > 0)
+                        {
+                            postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_posts\\" + "imagemPost" + post.ID + ".jpg");
+                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_posts\" + "imagemPost" + post.ID + ".jpg");
+                        }
+
+                    }
+
+                   if(post.Alterar(user.ID))
+                    {
+                        Resultado = true;
+                    }
+                }
+                
+               return Resultado;
+            }
+
+            return Resultado;
+        }
+
         public ActionResult Posts()
         {
             if (Request.HttpMethod == "POST")

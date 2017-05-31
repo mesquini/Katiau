@@ -176,6 +176,8 @@
     <Content Include="images\g8.jpg" />
     <Content Include="images\g9.jpg" />
     <Content Include="images\icon1.png" />
+    <Content Include="images\img_users\imagemPerfil2.jpg" />
+    <Content Include="images\img_users\imagemPerfil85.jpg" />
     <Content Include="images\katiau16.png" />
     <Content Include="images\katiau32.png" />
     <Content Include="images\katiau48.png" />

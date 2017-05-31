@@ -139,11 +139,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3>Criar um novo post</h3>
        
         <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Titulo" required="">
-                <input type="file" placeholder="Imagem" name="imagemPerfil" required="" />
+            <form class="seguraTudo" action="~/Posts/CriarPost" method="POST" enctype="multipart/form-data">
+                <input type="text" placeholder="Titulo" name="Titulo" id="Titulo" required>
+                <input type="file" placeholder="Imagem" name="imagemPost" id="imagemPost" required/>
                 <br />
-                <textarea placeholder="Mensagem" required=""></textarea>
+                <textarea placeholder="Mensagem" name="Texto" id="Texto" required=""></textarea>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpar Campos" />
             </form>

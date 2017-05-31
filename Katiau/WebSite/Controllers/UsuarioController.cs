@@ -37,7 +37,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             if (Request.HttpMethod == "POST")
