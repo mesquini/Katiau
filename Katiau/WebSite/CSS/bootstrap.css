@@ -780,12 +780,30 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+
+/* Então, essa é a parte mais bugada do mundo. Palavra da Salvação: Glória! */
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.containerequipe {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 4px;
+}
+
+.containerlojaprincipal {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;

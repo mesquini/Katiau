@@ -129,36 +129,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!--/navbar-->
                     </div>
                     <div class="clearfix"></div>
-                    <script type="text/css" src="~/CSS/bootstrap"></script>
-                    
+                    <script type="text/css" src="~/CSS/bootstrap">
+                    </script>
+
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-       
-       
+
+        <!--  JS da Verificação de Senha-->
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var nick = post.NickU.value;
+                var nome = post.NomeU.value;
+                var sobrenome = post.SobrenomeU.value;
+                var email = post.EmailU.value;
+                var senha = post.SenhaU.value;
+                var rep_senha = post.SenhaUv.value;
+                var data = post.NascimentoU.value;
+
+                if (nick == "") {
+                    alert('Preencha o Campo com o seu Nickname!');
+                    post.NickU.focus();
+                    return false;
+
+                } else if (nome == "") {
+                    alert('Preencha o Campo com o seu Nome!');
+                    post.NomeU.focus();
+                    return false;
+
+                } else if (sobrenome == "") {
+                    alert('Preencha o Campo com o seu Sobrenome!');
+                    post.SobrenomeU.focus();
+                    return false;
+
+                } else if (email == "") {
+                    alert('Preencha o Campo com o seu e-Mail!');
+                    post.EmailU.focus();
+                    return false;
+
+                } else if (senha == "") {
+                    alert('Insira uma senha!');
+                    post.SenhaU.focus();
+                    return false;
+
+                } else if (rep_senha == "") {
+                    alert('Re-insira sua senha');
+                    post.SenhaUv.focus();
+                    return false;
+
+                } else if (rep_senha != senha) {
+                    alert('Senhas não coincidem!');
+                    post.SenhaUv.focus();
+                    post.SenhaUv.value = '';
+                    return false;
+
+                }
+                // else if (data == "") {
+                //    alert('Senhas não coincidem!');
+                //    post.SenhaUv.focus();
+                //    return false;
+                //}
+            }
+        </script>
 
         <!-- multistep form -->
         <form id="post" action="/Usuario/Cadastrar" method="post">
             <fieldset id="fs1">
                 <h2 class="fs-title">Cadastrar novo usuário</h2>
                 <h3 class="fs-subtitle">Digite suas informações</h3>
-                <p><input type="text" name="NickU" id="NickU" placeholder="Digite o Nickname" required /></p>
-                <p><input type="text" name="NomeU" id="NomeU" placeholder="Digite o Nome " required /></p>
-                <p><input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Digite o Sobrenome" required /></p>
-                <p><input type="text" name="EmailU" id="EmailU" placeholder="Digite o E-mail" required /></p>
-                <p><input type="password" name="SenhaU" id="SenhaU" placeholder="Digite a Senha" required /></p>
+                <p><input type="text" name="NickU" id="NickU" placeholder="Nickname" required /></p>
+                <p><input type="text" name="NomeU" id="NomeU" placeholder="Nome" required /></p>
+                <p><input type="text" name="SobrenomeU" id="SobrenomeU" placeholder="Sobrenome" required /></p>
+                <p><input type="text" name="EmailU" id="EmailU" placeholder="e-Mail" required /></p>
+                <p><input type="password" name="SenhaU" id="SenhaU" placeholder="Senha" required /></p>
+                <p><input type="password" name="SenhaUv" id="SenhaUv" placeholder="Senha (Verificação)" required /></p>
                 <!-- <p><input type="file" name="ImagemU" id="ImagemU" placeholder="Imagem Perfil" /></p> !-->
                 <p><input type="text" name="NascimentoU" id="NascimentoU" placeholder="DD/MM/AAAA" required /></p>
-                <p><input type="submit" name="Enviar" id="Enviar" value="Enviar" /></p>
+                <p><input type="submit" onclick="return validar()" name="Enviar" id="Enviar" value="Enviar" /></p>
             </fieldset>
         </form>
-     
-    <div class="copywriteCadastro">
-        <div class="container">
-            <p> © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3Layouts</a></p>
+
+        <div class="copywriteCadastro">
+            <div class="container">
+                <p> © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3Layouts</a></p>
+            </div>
         </div>
-    </div>
 
 </body>
 </html>
