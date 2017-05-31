@@ -18,7 +18,7 @@ namespace WebSite.Controllers
                 Usuario Users = (Usuario)Session["User"];
                 if (!Users.Adm)
                 {
-                    Response.Redirect("/Home/Index", false);
+                    Response.Redirect("/Menu/Home", false);
                 }
 
                 List<Usuario> User = Usuario.ListarU();
@@ -39,11 +39,11 @@ namespace WebSite.Controllers
             return View(); 
         }
       
-       public ActionResult Ver(String ID)
+        public ActionResult Ver(String ID)
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("/Menu/Home", false);
             }
 
             Usuario U = new Usuario(Convert.ToInt32(ID));
@@ -62,7 +62,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("/Menu/Home", false);
             }
 
             Categoria P = new Categoria(Convert.ToInt32(ID));

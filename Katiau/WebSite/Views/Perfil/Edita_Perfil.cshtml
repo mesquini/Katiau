@@ -36,9 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="banner_head_top">
                 <div class="logo">
-                    <h1>
-                        <a href="/Home/Index">Katiau<img src="/images/Logos/katiaulogo.png" width="50" height="50" /></a>
-                    </h1>
+                    <h1><a href="~/Menu/Home">Katiau<img src="~/images/Logos/katiaulogo.png" width="50" height="50" /></a></h1>
                 </div>
                 <div class="top-menu">
                     <div class="content white">
@@ -54,32 +52,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <!--/navbar header-->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li>
-                                        <a href="/Home/Index">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="/About/Index">Sobre</a>
-                                    </li>
+                                    <li ><a href="~/Menu/Home">Home</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="/Review/Index">Review TechMundo</a>
-                                            </li>
-                                            <li>
-                                                <a href="/Review/Index">Review PC World</a>
-                                            </li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
+                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="/Gallery/Index">Galeria</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Store/Index">Loja</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Contact/Index">Contato</a>
-                                    </li>
+
+                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
+                                    <li><a href="~/Loja/Principal">Loja</a></li>
+                                    <li><a href="~/Menu/Contato">Contato</a></li>
                                     @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
@@ -93,14 +78,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="arrow-up"></div>
                                                     <div class="formholder" style="display: block;">
                                                         <div class="randompad">
-                                                            <form method="post" action="/Home/Index">
+                                                            <form method="post" action="~/Menu/Home">
                                                                 <e class="msg-erro-login">@ViewBag.MsgErro</e>
                                                                 <label class="email" name="email">Email</label>
                                                                 <input type="email" id="email" name="email" />
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>

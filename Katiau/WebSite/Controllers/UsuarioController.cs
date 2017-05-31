@@ -13,7 +13,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
 
@@ -127,7 +127,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             Usuario U = new Usuario(Convert.ToInt32(ID));
@@ -140,7 +140,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] == null)
             {
-                Response.Redirect("/Home/Index", false);
+                Response.Redirect("~/Menu/Home", false);
             }
 
             Usuario U = new Usuario(Convert.ToInt32(ID));
