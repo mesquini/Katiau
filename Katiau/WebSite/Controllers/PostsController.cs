@@ -193,16 +193,17 @@ namespace WebSite.Controllers
                         }
 
                     }
+                    post.Imagem = "imagemPost" + post.ID + ".jpg";
 
-                   if(post.Alterar(user.ID))
+                   if (post.Alterar(user.ID))
                     {
                         Resultado = true;
+                        Response.Redirect("/Posts/Posts");
                     }
                 }
                 
                return Resultado;
             }
-
             return Resultado;
         }
 
