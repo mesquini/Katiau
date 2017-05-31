@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="banner_head_top">
                 <div class="logo">
                     <h1>
-                        <a href="~/Menu/Home">Katiau<img src="/images/Logos/katiaulogo.png" width="50" height="50" /></a>
+                        <a href="/Home/Index">Katiau<img src="/images/Logos/katiaulogo.png" width="50" height="50" /></a>
                     </h1>
                 </div>
                 <div class="top-menu">
@@ -55,22 +55,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <a href="~/Menu/Home">Home</a>
+                                        <a href="/Home/Index">Home</a>
                                     </li>
                                     <li>
-                                        <a href="~/Menu/Equipe">Sobre</a>
+                                        <a href="/About/Index">Sobre</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/Posts/Posts">Posts</a></li>
-                                            <li><a href="~/Reviews/Reviews">Review PC World</a></li>
+                                            <li>
+                                                <a href="/Review/Index">Review TechMundo</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Review/Index">Review PC World</a>
+                                            </li>
                                         </ul>
                                     </li>
-
-                                    <li><a href="~/Menu/Galeria">Galeria</a></li>
-                                    <li><a href="~/Loja/Principal">Loja</a></li>
-                                    <li><a href="~/Menu/Contato">Contato</a></li>
+                                    <li>
+                                        <a href="/Gallery/Index">Galeria</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Store/Index">Loja</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Contact/Index">Contato</a>
+                                    </li>
 
                                     @if (ViewBag.Logado == null)
                                     {
@@ -85,14 +94,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <div class="arrow-up"></div>
                                                     <div class="formholder" style="display: block;">
                                                         <div class="randompad">
-                                                            <form method="post" action="~/Menu/Home">
+                                                            <form method="post" action="/Home/Index">
                                                                 <e class="msg-erro-login">@ViewBag.MsgErro</e>
                                                                 <label class="email" name="email">Email</label>
                                                                 <input type="email" id="email" name="email" />
                                                                 <label class="senha" name="password">Password</label>
                                                                 <input type="password" id="senha" name="senha" />
                                                                 <input type="submit" value="Login" />
-                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Menu/Cadastro"><strong>Cadastre-se </strong></a></h4>
+                                                                <h4 class="cadastrar">Não possui uma conta? <a href="~/Cadastro/Index"><strong>Cadastre-se </strong></a></h4>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -120,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="randompad">
                                                             <a href="~/Perfil/Index"><img class="imagem-logado" src="~/images/img_users/@ViewBag.ImagemU" /></a>
                                                             <p class="login-user-nome">@ViewBag.NomeU <e class="nick-login"><strong>"@ViewBag.NickU"</strong></e><e class="login-user-info"> @ViewBag.SobrenomeU</e></p>
-                                                            <a class="deslogar-bt" href="~/Menu/Sair"><strong>Sair</strong></a>
+                                                            <a class="deslogar-bt" href="~/Home/Sair"><strong>Sair</strong></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -140,8 +149,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="seguraTudo">
 
-        <input type="image" title="Editar Informações" onclick="EditaPerfil()" id="edit" src="~/images/img_users/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'"
-                onmouseout="this.src = '~/images/img_users/@ViewBag.ImagemU'" class="imgEdit"/>
+        <input type="image" title="Editar Informações" onclick="EditaPerfil()" id="edit" src="/images/imagensPerfil/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'"
+                onmouseout="this.src = '/images/imagensPerfil/@ViewBag.ImagemU'" class="imgEdit"/>
 
         <div style="padding: 60px;">
            <e class="nicknamae">@ViewBag.NomeU "<strong>@ViewBag.NickU</strong>" @ViewBag.SobrenomeU</e>
