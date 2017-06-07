@@ -143,64 +143,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="review-grids">
                     <div class="col-md-6 revw">
                         <div class="rft-grid">
-                            <div class="col-md-5 rft-pic">
-                                <a><img src="~/images/cars-1.jpg" class="img-responsive" alt="" /></a>
+
+                            @foreach (var P in ViewBag.Posts)
+                            {
+                               <div class="col-md-5 rft-pic">
+                                <a><img src="~/images/img_posts/@(P.Imagem)" class="img-responsive" alt="" /></a>
                             </div>
                             <div class="col-md-7 rft-pic-info">
-                                <h4><a>Sobre o jogo</a></h4>
-                                <p>
-                                    Project CARS (Community Assisted Racing Simulator) é um jogo do gênero simulador de corrida desenvolvido pela
-                                    companhia Slightly Mad Studios... <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
-                                </p>
-     
+                                <h4><a>@(P.Titulo)</a></h4>
+                                <p>@(P.Texto.Substring(0,Math.Min(P.Texto.Length,100))+"..." ) <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a></p>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 revw">
-                        <div class="rft-grid">
-                            <div class="col-md-5 rft-pic">
-                                <a><img src="~/images/cars-4.jpg" class="img-responsive" alt="" /></a>
-                            </div>
-                            <div class="col-md-7 rft-pic-info">
-                                <h4><a>Simulador realístico</a></h4>
-                                <p>
-                                    A Slightly Mad Studios tem como alvo um simulador realístico. Para diferenciar o jogo de líderes estabelecidos como
-                                    Gran Turismo ou Forza Motorsport... <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="review-grids">
-                    <div class="col-md-6 revw">
-                        <div class="rft-grid">
-                            <div class="col-md-5 rft-pic">
-                                <a><img src="~/images/cars-6.jpg" class="img-responsive" alt="" /></a>
-                            </div>
-                            <div class="col-md-7 rft-pic-info">
-                                <h4><a>Vantagens</a></h4>
-                                <p>
-                                    O jogo utiliza o Madness Engine, que foi usado nos jogos Need for Speed Shift também e que foi modificado durante o desenvolvimento...<a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 revw">
-                        <div class="rft-grid">
-                            <div class="col-md-5 rft-pic">
-                                <a><img src="~/images/cars3.jpg" class="img-responsive" alt="" /></a>
-                            </div>
-                            <div class="col-md-7 rft-pic-info">
-                                <h4><a>Execução e recompensa</a></h4>
-                                <p>
-                                    Mesmo com um bom periférico de volante, Project CARS não é exatamente um jogo fácil. Ou, pelo menos, não é um jogo que possa...<a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
+                            }
                         </div>
                     </div>
                     <div class="clearfix"></div>
