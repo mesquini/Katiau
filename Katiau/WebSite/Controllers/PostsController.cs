@@ -191,11 +191,10 @@ namespace WebSite.Controllers
                             postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_posts\\" + "imagemPost" + post.ID + ".jpg");
                             postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_posts\" + "imagemPost" + post.ID + ".jpg");
                         }
-
                     }
                     post.Imagem = "imagemPost" + post.ID + ".jpg";
 
-                   if (post.Alterar(user.ID))
+                   if (post.Alterar(post.ID))
                     {
                         Resultado = true;
                         Response.Redirect("/Posts/Posts");
@@ -252,7 +251,10 @@ namespace WebSite.Controllers
                 {
                     ViewBag.NivelAcesso = User.Adm;
                 }
+                               
             }
+            List<Post> Posts = Post.Listar();
+            ViewBag.Posts = Posts;
             return View();
         }
     }

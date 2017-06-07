@@ -13,8 +13,10 @@ namespace Website.Models
         public String Titulo { get; set; }
         public String Texto { get; set; }
         public int Autor { get; set; }
+        public String AutorSobrenome { get; set;}
         public String Imagem { get; set; }
         public DateTime Data { get; set; }
+        public Int32 Report { get; set; }
 
         public Post() { }
 
@@ -25,8 +27,7 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Posts WHERE Autor=@ID;";
-            Comando.Parameters.AddWithValue("@ID", ID);
+            Comando.CommandText = "SELECT TOP 1 * FROM Posts ORDER BY ID DESC;";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
@@ -48,10 +49,11 @@ namespace Website.Models
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "INSERT INTO Posts (Autor, Titulo, Texto, Data) VALUES (@Autor, @Titulo, @Texto, GETDATE());";
+            Comando.CommandText = "INSERT INTO Posts (Autor, Titulo, Texto, Data,Reports) VALUES (@Autor, @Titulo, @Texto, GETDATE(),@Reports);";
             Comando.Parameters.AddWithValue("@Autor", idUser);
             Comando.Parameters.AddWithValue("@Titulo", this.Titulo);
             Comando.Parameters.AddWithValue("@Texto", this.Texto);
+            Comando.Parameters.AddWithValue("@Reports", 0);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
 
@@ -103,9 +105,9 @@ namespace Website.Models
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
+            SqlCommand Comando2 = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "SELECT * FROM Post ORDER BY DataPostagem DESC;";
-
+            Comando.CommandText = "SELECT Posts.ID,Autor,Imagem,Titulo,Texto,Usuario.NomeU,Usuario.SobrenomeU,Data,Reports FROM Posts,Usuario WHERE Autor=Usuario.ID;";
             SqlDataReader Leitor = Comando.ExecuteReader();
 
             List<Post> Posts = new List<Post>();
@@ -115,6 +117,11 @@ namespace Website.Models
                 P.ID = (Int32)Leitor["ID"];
                 P.Titulo = (String)Leitor["Titulo"];
                 P.Texto = (String)Leitor["Texto"];
+                P.Imagem = (String)Leitor["Imagem"];
+                P.Data = (DateTime)Leitor["Data"];
+                P.Report = (Int32)Leitor["Reports"];
+                Usuario user = new Usuario((Int32)Leitor["Autor"]);
+                P.AutorSobrenome = user.Nome;
 
                 Posts.Add(P);
             }

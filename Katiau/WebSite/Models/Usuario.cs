@@ -37,6 +37,8 @@ namespace Website.Models
             this.ID = (Int32)Leitor["ID"];
             this.Email = (String)Leitor["EmailU"];
             this.Senha = (String)Leitor["SenhaU"];
+            this.Nome = (String)Leitor["NomeU"];
+            this.Sobrenome = (String)Leitor["SobrenomeU"];
 
             Conexao.Close();
         }
