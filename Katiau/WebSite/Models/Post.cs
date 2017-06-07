@@ -82,14 +82,14 @@ namespace Website.Models
             return Resultado > 0 ? true : false;
         }
 
-        public Boolean Remover()
+        public Boolean Apagar()
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
-            Comando.CommandText = "DELETE FROM Post WHERE ID = @ID;";
+            Comando.CommandText = "DELETE FROM Posts WHERE ID = @ID;";
             Comando.Parameters.AddWithValue("@ID", this.ID);
 
             Int32 Resultado = Comando.ExecuteNonQuery();
@@ -121,7 +121,7 @@ namespace Website.Models
                 P.Data = (DateTime)Leitor["Data"];
                 P.Report = (Int32)Leitor["Reports"];
                 Usuario user = new Usuario((Int32)Leitor["Autor"]);
-                P.AutorSobrenome = user.Nome;
+                P.AutorSobrenome = user.Nome + " " + user.Sobrenome;
 
                 Posts.Add(P);
             }

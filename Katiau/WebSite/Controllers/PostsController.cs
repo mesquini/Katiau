@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Website.Models;
+using WebSite.Models;
 
 namespace WebSite.Controllers
 {
@@ -189,7 +190,7 @@ namespace WebSite.Controllers
                         if (contentType.IndexOf("jpeg") > 0)
                         {
                             postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_posts\\" + "imagemPost" + post.ID + ".jpg");
-                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_posts\" + "imagemPost" + post.ID + ".jpg");
+                           // postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_posts\" + "imagemPost" + post.ID + ".jpg");
                         }
                     }
                     post.Imagem = "imagemPost" + post.ID + ".jpg";
@@ -256,6 +257,58 @@ namespace WebSite.Controllers
             List<Post> Posts = Post.Listar();
             ViewBag.Posts = Posts;
             return View();
+        }
+        public ActionResult Listar()
+        {
+            if (Session["User"] != null)
+            {
+                ViewBag.Logado = Session["User"];
+                Usuario Users = (Usuario)Session["User"];
+                if (!Users.Adm)
+                {
+                    Response.Redirect("/Menu/Home", false);
+                }
+
+                List<Usuario> User = Usuario.ListarU();
+                ViewBag.User = User;
+
+                List<Produto> Prod = Produto.ListarP();
+                ViewBag.Prod = Prod;
+
+                List<DLC> DLCs = DLC.ListarDLC();
+                ViewBag.DLCs = DLCs;
+
+                List<Post> Posts = Post.Listar();
+                ViewBag.Posts = Posts;
+
+
+                if (TempData["Mensagem"] != null)
+                {
+                    ViewBag.Mensagem = TempData["Mensagem"].ToString();
+                }
+            }
+            return View();
+        }
+        public ActionResult Apagar(String ID)
+        {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("/Menu/Home", false);
+            }
+
+            Post P = new Post(Convert.ToInt32(ID));
+
+
+            if (P.Apagar())
+            {
+                TempData["Mensagem"] = "Post removido com sucesso!";
+            }
+            else
+            {
+                TempData["Mensagem"] = "Não foi possível remover o Post. Verifique os dados e tente novamente";
+            }
+
+            return RedirectToAction("Listar","Posts");
         }
     }
 }

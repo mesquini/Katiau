@@ -58,18 +58,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li><a href="~/Menu/Home">Home</a></li>
-                                    <li><a href="~~/Menu/Equipe">Sobre</a></li>
+                                    <li><a href="~/Menu/Equipe">Sobre</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/Posts/Posts">PostsMundo</a></li>
+                                            <li><a href="~/Posts/Posts">Posts</a></li>
                                             <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
+
                                     <li><a href="~/Menu/Galeria">Galeria</a></li>
                                     <li><a href="~/Loja/Principal">Loja</a></li>
                                     <li><a href="~/Menu/Contato">Contato</a></li>
-                                     @if (ViewBag.Logado == null)
+
+                                    @if (ViewBag.Logado == null)
                                     {
                                         <li class="imagemUser">
                                             <span class="loginform" id="loginform">
@@ -126,8 +128,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     }
                                 </ul>
                             </div>
-                            <!--/navbar-->
-</div>
+                        </nav>
+                        <!--/navbar-->
+                    </div>
                     <div class="clearfix"></div>
 
                 </div>
@@ -152,7 +155,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <thead>
                                 <tr><a href="/Usuario/Novo/">Cadastrar novo Usuário ou Adm</a></tr>
                                 <tr class="Produto">
-                                    <th class="texto">ID</th>
                                     <th class="texto">Nick</th>
                                     <th class="texto">Nome</th>
                                     <th class="texto">Sobrenome</th>
@@ -174,7 +176,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                     <tr>
 
-                                        <td>@(U.ID)</td>
                                         <td>@(U.Nick)</td>
                                         <td>@(U.Nome)</td>
                                         <td>@(U.Sobrenome)</td>
@@ -199,7 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </li>
             <!--PACOTES-->
             <li class="tabs">
-                <input type="radio" name="tabs" class="rd_tabs" id="tab2" checked>
+                <input type="radio" name="tabs" class="rd_tabs" id="tab2">
                 <label for="tab2"> Pacotes </label>
 
 
@@ -224,16 +225,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 {
                                     <tr>
 
-
                                         <td>@(P.Nome)</td>
-                                        <td>@(P.Versao)</td>
+                                        <td>@(P.Categoria)</td>
                                         <td>@(P.Imagem)</td>
                                         <td>@(P.Descricao.Substring(0, Math.Min(P.Descricao.Length, 115)) + "...")</td>
                                         <td>R$@(P.Preco)</td>
                                         <td>
-                                            <a href="~/Pacote/Ver/@(P.ID)">Ver</a> |
-                                            <a href="~/Pacote/Alterar/@(P.ID)">Alterar</a> |
-                                            <a href="~/Pacote/Apagar/@(P.ID)">Apagar</a>
+                                            <a href="/Pacote/Ver/@(P.ID)">Ver</a> |
+                                            <a href="/Pacote/Alterar/@(P.ID)">Alterar</a> |
+                                            <a href="/Pacote/Apagar/@(P.ID)">Apagar</a>
                                         </td>
                                     </tr>
 
@@ -269,7 +269,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 {
                                     <tr>
 
-
                                         <td>@(D.Nome)</td>
                                         <td>@(D.Categoria)</td>
                                         <td>@(D.Imagem)</td>
@@ -289,49 +288,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </div>
             </li>
+            @* POSTS *@
+            <li class="tabs">
+                <input type="radio" name="tabs" class="rd_tabs" id="tab4" checked>
+                <label for="tab4"> Postagens </label>
+                <div class="content_tab">
 
-           @* POSTS *@
-        <li class="tabs">
-            <input type="radio" name="tabs" class="rd_tabs" id="tab4">
-            <label for="tab4"> Postagens </label>
-            <div class="content_tab">
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="/Posts/NovoPost/">Cadastrar uma nova DLC</a></tr>
+                                <tr class="Produto">
 
-                <section>
-                    <table border="1">
-                        <thead>
-                            <tr><a href="/Posts/NovoPost/">Cadastrar um novo Post</a></tr>
-                            <tr class="Produto">
-
-                                <th class="texto">Autor</th>
-                                <th class="texto">Título</th>
-                                <th class="texto">Imagem</th>
-                                <th class="texto">Descrição</th>
-                                <th class="texto">Data</th>
-                                <th class="texto">Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var Po in ViewBag.Posts)
-                            {
-                                <tr>
-                                    <td>@(Po.AutorSobrenome)</td>
-                                    <td>@(Po.Titulo)</td>
-                                    <td>@(Po.Imagem)</td>
-                                    <td>@(Po.Texto.Substring(0, Math.Min(Po.Texto.Length, 115)) + "...")</td>
-                                    <td>@(Po.Data)</td>
-                                    <td>
-                                        <a href="/Posts/Posts/@(Po.ID)">Ver</a> |
-                                        <a href="/Posts/Apagar/@(Po.ID)">Apagar</a>
-                                    </td>
+                                    <th class="texto">Autor</th>
+                                    <th class="texto">Título</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Data</th>
+                                    <th class="texto">Ação</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
-                </section>
+                            </thead>
+                            <tbody>
+                                @foreach (var Po in ViewBag.Posts)
+                                {
+                                    <tr>
+                                        <td>@(Po.AutorSobrenome)</td>
+                                        <td>@(Po.Titulo)</td>
+                                        <td>@(Po.Imagem)</td>
+                                        <td>@(Po.Texto.Substring(0, Math.Min(Po.Texto.Length, 115)) + "...")</td>
+                                        <td>@(Po.Data)</td>
+                                        <td>
+                                            <a href="/Posts/Posts/@(Po.ID)">Ver</a> |
+                                            <a href="/Posts/Apagar/@(Po.ID)">Apagar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </section>
 
-            </div>
-        </li>
-
+                </div>
+            </li>
         </ul>
     </div>
 

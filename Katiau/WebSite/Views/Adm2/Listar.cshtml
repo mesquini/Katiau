@@ -288,13 +288,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </div>
             </li>
-
+            @* POSTS *@
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab4">
-                <label for="tab4"> Outros </label>
+                <label for="tab4"> Postagens </label>
                 <div class="content_tab">
 
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="/Posts/NovoPost/">Cadastrar um novo Post</a></tr>
+                                <tr class="Produto">
 
+                                    <th class="texto">Autor</th>
+                                    <th class="texto">Título</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Data</th>
+                                    <th class="texto">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var Po in ViewBag.Posts)
+                                {
+                                    <tr>
+                                        <td>@(Po.AutorSobrenome)</td>
+                                        <td>@(Po.Titulo)</td>
+                                        <td>@(Po.Imagem)</td>
+                                        <td>@(Po.Texto.Substring(0, Math.Min(Po.Texto.Length, 115)) + "...")</td>
+                                        <td>@(Po.Data)</td>
+                                        <td>
+                                            <a href="~/Posts/Posts/">Ver</a> |
+                                            <a href="~/Posts/Apagar/@(Po.ID)">Apagar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </section>
 
                 </div>
             </li>
