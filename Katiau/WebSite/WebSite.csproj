@@ -176,6 +176,14 @@
     <Content Include="images\g8.jpg" />
     <Content Include="images\g9.jpg" />
     <Content Include="images\icon1.png" />
+    <Content Include="images\img_posts\imagemPost1.jpg" />
+    <Content Include="images\img_posts\imagemPost10.jpg" />
+    <Content Include="images\img_posts\imagemPost11.jpg" />
+    <Content Include="images\img_posts\imagemPost12.jpg" />
+    <Content Include="images\img_posts\imagemPost2.jpg" />
+    <Content Include="images\img_posts\imagemPost7.jpg" />
+    <Content Include="images\img_posts\imagemPost8.jpg" />
+    <Content Include="images\img_posts\imagemPost9.jpg" />
     <Content Include="images\img_users\imagemPerfil2.jpg" />
     <Content Include="images\img_users\imagemPerfil85.jpg" />
     <Content Include="images\katiau16.png" />
