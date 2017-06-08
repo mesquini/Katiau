@@ -261,7 +261,6 @@
     <Compile Include="Controllers\PacoteController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
-    <Compile Include="Controllers\PostUsuarioController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -293,7 +292,6 @@
     <Content Include="Views\Reviews\Vantagens.cshtml" />
     <Content Include="Views\Menu\Cadastro.cshtml" />
     <Content Include="Views\Adm2\Listar.cshtml" />
-    <Content Include="Views\PostUsuario\Index.cshtml" />
     <Content Include="Views\Posts\NovoPost.cshtml" />
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\DLCs\Alterar.cshtml" />
