@@ -34,6 +34,9 @@ namespace WebSite.Controllers
                 List<DLC> DLCs = DLC.ListarDLC();
                 ViewBag.DLCs = DLCs;
 
+                List<Post> Posts = Post.Listar();
+                ViewBag.Posts = Posts;
+
 
                 if (TempData["Mensagem"] != null)
                 {
@@ -65,6 +68,9 @@ namespace WebSite.Controllers
 
             DLC DLCs = new DLC(Convert.ToInt32(ID));
             ViewBag.DLCs = DLCs;
+
+            List<Post> Posts = Post.Listar();
+            ViewBag.Posts = Posts;
 
             return View();
         }

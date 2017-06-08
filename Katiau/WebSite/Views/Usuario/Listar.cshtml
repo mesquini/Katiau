@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li class="dropdown">
                                         <a href="#" class="scroll dropdown-toggle" data-toggle="dropdown">Análises<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="~/Posts/Posts">Review TechMundo</a></li>
+                                            <li><a href="~/Posts/Posts">PostsMundo</a></li>
                                             <li><a href="~/Reviews/Reviews">Review PC World</a></li>
                                         </ul>
                                     </li>
@@ -290,13 +290,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </div>
             </li>
-
+            @* POSTS *@
             <li class="tabs">
                 <input type="radio" name="tabs" class="rd_tabs" id="tab4">
-                <label for="tab4"> Outros </label>
+                <label for="tab4"> Postagens </label>
                 <div class="content_tab">
 
+                    <section>
+                        <table border="1">
+                            <thead>
+                                <tr><a href="/Posts/NovoPost/">Cadastrar uma nova DLC</a></tr>
+                                <tr class="Produto">
 
+                                    <th class="texto">Autor</th>
+                                    <th class="texto">Título</th>
+                                    <th class="texto">Imagem</th>
+                                    <th class="texto">Descrição</th>
+                                    <th class="texto">Data</th>
+                                    <th class="texto">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var P in ViewBag.Posts)
+                                {
+                                    <tr>
+                                        <td>@(P.AutorSobrenome)</td>
+                                        <td>@(P.Titulo)</td>
+                                        <td>@(P.Imagem)</td>
+                                        <td>@(P.Texto.Substring(0, Math.Min(P.Texto.Length, 115)) + "...")</td>
+                                        <td>@(P.Data)</td>
+                                        <td>
+                                            <a href="/Posts/Posts/@(P.ID)">Ver</a> |
+                                            <a href="/PostS/Apagar/@(P.ID)">Apagar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </section>
 
                 </div>
             </li>

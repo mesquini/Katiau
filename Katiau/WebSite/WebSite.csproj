@@ -308,6 +308,7 @@
     <Content Include="Views\DLCs\Listar.cshtml" />
     <Content Include="Views\Perfil\Edita_Perfil.cshtml" />
     <Content Include="Views\Loja\DLC.cshtml" />
+    <Content Include="Views\Posts\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
