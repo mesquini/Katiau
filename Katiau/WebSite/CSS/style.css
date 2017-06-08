@@ -1026,6 +1026,7 @@ background:url(../images/fundoLoja.jpg) no-repeat 0px 0px;
 }
 .rft-pic{
 	padding:0;
+    border: 8px solid white;
 }
 .rft-pic-info h4 a{
     color: #B01030;

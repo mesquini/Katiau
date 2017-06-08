@@ -306,7 +306,7 @@ namespace WebSite.Controllers
             }
             return View();
         }
-        public ActionResult Apagar(String ID)
+        /*public ActionResult Apagar(String ID)
         {
             if (Session["User"] == null)
             {
@@ -326,6 +326,6 @@ namespace WebSite.Controllers
             }
 
             return RedirectToAction("Listar","Posts");
-        }
+        }*/
     }
 }
