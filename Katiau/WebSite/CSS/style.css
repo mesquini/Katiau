@@ -2847,6 +2847,13 @@ border: 2px solid #B01030
     color:white;
 }
 
+.banner-post{
+    height: 300px;
+   width: 1170px;
+   background-size:cover;
+   background-repeat:no-repeat;
+}
+
 
 
 
