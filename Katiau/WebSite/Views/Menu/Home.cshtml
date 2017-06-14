@@ -160,7 +160,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="information_grids">
                         <div class="info">
                             <p>" Bastidores da nossa equipe na E3 2016.</p>
-                            <a href="~~/Menu/Equipe">Leia Mais</a>
+                            <a href="~/Menu/Equipe">Leia Mais</a>
                         </div>
                         <div class="info-pic">
                             <img src="~/images/ps.png" class="img-responsive" alt="" />
@@ -171,14 +171,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="games-grids">
                     <div class="game-grid-left">
                         <div class="grid1">
-                            <h5 class="act"><a href="~/Posts/Padrao">Eventos</a></h5>
-                            <a href="~/News/Index"><img src="~/images/c1.jpg" class="img-responsive" alt="" /></a>
+                            <h5 class="act"><a href="~/Posts/Noticias">Eventos</a></h5>
+                            <a href="~/Posts/Noticias"><img src="~/images/c1.jpg" class="img-responsive" alt="" /></a>
                             <div class="grid1-info">
                                 <h4><a href="~/Posts/Padrao">ALT + TAB | Beta Finalizado</a></h4>
                                 <p>Confira os bastidores de mais uma etapa finalizada de nosso Open-BETA.</p>
                             </div>
                             <div class="more">
-                                <a href="~/Posts/Padrao">Leia Mais</a>
+                                <a href="~/Posts/Noticias">Leia Mais</a>
                             </div>
                         </div>
 
@@ -235,18 +235,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <!--Game Post-->
                     <div role="tabpanel" class="tab-pane re-pad2" id="profile">
+                        @foreach (var P in ViewBag.Posts)
+                        {
                         <div class="game-post">
                             <div class="col-md-3 tab-pic">
-                                <a href="~/Single/Index"><img src="~/images/tr4.jpg" alt="/" class="img-responsive"></a>
+                                <a href="~/Single/"><img src="~/images/img_posts/@(P.Imagem)" width="70" height="50"/></a>
                             </div>
                             <div class="col-md-9 tab-post-info">
-                                <h4><a href="~/Single/Index">Nissan Skyline</a></h4>
-                                <p>Posted By <a>Admin</a> &nbsp;&nbsp; on Jun 2, 2016 &nbsp;&nbsp; <a>Comentários (10)</a></p>
+                                <h4><a href="~/Single/">@(P.Titulo)</a></h4>
+                                <p>Postado pelo <a>@(P.AutorSobrenome)</a> &nbsp;&nbsp; @P.Data &nbsp;&nbsp; </p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
-                        <div class="game-post">
+                        }
+                        @*<div class="game-post">
                             <div class="col-md-3 tab-pic">
                                 <a href="~/Single/Index"><img src="~/images/tr5.jpg" alt="/" class="img-responsive"></a>
                             </div>
@@ -266,7 +268,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <p>Posted By <a>Admin</a> &nbsp;&nbsp; on Feb 10, 2017 &nbsp;&nbsp; <a>Comentários (4)</a></p>
                             </div>
                             <div class="clearfix"></div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <!---->

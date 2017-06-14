@@ -135,9 +135,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <form class="seguraTudo" action="~/Perfil/Edita_Perfil" method="POST" enctype="multipart/form-data">
 
-        <input type="image" title="Editar Informações" id="edit" src="/images/img_users/@ViewBag.ImagemU" onmouseover="this.src = '/images/useredit - hover.png'" onmouseout="this.src = '/images/img_users/@ViewBag.ImagemU'"
-               class="imgEdit">
-        <input type="file" name="Imagem" id="img" runat="server" />
+        <input type="image" title="Editar Informações" id="edit" src="/images/img_users/@(ViewBag.ImagemU)" onmouseover="this.src = '/images/useredit - hover.png'" 
+               onmouseout="this.src = '/images/img_users/@(ViewBag.ImagemU)'" class="imgEdit">
+
+        <input type="file" name="Imagem" id="img" runat="server" class="imgFile" />
 
         <div class="editaTudo"style="padding: 60px;">
 

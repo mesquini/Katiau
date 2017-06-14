@@ -12,6 +12,10 @@ namespace WebSite.Controllers
     {
         public ActionResult Home()
         {
+            ViewBag.Posts = TempData["Posts"];
+            List<Post> Posts = Post.ListarTop3();
+            ViewBag.Posts = Posts;
+
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();
@@ -41,6 +45,7 @@ namespace WebSite.Controllers
                         break;
 
                 }
+                
             }
 
             if (Session["User"] != null)
