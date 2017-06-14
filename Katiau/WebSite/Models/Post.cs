@@ -128,6 +128,39 @@ namespace Website.Models
 
             Conexao.Close();
 
+
+            return Posts;
+        }
+             public static List<Post> ListarTop3()
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            SqlCommand Comando2 = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT Posts.ID,Autor,Imagem,Titulo,Texto,Usuario.NomeU,Usuario.SobrenomeU,Data,Reports FROM Posts,Usuario WHERE Autor=Usuario.ID ORDER BY ID DESC;";
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            List<Post> Posts = new List<Post>();
+            while (Leitor.Read())
+            {
+                Post P = new Post();
+                P.ID = (Int32)Leitor["ID"];
+                P.Titulo = (String)Leitor["Titulo"];
+                P.Texto = (String)Leitor["Texto"];
+                P.Imagem = (String)Leitor["Imagem"];
+                 P.Data = (DateTime)Leitor["Data"];
+                P.Report = (Int32)Leitor["Reports"];
+                Usuario user = new Usuario((Int32)Leitor["Autor"]);
+                P.AutorSobrenome = user.Nome + " " + user.Sobrenome;
+
+                Posts.Add(P);
+            }
+
+            Conexao.Close();
+
+
             return Posts;
         }
     }
