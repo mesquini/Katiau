@@ -42,6 +42,28 @@ namespace Website.Models
             Conexao.Close();
         }
 
+        public Post(Int32 id)
+        {
+            SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);
+            Conexao.Open();
+
+            SqlCommand Comando = new SqlCommand();
+            Comando.Connection = Conexao;
+            Comando.CommandText = "SELECT TOP 1 * FROM Posts ORDER BY ID DESC;";
+
+            SqlDataReader Leitor = Comando.ExecuteReader();
+
+            Leitor.Read();
+
+            this.ID = (Int32)Leitor["ID"];
+            this.Autor = (Int32)Leitor["Autor"];
+            this.Titulo = (String)Leitor["Titulo"];
+            this.Texto = (String)Leitor["Texto"];
+            this.Data = (DateTime)Leitor["Data"];
+
+            Conexao.Close();
+        }
+
         public Boolean BuscarDados(Int32 ID)
         {
             SqlConnection Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["KatiauBD"].ConnectionString);

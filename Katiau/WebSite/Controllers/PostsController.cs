@@ -14,8 +14,14 @@ namespace WebSite.Controllers
         // GET: Posts
         public ActionResult Padrao()
         {
+  
             ViewBag.Posts = TempData["Posts"];
 
+            if(ViewBag.Posts == null)
+            {
+                RedirectToAction("Posts","Posts");
+            }
+            
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();
@@ -306,7 +312,7 @@ namespace WebSite.Controllers
             }
             return View();
         }
-        /*public ActionResult Apagar(String ID)
+        public ActionResult Apagar(String ID)
         {
             if (Session["User"] == null)
             {
@@ -326,6 +332,6 @@ namespace WebSite.Controllers
             }
 
             return RedirectToAction("Listar","Posts");
-        }*/
+        }
     }
 }

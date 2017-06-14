@@ -15,6 +15,7 @@ namespace WebSite.Controllers
         {
             if (Session["User"] != null)
             {
+                ViewBag.Logado = Session["User"];
                 Usuario us = (Usuario)Session["User"];
                 ViewBag.SobrenomeU = us.Sobrenome;
                 ViewBag.NomeU = us.Nome;
