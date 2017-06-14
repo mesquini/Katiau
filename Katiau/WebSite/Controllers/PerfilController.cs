@@ -68,10 +68,10 @@ namespace WebSite.Controllers
                         if (contentType.IndexOf("jpeg") > 0)
                         {
                             postedFile.SaveAs(HttpRuntime.AppDomainAppPath + "\\images\\img_users\\" + "imagemPerfil" + ID + ".jpg");
-                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_users\" + "imagemPerfil" + ID + ".jpg");
+                            //postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\img_users\" + "imagemPerfil" + ID + ".jpg");
                         }
-                        else
-                            postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\" + Request.Form["Desc"] + ".txt");
+                       // else
+                          //  postedFile.SaveAs(@"C:\Users\16128604\Source\Repos\lpw-2017-3infb-g4\Katiau\WebSite\images\" + Request.Form["Desc"] + ".txt");
 
                     }
 

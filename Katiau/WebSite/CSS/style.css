@@ -2706,6 +2706,12 @@ text-align: center;
     width: 80%;
     height: 700px;
 }
+.seguraTudo1{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 70px;
+}
 
 .seguraTudo .nicknamae{
     color: #B01030;
@@ -2731,6 +2737,9 @@ text-align: center;
     top: 15%;
 }
 
+.imgFile{
+    padding-top: 20px;
+}
 .seguraTudo .imgEdit{  
     border-radius: 1000px;
     width:15%;
