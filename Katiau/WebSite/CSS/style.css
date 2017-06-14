@@ -1026,6 +1026,7 @@ background:url(../images/fundoLoja.jpg) no-repeat 0px 0px;
 }
 .rft-pic{
 	padding:0;
+    border: 8px solid white;
 }
 .rft-pic-info h4 a{
     color: #B01030;
@@ -2845,6 +2846,13 @@ border: 2px solid #B01030
     text-align:center;
     position:absolute;
     color:white;
+}
+
+.banner-post{
+    height: 300px;
+   width: 1170px;
+   background-size:cover;
+   background-repeat:no-repeat;
 }
 
 

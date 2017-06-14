@@ -12,16 +12,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title> alt+Tab | (Beta Test #3) Finalizado!  </title>
+    <title> alt+Tab | @ViewBag.Posts.Titulo  </title>
 
     <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
-    <link href="~/CSS/style4.css" rel='stylesheet' type='text/css' />
     <link href="~/CSS/twitter-bootstrap.css" rel='stylesheet' type='text/css' />
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
     <!-- jQuery (necessary JavaScript plugins) -->
     <script type='text/javascript' src="~/JS/jquery-1.11.1.min.js"></script>
-
+   
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -139,64 +138,110 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="single">
             <div class="blog-to">
-
-                <img class="img-responsive sin-on" src="~/images/sin1.jpg" alt="" />
+                
+                <div class="banner-post" style="background-image: url(/images/img_posts/@ViewBag.Posts.Imagem)">
+                </div>
                 <div class="blog-top">
                     <div class="blog-left">
-                        <b>01</b>
-                        <span>Feb</span>
+                        <b>@ViewBag.Posts.dia</b>
+                        <span>@ViewBag.Posts.mes</span>
                     </div>
                     <div class="top-blog">
-                        <a class="fast"> alt+Tab | (Beta Test #3) Finalizado! </a>
-                        <p>Postado por <a>Matt</a> no <a>Assuntos Gerais</a> | <a>4 Comentários</a></p>
-                        <p class="sed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus lorem vel augue vestibulum vulputate. Aliquam erat volutpat.
-                            Sed sed nulla at ipsum fermentum egestas. Fusce ultricies viverra tempor. Pellentesque non diam vitae nulla hendrerit blandit.
-                            Cras metus arcu, laoreet pellentesque rutrum sed, lacinia quis lectus. Cras efficitur metus a orci viverra, non dignissim enim euismod. Phasellus a magna eget ligula porta elementum. Sed non sagittis magna. Duis at nibh at elit gravida lacinia et in nulla. Proin tempus enim sapien, non auctor velit posuere id. Duis fringilla imperdiet nibh.
-
-                            Pellentesque sed ex purus. Vivamus rhoncus consequat ligula sed consequat. Vestibulum pulvinar mauris vel erat rutrum egestas. Aenean finibus in dui nec eleifend. Nam lacinia vitae turpis auctor mollis. Curabitur tincidunt mauris a dolor auctor, ac iaculis libero rhoncus. Maecenas ac leo malesuada ligula gravida vehicula et sed quam.
-                            Sed quis libero vel libero tempor consectetur quis at ex. Maecenas dignissim, felis at pellentesque finibus, nibh augue vestibulum orci, sit amet porttitor justo metus eget massa. Maecenas porta metus sed quam rhoncus sagittis in quis lacus. Cras lacinia neque vel sem sagittis, fermentum posuere dui sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aenean euismod eros lacus, ac blandit arcu malesuada at.
-                        </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis. Donec et purus nec leo interdum sodales nec sit amet magna.</p>
-                        <div class="col-md-6 md-in">
-                            <ul class="grid-part">
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                                <li><a><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                                <li><a><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                            </ul>
+                        <a class="fast" > alt+Tab | @ViewBag.Posts.Titulo </a>
+                        <p>Postado por <a>@ViewBag.Posts.AutorSobrenome</a>
+                        <p class="sed">@ViewBag.Posts.Texto</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
-        </div>
+
     </div>
+   
+        <div class="comment" id="HCB_comment_box">
+        <h3>Comentários</h3>
+        <style type="text/css">
+            #HCB_comment_box #HCB_comment_form_box {
+                padding-bottom: 1em;
+            }
 
-    <div class="rorschatch">
-        @if (ViewBag.Logado != null)
-            {
+            #HCB_comment_box .hcb-link {
+                cursor: pointer;
+            }
 
-            <form method="POST">
-                @* Action="/Cont/Method" *@
-                <input class="inputsgrila" type="text" value="@ViewBag.NickU" id="nome" name="Nome" required><button type="submit">Enviar</button>
-                <br />
-                <input class="inputsgrila" type="text" placeholder="Comentário" id="comment" name="Comentário" required><button type="reset"> Limpar </button>
-            </form>
-        }
-        else
-        {
-            <p class="pet"> É necessário estar logado para comentar e visualizar comentários! </p>
-        }
-    </div>
+            #HCB_comment_box .hcb-icon {
+                border: 0px transparent none;
+               
+            }
 
+            #HCB_comment_box textarea {
+                display: block;
+                width: 100%;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                width: 100%;
+                         
+            }
+
+            #HCB_comment_box blockquote {
+                margin: 10px;
+                overflow: hidden;
+            }
+
+            #HCB_comment_box .hcb-err {
+                color: black;
+            }
+
+            #HCB_comment_box .hcb-comment-tb {
+                margin: 0;
+                color: black;
+            }
+
+            #HCB_comment_box .comment {
+                position: relative;
+                color: black;
+            }
+
+                #HCB_comment_box .comment .likes {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    opacity: 0.8;
+                }
+
+                #HCB_comment_box .comment .hcb-comment-tb a {
+                    visibility: hidden;
+                }
+
+                #HCB_comment_box .comment:hover .hcb-comment-tb a {
+                    visibility: visible;
+                }
+
+            #HCB_comment_box .gravatar {
+                padding-right: 2px;
+            }
+
+            #HCB_comment_box input {
+                margin-left: 0;
+            }
+            #HCB_comment_box textarea{
+                 color: #B01030;
+             }
+
+        </style></div>
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a></div>
+        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24KJvpEEI7TDxRD5qolK3BS0"+"&opts=16862&num=10&ts=1487880652574");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
     <div class="copywrite">
         <div class="container">
             <p> © 2017 Katiau. All rights reserved | Design by <a href="http://www.w3layouts.com" style="color: #B01030;">W3layouts</a></p>
         </div>
     </div>
+
 </body>
 </html>
