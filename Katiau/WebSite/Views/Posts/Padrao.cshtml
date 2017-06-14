@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title> alt+Tab | (Beta Test #3) Finalizado!  </title>
+    <title> alt+Tab | @ViewBag.Posts.Titulo  </title>
 
     <link href="~/CSS/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/CSS/style.css" rel='stylesheet' type='text/css' />
@@ -139,33 +139,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="single">
             <div class="blog-to">
                 
-                <img class="img-responsive sin-on" src="~/images/sin1.jpg" alt="" />
+                <div class="banner-post" style="background-image: url(/images/img_posts/@ViewBag.Posts.Imagem)">
+                </div>
                 <div class="blog-top">
                     <div class="blog-left">
-                        <b>01</b>
-                        <span>Feb</span>
+                        <b>@ViewBag.Posts.dia</b>
+                        <span>@ViewBag.Posts.mes</span>
                     </div>
                     <div class="top-blog">
-                        <a class="fast" > alt+Tab | (Beta Test #3) Finalizado! </a>
-                        <p>Postado por <a>Matt</a> no <a>Assuntos Gerais</a> | <a>4 Comentários</a></p>
-                        <p class="sed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus lorem vel augue vestibulum vulputate. Aliquam erat volutpat.
-                            Sed sed nulla at ipsum fermentum egestas. Fusce ultricies viverra tempor. Pellentesque non diam vitae nulla hendrerit blandit.
-                            Cras metus arcu, laoreet pellentesque rutrum sed, lacinia quis lectus. Cras efficitur metus a orci viverra, non dignissim enim euismod. Phasellus a magna eget ligula porta elementum. Sed non sagittis magna. Duis at nibh at elit gravida lacinia et in nulla. Proin tempus enim sapien, non auctor velit posuere id. Duis fringilla imperdiet nibh.
-
-                            Pellentesque sed ex purus. Vivamus rhoncus consequat ligula sed consequat. Vestibulum pulvinar mauris vel erat rutrum egestas. Aenean finibus in dui nec eleifend. Nam lacinia vitae turpis auctor mollis. Curabitur tincidunt mauris a dolor auctor, ac iaculis libero rhoncus. Maecenas ac leo malesuada ligula gravida vehicula et sed quam.
-                            Sed quis libero vel libero tempor consectetur quis at ex. Maecenas dignissim, felis at pellentesque finibus, nibh augue vestibulum orci, sit amet porttitor justo metus eget massa. Maecenas porta metus sed quam rhoncus sagittis in quis lacus. Cras lacinia neque vel sem sagittis, fermentum posuere dui sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aenean euismod eros lacus, ac blandit arcu malesuada at.
-                        </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis. Donec et purus nec leo interdum sodales nec sit amet magna.</p>
-                        <div class="col-md-6 md-in">
-                            <ul class="grid-part">
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                                <li><a><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                                <li><a><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
-                                <li><a><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
-                            </ul>
+                        <a class="fast" > alt+Tab | @ViewBag.Posts.Titulo </a>
+                        <p>Postado por <a>@ViewBag.Posts.AutorSobrenome</a>
+                        <p class="sed">@ViewBag.Posts.Texto</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>

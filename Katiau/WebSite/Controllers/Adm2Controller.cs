@@ -16,6 +16,10 @@ namespace WebSite.Controllers
             {
                 ViewBag.Logado = Session["User"];
                 Usuario Users = (Usuario)Session["User"];
+                ViewBag.ImagemU = Users.ImagemPerfil;
+                ViewBag.NickU = Users.Nick;
+                ViewBag.NomeU = Users.Nome;
+                ViewBag.SobrenomeU = Users.Sobrenome;
                 if (!Users.Adm)
                 {
                     Response.Redirect("/Menu/Home", false);
@@ -49,6 +53,13 @@ namespace WebSite.Controllers
                 Response.Redirect("/Menu/Home", false);
             }
 
+            ViewBag.Logado = Session["User"];
+            Usuario Users = (Usuario)Session["User"];
+            ViewBag.ImagemU = Users.ImagemPerfil;
+            ViewBag.NickU = Users.Nick;
+            ViewBag.NomeU = Users.Nome;
+            ViewBag.SobrenomeU = Users.Sobrenome;
+
             Usuario U = new Usuario(Convert.ToInt32(ID));
             ViewBag.User = U;
 
@@ -73,6 +84,12 @@ namespace WebSite.Controllers
 
             Categoria P = new Categoria(Convert.ToInt32(ID));
 
+            ViewBag.Logado = Session["User"];
+            Usuario Users = (Usuario)Session["User"];
+            ViewBag.ImagemU = Users.ImagemPerfil;
+            ViewBag.NickU = Users.Nick;
+            ViewBag.NomeU = Users.Nome;
+            ViewBag.SobrenomeU = Users.Sobrenome;
 
             if (P.Apagar())
             {

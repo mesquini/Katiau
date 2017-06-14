@@ -147,11 +147,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @foreach (var P in ViewBag.Posts)
                             {
                                <div class="col-md-5 rft-pic">
-                                <a><img src="~/images/img_posts/@(P.Imagem)" class="img-responsive" alt="" /></a>
+                                <a><img src="~/images/img_posts/@(P.Imagem)" class="img-responsive" alt=""/></a>
                             </div>
                             <div class="col-md-7 rft-pic-info">
                                 <h4><a>@(P.Titulo)</a></h4>
-                                <p>@(P.Texto.Substring(0,Math.Min(P.Texto.Length,100))+"..." ) <a href="~/Posts/Padrao" style="color: #B01030">Veja Mais.</a></p>
+                                <p>@(P.Texto.Substring(0,Math.Min(P.Texto.Length,100))+"..." ) <a href="~/Posts/MostrarPost/@P.ID" style="color: #B01030">Veja Mais.</a></p>
                             </div>
                             <div class="clearfix"></div>
                             }

@@ -14,6 +14,8 @@ namespace WebSite.Controllers
         // GET: Posts
         public ActionResult Padrao()
         {
+            ViewBag.Posts = TempData["Posts"];
+
             if (Request.HttpMethod == "POST")
             {
                 String Email = Request.Form["email"].ToString();
@@ -59,6 +61,21 @@ namespace WebSite.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult MostrarPost(int id)
+        {
+            Post posts = new Post();
+            if (posts.BuscarDados(id))
+            {
+                TempData["Posts"] = posts;
+
+                return RedirectToAction("Padrao", "Posts");
+            }
+            else
+            {
+                return RedirectToAction("Posts", "Posts");
+            }
         }
 
         public ActionResult Noticias()
@@ -178,7 +195,7 @@ namespace WebSite.Controllers
 
                 if (novo.Salvar(user.ID))
                 {
-                    Post post = new Post(user.ID);
+                    Post post = new Post();
 
                     foreach (string fileName in Request.Files)
                     {
@@ -289,7 +306,7 @@ namespace WebSite.Controllers
             }
             return View();
         }
-        public ActionResult Apagar(String ID)
+        /*public ActionResult Apagar(String ID)
         {
             if (Session["User"] == null)
             {
@@ -309,6 +326,6 @@ namespace WebSite.Controllers
             }
 
             return RedirectToAction("Listar","Posts");
-        }
+        }*/
     }
 }
